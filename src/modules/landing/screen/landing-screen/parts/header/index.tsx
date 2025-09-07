@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { GraduationCap } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export function Header() {
   const t = useTranslations("LandingPage.header");
@@ -56,11 +57,15 @@ export function Header() {
 
           {/* Auth Buttons */}
           <div className="flex items-center gap-3">
-            <Button variant="ghost" className="font-medium">
-              {t("auth.signIn")}
+            <Button variant="ghost" className="font-medium" asChild>
+              <Link href="/auth/sign-in">
+                {t("auth.signIn")}
+              </Link>
             </Button>
-            <Button className="font-medium shadow-sm">
-              {t("auth.signUp")}
+            <Button className="font-medium shadow-sm" asChild>
+              <Link href="/auth/sign-up">
+                {t("auth.signUp")}
+              </Link>
             </Button>
           </div>
         </div>

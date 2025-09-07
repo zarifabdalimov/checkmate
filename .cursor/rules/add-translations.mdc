@@ -1,0 +1,5 @@
+---
+description: fot the text always use translation libraries and add it to en.json
+globs: 
+alwaysApply: true
+---

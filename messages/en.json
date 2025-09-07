@@ -131,5 +131,49 @@
       },
       "copyright": "© 2025 CheckMate. All rights reserved."
     }
+  },
+  "AuthPages": {
+    "signIn": {
+      "title": "Welcome back",
+      "subtitle": "Sign in to your account to continue",
+      "form": {
+        "email": "Email",
+        "emailPlaceholder": "Enter your email",
+        "password": "Password",
+        "passwordPlaceholder": "Enter your password",
+        "submitButton": "Sign in",
+        "submittingButton": "Signing in..."
+      },
+      "footer": {
+        "noAccount": "Don't have an account?",
+        "signUpLink": "Sign up"
+      }
+    },
+    "signUp": {
+      "title": "Create your account",
+      "subtitle": "Sign up to get started with Checkmate",
+      "form": {
+        "email": "Email",
+        "emailPlaceholder": "Enter your email",
+        "password": "Password",
+        "passwordPlaceholder": "Create a password",
+        "confirmPassword": "Confirm Password",
+        "confirmPasswordPlaceholder": "Confirm your password",
+        "submitButton": "Create account",
+        "submittingButton": "Creating account..."
+      },
+      "footer": {
+        "hasAccount": "Already have an account?",
+        "signInLink": "Sign in"
+      }
+    },
+    "validation": {
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "passwordRequired": "Password is required",
+      "passwordMinLength": "Password must be at least 6 characters",
+      "confirmPasswordRequired": "Please confirm your password",
+      "passwordsDontMatch": "Passwords don't match"
+    }
   }
 }
