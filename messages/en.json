@@ -8,5 +8,128 @@
     "learn": "Learn",
     "examples": "Examples",
     "goToNextjs": "Go to nextjs.org"
+  },
+  "LandingPage": {
+    "header": {
+      "navigation": {
+        "features": "Features",
+        "howItWorks": "How It Works",
+        "pricing": "Pricing",
+        "about": "About"
+      },
+      "auth": {
+        "signIn": "Sign In",
+        "signUp": "Sign Up"
+      }
+    },
+    "hero": {
+      "badge": "AI-Powered Education Platform",
+      "title": "Transform Testing with",
+      "titleHighlight": "AI Intelligence",
+      "subtitle": "Empower teachers to create intelligent assessments and provide students with personalized feedback and AI-powered study assistance.",
+      "getStarted": "Get Started Free",
+      "watchDemo": "Watch Demo",
+      "stats": {
+        "testsGenerated": "Tests Generated",
+        "teachers": "Teachers",
+        "studentsHelped": "Students Helped"
+      }
+    },
+    "features": {
+      "title": "Complete Assessment Solution",
+      "subtitle": "From test creation to personalized feedback, our platform handles the entire educational assessment workflow.",
+      "aiTestGeneration": {
+        "title": "AI Test Generation",
+        "description": "Create comprehensive tests instantly with our advanced AI that understands your curriculum and learning objectives."
+      },
+      "automatedGrading": {
+        "title": "Automated Grading",
+        "description": "Save hours with intelligent evaluation that provides detailed feedback and identifies learning gaps automatically."
+      },
+      "studentInsights": {
+        "title": "Student Insights",
+        "description": "Track student progress with detailed analytics and provide personalized learning recommendations."
+      },
+      "personalAiTutor": {
+        "title": "Personal AI Tutor",
+        "description": "Get instant explanations and study guidance tailored to your specific learning needs and mistakes."
+      },
+      "interactiveResults": {
+        "title": "Interactive Results",
+        "description": "Access your test results through a personalized link with detailed explanations and improvement suggestions."
+      },
+      "studyMaterials": {
+        "title": "Study Materials",
+        "description": "Receive curated study materials and practice questions based on your performance and learning goals."
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "Simple, powerful workflow that transforms traditional testing into an intelligent learning experience.",
+      "steps": {
+        "generateTest": {
+          "title": "Generate Test",
+          "description": "Teachers use AI to create customized tests based on their curriculum and learning objectives."
+        },
+        "printDistribute": {
+          "title": "Print & Distribute",
+          "description": "Print the generated test and distribute to students for traditional paper-based assessment."
+        },
+        "aiEvaluation": {
+          "title": "AI Evaluation",
+          "description": "Our AI evaluates completed tests and generates detailed feedback and explanations."
+        },
+        "personalizedLearning": {
+          "title": "Personalized Learning",
+          "description": "Students receive personalized links with results, explanations, and AI tutoring support."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Transform Your Classroom?",
+      "subtitle": "Join thousands of educators who are already using AI to create better learning experiences for their students.",
+      "startTrial": "Start Free Trial",
+      "scheduleDemo": "Schedule Demo"
+    },
+    "footer": {
+      "tagline": "Transforming education with AI-powered assessments",
+      "product": {
+        "title": "Product",
+        "features": "Features",
+        "pricing": "Pricing",
+        "demo": "Demo",
+        "documentation": "Documentation"
+      },
+      "company": {
+        "title": "Company",
+        "about": "About Us",
+        "careers": "Careers",
+        "blog": "Blog",
+        "contact": "Contact"
+      },
+      "support": {
+        "title": "Support",
+        "helpCenter": "Help Center",
+        "tutorials": "Tutorials",
+        "community": "Community",
+        "status": "Status"
+      },
+      "legal": {
+        "title": "Legal",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "cookies": "Cookie Policy"
+      },
+      "newsletter": {
+        "title": "Stay Updated",
+        "description": "Get the latest updates on AI in education and platform features.",
+        "placeholder": "Enter your email",
+        "subscribe": "Subscribe"
+      },
+      "social": {
+        "followUs": "Follow us"
+      },
+      "copyright": "© 2025 CheckMate. All rights reserved."
+    }
   }
 }
