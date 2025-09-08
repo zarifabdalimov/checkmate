@@ -1,32 +1,21 @@
 "use client";
 
+import { useGetStudents } from '@/lib/api/generated/aPIForCheckmateApp'
 import { EmptyState } from "@/modules/components/empty-state";
 import { Button } from "@/modules/ui/button";
-import { Student } from "@/types/model";
+
 import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
 import * as React from "react";
 import { useBoolean } from "usehooks-ts";
 import { AddEditStudentDialog } from "./parts/add-edit-student-dialog";
 import { StudentsTable } from "./parts/students-table";
+import { Student } from "@/lib/api/generated/model";
 
-const studentsMock = [
-  {
-    id: 1,
-    name: "John Doe",
-    email: "johndoe@example.com",
-    phone: "555-123-4567",
-  },
-  {
-    id: 2,
-    name: "Jane Doe",
-    email: "janedoe@example.com",
-    phone: "555-123-4568",
-  },
-];
+
 
 export function StudentsScreen() {
-  const data = studentsMock;
+  const studentsQuery = useGetStudents();
   const isDialogOpen = useBoolean();
   const [editingStudent, setEditingStudent] = React.useState<Student | null>(
     null,
@@ -66,7 +55,7 @@ export function StudentsScreen() {
     }
   };
 
-  if (data.length === 0) {
+  if (studentsQuery.data?.length === 0) {
     return (
       <>
         <EmptyState
@@ -98,7 +87,7 @@ export function StudentsScreen() {
         </Button>
       </div>
       <StudentsTable
-        data={data}
+        data={studentsQuery.data ?? []}
         onEditStudent={handleEditStudent}
         onDeleteStudent={handleDeleteStudent}
       />

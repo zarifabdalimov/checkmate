@@ -1,4 +1,4 @@
-import { Student } from "@/types/model";
+import { Student } from "@/lib/api/generated/model";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import * as React from "react";

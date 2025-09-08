@@ -1,7 +1,7 @@
 import { ReactTable } from "@/modules/components/react-table";
-import { Student } from "@/types/model";
 import * as React from "react";
 import { useStudentsTable } from "./hooks/use-students-table";
+import { Student } from "@/lib/api/generated/model";
 
 interface StudentsTableProps {
   data: Student[];

@@ -19,12 +19,10 @@ function getPageNameKey(pathname: string): string {
     switch (segment) {
       case "students":
         return "students";
-      case "classes":
-        return "classes";
-      case "test-builder":
-        return "testBuilder";
-      case "test-results":
-        return "testResults";
+      case "groups":
+        return "groups";
+      case "tests":
+        return "tests";
       default:
         return "home";
     }

@@ -14,10 +14,10 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/modules/ui/sidebar";
-import { BarChart3, BookOpen, FileText, Users } from "lucide-react";
+import { BookOpen, FileText, Users } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useTranslations } from "next-intl";
 
 const getNavigationItems = (t: ReturnType<typeof useTranslations>) => [
   {
@@ -26,19 +26,14 @@ const getNavigationItems = (t: ReturnType<typeof useTranslations>) => [
     icon: Users,
   },
   {
-    title: t("navigation.classes"),
-    url: "/dashboard/classes",
+    title: t("navigation.groups"),
+    url: "/dashboard/groups",
     icon: BookOpen,
   },
   {
-    title: t("navigation.testBuilder"),
-    url: "/dashboard/test-builder",
+    title: t("navigation.tests"),
+    url: "/dashboard/tests",
     icon: FileText,
-  },
-  {
-    title: t("navigation.testResults"),
-    url: "/dashboard/test-results",
-    icon: BarChart3,
   },
 ];
 

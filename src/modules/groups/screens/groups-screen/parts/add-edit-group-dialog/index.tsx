@@ -18,41 +18,39 @@ import {
   FormMessage,
 } from "@/modules/ui/form";
 import { Input } from "@/modules/ui/input";
-import { Student } from "@/lib/api/generated/model";
+import { Group } from '@/lib/api/generated/model'
 import { useTranslations } from "next-intl";
 import { useEffect } from "react";
 import * as React from "react";
-import { StudentFormData, useStudentForm } from "./hooks/use-student-form";
+import { GroupFormData, useGroupForm } from "./hooks/use-group-form";
 
-interface AddEditStudentDialogProps {
+interface AddEditGroupDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  student?: Student | null;
-  onSubmit: (data: StudentFormData) => void;
+  group?: Group | null;
+  onSubmit: (data: GroupFormData) => void;
 }
 
-export function AddEditStudentDialog({
+export function AddEditGroupDialog({
   open,
   onOpenChange,
-  student,
+  group,
   onSubmit,
-}: AddEditStudentDialogProps) {
-  const isEditing = !!student;
-  const t = useTranslations("Dashboard.students.dialog");
-  const form = useStudentForm();
+}: AddEditGroupDialogProps) {
+  const isEditing = !!group;
+  const t = useTranslations("Dashboard.groups.dialog");
+  const form = useGroupForm();
 
-  // Reset form when dialog opens/closes or student changes
+  // Reset form when dialog opens/closes or group changes
   useEffect(() => {
     if (open) {
       form.reset({
-        name: student?.name || "",
-        email: student?.email || "",
-        phone: student?.phone || "",
+        name: group?.name || "",
       });
     }
-  }, [open, student, form]);
+  }, [open, group, form]);
 
-  const handleSubmit = (data: StudentFormData) => {
+  const handleSubmit = (data: GroupFormData) => {
     onSubmit(data);
     onOpenChange(false);
     form.reset();
@@ -97,42 +95,6 @@ export function AddEditStudentDialog({
               )}
             />
 
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>{t("form.email.label")}</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="email"
-                      placeholder={t("form.email.placeholder")}
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>{t("form.phone.label")}</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="tel"
-                      placeholder={t("form.phone.placeholder")}
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
             <DialogFooter>
               <Button type="button" variant="outline" onClick={handleCancel}>
                 {t("buttons.cancel")}
@@ -141,8 +103,8 @@ export function AddEditStudentDialog({
                 {form.formState.isSubmitting
                   ? t("buttons.saving")
                   : isEditing
-                    ? t("buttons.updateStudent")
-                    : t("buttons.addStudent")}
+                    ? t("buttons.updateGroup")
+                    : t("buttons.addGroup")}
               </Button>
             </DialogFooter>
           </form>

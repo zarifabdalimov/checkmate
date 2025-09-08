@@ -210,17 +210,15 @@
       "navigation": {
         "title": "Navigation",
         "students": "Students",
-        "classes": "Classes",
-        "testBuilder": "Test Builder",
-        "testResults": "Test Results"
+        "groups": "Groups",
+        "tests": "Tests"
       }
     },
     "pages": {
       "home": "Dashboard",
       "students": "Students",
-      "classes": "Classes",
-      "testBuilder": "Test Builder",
-      "testResults": "Test Results"
+      "groups": "Groups",
+      "tests": "Tests"
     },
     "students": {
       "screen": {
@@ -281,6 +279,54 @@
           "emailInvalid": "Please enter a valid email address",
           "phoneRequired": "Phone number is required",
           "phoneInvalid": "Please enter a valid phone number"
+        }
+      }
+    },
+    "groups": {
+      "screen": {
+        "description": "Manage your groups and organize your students.",
+        "addButton": "Add Group",
+        "emptyState": {
+          "title": "No groups yet",
+          "description": "Get started by creating your first group to organize your students.",
+          "addFirstButton": "Create Your First Group"
+        }
+      },
+      "table": {
+        "columns": {
+          "id": "ID",
+          "name": "Name",
+          "actions": "Actions"
+        },
+        "actions": {
+          "editTooltip": "Edit group",
+          "deleteTooltip": "Delete group"
+        }
+      },
+      "dialog": {
+        "add": {
+          "title": "Add New Group",
+          "description": "Enter the group information to create a new group."
+        },
+        "edit": {
+          "title": "Edit Group",
+          "description": "Update the group information below."
+        },
+        "form": {
+          "name": {
+            "label": "Group Name",
+            "placeholder": "Enter group name"
+          }
+        },
+        "buttons": {
+          "cancel": "Cancel",
+          "addGroup": "Add Group",
+          "updateGroup": "Update Group",
+          "saving": "Saving..."
+        },
+        "validation": {
+          "nameRequired": "Name is required",
+          "nameTooLong": "Name is too long"
         }
       }
     }

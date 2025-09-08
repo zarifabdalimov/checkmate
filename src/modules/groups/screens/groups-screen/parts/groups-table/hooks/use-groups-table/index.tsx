@@ -6,22 +6,22 @@ import {
 import { Edit, Trash2 } from "lucide-react";
 import * as React from "react";
 import { useTranslations } from "next-intl";
-import { Student } from "@/lib/api/generated/model";
+import { Group } from '@/lib/api/generated/model'
 
-interface UseStudentsTableProps {
-  data: Student[];
-  onEditStudent?: (student: Student) => void;
-  onDeleteStudent?: (student: Student) => void;
+interface UseGroupsTableProps {
+  data: Group[];
+  onEditGroup?: (group: Group) => void;
+  onDeleteGroup?: (group: Group) => void;
 }
 
-const columnHelper = createColumnHelper<Student>();
+const columnHelper = createColumnHelper<Group>();
 
-export function useStudentsTable({
+export function useGroupsTable({
   data,
-  onEditStudent,
-  onDeleteStudent,
-}: UseStudentsTableProps) {
-  const t = useTranslations("Dashboard.students.table");
+  onEditGroup,
+  onDeleteGroup,
+}: UseGroupsTableProps) {
+  const t = useTranslations("Dashboard.groups.table");
 
   const columns = React.useMemo(
     () => [
@@ -33,14 +33,6 @@ export function useStudentsTable({
         header: t("columns.name"),
         cell: (info) => info.getValue(),
       }),
-      columnHelper.accessor("email", {
-        header: t("columns.email"),
-        cell: (info) => info.getValue(),
-      }),
-      columnHelper.accessor("phone", {
-        header: t("columns.phone"),
-        cell: (info) => info.getValue(),
-      }),
       columnHelper.display({
         id: "actions",
         header: t("columns.actions"),
@@ -48,10 +40,10 @@ export function useStudentsTable({
           <div className="flex items-center gap-2">
             <button
               onClick={() => {
-                if (onEditStudent) {
-                  onEditStudent(info.row.original);
+                if (onEditGroup) {
+                  onEditGroup(info.row.original);
                 } else {
-                  console.log("Edit student:", info.row.original);
+                  console.log("Edit group:", info.row.original);
                 }
               }}
               className="p-1 hover:bg-muted rounded transition-colors"
@@ -61,10 +53,10 @@ export function useStudentsTable({
             </button>
             <button
               onClick={() => {
-                if (onDeleteStudent) {
-                  onDeleteStudent(info.row.original);
+                if (onDeleteGroup) {
+                  onDeleteGroup(info.row.original);
                 } else {
-                  console.log("Delete student:", info.row.original);
+                  console.log("Delete group:", info.row.original);
                 }
               }}
               className="p-1 hover:bg-muted rounded transition-colors text-destructive hover:text-destructive"
@@ -76,7 +68,7 @@ export function useStudentsTable({
         ),
       }),
     ],
-    [onEditStudent, onDeleteStudent, t],
+    [onEditGroup, onDeleteGroup, t],
   );
 
   const table = useReactTable({
