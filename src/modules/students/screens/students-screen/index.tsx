@@ -1,6 +1,11 @@
 "use client";
 
-import { useGetStudents } from "@/lib/api/generated/aPIForCheckmateApp";
+import {
+  useGetStudents,
+  usePostApiV1Students,
+  usePatchApiV1StudentsStudentId,
+  useDeleteApiV1StudentsStudentId,
+} from "@/lib/api/generated/aPIForCheckmateApp";
 import { EmptyState } from "@/modules/components/empty-state";
 import { Button } from "@/modules/ui/button";
 
@@ -14,6 +19,9 @@ import { Student } from "@/lib/api/generated/model";
 
 export function StudentsScreen() {
   const studentsQuery = useGetStudents();
+  const addStudentMutation = usePostApiV1Students();
+  const deleteStudentMutation = useDeleteApiV1StudentsStudentId();
+  const editStudentMutation = usePatchApiV1StudentsStudentId();
   const isDialogOpen = useBoolean();
   const [editingStudent, setEditingStudent] = React.useState<Student | null>(
     null,
@@ -24,13 +32,15 @@ export function StudentsScreen() {
     studentData: Omit<Student, "id" | "created_at" | "updated_at">,
   ) => {
     if (editingStudent) {
-      // TODO: Implement actual edit student logic
-      console.log("Editing student:", { ...editingStudent, ...studentData });
+      editStudentMutation.mutate({
+        studentId: editingStudent.id,
+        data: studentData,
+      });
     } else {
-      // TODO: Implement actual add student logic
-      console.log("Adding student:", studentData);
+      addStudentMutation.mutate({
+        data: studentData,
+      });
     }
-    // Clear editing state
     setEditingStudent(null);
   };
 
@@ -40,8 +50,9 @@ export function StudentsScreen() {
   };
 
   const handleDeleteStudent = (student: Student) => {
-    // TODO: Implement actual delete student logic
-    console.log("Deleting student:", student);
+    deleteStudentMutation.mutate({
+      studentId: student.id,
+    });
   };
 
   const handleDialogClose = (open: boolean) => {
