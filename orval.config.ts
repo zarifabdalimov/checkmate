@@ -1,15 +1,15 @@
-import { defineConfig } from 'orval';
+import { defineConfig } from "orval";
 
 export default defineConfig({
   checkmate: {
     input: {
-      target: './openapi.yaml',
+      target: "./openapi.yaml",
     },
     output: {
-      mode: 'split',
-      target: 'src/lib/api/generated',
-      schemas: 'src/lib/api/generated/model',
-      client: 'react-query',
+      mode: "split",
+      target: "src/lib/api/generated",
+      schemas: "src/lib/api/generated/model",
+      client: "react-query",
       mock: false,
       clean: true,
       prettier: true,
@@ -21,7 +21,7 @@ export default defineConfig({
       },
     },
     hooks: {
-      afterAllFilesWrite: 'prettier --write',
+      afterAllFilesWrite: "prettier --write",
     },
   },
 });
