@@ -1,6 +1,11 @@
 "use client";
 
-import { useGetApiV1Groups } from "@/lib/api/generated/aPIForCheckmateApp";
+import {
+  useDeleteApiV1GroupsGroupId,
+  useGetApiV1Groups,
+  usePatchApiV1GroupsGroupId,
+  usePostApiV1Groups,
+} from "@/lib/api/generated/aPIForCheckmateApp";
 import { Group } from "@/lib/api/generated/model";
 import { EmptyState } from "@/modules/components/empty-state";
 import { Button } from "@/modules/ui/button";
@@ -15,17 +20,24 @@ export function GroupsScreen() {
   const groupsQuery = useGetApiV1Groups();
   const isDialogOpen = useBoolean();
   const [editingGroup, setEditingGroup] = React.useState<Group | null>(null);
+  const addGroupMutation = usePostApiV1Groups();
+  const deleteGroupMutation = useDeleteApiV1GroupsGroupId();
+  const editGroupMutation = usePatchApiV1GroupsGroupId();
   const t = useTranslations("Dashboard.groups.screen");
 
-  const handleAddGroup = (groupData: { name: string }) => {
+  const handleAddGroup = (
+    groupData: Omit<Group, "id" | "created_at" | "updated_at">,
+  ) => {
     if (editingGroup) {
-      // TODO: Implement actual edit group logic
-      console.log("Editing group:", { ...editingGroup, ...groupData });
+      editGroupMutation.mutate({
+        groupId: editingGroup.id,
+        data: groupData,
+      });
     } else {
-      // TODO: Implement actual add group logic
-      console.log("Adding group:", groupData);
+      addGroupMutation.mutate({
+        data: groupData,
+      });
     }
-    // Clear editing state
     setEditingGroup(null);
   };
 
@@ -35,8 +47,9 @@ export function GroupsScreen() {
   };
 
   const handleDeleteGroup = (group: Group) => {
-    // TODO: Implement actual delete group logic
-    console.log("Deleting group:", group);
+    deleteGroupMutation.mutate({
+      groupId: group.id,
+    });
   };
 
   const handleDialogClose = (open: boolean) => {
