@@ -1,1 +1,1 @@
-export { StudentsScreen as default } from "@/modules/students/screens/students-screen";
+export { TestsScreen as default } from "@/modules/tests/screens/tests-screen";

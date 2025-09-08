@@ -329,6 +329,53 @@
           "nameTooLong": "Name is too long"
         }
       }
+    },
+    "tests": {
+      "screen": {
+        "description": "Manage your tests and assessments.",
+        "addButton": "Add Test",
+        "emptyState": {
+          "title": "No tests yet",
+          "description": "Get started by creating your first test to assess your students.",
+          "addFirstButton": "Create Your First Test"
+        }
+      },
+      "table": {
+        "columns": {
+          "name": "Name",
+          "actions": "Actions"
+        },
+        "actions": {
+          "editTooltip": "Edit test",
+          "deleteTooltip": "Delete test"
+        }
+      },
+      "dialog": {
+        "add": {
+          "title": "Add New Test",
+          "description": "Enter the test information to create a new assessment."
+        },
+        "edit": {
+          "title": "Edit Test",
+          "description": "Update the test information below."
+        },
+        "form": {
+          "name": {
+            "label": "Test Name",
+            "placeholder": "Enter test name"
+          }
+        },
+        "buttons": {
+          "cancel": "Cancel",
+          "addTest": "Add Test",
+          "updateTest": "Update Test",
+          "saving": "Saving..."
+        },
+        "validation": {
+          "nameRequired": "Name is required",
+          "nameTooLong": "Name is too long"
+        }
+      }
     }
   }
 }
