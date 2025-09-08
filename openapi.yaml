@@ -1,0 +1,504 @@
+openapi: 3.0.3
+info:
+  title: API for Checkmate app
+  version: 0.0.0
+
+tags:
+  - name: maintenance
+    description: Maintenance operations
+  - name: v1/students
+    description: Operations related to students
+  - name: v1/groups
+    description: Operations related to groups
+
+paths:
+  /ping:
+    get:
+      tags:
+        - maintenance
+      summary: Health check endpoint
+      operationId: ping
+      responses:
+        '204':
+          description: 'Service is healthy'
+  /api/v1/students:
+    get:
+      security:
+        - bearerAuth: [ ]
+      tags:
+        - v1/students
+      summary: Get list of students
+      operationId: getStudents
+      responses:
+        '200':
+          description: 'List of students'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Student'
+        '401':
+          description: 'Authentication was not successful'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedError'
+    post:
+      security:
+        - bearerAuth: [ ]
+      tags:
+        - v1/students
+      summary: Create a new student
+      requestBody:
+        description: Student to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateStudentReq'
+      responses:
+        '201':
+          description: 'Student created successfully'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+        '400':
+          description: 'Invalid input data'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '401':
+          description: 'Authentication was not successful'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedError'
+  /api/v1/students/{id}:
+    get:
+      security:
+        - bearerAuth: [ ]
+      tags:
+        - v1/students
+      summary: Get a student by ID
+      parameters:
+        - $ref: '#/components/parameters/StudentId'
+      responses:
+        '200':
+          description: 'Student details'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+        '400':
+          description: 'Invalid student ID'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '401':
+          description: 'Authentication was not successful'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedError'
+        '403':
+          description: 'You do not have permission to access this student'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenError'
+        '404':
+          description: 'Student not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+    patch:
+      security:
+        - bearerAuth: [ ]
+      tags:
+        - v1/students
+      summary: Update a student by ID
+      parameters:
+        - $ref: '#/components/parameters/StudentId'
+      requestBody:
+        description: Student fields to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateStudentReq'
+      responses:
+        '200':
+          description: 'Student updated successfully'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+        '400':
+          description: 'Invalid input data or student ID'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '401':
+          description: 'Authentication was not successful'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedError'
+        '403':
+          description: 'You do not have permission to update this student'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenError'
+        '404':
+          description: 'Student not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+    delete:
+      security:
+        - bearerAuth: [ ]
+      tags:
+        - v1/students
+      summary: Delete a student by ID
+      parameters:
+        - $ref: '#/components/parameters/StudentId'
+      responses:
+        '204':
+          description: 'Student deleted successfully'
+        '400':
+          description: 'Invalid student ID'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '401':
+          description: 'Authentication was not successful'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedError'
+        '403':
+          description: 'You do not have permission to delete this student'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenError'
+        '404':
+          description: 'Student not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+
+  /api/v1/groups:
+    get:
+      security:
+        - bearerAuth: [ ]
+      tags:
+        - v1/groups
+      summary: Get list of groups
+      responses:
+        '200':
+          description: 'List of groups'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Group'
+        '401':
+          description: 'Authentication was not successful'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedError'
+    post:
+      security:
+        - bearerAuth: [ ]
+      tags:
+        - v1/groups
+      summary: Create a new group
+      requestBody:
+        description: Group to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateGroupReq'
+      responses:
+        '201':
+          description: 'Group created successfully'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        '400':
+          description: 'Invalid input data'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '401':
+          description: 'Authentication was not successful'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedError'
+  /api/v1/groups/{id}:
+    get:
+      security:
+        - bearerAuth: [ ]
+      tags:
+        - v1/groups
+      summary: Get a group by ID
+      parameters:
+        - $ref: '#/components/parameters/GroupId'
+      responses:
+        '200':
+          description: 'Group details'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        '400':
+          description: 'Invalid group ID'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '401':
+          description: 'Authentication was not successful'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedError'
+        '403':
+          description: 'You do not have permission to access this group'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenError'
+        '404':
+          description: 'Group not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+    patch:
+      security:
+        - bearerAuth: [ ]
+      tags:
+        - v1/groups
+      summary: Update a group by ID
+      parameters:
+        - $ref: '#/components/parameters/GroupId'
+      requestBody:
+        description: Group fields to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateGroupReq'
+      responses:
+        '200':
+          description: 'Group updated successfully'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        '400':
+          description: 'Invalid input data or group ID'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '401':
+          description: 'Authentication was not successful'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedError'
+        '403':
+          description: 'You do not have permission to update this group'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenError'
+        '404':
+          description: 'Group not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+    delete:
+      security:
+        - bearerAuth: [ ]
+      tags:
+        - v1/groups
+      summary: Delete a group by ID
+      parameters:
+        - $ref: '#/components/parameters/GroupId'
+      responses:
+        '204':
+          description: 'Group deleted successfully'
+        '400':
+          description: 'Invalid group ID'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '401':
+          description: 'Authentication was not successful'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedError'
+        '403':
+          description: 'You do not have permission to delete this group'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenError'
+        '404':
+          description: 'Group not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+components:
+  schemas:
+    CreateStudentReq:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+      required:
+        - name
+        - email
+    UpdateStudentReq:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+    Student:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+      required:
+        - id
+        - name
+        - email
+        - created_at
+        - updated_at
+    CreateGroupReq:
+      type: object
+      properties:
+        name:
+          type: string
+      required:
+        - name
+    UpdateGroupReq:
+      type: object
+      properties:
+        name:
+          type: string
+    Group:
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    ## Errors
+    UnauthorizedError:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          example: '401'
+        errorMessage:
+          type: string
+          example: 'JWT token is missing or invalid.'
+    BadRequestError:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          example: '400'
+        errorMessage:
+          type: string
+          example: 'Invalid input data.'
+    ForbiddenError:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          example: '403'
+        errorMessage:
+          type: string
+          example: 'You do not have permission to access this resource.'
+    NotFoundError:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          example: '404'
+        errorMessage:
+          type: string
+          example: 'Resource not found.'
+  parameters:
+    StudentId:
+      name: id
+      in: path
+      description: UUID of the student
+      required: true
+      schema:
+        type: string
+        format: uuid
+    GroupId:
+      name: id
+      in: path
+      description: UUID of the group
+      required: true
+      schema:
+        type: string
+        format: uuid
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

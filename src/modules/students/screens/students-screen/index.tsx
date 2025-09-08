@@ -2,13 +2,13 @@
 
 import { EmptyState } from "@/modules/components/empty-state";
 import { Button } from "@/modules/ui/button";
+import { Student } from "@/types/model";
 import { Plus } from "lucide-react";
+import { useTranslations } from "next-intl";
 import * as React from "react";
 import { useBoolean } from "usehooks-ts";
-import { useTranslations } from "next-intl";
-import { StudentsTable } from "./parts/students-table";
 import { AddEditStudentDialog } from "./parts/add-edit-student-dialog";
-import { Student } from "@/types/model";
+import { StudentsTable } from "./parts/students-table";
 
 const studentsMock = [
   {
