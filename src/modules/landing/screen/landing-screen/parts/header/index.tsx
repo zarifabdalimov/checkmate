@@ -21,7 +21,6 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
               <GraduationCap className="w-5 h-5 text-primary-foreground" />
@@ -29,7 +28,6 @@ export function Header() {
             <span className="text-xl font-bold">CheckMate</span>
           </div>
 
-          {/* Navigation Links */}
           <nav className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection("features")}
@@ -57,11 +55,10 @@ export function Header() {
             </button>
           </nav>
 
-          {/* Auth Buttons */}
           <div className="flex items-center gap-3">
             {auth.data ? (
               <Button className="font-medium shadow-sm" asChild>
-                <Link href="/dashboard/home">{t("auth.dashboard")}</Link>
+                <Link href="/dashboard">{t("auth.dashboard")}</Link>
               </Button>
             ) : (
               <>

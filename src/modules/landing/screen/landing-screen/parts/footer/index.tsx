@@ -11,9 +11,7 @@ export function Footer() {
   return (
     <footer id="about" className="bg-muted/30 border-t">
       <div className="container mx-auto px-4 py-16">
-        {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
-          {/* Brand Section */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
@@ -24,7 +22,6 @@ export function Footer() {
             <p className="text-muted-foreground max-w-sm">{t("tagline")}</p>
           </div>
 
-          {/* Product Links */}
           <div className="space-y-4">
             <h4 className="font-semibold">{t("product.title")}</h4>
             <nav className="flex flex-col space-y-2">
@@ -55,7 +52,6 @@ export function Footer() {
             </nav>
           </div>
 
-          {/* Company Links */}
           <div className="space-y-4">
             <h4 className="font-semibold">{t("company.title")}</h4>
             <nav className="flex flex-col space-y-2">
@@ -86,7 +82,6 @@ export function Footer() {
             </nav>
           </div>
 
-          {/* Support Links */}
           <div className="space-y-4">
             <h4 className="font-semibold">{t("support.title")}</h4>
             <nav className="flex flex-col space-y-2">
@@ -117,7 +112,6 @@ export function Footer() {
             </nav>
           </div>
 
-          {/* Legal Links */}
           <div className="space-y-4">
             <h4 className="font-semibold">{t("legal.title")}</h4>
             <nav className="flex flex-col space-y-2">
@@ -145,11 +139,9 @@ export function Footer() {
 
         <Separator className="mb-8" />
 
-        {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">{t("copyright")}</p>
 
-          {/* Social Links */}
           <div className="flex items-center gap-4">
             <span className="text-sm text-muted-foreground">
               {t("social.followUs")}:

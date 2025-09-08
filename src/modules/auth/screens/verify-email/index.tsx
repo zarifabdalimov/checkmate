@@ -97,7 +97,6 @@ export function VerifyEmailScreen() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/10 flex items-center justify-center p-4">
       <Card className="w-full max-w-md p-8 space-y-6">
-        {/* Header */}
         <div className="text-center space-y-2">
           <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
             <Mail className="w-6 h-6 text-primary" />
@@ -108,14 +107,12 @@ export function VerifyEmailScreen() {
           </p>
         </div>
 
-        {/* Success Message */}
         {successMessage && (
           <div className="p-3 text-sm text-green-600 bg-green-50 border border-green-200 rounded-md">
             {successMessage}
           </div>
         )}
 
-        {/* Error Message */}
         {(confirmSignUpMutation.error || resendCodeMutation.error) && (
           <div className="p-3 text-sm text-red-600 bg-red-50 border border-red-200 rounded-md">
             {getAuthErrorMessage(
@@ -124,10 +121,8 @@ export function VerifyEmailScreen() {
           </div>
         )}
 
-        {/* Form */}
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            {/* Verification Code Field */}
             <FormField
               control={form.control}
               name="code"
@@ -148,7 +143,6 @@ export function VerifyEmailScreen() {
               )}
             />
 
-            {/* Submit Button */}
             <Button
               type="submit"
               className="w-full"
@@ -161,7 +155,6 @@ export function VerifyEmailScreen() {
           </form>
         </Form>
 
-        {/* Resend Code */}
         <div className="text-center space-y-4">
           <p className="text-sm text-muted-foreground">{t("resend.text")}</p>
           <Button
@@ -176,7 +169,6 @@ export function VerifyEmailScreen() {
           </Button>
         </div>
 
-        {/* Back Link */}
         <div className="text-center">
           <Button
             variant="ghost"

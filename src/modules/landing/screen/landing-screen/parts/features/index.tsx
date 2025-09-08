@@ -29,7 +29,6 @@ export function Features() {
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {/* Teacher Features */}
         <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20">
           <CardHeader>
             <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
@@ -66,7 +65,6 @@ export function Features() {
           </CardHeader>
         </Card>
 
-        {/* Student Features */}
         <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20">
           <CardHeader>
             <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">

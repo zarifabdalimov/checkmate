@@ -63,23 +63,19 @@ export function SignInScreen() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/10 flex items-center justify-center p-4">
       <Card className="w-full max-w-md p-8 space-y-6">
-        {/* Header */}
         <div className="text-center space-y-2">
           <h1 className="text-2xl font-bold">{t("title")}</h1>
           <p className="text-muted-foreground">{t("subtitle")}</p>
         </div>
 
-        {/* Error Message */}
         {signInMutation.error && (
           <div className="p-3 text-sm text-red-600 bg-red-50 border border-red-200 rounded-md">
             {getAuthErrorMessage(signInMutation.error)}
           </div>
         )}
 
-        {/* Form */}
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            {/* Email Field */}
             <FormField
               control={form.control}
               name="email"
@@ -103,7 +99,6 @@ export function SignInScreen() {
               )}
             />
 
-            {/* Password Field */}
             <FormField
               control={form.control}
               name="password"
@@ -141,7 +136,6 @@ export function SignInScreen() {
               )}
             />
 
-            {/* Submit Button */}
             <Button
               type="submit"
               className="w-full"
@@ -154,7 +148,6 @@ export function SignInScreen() {
           </form>
         </Form>
 
-        {/* Footer */}
         <div className="text-center space-y-4">
           <div className="text-sm text-muted-foreground">
             {t("footer.noAccount")}{" "}
