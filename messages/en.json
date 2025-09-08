@@ -214,6 +214,75 @@
         "testBuilder": "Test Builder",
         "testResults": "Test Results"
       }
+    },
+    "pages": {
+      "home": "Dashboard",
+      "students": "Students",
+      "classes": "Classes",
+      "testBuilder": "Test Builder",
+      "testResults": "Test Results"
+    },
+    "students": {
+      "screen": {
+        "description": "Manage your students and their information.",
+        "addButton": "Add Student",
+        "emptyState": {
+          "title": "No students yet",
+          "description": "Get started by adding your first student to begin managing your classroom.",
+          "addFirstButton": "Add Your First Student"
+        }
+      },
+      "table": {
+        "columns": {
+          "id": "ID",
+          "name": "Name",
+          "email": "Email",
+          "phone": "Phone",
+          "actions": "Actions"
+        },
+        "actions": {
+          "editTooltip": "Edit student",
+          "deleteTooltip": "Delete student"
+        }
+      },
+      "dialog": {
+        "add": {
+          "title": "Add New Student",
+          "description": "Enter the student's information to add them to your class."
+        },
+        "edit": {
+          "title": "Edit Student",
+          "description": "Update the student's information below."
+        },
+        "form": {
+          "name": {
+            "label": "Full Name",
+            "placeholder": "Enter student's full name"
+          },
+          "email": {
+            "label": "Email Address",
+            "placeholder": "Enter student's email"
+          },
+          "phone": {
+            "label": "Phone Number",
+            "placeholder": "Enter student's phone number"
+          }
+        },
+        "buttons": {
+          "cancel": "Cancel",
+          "addStudent": "Add Student",
+          "updateStudent": "Update Student",
+          "saving": "Saving..."
+        },
+        "validation": {
+          "nameRequired": "Name is required",
+          "nameTooLong": "Name is too long",
+          "emailRequired": "Email is required",
+          "emailInvalid": "Please enter a valid email address",
+          "phoneRequired": "Phone number is required",
+          "phoneInvalid": "Please enter a valid phone number"
+        }
+      }
     }
   }
 }
