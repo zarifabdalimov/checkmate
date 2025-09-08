@@ -360,9 +360,53 @@
           "description": "Update the test information below."
         },
         "form": {
+          "testParams": {
+            "title": "Test Parameters"
+          },
           "name": {
             "label": "Test Name",
             "placeholder": "Enter test name"
+          },
+          "description": {
+            "label": "Description",
+            "placeholder": "Enter test description (optional)"
+          },
+          "subject": {
+            "label": "Subject",
+            "placeholder": "e.g., Mathematics"
+          },
+          "topic": {
+            "label": "Topic",
+            "placeholder": "e.g., Algebra"
+          },
+          "ageRange": {
+            "label": "Student Age Range",
+            "placeholder": "Select age range"
+          },
+          "difficulty": {
+            "label": "Difficulty Level",
+            "placeholder": "Select difficulty",
+            "options": {
+              "beginner": "Beginner",
+              "intermediate": "Intermediate",
+              "advanced": "Advanced"
+            }
+          },
+          "questionFormat": {
+            "label": "Question Format",
+            "placeholder": "Select format",
+            "options": {
+              "multipleChoice": "Multiple Choice",
+              "singleChoice": "Single Choice"
+            }
+          },
+          "questions": {
+            "label": "Number of Questions",
+            "placeholder": "10"
+          },
+          "timePerQuestion": {
+            "label": "Time per Question (minutes)",
+            "placeholder": "2.0"
           }
         },
         "buttons": {
@@ -373,7 +417,17 @@
         },
         "validation": {
           "nameRequired": "Name is required",
-          "nameTooLong": "Name is too long"
+          "nameTooLong": "Name is too long",
+          "subjectRequired": "Subject is required",
+          "subjectTooLong": "Subject is too long",
+          "topicRequired": "Topic is required",
+          "topicTooLong": "Topic is too long",
+          "ageRangeRequired": "Age range is required",
+          "difficultyRequired": "Difficulty level is required",
+          "questionsMin": "Must have at least 1 question",
+          "questionsMax": "Cannot exceed 100 questions",
+          "timeMin": "Minimum 0.5 minutes per question",
+          "timeMax": "Maximum 60 minutes per question"
         }
       }
     }

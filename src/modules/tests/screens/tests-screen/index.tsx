@@ -15,6 +15,7 @@ import {
 import { Test } from "@/lib/api/generated/model";
 import { TestsTable } from "./parts/tests-table";
 import { AddEditTestDialog } from "./parts/add-edit-test-dialog";
+import { TestFormData } from "./parts/add-edit-test-dialog/hooks/use-test-form";
 
 export function TestsScreen() {
   const testsQuery = useGetApiV1Tests();
@@ -25,23 +26,50 @@ export function TestsScreen() {
   const [editingTest, setEditingTest] = React.useState<Test | null>(null);
   const t = useTranslations("Dashboard.tests.screen");
 
-  const handleAddTest = (
-    testData: Omit<
-      Test,
-      | "id"
-      | "created_at"
-      | "updated_at"
-      | "group_id"
-      | "test_params"
-      | "content"
-    >,
-  ) => {
-    if (editingTest) {
-      // todo
-    } else {
-      // todo
-    }
-    setEditingTest(null);
+  const handleAddTest = (testData: TestFormData) => {
+    // const {
+    //   name,
+    //   description,
+    //   subject,
+    //   topic,
+    //   student_age_range,
+    //   difficulty_level,
+    //   question_format,
+    //   number_of_questions,
+    //   time_per_question_in_minutes,
+    // } = testData;
+    //
+    // const testParams = {
+    //   subject,
+    //   topic,
+    //   student_age_range,
+    //   difficultyt_level: difficulty_level, // Note: API has typo in field name
+    //   question_format,
+    //   number_of_questions,
+    //   time_per_question_in_minutes,
+    // };
+    //
+    // if (editingTest) {
+    //   editTestMutation.mutate({
+    //     testId: editingTest.id,
+    //     data: {
+    //       name,
+    //       description,
+    //       test_params: testParams,
+    //     },
+    //   });
+    // } else {
+    //   addTestMutation.mutate({
+    //     data: {
+    //       name,
+    //       description,
+    //       group_id: "", // This should be set based on current context
+    //       test_params: testParams,
+    //       content: [],
+    //     },
+    //   });
+    // }
+    // setEditingTest(null);
   };
 
   const handleEditTest = (test: Test) => {
