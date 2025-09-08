@@ -48,7 +48,7 @@ export function SignInScreen() {
       {
         onSuccess: (data, variables) => {
           if (data.isSignedIn) {
-            router.push("/dashboard/home");
+            router.push("/dashboard");
           } else if (data.nextStep?.signInStep === "CONFIRM_SIGN_UP") {
             const email = variables.username;
             router.push(

@@ -200,5 +200,20 @@
       "codeRequired": "Verification code is required",
       "codeLength": "Code must be 6 digits"
     }
+  },
+  "Dashboard": {
+    "sidebar": {
+      "brand": {
+        "title": "Checkmate",
+        "subtitle": "Dashboard"
+      },
+      "navigation": {
+        "title": "Navigation",
+        "students": "Students",
+        "classes": "Classes",
+        "testBuilder": "Test Builder",
+        "testResults": "Test Results"
+      }
+    }
   }
 }
