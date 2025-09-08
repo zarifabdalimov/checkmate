@@ -2,7 +2,7 @@ import Axios, { AxiosError, AxiosRequestConfig } from "axios";
 import { fetchAuthSession } from "aws-amplify/auth";
 
 export const AXIOS_INSTANCE = Axios.create({
-  baseURL: "https://o33e57i2m3.execute-api.eu-central-1.amazonaws.com/dev",
+  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
   timeout: 10000,
 });
 
@@ -30,7 +30,6 @@ AXIOS_INSTANCE.interceptors.response.use(
     return response;
   },
   (error) => {
-    console.log("[debug]", error);
     console.error(
       "Response error:",
       error.response?.status,
@@ -58,7 +57,6 @@ export const axios = <T>(
 
   // @ts-expect-error - add cancel method to promise
   promise.cancel = () => {
-    console.log("[debug]", "zxc");
     source.cancel("Query was cancelled");
   };
 
