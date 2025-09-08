@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card";
+} from "@/modules/ui/card";
 import {
   Brain,
   CheckCircle,

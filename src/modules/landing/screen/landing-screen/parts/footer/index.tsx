@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
+import { Button } from "@/modules/ui/button";
+import { Separator } from "@/modules/ui/separator";
 import { Github, GraduationCap, Linkedin, Mail, Twitter } from "lucide-react";
 import { useTranslations } from "next-intl";
 

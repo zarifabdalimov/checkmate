@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/modules/ui/button";
 import { useTranslations } from "next-intl";
 
 export function CTA() {

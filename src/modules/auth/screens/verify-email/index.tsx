@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Button } from "@/modules/ui/button";
+import { Card } from "@/modules/ui/card";
 import {
   Form,
   FormControl,
@@ -9,8 +9,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+} from "@/modules/ui/form";
+import { Input } from "@/modules/ui/input";
 
 import { useConfirmSignUp } from "@/hooks/use-confirm-sign-up";
 import { useResendVerificationCode } from "@/hooks/use-resend-verification-code";

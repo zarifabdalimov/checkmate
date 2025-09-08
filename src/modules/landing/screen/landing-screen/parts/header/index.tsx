@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/modules/ui/button";
 import { useAuth } from "@/hooks/use-auth";
 import { GraduationCap } from "lucide-react";
 import { useTranslations } from "next-intl";

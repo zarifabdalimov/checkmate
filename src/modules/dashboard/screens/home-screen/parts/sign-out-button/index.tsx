@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/modules/ui/button";
 import { useSignOut } from "@/hooks/use-sign-out";
 import { useRouter } from "next/navigation";
 
