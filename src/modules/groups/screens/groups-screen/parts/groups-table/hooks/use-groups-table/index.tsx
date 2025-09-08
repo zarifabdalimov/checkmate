@@ -6,7 +6,7 @@ import {
 import { Edit, Trash2 } from "lucide-react";
 import * as React from "react";
 import { useTranslations } from "next-intl";
-import { Group } from '@/lib/api/generated/model'
+import { Group } from "@/lib/api/generated/model";
 
 interface UseGroupsTableProps {
   data: Group[];

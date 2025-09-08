@@ -47,7 +47,6 @@ export function AddEditStudentDialog({
       form.reset({
         name: student?.name || "",
         email: student?.email || "",
-        phone: student?.phone || "",
       });
     }
   }, [open, student, form]);
@@ -107,24 +106,6 @@ export function AddEditStudentDialog({
                     <Input
                       type="email"
                       placeholder={t("form.email.placeholder")}
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>{t("form.phone.label")}</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="tel"
-                      placeholder={t("form.phone.placeholder")}
                       {...field}
                     />
                   </FormControl>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useGetStudents } from '@/lib/api/generated/aPIForCheckmateApp'
+import { useGetStudents } from "@/lib/api/generated/aPIForCheckmateApp";
 import { EmptyState } from "@/modules/components/empty-state";
 import { Button } from "@/modules/ui/button";
 
@@ -12,8 +12,6 @@ import { AddEditStudentDialog } from "./parts/add-edit-student-dialog";
 import { StudentsTable } from "./parts/students-table";
 import { Student } from "@/lib/api/generated/model";
 
-
-
 export function StudentsScreen() {
   const studentsQuery = useGetStudents();
   const isDialogOpen = useBoolean();
@@ -22,11 +20,9 @@ export function StudentsScreen() {
   );
   const t = useTranslations("Dashboard.students.screen");
 
-  const handleAddStudent = (studentData: {
-    name: string;
-    email: string;
-    phone: string;
-  }) => {
+  const handleAddStudent = (
+    studentData: Omit<Student, "id" | "created_at" | "updated_at">,
+  ) => {
     if (editingStudent) {
       // TODO: Implement actual edit student logic
       console.log("Editing student:", { ...editingStudent, ...studentData });

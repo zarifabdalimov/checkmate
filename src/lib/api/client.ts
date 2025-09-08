@@ -30,7 +30,7 @@ AXIOS_INSTANCE.interceptors.response.use(
     return response;
   },
   (error) => {
-    console.log('[debug]', error)
+    console.log("[debug]", error);
     console.error(
       "Response error:",
       error.response?.status,
@@ -58,7 +58,7 @@ export const axios = <T>(
 
   // @ts-expect-error - add cancel method to promise
   promise.cancel = () => {
-    console.log('[debug]', 'zxc')
+    console.log("[debug]", "zxc");
     source.cancel("Query was cancelled");
   };
 

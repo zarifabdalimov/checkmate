@@ -9,16 +9,11 @@ export const createStudentSchema = (t: ReturnType<typeof useTranslations>) =>
   z.object({
     name: z.string().min(1, t("nameRequired")).max(100, t("nameTooLong")),
     email: z.string().min(1, t("emailRequired")).email(t("emailInvalid")),
-    phone: z
-      .string()
-      .min(1, t("phoneRequired"))
-      .regex(/^[\+]?[1-9][\d]{0,15}$/, t("phoneInvalid")),
   });
 
 export type StudentFormData = {
   name: string;
   email: string;
-  phone: string;
 };
 
 export function useStudentForm(student?: Student) {
@@ -33,7 +28,6 @@ export function useStudentForm(student?: Student) {
     defaultValues: {
       name: student?.name || "",
       email: student?.email || "",
-      phone: student?.phone || "",
     },
   });
 }

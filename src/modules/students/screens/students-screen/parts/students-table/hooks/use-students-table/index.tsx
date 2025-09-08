@@ -37,10 +37,6 @@ export function useStudentsTable({
         header: t("columns.email"),
         cell: (info) => info.getValue(),
       }),
-      columnHelper.accessor("phone", {
-        header: t("columns.phone"),
-        cell: (info) => info.getValue(),
-      }),
       columnHelper.display({
         id: "actions",
         header: t("columns.actions"),

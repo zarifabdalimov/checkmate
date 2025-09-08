@@ -9,15 +9,15 @@ export default defineConfig({
       mode: "split",
       target: "src/lib/api/generated",
       schemas: "src/lib/api/generated/model",
-      httpClient: 'axios',
+      httpClient: "axios",
       client: "react-query",
       mock: false,
       clean: true,
       prettier: true,
       override: {
         mutator: {
-          path: './src/lib/api/client.ts',
-          name: 'axios',
+          path: "./src/lib/api/client.ts",
+          name: "axios",
         },
         query: {
           useQuery: true,

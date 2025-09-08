@@ -18,7 +18,7 @@ import {
   FormMessage,
 } from "@/modules/ui/form";
 import { Input } from "@/modules/ui/input";
-import { Group } from '@/lib/api/generated/model'
+import { Group } from "@/lib/api/generated/model";
 import { useTranslations } from "next-intl";
 import { useEffect } from "react";
 import * as React from "react";
