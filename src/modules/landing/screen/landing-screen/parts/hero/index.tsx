@@ -31,7 +31,10 @@ export function Hero() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-          <Button size="lg" className="text-lg font-semibold px-8 py-4 h-auto shadow-lg hover:shadow-xl transition-all">
+          <Button
+            size="lg"
+            className="text-lg font-semibold px-8 py-4 h-auto shadow-lg hover:shadow-xl transition-all"
+          >
             <GraduationCap className="w-5 h-5 mr-2" />
             {t("getStarted")}
           </Button>

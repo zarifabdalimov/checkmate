@@ -1,15 +1,7 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import Link from "next/link"
-import { Eye, EyeOff, Mail, Lock } from "lucide-react"
-import { useTranslations } from "next-intl"
-
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import {
   Form,
   FormControl,
@@ -17,15 +9,27 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { useSignIn } from "@/hooks/use-sign-in";
+import { getAuthErrorMessage } from "@/lib/auth";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Eye, EyeOff, Lock, Mail } from "lucide-react";
+import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { useBoolean } from "usehooks-ts";
 
-import { createSignInSchema, type SignInFormData } from "../../lib/validation"
+import { createSignInSchema, type SignInFormData } from "../../lib/validation";
 
 export function SignInScreen() {
-  const t = useTranslations("AuthPages.signIn")
-  const tValidation = useTranslations("AuthPages.validation")
-  const [showPassword, setShowPassword] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const t = useTranslations("AuthPages.signIn");
+  const tValidation = useTranslations("AuthPages.validation");
+  const showPassword = useBoolean();
+  const router = useRouter();
+
+  const signInMutation = useSignIn();
 
   const form = useForm<SignInFormData>({
     resolver: zodResolver(createSignInSchema(tValidation)),
@@ -33,20 +37,28 @@ export function SignInScreen() {
       email: "",
       password: "",
     },
-  })
+  });
 
   const onSubmit = async (data: SignInFormData) => {
-    setIsLoading(true)
-    try {
-      // TODO: Implement actual sign-in logic
-      console.log("Sign in data:", data)
-      await new Promise(resolve => setTimeout(resolve, 1000)) // Simulate API call
-    } catch (error) {
-      console.error("Sign in error:", error)
-    } finally {
-      setIsLoading(false)
-    }
-  }
+    signInMutation.mutate(
+      {
+        username: data.email,
+        password: data.password,
+      },
+      {
+        onSuccess: (data, variables) => {
+          if (data.isSignedIn) {
+            router.push("/dashboard/home");
+          } else if (data.nextStep?.signInStep === "CONFIRM_SIGN_UP") {
+            const email = variables.username;
+            router.push(
+              `/auth/verify-email?email=${encodeURIComponent(email)}`,
+            );
+          }
+        },
+      },
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/10 flex items-center justify-center p-4">
@@ -54,10 +66,15 @@ export function SignInScreen() {
         {/* Header */}
         <div className="text-center space-y-2">
           <h1 className="text-2xl font-bold">{t("title")}</h1>
-          <p className="text-muted-foreground">
-            {t("subtitle")}
-          </p>
+          <p className="text-muted-foreground">{t("subtitle")}</p>
         </div>
+
+        {/* Error Message */}
+        {signInMutation.error && (
+          <div className="p-3 text-sm text-red-600 bg-red-50 border border-red-200 rounded-md">
+            {getAuthErrorMessage(signInMutation.error)}
+          </div>
+        )}
 
         {/* Form */}
         <Form {...form}>
@@ -77,7 +94,7 @@ export function SignInScreen() {
                         type="email"
                         placeholder={t("form.emailPlaceholder")}
                         className="pl-10"
-                        disabled={isLoading}
+                        disabled={signInMutation.isPending}
                       />
                     </div>
                   </FormControl>
@@ -98,20 +115,20 @@ export function SignInScreen() {
                       <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                       <Input
                         {...field}
-                        type={showPassword ? "text" : "password"}
+                        type={showPassword.value ? "text" : "password"}
                         placeholder={t("form.passwordPlaceholder")}
                         className="pl-10 pr-10"
-                        disabled={isLoading}
+                        disabled={signInMutation.isPending}
                       />
                       <Button
                         type="button"
                         variant="ghost"
                         size="sm"
                         className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
-                        onClick={() => setShowPassword(!showPassword)}
-                        disabled={isLoading}
+                        onClick={showPassword.toggle}
+                        disabled={signInMutation.isPending}
                       >
-                        {showPassword ? (
+                        {showPassword.value ? (
                           <EyeOff className="h-4 w-4 text-muted-foreground" />
                         ) : (
                           <Eye className="h-4 w-4 text-muted-foreground" />
@@ -128,9 +145,11 @@ export function SignInScreen() {
             <Button
               type="submit"
               className="w-full"
-              disabled={isLoading}
+              disabled={signInMutation.isPending}
             >
-              {isLoading ? t("form.submittingButton") : t("form.submitButton")}
+              {signInMutation.isPending
+                ? t("form.submittingButton")
+                : t("form.submitButton")}
             </Button>
           </form>
         </Form>
@@ -149,5 +168,5 @@ export function SignInScreen() {
         </div>
       </Card>
     </div>
-  )
+  );
 }

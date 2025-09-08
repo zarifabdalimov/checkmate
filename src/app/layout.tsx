@@ -1,17 +1,8 @@
+import { InitAmplify } from "@/modules/amplify/parts/init-amplify";
+import { QueryProvider } from "@/providers/query-provider";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { NextIntlClientProvider } from 'next-intl';
+import { NextIntlClientProvider } from "next-intl";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,10 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+      <body>
+        <InitAmplify />
+        <QueryProvider>
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        </QueryProvider>
       </body>
     </html>
   );

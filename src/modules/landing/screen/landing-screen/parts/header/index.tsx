@@ -1,12 +1,14 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/hooks/use-auth";
 import { GraduationCap } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 export function Header() {
   const t = useTranslations("LandingPage.header");
+  const auth = useAuth();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -57,16 +59,20 @@ export function Header() {
 
           {/* Auth Buttons */}
           <div className="flex items-center gap-3">
-            <Button variant="ghost" className="font-medium" asChild>
-              <Link href="/auth/sign-in">
-                {t("auth.signIn")}
-              </Link>
-            </Button>
-            <Button className="font-medium shadow-sm" asChild>
-              <Link href="/auth/sign-up">
-                {t("auth.signUp")}
-              </Link>
-            </Button>
+            {auth.data ? (
+              <Button className="font-medium shadow-sm" asChild>
+                <Link href="/dashboard/home">{t("auth.dashboard")}</Link>
+              </Button>
+            ) : (
+              <>
+                <Button variant="ghost" className="font-medium" asChild>
+                  <Link href="/auth/sign-in">{t("auth.signIn")}</Link>
+                </Button>
+                <Button className="font-medium shadow-sm" asChild>
+                  <Link href="/auth/sign-up">{t("auth.signUp")}</Link>
+                </Button>
+              </>
+            )}
           </div>
         </div>
       </div>

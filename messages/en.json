@@ -18,6 +18,7 @@
         "about": "About"
       },
       "auth": {
+        "dashboard": "Dashboard",
         "signIn": "Sign In",
         "signUp": "Sign Up"
       }
@@ -167,13 +168,37 @@
         "signInLink": "Sign in"
       }
     },
+    "verifyEmail": {
+      "title": "Verify Your Email",
+      "subtitle": "We sent a verification code to",
+      "form": {
+        "code": "Verification Code",
+        "codePlaceholder": "Enter 6-digit code",
+        "submitButton": "Verify Email",
+        "submittingButton": "Verifying..."
+      },
+      "resend": {
+        "text": "Didn't receive the code?",
+        "button": "Resend Code",
+        "sendingButton": "Sending..."
+      },
+      "messages": {
+        "success": "Email verified successfully! Redirecting to sign in...",
+        "resendSuccess": "Verification code sent! Check your email."
+      },
+      "footer": {
+        "backToSignUp": "Back to Sign Up"
+      }
+    },
     "validation": {
       "emailRequired": "Email is required",
       "emailInvalid": "Please enter a valid email address",
       "passwordRequired": "Password is required",
       "passwordMinLength": "Password must be at least 6 characters",
       "confirmPasswordRequired": "Please confirm your password",
-      "passwordsDontMatch": "Passwords don't match"
+      "passwordsDontMatch": "Passwords don't match",
+      "codeRequired": "Verification code is required",
+      "codeLength": "Code must be 6 digits"
     }
   }
 }
