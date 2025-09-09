@@ -1,3 +1,4 @@
+import { Button } from "@/modules/ui/button";
 import {
   createColumnHelper,
   getCoreRowModel,
@@ -25,10 +26,6 @@ export function useStudentsTable({
 
   const columns = React.useMemo(
     () => [
-      columnHelper.accessor("id", {
-        header: t("columns.id"),
-        cell: (info) => info.getValue(),
-      }),
       columnHelper.accessor("name", {
         header: t("columns.name"),
         cell: (info) => info.getValue(),
@@ -40,36 +37,37 @@ export function useStudentsTable({
       columnHelper.display({
         id: "actions",
         header: t("columns.actions"),
-        cell: (info) => (
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => {
-                if (onEditStudent) {
-                  onEditStudent(info.row.original);
-                } else {
-                  console.log("Edit student:", info.row.original);
-                }
-              }}
-              className="p-1 hover:bg-muted rounded transition-colors"
-              title={t("actions.editTooltip")}
-            >
-              <Edit className="h-4 w-4" />
-            </button>
-            <button
-              onClick={() => {
-                if (onDeleteStudent) {
-                  onDeleteStudent(info.row.original);
-                } else {
-                  console.log("Delete student:", info.row.original);
-                }
-              }}
-              className="p-1 hover:bg-muted rounded transition-colors text-destructive hover:text-destructive"
-              title={t("actions.deleteTooltip")}
-            >
-              <Trash2 className="h-4 w-4" />
-            </button>
-          </div>
-        ),
+        cell: (info) =>
+          info.row.original.id === "-1" ? null : (
+            <div className="flex items-center gap-2">
+              <Button
+                size="icon"
+                variant="outline"
+                onClick={() => {
+                  if (onEditStudent) {
+                    onEditStudent(info.row.original);
+                  } else {
+                    console.log("Edit student:", info.row.original);
+                  }
+                }}
+              >
+                <Edit className="h-4 w-4" />
+              </Button>
+              <Button
+                size="icon"
+                variant="destructive"
+                onClick={() => {
+                  if (onDeleteStudent) {
+                    onDeleteStudent(info.row.original);
+                  } else {
+                    console.log("Delete student:", info.row.original);
+                  }
+                }}
+              >
+                <Trash2 className="h-4 w-4" />
+              </Button>
+            </div>
+          ),
       }),
     ],
     [onEditStudent, onDeleteStudent, t],

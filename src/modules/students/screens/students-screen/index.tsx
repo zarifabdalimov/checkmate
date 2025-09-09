@@ -1,90 +1,22 @@
 "use client";
 
-import {
-  getGetStudentsQueryOptions,
-  useDeleteApiV1StudentsStudentId,
-  useGetStudents,
-  usePatchApiV1StudentsStudentId,
-  usePostApiV1Students,
-} from "@/lib/api/generated/aPIForCheckmateApp";
+import { useGetStudents } from "@/lib/api/generated/aPIForCheckmateApp";
 import { Student } from "@/lib/api/generated/model";
 import { Button } from "@/modules/ui/button";
-import { queryClient } from "@/providers/query-provider";
 
 import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
 import * as React from "react";
 import { useBoolean } from "usehooks-ts";
 import { Status } from "../../../components/status";
+import { useStudentMutations } from "./hooks/use-student-mutations";
 import { AddEditStudentDialog } from "./parts/add-edit-student-dialog";
 import { StudentsTable } from "./parts/students-table";
-import { toast } from "sonner";
 
 export function StudentsScreen() {
   const studentsQuery = useGetStudents();
-  const addStudentMutation = usePostApiV1Students({
-    mutation: {
-      onMutate: (variables) => {
-        const previousStudents =
-          queryClient.getQueryData(getGetStudentsQueryOptions().queryKey) ?? [];
-
-        queryClient.setQueryData(getGetStudentsQueryOptions().queryKey, [
-          {
-            ...variables.data,
-            id: "-1",
-            created_at: "",
-            updated_at: "",
-          },
-          ...previousStudents,
-        ]);
-
-        return { previousStudents };
-      },
-      onError: (_, __, context) => {
-        toast.error("Failed to add student");
-
-        queryClient.setQueryData(
-          getGetStudentsQueryOptions().queryKey,
-          context?.previousStudents ?? [],
-        );
-      },
-      onSuccess: async (newUser) => {
-        toast.success(`Student ${newUser.name} added successfully`);
-
-        await queryClient.invalidateQueries({
-          queryKey: getGetStudentsQueryOptions().queryKey,
-        });
-      },
-    },
-  });
-  const deleteStudentMutation = useDeleteApiV1StudentsStudentId({
-    mutation: {
-      onMutate: (variables) => {
-        toast.success("Student deleted successfully");
-
-        const previousStudents =
-          queryClient.getQueryData(getGetStudentsQueryOptions().queryKey) ?? [];
-
-        queryClient.setQueryData(
-          getGetStudentsQueryOptions().queryKey,
-          previousStudents.filter(
-            (student) => variables.studentId !== student.id,
-          ),
-        );
-
-        return { previousStudents };
-      },
-      onError: (_, __, context) => {
-        toast.error("Failed to delete student");
-
-        queryClient.setQueryData(
-          getGetStudentsQueryOptions().queryKey,
-          context?.previousStudents ?? [],
-        );
-      },
-    },
-  });
-  const editStudentMutation = usePatchApiV1StudentsStudentId();
+  const { addStudentMutation, deleteStudentMutation, editStudentMutation } =
+    useStudentMutations();
   const isDialogOpen = useBoolean();
   const [editingStudent, setEditingStudent] = React.useState<Student | null>(
     null,

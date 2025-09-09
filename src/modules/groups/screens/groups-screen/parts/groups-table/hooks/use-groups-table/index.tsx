@@ -25,10 +25,6 @@ export function useGroupsTable({
 
   const columns = React.useMemo(
     () => [
-      columnHelper.accessor("id", {
-        header: t("columns.id"),
-        cell: (info) => info.getValue(),
-      }),
       columnHelper.accessor("name", {
         header: t("columns.name"),
         cell: (info) => info.getValue(),
