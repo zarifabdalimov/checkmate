@@ -378,6 +378,17 @@
           }
         },
         "form": {
+          "tabs": {
+            "basicInfo": "Basic Info",
+            "parameters": "Parameters",
+            "content": "Test Content"
+          },
+          "basicInfo": {
+            "title": "Basic Information"
+          },
+          "parameters": {
+            "title": "Test Parameters"
+          },
           "testParams": {
             "title": "Test Parameters"
           },
@@ -387,18 +398,18 @@
           },
           "description": {
             "label": "Description",
-            "placeholder": "Enter test description (optional)"
+            "placeholder": "Enter test description"
           },
           "subject": {
             "label": "Subject",
-            "placeholder": "e.g., Mathematics"
+            "placeholder": "Enter subject"
           },
           "topic": {
             "label": "Topic",
-            "placeholder": "e.g., Algebra"
+            "placeholder": "Enter topic"
           },
           "ageRange": {
-            "label": "Student Age Range",
+            "label": "Age Range",
             "placeholder": "Select age range"
           },
           "difficulty": {
@@ -418,6 +429,9 @@
               "singleChoice": "Single Choice"
             }
           },
+          "questionsCount": {
+            "label": "Number of Questions"
+          },
           "questions": {
             "label": "Number of Questions",
             "placeholder": "10"
@@ -425,6 +439,17 @@
           "timePerQuestion": {
             "label": "Time per Question (minutes)",
             "placeholder": "2.0"
+          },
+          "content": {
+            "title": "Test Questions",
+            "addQuestion": "Add Question",
+            "questionNumber": "Question {number}",
+            "removeQuestion": "Remove",
+            "questionText": "Question Text",
+            "questionPlaceholder": "Enter the question",
+            "answerOptions": "Answer Options",
+            "optionPlaceholder": "Option {letter}",
+            "noQuestions": "No questions added yet. Click \"Add Question\" to get started."
           }
         },
         "buttons": {
@@ -433,6 +458,7 @@
           "next": "Next",
           "addTest": "Create Test",
           "updateTest": "Update Test",
+          "saveChanges": "Save Changes",
           "saving": "Saving..."
         },
         "validation": {
