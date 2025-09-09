@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run api:generate && next build",
     "start": "next start",
     "type:check": "tsc --noEmit",
     "lint:check": "eslint --max-warnings 0",
