@@ -7,8 +7,10 @@ import {
 import { TEMP_ENTITY_ID } from "@/lib/constants/cache";
 import { queryClient } from "@/providers/query-provider";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 export function useStudentMutations() {
+  const t = useTranslations("Dashboard.mutations.students");
   const addStudentMutation = usePostApiV1Students({
     mutation: {
       onMutate: (variables) => {
@@ -28,7 +30,7 @@ export function useStudentMutations() {
         return { previousStudents };
       },
       onError: (_, __, context) => {
-        toast.error("Failed to add student");
+        toast.error(t("add.error"));
 
         queryClient.setQueryData(
           getGetStudentsQueryOptions().queryKey,
@@ -36,7 +38,7 @@ export function useStudentMutations() {
         );
       },
       onSuccess: async (newUser) => {
-        toast.success(`Student ${newUser.name} added successfully`);
+        toast.success(t("add.success", { name: newUser.name }));
 
         await queryClient.invalidateQueries({
           queryKey: getGetStudentsQueryOptions().queryKey,
@@ -47,7 +49,7 @@ export function useStudentMutations() {
   const deleteStudentMutation = useDeleteApiV1StudentsStudentId({
     mutation: {
       onMutate: (variables) => {
-        toast.success("Student deleted successfully");
+        toast.success(t("delete.success"));
 
         const previousStudents =
           queryClient.getQueryData(getGetStudentsQueryOptions().queryKey) ?? [];
@@ -62,7 +64,7 @@ export function useStudentMutations() {
         return { previousStudents };
       },
       onError: (_, __, context) => {
-        toast.error("Failed to delete student");
+        toast.error(t("delete.error"));
 
         queryClient.setQueryData(
           getGetStudentsQueryOptions().queryKey,
@@ -89,7 +91,7 @@ export function useStudentMutations() {
         return { previousStudents };
       },
       onError: (_, __, context) => {
-        toast.error("Failed to update student");
+        toast.error(t("edit.error"));
 
         queryClient.setQueryData(
           getGetStudentsQueryOptions().queryKey,
@@ -97,7 +99,7 @@ export function useStudentMutations() {
         );
       },
       onSuccess: async (updatedStudent) => {
-        toast.success(`Student ${updatedStudent.name} updated successfully`);
+        toast.success(t("edit.success", { name: updatedStudent.name }));
 
         await queryClient.invalidateQueries({
           queryKey: getGetStudentsQueryOptions().queryKey,

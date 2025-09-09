@@ -476,6 +476,50 @@
           "timeMax": "Maximum 60 minutes per question"
         }
       }
+    },
+    "mutations": {
+      "students": {
+        "add": {
+          "error": "Failed to add student",
+          "success": "Student {name} added successfully"
+        },
+        "edit": {
+          "error": "Failed to update student",
+          "success": "Student {name} updated successfully"
+        },
+        "delete": {
+          "error": "Failed to delete student",
+          "success": "Student deleted successfully"
+        }
+      },
+      "groups": {
+        "add": {
+          "error": "Failed to add group",
+          "success": "Group {name} added successfully"
+        },
+        "edit": {
+          "error": "Failed to update group",
+          "success": "Group {name} updated successfully"
+        },
+        "delete": {
+          "error": "Failed to delete group",
+          "success": "Group deleted successfully"
+        }
+      },
+      "tests": {
+        "add": {
+          "error": "Failed to add test",
+          "success": "Test {name} added successfully"
+        },
+        "edit": {
+          "error": "Failed to update test",
+          "success": "Test {name} updated successfully"
+        },
+        "delete": {
+          "error": "Failed to delete test",
+          "success": "Test deleted successfully"
+        }
+      }
     }
   }
 }

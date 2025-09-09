@@ -7,8 +7,10 @@ import {
 import { TEMP_ENTITY_ID } from "@/lib/constants/cache";
 import { queryClient } from "@/providers/query-provider";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 export function useTestMutations() {
+  const t = useTranslations("Dashboard.mutations.tests");
   const addTestMutation = usePostApiV1Tests({
     mutation: {
       onMutate: (variables) => {
@@ -31,7 +33,7 @@ export function useTestMutations() {
         return { previousTests };
       },
       onError: (_, __, context) => {
-        toast.error("Failed to add test");
+        toast.error(t("add.error"));
 
         queryClient.setQueryData(
           getGetApiV1TestsQueryOptions().queryKey,
@@ -39,7 +41,7 @@ export function useTestMutations() {
         );
       },
       onSuccess: async (newTest) => {
-        toast.success(`Test ${newTest.name} added successfully`);
+        toast.success(t("add.success", { name: newTest.name }));
 
         await queryClient.invalidateQueries({
           queryKey: getGetApiV1TestsQueryOptions().queryKey,
@@ -63,7 +65,7 @@ export function useTestMutations() {
         return { previousTests };
       },
       onError: (_, __, context) => {
-        toast.error("Failed to delete test");
+        toast.error(t("delete.error"));
 
         queryClient.setQueryData(
           getGetApiV1TestsQueryOptions().queryKey,
@@ -71,7 +73,7 @@ export function useTestMutations() {
         );
       },
       onSuccess: () => {
-        toast.success("Test deleted successfully");
+        toast.success(t("delete.success"));
       },
     },
   });
@@ -95,7 +97,7 @@ export function useTestMutations() {
         return { previousTests };
       },
       onError: (_, __, context) => {
-        toast.error("Failed to update test");
+        toast.error(t("edit.error"));
 
         queryClient.setQueryData(
           getGetApiV1TestsQueryOptions().queryKey,
@@ -103,7 +105,7 @@ export function useTestMutations() {
         );
       },
       onSuccess: async (updatedTest) => {
-        toast.success(`Test ${updatedTest.name} updated successfully`);
+        toast.success(t("edit.success", { name: updatedTest.name }));
 
         await queryClient.invalidateQueries({
           queryKey: getGetApiV1TestsQueryOptions().queryKey,

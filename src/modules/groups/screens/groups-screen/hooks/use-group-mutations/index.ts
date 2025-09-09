@@ -7,8 +7,10 @@ import {
 import { TEMP_ENTITY_ID } from "@/lib/constants/cache";
 import { queryClient } from "@/providers/query-provider";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 export function useGroupMutations() {
+  const t = useTranslations("Dashboard.mutations.groups");
   const addGroupMutation = usePostApiV1Groups({
     mutation: {
       onMutate: (variables) => {
@@ -29,7 +31,7 @@ export function useGroupMutations() {
         return { previousGroups };
       },
       onError: (_, __, context) => {
-        toast.error("Failed to add group");
+        toast.error(t("add.error"));
 
         queryClient.setQueryData(
           getGetApiV1GroupsQueryOptions().queryKey,
@@ -37,7 +39,7 @@ export function useGroupMutations() {
         );
       },
       onSuccess: async (newGroup) => {
-        toast.success(`Group ${newGroup.name} added successfully`);
+        toast.success(t("add.success", { name: newGroup.name }));
 
         await queryClient.invalidateQueries({
           queryKey: getGetApiV1GroupsQueryOptions().queryKey,
@@ -49,8 +51,6 @@ export function useGroupMutations() {
   const deleteGroupMutation = useDeleteApiV1GroupsGroupId({
     mutation: {
       onMutate: (variables) => {
-        toast.success("Group deleted successfully");
-
         const previousGroups =
           queryClient.getQueryData(getGetApiV1GroupsQueryOptions().queryKey) ??
           [];
@@ -63,12 +63,15 @@ export function useGroupMutations() {
         return { previousGroups };
       },
       onError: (_, __, context) => {
-        toast.error("Failed to delete group");
+        toast.error(t("delete.error"));
 
         queryClient.setQueryData(
           getGetApiV1GroupsQueryOptions().queryKey,
           context?.previousGroups ?? [],
         );
+      },
+      onSuccess: () => {
+        toast.success(t("delete.success"));
       },
     },
   });
@@ -92,7 +95,7 @@ export function useGroupMutations() {
         return { previousGroups };
       },
       onError: (_, __, context) => {
-        toast.error("Failed to update group");
+        toast.error(t("edit.error"));
 
         queryClient.setQueryData(
           getGetApiV1GroupsQueryOptions().queryKey,
@@ -100,7 +103,7 @@ export function useGroupMutations() {
         );
       },
       onSuccess: async (updatedGroup) => {
-        toast.success(`Group ${updatedGroup.name} updated successfully`);
+        toast.success(t("edit.success", { name: updatedGroup.name }));
 
         await queryClient.invalidateQueries({
           queryKey: getGetApiV1GroupsQueryOptions().queryKey,
