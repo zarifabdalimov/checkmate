@@ -8,10 +8,12 @@ import * as z from "zod";
 export const createGroupSchema = (t: ReturnType<typeof useTranslations>) =>
   z.object({
     name: z.string().min(1, t("nameRequired")).max(100, t("nameTooLong")),
+    studentIds: z.array(z.string()),
   });
 
 export type GroupFormData = {
   name: string;
+  studentIds: string[];
 };
 
 export function useGroupForm(group?: Group) {
@@ -25,6 +27,7 @@ export function useGroupForm(group?: Group) {
     resolver: zodResolver(groupSchema),
     defaultValues: {
       name: group?.name || "",
+      studentIds: [],
     },
   });
 }

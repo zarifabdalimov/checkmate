@@ -1,5 +1,7 @@
 "use client";
 
+import { useGetStudents } from "@/lib/api/generated/aPIForCheckmateApp";
+import { Group } from "@/lib/api/generated/model";
 import { Button } from "@/modules/ui/button";
 import {
   Dialog,
@@ -18,10 +20,10 @@ import {
   FormMessage,
 } from "@/modules/ui/form";
 import { Input } from "@/modules/ui/input";
-import { Group } from "@/lib/api/generated/model";
+import { MultiSelect } from "@/modules/ui/multi-select";
 import { useTranslations } from "next-intl";
-import { useEffect } from "react";
 import * as React from "react";
+import { useEffect, useMemo } from "react";
 import { GroupFormData, useGroupForm } from "./hooks/use-group-form";
 
 interface AddEditGroupDialogProps {
@@ -37,15 +39,27 @@ export function AddEditGroupDialog({
   group,
   onSubmit,
 }: AddEditGroupDialogProps) {
+  const studentsQuery = useGetStudents();
   const isEditing = !!group;
   const t = useTranslations("Dashboard.groups.dialog");
   const form = useGroupForm();
+
+  // Convert students data to MultiSelect options
+  const studentOptions = useMemo(() => {
+    if (!studentsQuery.data) return [];
+
+    return studentsQuery.data.map((student) => ({
+      label: student.name,
+      value: student.id,
+    }));
+  }, [studentsQuery.data]);
 
   // Reset form when dialog opens/closes or group changes
   useEffect(() => {
     if (open) {
       form.reset({
         name: group?.name || "",
+        studentIds: [],
       });
     }
   }, [open, group, form]);
@@ -63,7 +77,7 @@ export function AddEditGroupDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
           <DialogTitle>
             {isEditing ? t("edit.title") : t("add.title")}
@@ -88,6 +102,28 @@ export function AddEditGroupDialog({
                     <Input
                       placeholder={t("form.name.placeholder")}
                       {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="studentIds"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("form.students.label")}</FormLabel>
+                  <FormControl>
+                    <MultiSelect
+                      options={studentOptions}
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                      placeholder={t("form.students.placeholder")}
+                      variant="default"
+                      maxCount={3}
+                      disabled={studentsQuery.isLoading}
                     />
                   </FormControl>
                   <FormMessage />

@@ -316,6 +316,10 @@
           "name": {
             "label": "Group Name",
             "placeholder": "Enter group name"
+          },
+          "students": {
+            "label": "Students",
+            "placeholder": "Select students to add to this group"
           }
         },
         "buttons": {

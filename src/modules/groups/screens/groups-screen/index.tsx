@@ -7,6 +7,7 @@ import {
   usePostApiV1Groups,
 } from "@/lib/api/generated/aPIForCheckmateApp";
 import { Group } from "@/lib/api/generated/model";
+import { GroupFormData } from "./parts/add-edit-group-dialog/hooks/use-group-form";
 import { Status } from "../../../components/status";
 import { Button } from "@/modules/ui/button";
 import { Plus } from "lucide-react";
@@ -25,17 +26,23 @@ export function GroupsScreen() {
   const editGroupMutation = usePatchApiV1GroupsGroupId();
   const t = useTranslations("Dashboard.groups.screen");
 
-  const handleAddGroup = (
-    groupData: Omit<Group, "id" | "created_at" | "updated_at">,
-  ) => {
+  const handleAddGroup = (groupData: GroupFormData) => {
     if (editingGroup) {
+      // Update uses students_ids (note the 's')
       editGroupMutation.mutate({
         groupId: editingGroup.id,
-        data: groupData,
+        data: {
+          name: groupData.name,
+          students_ids: groupData.studentIds,
+        },
       });
     } else {
+      // Create uses student_ids (no 's')
       addGroupMutation.mutate({
-        data: groupData,
+        data: {
+          name: groupData.name,
+          student_ids: groupData.studentIds,
+        },
       });
     }
     setEditingGroup(null);
