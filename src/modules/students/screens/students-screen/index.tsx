@@ -24,41 +24,63 @@ export function StudentsScreen() {
   const studentsQuery = useGetStudents();
   const addStudentMutation = usePostApiV1Students({
     mutation: {
-      onSuccess: (newUser) => {
-        toast.success(`Student ${newUser.name} added successfully`);
+      onMutate: (variables) => {
+        const previousStudents =
+          queryClient.getQueryData(getGetStudentsQueryOptions().queryKey) ?? [];
+
+        queryClient.setQueryData(getGetStudentsQueryOptions().queryKey, [
+          {
+            ...variables.data,
+            id: "-1",
+            created_at: "",
+            updated_at: "",
+          },
+          ...previousStudents,
+        ]);
+
+        return { previousStudents };
+      },
+      onError: (_, __, context) => {
+        toast.error("Failed to add student");
 
         queryClient.setQueryData(
           getGetStudentsQueryOptions().queryKey,
-          (prevData) => {
-            if (!prevData) return prevData;
-
-            return [newUser, ...prevData];
-          },
+          context?.previousStudents ?? [],
         );
       },
-      onError: () => {
-        toast.error("Failed to add student");
+      onSuccess: async (newUser) => {
+        toast.success(`Student ${newUser.name} added successfully`);
+
+        await queryClient.invalidateQueries({
+          queryKey: getGetStudentsQueryOptions().queryKey,
+        });
       },
     },
   });
   const deleteStudentMutation = useDeleteApiV1StudentsStudentId({
     mutation: {
-      onSuccess: (_, variables) => {
+      onMutate: (variables) => {
         toast.success("Student deleted successfully");
+
+        const previousStudents =
+          queryClient.getQueryData(getGetStudentsQueryOptions().queryKey) ?? [];
 
         queryClient.setQueryData(
           getGetStudentsQueryOptions().queryKey,
-          (prevData) => {
-            if (!prevData) return prevData;
-
-            return prevData.filter(
-              (student) => variables.studentId !== student.id,
-            );
-          },
+          previousStudents.filter(
+            (student) => variables.studentId !== student.id,
+          ),
         );
+
+        return { previousStudents };
       },
-      onError: () => {
+      onError: (_, __, context) => {
         toast.error("Failed to delete student");
+
+        queryClient.setQueryData(
+          getGetStudentsQueryOptions().queryKey,
+          context?.previousStudents ?? [],
+        );
       },
     },
   });
