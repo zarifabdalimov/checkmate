@@ -1,10 +1,23 @@
 import { InitAmplify } from "@/modules/amplify/parts/init-amplify";
+import { Toaster } from "@/modules/ui/sonner";
 import { QueryProvider } from "@/providers/query-provider";
 import { METADATA_CONSTANTS } from "@/lib/constants/metadata";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
+import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 import { PropsWithChildren } from "react";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const lora = Lora({
+  subsets: ["latin"],
+  variable: "--font-lora",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -32,11 +45,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${inter.variable} ${lora.variable}`}>
         <InitAmplify />
         <QueryProvider>
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </QueryProvider>
+        <Toaster />
       </body>
     </html>
   );

@@ -25,7 +25,7 @@
     },
     "hero": {
       "badge": "AI-Powered Education Platform",
-      "title": "Transform Testing with",
+      "title": "Transform Testing with\n<highlight>AI Intelligence</highlight>",
       "titleHighlight": "AI Intelligence",
       "subtitle": "Empower teachers to create intelligent assessments and provide students with personalized feedback and AI-powered study assistance.",
       "getStarted": "Get Started Free",
@@ -152,7 +152,7 @@
     },
     "signUp": {
       "title": "Create your account",
-      "subtitle": "Sign up to get started with Checkmate",
+      "subtitle": "Sign up to get started with CheckMate",
       "form": {
         "email": "Email",
         "emailPlaceholder": "Enter your email",
@@ -204,7 +204,7 @@
   "Dashboard": {
     "sidebar": {
       "brand": {
-        "title": "Checkmate",
+        "title": "CheckMate",
         "subtitle": "Dashboard"
       },
       "navigation": {
