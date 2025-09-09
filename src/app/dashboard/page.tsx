@@ -1,3 +1,8 @@
+import { createPageMetadata } from "@/lib/constants/metadata";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = createPageMetadata("DASHBOARD");
+
 export default function DashboardPage() {
   return (
     <div className="flex flex-1 items-center justify-center">
