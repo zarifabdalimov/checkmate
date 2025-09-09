@@ -32,36 +32,37 @@ export function useGroupsTable({
       columnHelper.display({
         id: "actions",
         header: t("columns.actions"),
-        cell: (info) => (
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => {
-                if (onEditGroup) {
-                  onEditGroup(info.row.original);
-                } else {
-                  console.log("Edit group:", info.row.original);
-                }
-              }}
-              className="p-1 hover:bg-muted rounded transition-colors"
-              title={t("actions.editTooltip")}
-            >
-              <Edit className="h-4 w-4" />
-            </button>
-            <button
-              onClick={() => {
-                if (onDeleteGroup) {
-                  onDeleteGroup(info.row.original);
-                } else {
-                  console.log("Delete group:", info.row.original);
-                }
-              }}
-              className="p-1 hover:bg-muted rounded transition-colors text-destructive hover:text-destructive"
-              title={t("actions.deleteTooltip")}
-            >
-              <Trash2 className="h-4 w-4" />
-            </button>
-          </div>
-        ),
+        cell: (info) =>
+          info.row.original.id === "-1" ? null : (
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => {
+                  if (onEditGroup) {
+                    onEditGroup(info.row.original);
+                  } else {
+                    console.log("Edit group:", info.row.original);
+                  }
+                }}
+                className="p-1 hover:bg-muted rounded transition-colors"
+                title={t("actions.editTooltip")}
+              >
+                <Edit className="h-4 w-4" />
+              </button>
+              <button
+                onClick={() => {
+                  if (onDeleteGroup) {
+                    onDeleteGroup(info.row.original);
+                  } else {
+                    console.log("Delete group:", info.row.original);
+                  }
+                }}
+                className="p-1 hover:bg-muted rounded transition-colors text-destructive hover:text-destructive"
+                title={t("actions.deleteTooltip")}
+              >
+                <Trash2 className="h-4 w-4" />
+              </button>
+            </div>
+          ),
       }),
     ],
     [onEditGroup, onDeleteGroup, t],

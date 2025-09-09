@@ -1,14 +1,10 @@
 "use client";
 
-import {
-  useDeleteApiV1GroupsGroupId,
-  useGetApiV1Groups,
-  usePatchApiV1GroupsGroupId,
-  usePostApiV1Groups,
-} from "@/lib/api/generated/aPIForCheckmateApp";
+import { useGetApiV1Groups } from "@/lib/api/generated/aPIForCheckmateApp";
 import { Group } from "@/lib/api/generated/model";
 import { GroupFormData } from "./parts/add-edit-group-dialog/hooks/use-group-form";
 import { Status } from "../../../components/status";
+import { useGroupMutations } from "./hooks/use-group-mutations";
 import { Button } from "@/modules/ui/button";
 import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -19,11 +15,10 @@ import { GroupsTable } from "./parts/groups-table";
 
 export function GroupsScreen() {
   const groupsQuery = useGetApiV1Groups();
+  const { addGroupMutation, deleteGroupMutation, editGroupMutation } =
+    useGroupMutations();
   const isDialogOpen = useBoolean();
   const [editingGroup, setEditingGroup] = React.useState<Group | null>(null);
-  const addGroupMutation = usePostApiV1Groups();
-  const deleteGroupMutation = useDeleteApiV1GroupsGroupId();
-  const editGroupMutation = usePatchApiV1GroupsGroupId();
   const t = useTranslations("Dashboard.groups.screen");
 
   const handleAddGroup = (groupData: GroupFormData) => {

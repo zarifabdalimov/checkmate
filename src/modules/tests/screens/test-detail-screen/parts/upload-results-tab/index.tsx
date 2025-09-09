@@ -30,7 +30,6 @@ export function UploadResultsTab() {
     },
   });
 
-
   return (
     <div className="not-prose flex flex-col gap-4">
       <Dropzone {...dropzone}>
@@ -39,11 +38,11 @@ export function UploadResultsTab() {
             <DropzoneDescription>
               Please select up to 10 images
             </DropzoneDescription>
-            <DropzoneMessage/>
+            <DropzoneMessage />
           </div>
           <DropZoneArea>
             <DropzoneTrigger className="flex flex-col items-center gap-4 bg-transparent p-10 text-center text-sm">
-              <CloudUploadIcon className="size-8"/>
+              <CloudUploadIcon className="size-8" />
               <div>
                 <p className="font-semibold">Upload listing images</p>
                 <p className="text-sm text-muted-foreground">
@@ -62,7 +61,7 @@ export function UploadResultsTab() {
               file={file}
             >
               {file.status === "pending" && (
-                <div className="aspect-video animate-pulse bg-black/20"/>
+                <div className="aspect-video animate-pulse bg-black/20" />
               )}
               {file.status === "success" && (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -83,7 +82,7 @@ export function UploadResultsTab() {
                   variant="ghost"
                   className="shrink-0 hover:outline"
                 >
-                  <Trash2Icon className="size-4"/>
+                  <Trash2Icon className="size-4" />
                 </DropzoneRemoveFile>
               </div>
             </DropzoneFileListItem>
