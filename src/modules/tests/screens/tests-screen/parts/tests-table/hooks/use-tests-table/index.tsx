@@ -5,8 +5,9 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { Trash2 } from "lucide-react";
+import { ExternalLink, Trash2 } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 import * as React from "react";
 
 interface UseTestsTableProps {
@@ -30,8 +31,13 @@ export function useTestsTable({ data, onDeleteTest }: UseTestsTableProps) {
         header: t("columns.actions"),
         cell: (info) => (
           <div className="flex items-center gap-2">
+            <Link href={`/dashboard/tests/${info.row.original.id}`}>
+              <Button asChild variant="secondary" size="icon">
+                <ExternalLink className="h-4 w-4" />
+              </Button>
+            </Link>
             <Button
-              variant="secondary"
+              variant="destructive"
               size="icon"
               onClick={() => onDeleteTest?.(info.row.original)}
             >
