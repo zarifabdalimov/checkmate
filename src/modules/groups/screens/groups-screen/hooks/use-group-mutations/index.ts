@@ -4,6 +4,7 @@ import {
   usePatchApiV1GroupsGroupId,
   usePostApiV1Groups,
 } from "@/lib/api/generated/aPIForCheckmateApp";
+import { TEMP_ENTITY_ID } from "@/lib/constants/cache";
 import { queryClient } from "@/providers/query-provider";
 import { toast } from "sonner";
 
@@ -18,7 +19,7 @@ export function useGroupMutations() {
         queryClient.setQueryData(getGetApiV1GroupsQueryOptions().queryKey, [
           {
             ...variables.data,
-            id: "-1",
+            id: TEMP_ENTITY_ID,
             created_at: "",
             updated_at: "",
           },

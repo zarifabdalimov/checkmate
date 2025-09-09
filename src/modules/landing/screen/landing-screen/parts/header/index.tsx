@@ -25,7 +25,7 @@ export function Header() {
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
               <GraduationCap className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold">CheckMate</span>
+            <span className="text-xl font-bold font-serif">CheckMate.ink</span>
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">

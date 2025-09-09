@@ -806,12 +806,25 @@ paths:
         - bearerAuth: []
       tags:
         - v1/tests/results
-      summary: Trigger evaluation of all uploaded test results that were not evaluated yet.
+      summary: Trigger OMR evaluation of all uploaded test files for this test.
+      description: |
+        Scans S3 for uploaded test photos under the test_id directory and processes them using Optical Mark Recognition (OMR) to automatically:
+        - Download each uploaded image file from S3
+        - Detect student IDs from the ID grid on test sheets  
+        - Extract answers from multiple choice bubbles
+        - Grade against the test answer key
+        - Create new test_results records in the database
+
+        The evaluation processes all image files found in S3 under the test_id prefix and runs synchronously.
       parameters:
         - $ref: "#/components/parameters/TestId"
       responses:
-        "202":
-          description: "Evaluation process started"
+        "200":
+          description: "OMR evaluation completed successfully"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OMREvaluationResponse"
         "400":
           description: "Invalid test ID"
           content:
@@ -836,6 +849,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/NotFoundError"
+        "500":
+          description: "OMR evaluation failed or internal server error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalServerError"
   /api/v1/tests/{test_id}/results/{result_id}:
     get:
       security:
@@ -1195,6 +1214,91 @@ components:
         - id
         - status
 
+    OMREvaluationResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "OMR evaluation completed successfully"
+        test_id:
+          type: string
+          format: uuid
+          example: "123e4567-e89b-12d3-a456-426614174000"
+        processed_files:
+          type: integer
+          description: "Number of image files found and processed from S3"
+          example: 25
+        successful_evaluations:
+          type: integer
+          description: "Number of successfully processed OMR evaluations"
+          example: 23
+        failed_evaluations:
+          type: integer
+          description: "Number of failed OMR evaluations"
+          example: 2
+        evaluation_details:
+          type: array
+          items:
+            $ref: "#/components/schemas/OMREvaluationDetail"
+      required:
+        - message
+        - test_id
+        - processed_files
+        - successful_evaluations
+        - failed_evaluations
+        - evaluation_details
+
+    OMREvaluationDetail:
+      type: object
+      properties:
+        file_key:
+          type: string
+          description: "S3 key of the processed file"
+          example: "123e4567-e89b-12d3-a456-426614174000/student_photo_001.jpg"
+        detected_student_id:
+          type: string
+          description: "Student ID detected from the OMR grid"
+          example: "25"
+          nullable: true
+        success:
+          type: boolean
+          description: "Whether OMR evaluation was successful"
+        student_id_confidence:
+          type: number
+          format: float
+          description: "Confidence score for student ID detection (0-1)"
+          example: 0.98
+        correct_answers_count:
+          type: integer
+          description: "Number of correct answers detected"
+          example: 18
+        total_questions:
+          type: integer
+          description: "Total number of questions in the test"
+          example: 20
+        percentage:
+          type: number
+          format: float
+          description: "Test score as percentage"
+          example: 90.0
+        pipeline_quality:
+          type: number
+          format: float
+          description: "Overall OMR pipeline quality score (0-1)"
+          example: 0.95
+        processing_time:
+          type: number
+          format: float
+          description: "Processing time in seconds"
+          example: 3.24
+        error:
+          type: string
+          description: "Error message if evaluation failed"
+          example: "OMR processing failed: Template alignment failed"
+      required:
+        - file_key
+        - success
+
     ## Errors
     UnauthorizedError:
       type: object
@@ -1232,6 +1336,15 @@ components:
         errorMessage:
           type: string
           example: "Resource not found."
+    InternalServerError:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          example: "500"
+        errorMessage:
+          type: string
+          example: "Internal server error occurred during processing."
   parameters:
     StudentId:
       name: student_id

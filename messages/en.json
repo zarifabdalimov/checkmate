@@ -130,7 +130,7 @@
       "social": {
         "followUs": "Follow us"
       },
-      "copyright": "© 2025 CheckMate. All rights reserved."
+      "copyright": "© 2025 CheckMate.ink. All rights reserved."
     }
   },
   "AuthPages": {
@@ -152,7 +152,7 @@
     },
     "signUp": {
       "title": "Create your account",
-      "subtitle": "Sign up to get started with CheckMate",
+      "subtitle": "Sign up to get started with CheckMate.ink",
       "form": {
         "email": "Email",
         "emailPlaceholder": "Enter your email",
@@ -204,7 +204,7 @@
   "Dashboard": {
     "sidebar": {
       "brand": {
-        "title": "CheckMate",
+        "title": "CheckMate.ink",
         "subtitle": "Dashboard"
       },
       "navigation": {

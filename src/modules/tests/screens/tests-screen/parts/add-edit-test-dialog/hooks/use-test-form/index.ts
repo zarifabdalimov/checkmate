@@ -27,17 +27,7 @@ export const createTestSchema = (t: ReturnType<typeof useTranslations>) =>
       .max(60, t("timeMax")),
   });
 
-export type TestFormData = {
-  name: string;
-  description?: string;
-  subject: string;
-  topic: string;
-  student_age_range: string;
-  difficulty_level: string;
-  question_format: TestParamsQuestionFormat;
-  number_of_questions: number;
-  time_per_question_in_minutes: number;
-};
+export type TestFormData = z.infer<ReturnType<typeof createTestSchema>>;
 
 export function useTestForm(test?: Test) {
   const tValidation = useTranslations("Dashboard.tests.dialog.validation");
@@ -49,18 +39,18 @@ export function useTestForm(test?: Test) {
   return useForm<TestFormData>({
     resolver: zodResolver(testSchema),
     defaultValues: {
-      name: test?.name || "",
-      description: test?.description || "",
-      subject: test?.test_params?.subject || "",
-      topic: test?.test_params?.topic || "",
-      student_age_range: test?.test_params?.student_age_range || "",
-      difficulty_level: test?.test_params?.difficulty_level || "",
+      name: test?.name ?? "",
+      description: test?.description ?? "",
+      subject: test?.test_params?.subject ?? "",
+      topic: test?.test_params?.topic ?? "",
+      student_age_range: test?.test_params?.student_age_range ?? "",
+      difficulty_level: test?.test_params?.difficulty_level ?? "",
       question_format:
-        test?.test_params?.question_format ||
+        test?.test_params?.question_format ??
         TestParamsQuestionFormat.multiple_choice,
-      number_of_questions: test?.test_params?.number_of_questions || 10,
+      number_of_questions: test?.test_params?.number_of_questions ?? 10,
       time_per_question_in_minutes:
-        test?.test_params?.time_per_question_in_minutes || 2,
+        test?.test_params?.time_per_question_in_minutes ?? 2,
     },
   });
 }

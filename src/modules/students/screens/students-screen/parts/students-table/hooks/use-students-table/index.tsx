@@ -1,3 +1,4 @@
+import { TEMP_ENTITY_ID } from "@/lib/constants/cache";
 import { Button } from "@/modules/ui/button";
 import {
   createColumnHelper,
@@ -38,7 +39,7 @@ export function useStudentsTable({
         id: "actions",
         header: t("columns.actions"),
         cell: (info) =>
-          info.row.original.id === "-1" ? null : (
+          info.row.original.id === TEMP_ENTITY_ID ? null : (
             <div className="flex items-center gap-2">
               <Button
                 size="icon"

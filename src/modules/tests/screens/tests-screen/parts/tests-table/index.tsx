@@ -5,18 +5,12 @@ import { Test } from "@/lib/api/generated/model";
 
 interface TestsTableProps {
   data: Test[];
-  onEditTest?: (test: Test) => void;
   onDeleteTest?: (test: Test) => void;
 }
 
-export function TestsTable({
-  data,
-  onEditTest,
-  onDeleteTest,
-}: TestsTableProps) {
+export function TestsTable({ data, onDeleteTest }: TestsTableProps) {
   const table = useTestsTable({
     data,
-    onEditTest,
     onDeleteTest,
   });
 
