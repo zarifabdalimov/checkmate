@@ -43,7 +43,7 @@ export function TestsScreen() {
     //   subject,
     //   topic,
     //   student_age_range,
-    //   difficultyt_level: difficulty_level, // Note: API has typo in field name
+    //   difficulty_level: difficulty_level, // Note: API has typo in field name
     //   question_format,
     //   number_of_questions,
     //   time_per_question_in_minutes,

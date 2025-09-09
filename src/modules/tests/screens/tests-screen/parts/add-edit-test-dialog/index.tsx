@@ -76,7 +76,7 @@ export function AddEditTestDialog({
         subject: test?.test_params?.subject || "",
         topic: test?.test_params?.topic || "",
         student_age_range: test?.test_params?.student_age_range || "",
-        difficulty_level: test?.test_params?.difficultyt_level || "",
+        difficulty_level: test?.test_params?.difficulty_level || "",
         question_format:
           test?.test_params?.question_format ||
           TestParamsQuestionFormat.multiple_choice,
