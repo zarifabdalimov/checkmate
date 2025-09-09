@@ -15,11 +15,14 @@ export function Hero() {
           <span className="text-sm font-medium">{t("badge")}</span>
         </div>
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-          {t("title")}
-          <span className="block bg-gradient-to-r from-primary via-primary to-primary/80 bg-clip-text text-transparent">
-            {t("titleHighlight")}
-          </span>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight whitespace-pre-line">
+          {t.rich("title", {
+            highlight: (chunks) => (
+              <span className="bg-gradient-to-r from-primary via-primary to-primary/80 bg-clip-text text-transparent">
+                {chunks}
+              </span>
+            ),
+          })}
         </h1>
 
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
