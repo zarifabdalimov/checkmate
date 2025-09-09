@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/modules/ui/button";
-import { EmptyState } from "@/modules/components/empty-state";
+import { Status } from "../../../components/status";
 import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
 import * as React from "react";
@@ -90,10 +90,24 @@ export function TestsScreen() {
     }
   };
 
+  if (testsQuery.isLoading) {
+    return <Status isLoading />;
+  }
+
+  if (testsQuery.isError) {
+    return (
+      <Status
+        icon="alert-circle"
+        title="Failed to load tests"
+        description="There was an error loading your tests. Please try again."
+      />
+    );
+  }
+
   if (testsQuery.data?.length === 0) {
     return (
       <>
-        <EmptyState
+        <Status
           icon="clipboard-list"
           title={t("emptyState.title")}
           description={t("emptyState.description")}

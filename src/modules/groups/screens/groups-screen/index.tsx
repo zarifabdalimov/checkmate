@@ -7,7 +7,7 @@ import {
   usePostApiV1Groups,
 } from "@/lib/api/generated/aPIForCheckmateApp";
 import { Group } from "@/lib/api/generated/model";
-import { EmptyState } from "@/modules/components/empty-state";
+import { Status } from "../../../components/status";
 import { Button } from "@/modules/ui/button";
 import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -59,10 +59,24 @@ export function GroupsScreen() {
     }
   };
 
+  if (groupsQuery.isLoading) {
+    return <Status isLoading />;
+  }
+
+  if (groupsQuery.isError) {
+    return (
+      <Status
+        icon="alert-circle"
+        title="Failed to load groups"
+        description="There was an error loading your groups. Please try again."
+      />
+    );
+  }
+
   if (groupsQuery.data?.length === 0) {
     return (
       <>
-        <EmptyState
+        <Status
           icon="users"
           title={t("emptyState.title")}
           description={t("emptyState.description")}

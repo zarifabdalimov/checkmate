@@ -6,7 +6,7 @@ import {
   usePatchApiV1StudentsStudentId,
   useDeleteApiV1StudentsStudentId,
 } from "@/lib/api/generated/aPIForCheckmateApp";
-import { EmptyState } from "@/modules/components/empty-state";
+import { Status } from "../../../components/status";
 import { Button } from "@/modules/ui/button";
 
 import { Plus } from "lucide-react";
@@ -62,10 +62,24 @@ export function StudentsScreen() {
     }
   };
 
+  if (studentsQuery.isLoading) {
+    return <Status isLoading />;
+  }
+
+  if (studentsQuery.isError) {
+    return (
+      <Status
+        icon="alert-circle"
+        title="Failed to load students"
+        description="There was an error loading your students. Please try again."
+      />
+    );
+  }
+
   if (studentsQuery.data?.length === 0) {
     return (
       <>
-        <EmptyState
+        <Status
           icon="users"
           title={t("emptyState.title")}
           description={t("emptyState.description")}
