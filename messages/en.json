@@ -352,12 +352,26 @@
       },
       "dialog": {
         "add": {
-          "title": "Add New Test",
-          "description": "Enter the test information to create a new assessment."
+          "title": "Create New Test",
+          "description": "Follow the steps to create a comprehensive test assessment."
         },
         "edit": {
           "title": "Edit Test",
-          "description": "Update the test information below."
+          "description": "Follow the steps to update the test information."
+        },
+        "steps": {
+          "basic": {
+            "title": "Basic Info",
+            "description": "Enter the test name and description."
+          },
+          "parameters": {
+            "title": "Parameters",
+            "description": "Configure the test subject, topic, age range, and difficulty."
+          },
+          "questions": {
+            "title": "Questions",
+            "description": "Set the question format, count, and timing."
+          }
         },
         "form": {
           "testParams": {
@@ -411,7 +425,9 @@
         },
         "buttons": {
           "cancel": "Cancel",
-          "addTest": "Add Test",
+          "previous": "Previous",
+          "next": "Next",
+          "addTest": "Create Test",
           "updateTest": "Update Test",
           "saving": "Saving..."
         },

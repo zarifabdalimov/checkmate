@@ -1,0 +1,5 @@
+---
+description: do not write comments to jsx
+globs:
+alwaysApply: true
+---
