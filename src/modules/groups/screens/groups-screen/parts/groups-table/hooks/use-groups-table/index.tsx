@@ -1,3 +1,4 @@
+import { Group } from "@/lib/api/generated/model";
 import { TEMP_ENTITY_ID } from "@/lib/constants/cache";
 import {
   createColumnHelper,
@@ -5,9 +6,8 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { Edit, Trash2 } from "lucide-react";
-import * as React from "react";
 import { useTranslations } from "next-intl";
-import { Group } from "@/lib/api/generated/model";
+import * as React from "react";
 
 interface UseGroupsTableProps {
   data: Group[];
@@ -37,26 +37,14 @@ export function useGroupsTable({
           info.row.original.id === TEMP_ENTITY_ID ? null : (
             <div className="flex items-center gap-2">
               <button
-                onClick={() => {
-                  if (onEditGroup) {
-                    onEditGroup(info.row.original);
-                  } else {
-                    console.log("Edit group:", info.row.original);
-                  }
-                }}
+                onClick={() => onEditGroup?.(info.row.original)}
                 className="p-1 hover:bg-muted rounded transition-colors"
                 title={t("actions.editTooltip")}
               >
                 <Edit className="h-4 w-4" />
               </button>
               <button
-                onClick={() => {
-                  if (onDeleteGroup) {
-                    onDeleteGroup(info.row.original);
-                  } else {
-                    console.log("Delete group:", info.row.original);
-                  }
-                }}
+                onClick={() => onDeleteGroup?.(info.row.original)}
                 className="p-1 hover:bg-muted rounded transition-colors text-destructive hover:text-destructive"
                 title={t("actions.deleteTooltip")}
               >
@@ -69,11 +57,9 @@ export function useGroupsTable({
     [onEditGroup, onDeleteGroup, t],
   );
 
-  const table = useReactTable({
+  return useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
-
-  return table;
 }

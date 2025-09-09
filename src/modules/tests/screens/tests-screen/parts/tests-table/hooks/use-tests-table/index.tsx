@@ -33,13 +33,7 @@ export function useTestsTable({ data, onDeleteTest }: UseTestsTableProps) {
             <Button
               variant="secondary"
               size="icon"
-              onClick={() => {
-                if (onDeleteTest) {
-                  onDeleteTest(info.row.original);
-                } else {
-                  console.log("Delete test:", info.row.original);
-                }
-              }}
+              onClick={() => onDeleteTest?.(info.row.original)}
             >
               <Trash2 className="h-4 w-4" />
             </Button>

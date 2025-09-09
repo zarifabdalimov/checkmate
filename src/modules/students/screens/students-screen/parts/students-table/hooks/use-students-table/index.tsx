@@ -44,26 +44,14 @@ export function useStudentsTable({
               <Button
                 size="icon"
                 variant="outline"
-                onClick={() => {
-                  if (onEditStudent) {
-                    onEditStudent(info.row.original);
-                  } else {
-                    console.log("Edit student:", info.row.original);
-                  }
-                }}
+                onClick={() => onEditStudent?.(info.row.original)}
               >
                 <Edit className="h-4 w-4" />
               </Button>
               <Button
                 size="icon"
                 variant="destructive"
-                onClick={() => {
-                  if (onDeleteStudent) {
-                    onDeleteStudent(info.row.original);
-                  } else {
-                    console.log("Delete student:", info.row.original);
-                  }
-                }}
+                onClick={() => onDeleteStudent?.(info.row.original)}
               >
                 <Trash2 className="h-4 w-4" />
               </Button>
