@@ -47,10 +47,15 @@ export function BasicInfoStep() {
           <FormField
             control={form.control}
             name="group_id"
+            disabled
             render={({ field }) => (
               <FormItem>
                 <FormLabel>{t("form.group.label")}</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <Select
+                  disabled
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
                   <FormControl>
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder={t("form.group.placeholder")} />
