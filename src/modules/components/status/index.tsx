@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { Spinner } from "../../ui/spinner";
 import { Button } from "@/modules/ui/button";
 import { Plus } from "lucide-react";
@@ -8,6 +9,7 @@ interface EmptyStateProps {
   icon?: IconName;
   title?: string;
   description?: string;
+  animatedIcon?: boolean;
   isLoading?: boolean;
   cta?: {
     label: string;
@@ -19,6 +21,7 @@ export function Status({
   icon,
   title,
   isLoading,
+  animatedIcon = false,
   description,
   cta,
 }: EmptyStateProps) {
@@ -30,7 +33,10 @@ export function Status({
           {icon && (
             <DynamicIcon
               name={icon}
-              className="h-12 w-12 text-muted-foreground"
+              className={cn(
+                "h-12 w-12 text-muted-foreground",
+                animatedIcon ? "animate-pulse" : "",
+              )}
             />
           )}
         </div>

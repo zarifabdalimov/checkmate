@@ -1,6 +1,9 @@
 "use client";
 
-import { usePatchApiV1TestsTestId } from "@/lib/api/generated/aPIForCheckmateApp";
+import {
+  getGetApiV1TestsTestIdQueryKey,
+  usePatchApiV1TestsTestId,
+} from "@/lib/api/generated/aPIForCheckmateApp";
 import { Test, TestParamsQuestionFormat } from "@/lib/api/generated/model";
 import { useEditTestForm } from "@/modules/tests/screens/test-detail-screen/parts/edit-test-tab/hooks/use-edit-test-form-context";
 import { Button } from "@/modules/ui/button";
@@ -10,8 +13,10 @@ import * as React from "react";
 import { FormProvider } from "react-hook-form";
 import { BasicInfoStep } from "./parts/basic-info-step";
 import { ContentEditorStep } from "./parts/content-editor-step";
+import { LockTestButton } from "./parts/lock-test-button";
 import { ParametersStep } from "./parts/parameters-step";
 import { EditTestFormData } from "./types";
+import { queryClient } from "@/providers/query-provider";
 
 interface EditTestTabProps {
   test: Test;
@@ -19,7 +24,15 @@ interface EditTestTabProps {
 
 export function EditTestTab({ test }: EditTestTabProps) {
   const t = useTranslations("Dashboard.tests.dialog");
-  const updateTestMutation = usePatchApiV1TestsTestId();
+  const updateTestMutation = usePatchApiV1TestsTestId({
+    mutation: {
+      onSuccess: async () => {
+        await queryClient.invalidateQueries({
+          queryKey: getGetApiV1TestsTestIdQueryKey(test.id),
+        });
+      },
+    },
+  });
   const form = useEditTestForm({
     name: test?.name || "",
     description: test?.description || "",
@@ -55,7 +68,7 @@ export function EditTestTab({ test }: EditTestTabProps) {
   return (
     <div className="max-w-4xl">
       <FormProvider {...form}>
-        <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">
+        <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
           <Tabs defaultValue="basic-info" className="w-full">
             <TabsList className="grid w-full grid-cols-3">
               <TabsTrigger value="basic-info">
@@ -82,11 +95,14 @@ export function EditTestTab({ test }: EditTestTabProps) {
             </TabsContent>
           </Tabs>
 
-          <Button type="submit" disabled={updateTestMutation.isPending}>
-            {updateTestMutation.isPending
-              ? t("buttons.saving")
-              : t("buttons.saveChanges")}
-          </Button>
+          <div className="flex gap-2 flex-row justify-end">
+            <Button type="submit" disabled={updateTestMutation.isPending}>
+              {updateTestMutation.isPending
+                ? t("buttons.saving")
+                : t("buttons.saveChanges")}
+            </Button>
+            <LockTestButton testId={test.id} />
+          </div>
         </form>
       </FormProvider>
     </div>

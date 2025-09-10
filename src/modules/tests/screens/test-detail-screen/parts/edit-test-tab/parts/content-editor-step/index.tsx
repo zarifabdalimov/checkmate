@@ -9,6 +9,7 @@ import {
 } from "@/modules/ui/form";
 import { Input } from "@/modules/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/modules/ui/radio-group";
+import { Plus, Trash } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useFieldArray } from "react-hook-form";
 import { useEditTestFormContext } from "../../hooks/use-edit-test-form-context";
@@ -57,6 +58,7 @@ export function ContentEditorStep() {
       <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle>{t("form.content.title")}</CardTitle>
         <Button type="button" onClick={addQuestion}>
+          <Plus/>
           {t("form.content.addQuestion")}
         </Button>
       </CardHeader>
@@ -75,6 +77,7 @@ export function ContentEditorStep() {
                 size="sm"
                 onClick={() => remove(questionIndex)}
               >
+                <Trash/>
                 {t("form.content.removeQuestion")}
               </Button>
             </div>

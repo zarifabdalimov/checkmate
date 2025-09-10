@@ -270,6 +270,7 @@
           "cancel": "Cancel",
           "addStudent": "Add Student",
           "updateStudent": "Update Student",
+          "lockTest": "Lock Test",
           "saving": "Saving..."
         },
         "validation": {
@@ -460,10 +461,17 @@
           "cancel": "Cancel",
           "previous": "Previous",
           "next": "Next",
+          "lockTest": "Lock Test",
           "addTest": "Create Test",
           "updateTest": "Update Test",
           "saveChanges": "Save Changes",
           "saving": "Saving..."
+        },
+        "lockTestConfirm": {
+          "title": "Are you sure you want to lock this test?",
+          "description": "Once locked, this test cannot be edited anymore. Students will be able to take this test and results can be uploaded for evaluation. This action cannot be undone.",
+          "confirmButton": "Lock Test",
+          "cancelButton": "Cancel"
         },
         "validation": {
           "nameRequired": "Name is required",
@@ -504,6 +512,23 @@
         "messages": {
           "uploadSuccess": "Upload completed successfully",
           "uploadError": "Upload failed"
+        }
+      },
+      "testDetail": {
+        "tabs": {
+          "editTest": "Edit Test",
+          "testResults": "Test Results",
+          "uploadResults": "Upload Results"
+        },
+        "errors": {
+          "loadFailed": {
+            "title": "Failed to load test",
+            "description": "There was an error loading your test. Please try again."
+          }
+        },
+        "draft": {
+          "title": "AI is preparing your test",
+          "description": "This test is currently being prepared for AI evaluation"
         }
       }
     },
@@ -548,6 +573,10 @@
         "delete": {
           "error": "Failed to delete test",
           "success": "Test deleted successfully"
+        },
+        "lock": {
+          "error": "Failed to lock test",
+          "success": "Test locked successfully"
         }
       }
     }
