@@ -9,6 +9,7 @@ import {
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { PropsWithChildren } from "react";
+import { AppBreadcrumb } from "@/modules/navigation/app-breadcrumb";
 
 function getPageNameKey(pathname: string): string {
   if (pathname === "/dashboard" || pathname === "/dashboard/") {
@@ -43,7 +44,7 @@ export default function DashboardLayout({ children }: PropsWithChildren) {
         <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4 print:hidden">
           <SidebarTrigger className="-ml-1" />
           <div className="h-4 w-px bg-border" />
-          <span className="font-medium text-sm">{pageName}</span>
+          <AppBreadcrumb />
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4">{children}</main>
       </SidebarInset>
