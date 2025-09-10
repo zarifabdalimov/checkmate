@@ -22,6 +22,7 @@ export function EditTestTab({ test, onSave }: EditTestTabProps) {
   const form = useEditTestForm({
     name: test?.name || "",
     description: test?.description || "",
+    group_id: test?.group_id || "",
     subject: test?.test_params?.subject || "",
     topic: test?.test_params?.topic || "",
     student_age_range: test?.test_params?.student_age_range || "",
