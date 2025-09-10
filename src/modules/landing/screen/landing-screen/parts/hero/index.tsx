@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/modules/ui/button";
-import { GraduationCap, BookOpen, Sparkles } from "lucide-react";
+import { GraduationCap, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 

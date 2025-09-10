@@ -1,8 +1,7 @@
 "use client";
 
-import { Button } from "@/modules/ui/button";
 import { Separator } from "@/modules/ui/separator";
-import { Github, GraduationCap, Linkedin, Mail, Twitter } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export function Footer() {
@@ -21,7 +20,6 @@ export function Footer() {
             </div>
             <p className="text-muted-foreground max-w-sm">{t("tagline")}</p>
           </div>
-
         </div>
 
         <Separator className="mb-8" />

@@ -65,7 +65,7 @@ export function AddEditGroupDialog({
   }, [open, group, form]);
 
   const handleSubmit = (data: GroupFormData) => {
-    console.log('[debug]', data)
+    console.log("[debug]", data);
     onSubmit(data);
     onOpenChange(false);
     form.reset();
