@@ -1,6 +1,6 @@
 "use client";
 
-import { Test, TestParamsQuestionFormat } from "@/lib/api/generated/model";
+import { TestParamsQuestionFormat } from "@/lib/api/generated/model";
 import { BasicInfoStep } from "@/modules/tests/screens/tests-screen/parts/add-edit-test-dialog/parts/basic-info-step";
 import { ParametersStep } from "@/modules/tests/screens/tests-screen/parts/add-edit-test-dialog/parts/parameters-step";
 import { ProgressSteps } from "@/modules/tests/screens/tests-screen/parts/add-edit-test-dialog/parts/progress-steps";
