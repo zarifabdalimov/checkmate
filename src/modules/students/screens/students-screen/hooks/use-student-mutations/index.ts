@@ -5,7 +5,7 @@ import {
   usePostApiV1Students,
 } from "@/lib/api/generated/aPIForCheckmateApp";
 import { TEMP_ENTITY_ID } from "@/lib/constants/cache";
-import { queryClient } from "@/providers/query-provider";
+import { queryClient } from "@/modules/providers/query-provider";
 import { toast } from "sonner";
 import { useTranslations } from "next-intl";
 

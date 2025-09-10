@@ -16,7 +16,7 @@ import { ContentEditorStep } from "./parts/content-editor-step";
 import { LockTestButton } from "./parts/lock-test-button";
 import { ParametersStep } from "./parts/parameters-step";
 import { EditTestFormData } from "./types";
-import { queryClient } from "@/providers/query-provider";
+import { queryClient } from "@/modules/providers/query-provider";
 
 interface EditTestTabProps {
   test: Test;

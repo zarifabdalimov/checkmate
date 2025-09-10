@@ -1,6 +1,6 @@
 import { InitAmplify } from "@/modules/amplify/parts/init-amplify";
 import { Toaster } from "@/modules/ui/sonner";
-import { QueryProvider } from "@/providers/query-provider";
+import { QueryProvider } from "@/modules/providers/query-provider";
 import { METADATA_CONSTANTS } from "@/lib/constants/metadata";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
