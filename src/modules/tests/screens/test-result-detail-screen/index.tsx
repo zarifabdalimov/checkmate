@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useParams } from "next/navigation";
 import { Card } from "@/modules/ui/card";
@@ -22,17 +22,23 @@ export function TestResultDetailScreen() {
         <div className="space-y-6">
           <div>
             <h2 className="text-lg font-semibold mb-2">Student Information</h2>
-            <p className="text-muted-foreground">Student details will go here...</p>
+            <p className="text-muted-foreground">
+              Student details will go here...
+            </p>
           </div>
 
           <div>
             <h2 className="text-lg font-semibold mb-2">Test Results</h2>
-            <p className="text-muted-foreground">Test results details will go here...</p>
+            <p className="text-muted-foreground">
+              Test results details will go here...
+            </p>
           </div>
 
           <div>
             <h2 className="text-lg font-semibold mb-2">Answer Analysis</h2>
-            <p className="text-muted-foreground">Detailed answer analysis will go here...</p>
+            <p className="text-muted-foreground">
+              Detailed answer analysis will go here...
+            </p>
           </div>
         </div>
       </Card>

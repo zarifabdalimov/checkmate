@@ -18,13 +18,13 @@ const gradeVariants = cva(
         md: "w-8 h-8 text-sm",
         lg: "w-10 h-10 text-base",
         xl: "w-12 h-12 text-lg",
-      }
+      },
     },
     defaultVariants: {
       value: "F",
-      size: "md"
+      size: "md",
     },
-  }
+  },
 );
 
 export type GradeValue = "A" | "B" | "C" | "D" | "F";
@@ -44,18 +44,16 @@ const calculateGrade = (percentage: number): GradeValue => {
   return "F";
 };
 
-export function Grade({ correctCount, totalCount, size, className }: GradeProps) {
+export function Grade({
+  correctCount,
+  totalCount,
+  size,
+  className,
+}: GradeProps) {
   const percentage = totalCount === 0 ? 0 : (correctCount / totalCount) * 100;
   const value = calculateGrade(percentage);
 
   return (
-    <div
-      className={cn(
-        gradeVariants({ value, size }),
-        className
-      )}
-    >
-      {value}
-    </div>
+    <div className={cn(gradeVariants({ value, size }), className)}>{value}</div>
   );
 }

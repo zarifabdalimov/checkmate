@@ -1,8 +1,7 @@
 "use client";
 
-import { Button } from "@/modules/ui/button";
 import { useAuth } from "@/hooks/use-auth";
-import { GraduationCap } from "lucide-react";
+import { Button } from "@/modules/ui/button";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,12 +22,7 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <Image
-              alt="CheckMate.ink"
-              src="/logo.png"
-              width={32}
-              height={32}
-            />
+            <Image alt="CheckMate.ink" src="/logo.png" width={32} height={32} />
             <span className="text-xl font-bold font-serif">CheckMate.ink</span>
           </div>
 
