@@ -28,7 +28,7 @@ export function GroupsScreen() {
         groupId: editingGroup.id,
         data: {
           name: groupData.name,
-          students_ids: groupData.studentIds,
+          student_ids: groupData.studentIds,
         },
       });
     } else {

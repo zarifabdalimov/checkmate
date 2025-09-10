@@ -65,7 +65,7 @@ export function TestDetailScreen() {
         <TestPreviewTab test={testQuery.data} />
       </TabsContent>
       <TabsContent value="test-results">
-        <TestResultsTab />
+        <TestResultsTab test={testQuery.data} />
       </TabsContent>
       <TabsContent value="upload-results">
         <UploadResultsTab test={testQuery.data} />
