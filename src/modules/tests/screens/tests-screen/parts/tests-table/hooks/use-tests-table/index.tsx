@@ -1,11 +1,10 @@
 import { Test } from "@/lib/api/generated/model";
-import { Button } from "@/modules/ui/button";
+import { TableDeleteAction, TableExternalLinkAction } from "@/modules/ui/table";
 import {
   createColumnHelper,
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ExternalLink, Trash2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import * as React from "react";
@@ -32,17 +31,11 @@ export function useTestsTable({ data, onDeleteTest }: UseTestsTableProps) {
         cell: (info) => (
           <div className="flex items-center gap-2">
             <Link href={`/dashboard/tests/${info.row.original.id}`}>
-              <Button asChild variant="secondary" size="icon">
-                <ExternalLink className="h-4 w-4" />
-              </Button>
+              <TableExternalLinkAction />
             </Link>
-            <Button
-              variant="destructive"
-              size="icon"
+            <TableDeleteAction
               onClick={() => onDeleteTest?.(info.row.original)}
-            >
-              <Trash2 className="h-4 w-4" />
-            </Button>
+            />
           </div>
         ),
       }),

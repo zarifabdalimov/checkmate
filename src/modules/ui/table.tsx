@@ -1,8 +1,10 @@
 "use client";
 
+import { Button } from "@/modules/ui/button";
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
+import { ExternalLink, Pencil, Trash } from "lucide-react";
 
 function Table({ className, ...props }: React.ComponentProps<"table">) {
   return (
@@ -104,6 +106,30 @@ function TableCaption({
   );
 }
 
+function TableEditAction(props: React.ComponentProps<"button">) {
+  return (
+    <Button size="icon" variant="secondary" {...props}>
+      <Pencil className="h-4 w-4" />
+    </Button>
+  );
+}
+
+function TableDeleteAction(props: React.ComponentProps<"button">) {
+  return (
+    <Button size="icon" variant="destructive" {...props}>
+      <Trash className="h-4 w-4" />
+    </Button>
+  );
+}
+
+function TableExternalLinkAction(props: React.ComponentProps<"button">) {
+  return (
+    <Button size="icon" variant="secondary" {...props}>
+      <ExternalLink className="h-4 w-4" />
+    </Button>
+  );
+}
+
 export {
   Table,
   TableHeader,
@@ -113,4 +139,7 @@ export {
   TableRow,
   TableCell,
   TableCaption,
+  TableEditAction,
+  TableDeleteAction,
+  TableExternalLinkAction,
 };

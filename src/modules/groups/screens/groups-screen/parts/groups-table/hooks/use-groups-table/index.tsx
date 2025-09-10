@@ -1,11 +1,11 @@
 import { Group } from "@/lib/api/generated/model";
 import { TEMP_ENTITY_ID } from "@/lib/constants/cache";
+import { TableDeleteAction, TableEditAction } from "@/modules/ui/table";
 import {
   createColumnHelper,
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { Edit, Trash2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import * as React from "react";
 
@@ -36,20 +36,12 @@ export function useGroupsTable({
         cell: (info) =>
           info.row.original.id === TEMP_ENTITY_ID ? null : (
             <div className="flex items-center gap-2">
-              <button
+              <TableEditAction
                 onClick={() => onEditGroup?.(info.row.original)}
-                className="p-1 hover:bg-muted rounded transition-colors"
-                title={t("actions.editTooltip")}
-              >
-                <Edit className="h-4 w-4" />
-              </button>
-              <button
+              />
+              <TableDeleteAction
                 onClick={() => onDeleteGroup?.(info.row.original)}
-                className="p-1 hover:bg-muted rounded transition-colors text-destructive hover:text-destructive"
-                title={t("actions.deleteTooltip")}
-              >
-                <Trash2 className="h-4 w-4" />
-              </button>
+              />
             </div>
           ),
       }),

@@ -1,14 +1,13 @@
+import { Student } from "@/lib/api/generated/model";
 import { TEMP_ENTITY_ID } from "@/lib/constants/cache";
-import { Button } from "@/modules/ui/button";
+import { TableDeleteAction, TableEditAction } from "@/modules/ui/table";
 import {
   createColumnHelper,
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { Edit, Trash2 } from "lucide-react";
-import * as React from "react";
 import { useTranslations } from "next-intl";
-import { Student } from "@/lib/api/generated/model";
+import * as React from "react";
 
 interface UseStudentsTableProps {
   data: Student[];
@@ -41,20 +40,12 @@ export function useStudentsTable({
         cell: (info) =>
           info.row.original.id === TEMP_ENTITY_ID ? null : (
             <div className="flex items-center gap-2">
-              <Button
-                size="icon"
-                variant="outline"
+              <TableEditAction
                 onClick={() => onEditStudent?.(info.row.original)}
-              >
-                <Edit className="h-4 w-4" />
-              </Button>
-              <Button
-                size="icon"
-                variant="destructive"
+              />
+              <TableDeleteAction
                 onClick={() => onDeleteStudent?.(info.row.original)}
-              >
-                <Trash2 className="h-4 w-4" />
-              </Button>
+              />
             </div>
           ),
       }),
@@ -62,11 +53,9 @@ export function useStudentsTable({
     [onEditStudent, onDeleteStudent, t],
   );
 
-  const table = useReactTable({
+  return useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
-
-  return table;
 }
