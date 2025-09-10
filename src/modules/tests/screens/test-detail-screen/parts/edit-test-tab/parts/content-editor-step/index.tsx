@@ -57,7 +57,7 @@ export function ContentEditorStep() {
     <Card>
       <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle>{t("form.content.title")}</CardTitle>
-        <Button type="button" onClick={addQuestion}>
+        <Button type="button" onClick={addQuestion} variant="outline">
           <Plus />
           {t("form.content.addQuestion")}
         </Button>
@@ -162,7 +162,7 @@ export function ContentEditorStep() {
           </Card>
         ))}
 
-        <Button type="button" onClick={addQuestion}>
+        <Button type="button" onClick={addQuestion} variant="outline">
           <Plus />
           {t("form.content.addQuestion")}
         </Button>
