@@ -2,6 +2,7 @@
 
 import { Test } from "@/lib/api/generated/model";
 import { Button } from "@/modules/ui/button";
+import { Separator } from "@/modules/ui/separator";
 import { Printer } from "lucide-react";
 import * as React from "react";
 
@@ -10,11 +11,11 @@ interface TestPreviewTabProps {
 }
 
 export function TestPreviewTab({ test }: TestPreviewTabProps) {
-  const questionCount = test.content?.length ?? 0
+  const questionCount = test.content?.length ?? 0;
 
   return (
-    <div className="max-w-4xl space-y-6 py-4">
-      <div className="text-center border-b-2 border-black pb-4 mb-6">
+    <div className="max-w-4xl space-y-6 py-8">
+      <div className="text-center">
         <h1 className="text-2xl font-bold mb-2">{test.name}</h1>
         {test.description && <p className="text-lg mb-2">{test.description}</p>}
         <div className="text-sm">
@@ -22,15 +23,15 @@ export function TestPreviewTab({ test }: TestPreviewTabProps) {
           {test.test_params?.subject || "N/A"} |
           <span className="font-medium ml-2">Difficulty:</span>{" "}
           {test.test_params?.difficulty_level || "N/A"} |
-          <span className="font-medium ml-2">Questions:</span>{" "}
-          {questionCount} |<span className="font-medium ml-2">Time:</span>{" "}
+          <span className="font-medium ml-2">Questions:</span> {questionCount} |
+          <span className="font-medium ml-2">Time:</span>{" "}
           {test.test_params?.time_per_question_in_minutes
             ? `${test.test_params.time_per_question_in_minutes * questionCount} minutes`
             : "N/A"}
         </div>
       </div>
-
-      <div className="space-y-8">
+      <Separator className="bg-black" />
+      <div className="space-y-6">
         {test.content?.map((item) => (
           <div key={item.q} className="space-y-2">
             <div>
@@ -55,9 +56,9 @@ export function TestPreviewTab({ test }: TestPreviewTabProps) {
           </div>
         ))}
       </div>
-
-      <div className="flex justify-center mt-8 pt-6 border-t-2 border-black print:hidden">
-        <Button onClick={window.print} className="gap-2" variant="outline">
+      <Separator className="bg-black" />
+      <div className="print:hidden">
+        <Button onClick={window.print} variant="outline">
           <Printer className="h-4 w-4" />
           Print Test
         </Button>
