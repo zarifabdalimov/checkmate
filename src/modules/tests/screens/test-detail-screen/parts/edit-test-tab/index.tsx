@@ -1,5 +1,6 @@
 "use client";
 
+import { usePatchApiV1TestsTestId } from "@/lib/api/generated/aPIForCheckmateApp";
 import { Test, TestParamsQuestionFormat } from "@/lib/api/generated/model";
 import { useEditTestForm } from "@/modules/tests/screens/test-detail-screen/parts/edit-test-tab/hooks/use-edit-test-form-context";
 import { Button } from "@/modules/ui/button";
@@ -13,12 +14,12 @@ import { ParametersStep } from "./parts/parameters-step";
 import { EditTestFormData } from "./types";
 
 interface EditTestTabProps {
-  test?: Test;
-  onSave?: (data: EditTestFormData) => void;
+  test: Test;
 }
 
-export function EditTestTab({ test, onSave }: EditTestTabProps) {
+export function EditTestTab({ test }: EditTestTabProps) {
   const t = useTranslations("Dashboard.tests.dialog");
+  const updateTestMutation = usePatchApiV1TestsTestId();
   const form = useEditTestForm({
     name: test?.name || "",
     description: test?.description || "",
@@ -41,8 +42,14 @@ export function EditTestTab({ test, onSave }: EditTestTabProps) {
   });
 
   const handleSubmit = (data: EditTestFormData) => {
-    console.log("Form data:", data);
-    onSave?.(data);
+    updateTestMutation.mutate({
+      testId: test.id,
+      data: {
+        name: data.name,
+        description: data.description,
+        content: data.content,
+      },
+    });
   };
 
   return (
@@ -75,7 +82,11 @@ export function EditTestTab({ test, onSave }: EditTestTabProps) {
             </TabsContent>
           </Tabs>
 
-          <Button type="submit">{t("buttons.saveChanges")}</Button>
+          <Button type="submit" disabled={updateTestMutation.isPending}>
+            {updateTestMutation.isPending
+              ? t("buttons.saving")
+              : t("buttons.saveChanges")}
+          </Button>
         </form>
       </FormProvider>
     </div>

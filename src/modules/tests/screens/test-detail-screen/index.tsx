@@ -12,16 +12,11 @@ export function TestDetailScreen() {
   const params = useParams<{ testId: string }>();
   const testQuery = useGetApiV1TestsTestId(params.testId);
 
-  const handleSave = () => {
-    // console.log("Saving test data:", data);
-    // // TODO: Implement save functionality
-  };
-
   if (testQuery.isLoading) {
     return <Status isLoading />;
   }
 
-  if (testQuery.isError) {
+  if (testQuery.isError || !testQuery.data) {
     return (
       <Status
         icon="alert-circle"
@@ -39,7 +34,7 @@ export function TestDetailScreen() {
         <TabsTrigger value="upload-results">Upload Results</TabsTrigger>
       </TabsList>
       <TabsContent value="edit-test">
-        <EditTestTab test={testQuery.data} onSave={handleSave} />
+        <EditTestTab test={testQuery.data} />
       </TabsContent>
       <TabsContent value="test-results">
         <TestResultsTab />

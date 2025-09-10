@@ -2,13 +2,11 @@ import { TestParamsQuestionFormat } from "@/lib/api/generated/model";
 import { useTranslations } from "next-intl";
 import * as z from "zod";
 
-// Extended form schema that includes test content
 export const createEditTestSchema = (t: ReturnType<typeof useTranslations>) =>
   z.object({
     name: z.string().min(1, t("nameRequired")).max(100, t("nameTooLong")),
     description: z.string().optional(),
     group_id: z.string().min(1, t("groupRequired")),
-    // Parameters are read-only, no validation needed
     subject: z.string().optional(),
     topic: z.string().optional(),
     student_age_range: z.string().optional(),
