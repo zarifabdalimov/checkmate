@@ -25,17 +25,14 @@ import { TestFormData, useTestForm } from "./hooks/use-test-form";
 interface AddEditTestDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  test?: Test | null;
   onSubmit: (data: TestFormData) => void;
 }
 
 export function AddEditTestDialog({
   open,
   onOpenChange,
-  test,
   onSubmit,
 }: AddEditTestDialogProps) {
-  const isEditing = !!test;
   const t = useTranslations("Dashboard.tests.dialog");
   const form = useTestForm();
 
@@ -71,21 +68,18 @@ export function AddEditTestDialog({
     if (open) {
       reset();
       form.reset({
-        name: test?.name || "",
-        description: test?.description || "",
-        subject: test?.test_params?.subject || "",
-        topic: test?.test_params?.topic || "",
-        student_age_range: test?.test_params?.student_age_range || "",
-        difficulty_level: test?.test_params?.difficulty_level || "",
-        question_format:
-          test?.test_params?.question_format ||
-          TestParamsQuestionFormat.multiple_choice,
-        number_of_questions: test?.test_params?.number_of_questions || 10,
-        time_per_question_in_minutes:
-          test?.test_params?.time_per_question_in_minutes || 2,
+        name: "",
+        description: "",
+        subject: "",
+        topic: "",
+        student_age_range: "",
+        difficulty_level: "",
+        question_format: TestParamsQuestionFormat.single_choice,
+        number_of_questions: 10,
+        time_per_question_in_minutes: 2,
       });
     }
-  }, [open, test, form, reset]);
+  }, [open, form, reset]);
 
   const handleNext = async () => {
     const isValid = await validateCurrentStep();
@@ -146,9 +140,7 @@ export function AddEditTestDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[600px] max-h-[80vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>
-            {isEditing ? t("edit.title") : t("add.title")}
-          </DialogTitle>
+          <DialogTitle>{t("add.title")}</DialogTitle>
           <DialogDescription>{currentStep.description}</DialogDescription>
         </DialogHeader>
 
@@ -194,9 +186,7 @@ export function AddEditTestDialog({
                     >
                       {form.formState.isSubmitting
                         ? t("buttons.saving")
-                        : isEditing
-                          ? t("buttons.updateTest")
-                          : t("buttons.addTest")}
+                        : t("buttons.addTest")}
                     </Button>
                   )}
                 </div>

@@ -16,7 +16,7 @@ export type GroupFormData = {
   studentIds: string[];
 };
 
-export function useGroupForm(group?: Group) {
+export function useGroupForm(group?: Group | null) {
   const tValidation = useTranslations("Dashboard.groups.dialog.validation");
   const groupSchema = React.useMemo(
     () => createGroupSchema(tValidation),

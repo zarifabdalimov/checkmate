@@ -23,8 +23,8 @@ paths:
       summary: Health check endpoint
       operationId: ping
       responses:
-        '204':
-          description: 'Service is healthy'
+        "204":
+          description: "Service is healthy"
   /api/openapi.yaml:
     get:
       tags:
@@ -32,34 +32,34 @@ paths:
       summary: Get OpenAPI specification
       operationId: getOpenAPISpec
       responses:
-        '200':
-          description: 'OpenAPI specification in YAML format'
+        "200":
+          description: "OpenAPI specification in YAML format"
   /api/v1/students:
     get:
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
         - v1/students
       summary: Get list of students
       operationId: getStudents
       responses:
-        '200':
-          description: 'List of students'
+        "200":
+          description: "List of students"
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Student'
-        '401':
-          description: 'Authentication was not successful'
+                  $ref: "#/components/schemas/Student"
+        "401":
+          description: "Authentication was not successful"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedError'
+                $ref: "#/components/schemas/UnauthorizedError"
     post:
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
         - v1/students
       summary: Create a new student
@@ -69,173 +69,173 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateStudentReq'
+              $ref: "#/components/schemas/CreateStudentReq"
       responses:
-        '201':
-          description: 'Student created successfully'
+        "201":
+          description: "Student created successfully"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Student'
-        '400':
-          description: 'Invalid input data'
+                $ref: "#/components/schemas/Student"
+        "400":
+          description: "Invalid input data"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BadRequestError'
-        '401':
-          description: 'Authentication was not successful'
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedError'
+                $ref: "#/components/schemas/UnauthorizedError"
   /api/v1/students/{student_id}:
     get:
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
         - v1/students
       summary: Get a student by ID
       parameters:
-        - $ref: '#/components/parameters/StudentId'
+        - $ref: "#/components/parameters/StudentId"
       responses:
-        '200':
-          description: 'Student details'
+        "200":
+          description: "Student details"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Student'
-        '400':
-          description: 'Invalid student ID'
+                $ref: "#/components/schemas/Student"
+        "400":
+          description: "Invalid student ID"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BadRequestError'
-        '401':
-          description: 'Authentication was not successful'
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedError'
-        '403':
-          description: 'You do not have permission to access this student'
+                $ref: "#/components/schemas/UnauthorizedError"
+        "403":
+          description: "You do not have permission to access this student"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ForbiddenError'
-        '404':
-          description: 'Student not found'
+                $ref: "#/components/schemas/ForbiddenError"
+        "404":
+          description: "Student not found"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFoundError'
+                $ref: "#/components/schemas/NotFoundError"
     patch:
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
         - v1/students
       summary: Update a student by ID
       parameters:
-        - $ref: '#/components/parameters/StudentId'
+        - $ref: "#/components/parameters/StudentId"
       requestBody:
         description: Student fields to update
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateStudentReq'
+              $ref: "#/components/schemas/UpdateStudentReq"
       responses:
-        '200':
-          description: 'Student updated successfully'
+        "200":
+          description: "Student updated successfully"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Student'
-        '400':
-          description: 'Invalid input data or student ID'
+                $ref: "#/components/schemas/Student"
+        "400":
+          description: "Invalid input data or student ID"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BadRequestError'
-        '401':
-          description: 'Authentication was not successful'
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedError'
-        '403':
-          description: 'You do not have permission to update this student'
+                $ref: "#/components/schemas/UnauthorizedError"
+        "403":
+          description: "You do not have permission to update this student"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ForbiddenError'
-        '404':
-          description: 'Student not found'
+                $ref: "#/components/schemas/ForbiddenError"
+        "404":
+          description: "Student not found"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFoundError'
+                $ref: "#/components/schemas/NotFoundError"
     delete:
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
         - v1/students
       summary: Delete a student by ID
       parameters:
-        - $ref: '#/components/parameters/StudentId'
+        - $ref: "#/components/parameters/StudentId"
       responses:
-        '204':
-          description: 'Student deleted successfully'
-        '400':
-          description: 'Invalid student ID'
+        "204":
+          description: "Student deleted successfully"
+        "400":
+          description: "Invalid student ID"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BadRequestError'
-        '401':
-          description: 'Authentication was not successful'
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedError'
-        '403':
-          description: 'You do not have permission to delete this student'
+                $ref: "#/components/schemas/UnauthorizedError"
+        "403":
+          description: "You do not have permission to delete this student"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ForbiddenError'
-        '404':
-          description: 'Student not found'
+                $ref: "#/components/schemas/ForbiddenError"
+        "404":
+          description: "Student not found"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFoundError'
+                $ref: "#/components/schemas/NotFoundError"
 
   /api/v1/groups:
     get:
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
         - v1/groups
       summary: Get list of groups
       responses:
-        '200':
-          description: 'List of groups'
+        "200":
+          description: "List of groups"
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Group'
-        '401':
-          description: 'Authentication was not successful'
+                  $ref: "#/components/schemas/Group"
+        "401":
+          description: "Authentication was not successful"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedError'
+                $ref: "#/components/schemas/UnauthorizedError"
     post:
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
         - v1/groups
       summary: Create a new group
@@ -245,217 +245,217 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateGroupReq'
+              $ref: "#/components/schemas/CreateGroupReq"
       responses:
-        '201':
-          description: 'Group created successfully'
+        "201":
+          description: "Group created successfully"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Group'
-        '400':
-          description: 'Invalid input data'
+                $ref: "#/components/schemas/Group"
+        "400":
+          description: "Invalid input data"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BadRequestError'
-        '401':
-          description: 'Authentication was not successful'
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedError'
+                $ref: "#/components/schemas/UnauthorizedError"
   /api/v1/groups/{group_id}:
     get:
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
         - v1/groups
       summary: Get a group by ID
       parameters:
-        - $ref: '#/components/parameters/GroupId'
+        - $ref: "#/components/parameters/GroupId"
       responses:
-        '200':
-          description: 'Group details'
+        "200":
+          description: "Group details"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Group'
-        '400':
-          description: 'Invalid group ID'
+                $ref: "#/components/schemas/Group"
+        "400":
+          description: "Invalid group ID"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BadRequestError'
-        '401':
-          description: 'Authentication was not successful'
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedError'
-        '403':
-          description: 'You do not have permission to access this group'
+                $ref: "#/components/schemas/UnauthorizedError"
+        "403":
+          description: "You do not have permission to access this group"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ForbiddenError'
-        '404':
-          description: 'Group not found'
+                $ref: "#/components/schemas/ForbiddenError"
+        "404":
+          description: "Group not found"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFoundError'
+                $ref: "#/components/schemas/NotFoundError"
     patch:
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
         - v1/groups
       summary: Update a group by ID
       parameters:
-        - $ref: '#/components/parameters/GroupId'
+        - $ref: "#/components/parameters/GroupId"
       requestBody:
         description: Group fields to update
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateGroupReq'
+              $ref: "#/components/schemas/UpdateGroupReq"
       responses:
-        '200':
-          description: 'Group updated successfully'
+        "200":
+          description: "Group updated successfully"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Group'
-        '400':
-          description: 'Invalid input data or group ID'
+                $ref: "#/components/schemas/Group"
+        "400":
+          description: "Invalid input data or group ID"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BadRequestError'
-        '401':
-          description: 'Authentication was not successful'
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedError'
-        '403':
-          description: 'You do not have permission to update this group'
+                $ref: "#/components/schemas/UnauthorizedError"
+        "403":
+          description: "You do not have permission to update this group"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ForbiddenError'
-        '404':
-          description: 'Group not found'
+                $ref: "#/components/schemas/ForbiddenError"
+        "404":
+          description: "Group not found"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFoundError'
+                $ref: "#/components/schemas/NotFoundError"
     delete:
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
         - v1/groups
       summary: Delete a group by ID
       parameters:
-        - $ref: '#/components/parameters/GroupId'
+        - $ref: "#/components/parameters/GroupId"
       responses:
-        '204':
-          description: 'Group deleted successfully'
-        '400':
-          description: 'Invalid group ID'
+        "204":
+          description: "Group deleted successfully"
+        "400":
+          description: "Invalid group ID"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BadRequestError'
-        '401':
-          description: 'Authentication was not successful'
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedError'
-        '403':
-          description: 'You do not have permission to delete this group'
+                $ref: "#/components/schemas/UnauthorizedError"
+        "403":
+          description: "You do not have permission to delete this group"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ForbiddenError'
-        '404':
-          description: 'Group not found'
+                $ref: "#/components/schemas/ForbiddenError"
+        "404":
+          description: "Group not found"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFoundError'
+                $ref: "#/components/schemas/NotFoundError"
   /api/v1/tests:
     get:
       security:
-          - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
-          - v1/tests
+        - v1/tests
       summary: Get list of tests
       parameters:
-        - $ref: '#/components/parameters/GroupIdFilter'
-        - $ref: '#/components/parameters/CreatedFromFilter'
-        - $ref: '#/components/parameters/CreatedToFilter'
+        - $ref: "#/components/parameters/GroupIdFilter"
+        - $ref: "#/components/parameters/CreatedFromFilter"
+        - $ref: "#/components/parameters/CreatedToFilter"
       responses:
-          '200':
-            description: 'List of tests'
-            content:
-              application/json:
-                schema:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/Test'
-          '401':
-            description: 'Authentication was not successful'
-            content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/UnauthorizedError'
+        "200":
+          description: "List of tests"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Test"
+        "401":
+          description: "Authentication was not successful"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
     post:
-        security:
-            - bearerAuth: [ ]
-        tags:
-            - v1/tests
-        summary: Create a new test
-        requestBody:
-            description: Test to create
-            required: true
-            content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/CreateTestReq'
-        responses:
-            '201':
-                description: 'Test created successfully'
-                content:
-                  application/json:
-                    schema:
-                      $ref: '#/components/schemas/Test'
-            '400':
-                description: 'Invalid input data'
-                content:
-                  application/json:
-                    schema:
-                      $ref: '#/components/schemas/BadRequestError'
-            '401':
-                description: 'Authentication was not successful'
-                content:
-                  application/json:
-                    schema:
-                      $ref: '#/components/schemas/UnauthorizedError'
-            '403':
-                description: 'Cannot create test for the specified group'
-                content:
-                    application/json:
-                      schema:
-                        $ref: '#/components/schemas/ForbiddenError'
+      security:
+        - bearerAuth: []
+      tags:
+        - v1/tests
+      summary: Create a new test
+      requestBody:
+        description: Test to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateTestReq"
+      responses:
+        "201":
+          description: "Test created successfully"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Test"
+        "400":
+          description: "Invalid input data"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+        "403":
+          description: "Cannot create test for the specified group"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForbiddenError"
   /api/v1/tests/debug:
     post:
       security:
-          - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
-          - v1/tests
+        - v1/tests
       summary: Calls the AI model directly and returns the generated test without saving it to the database.
       requestBody:
         description: Test parameters for generating a test
@@ -463,239 +463,239 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/TestParamsDebug'
+              $ref: "#/components/schemas/TestParamsDebug"
       responses:
-        '200':
-          description: 'Generated test'
+        "200":
+          description: "Generated test"
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/TestItem'
-        '400':
-          description: 'Invalid input data'
+                  $ref: "#/components/schemas/TestItem"
+        "400":
+          description: "Invalid input data"
           content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/BadRequestError'
-        '401':
-          description: 'Authentication was not successful'
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
           content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/UnauthorizedError'
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
   /api/v1/tests/{test_id}/complete:
     post:
       security:
-          - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
-          - v1/tests
+        - v1/tests
       summary: Complete a test, after this user cannot change the test questions anymore.
       parameters:
-          - $ref: '#/components/parameters/TestId'
+        - $ref: "#/components/parameters/TestId"
       responses:
-        '204':
-          description: 'Test completed successfully'
-        '400':
-          description: 'Invalid test ID or test is already completed'
+        "204":
+          description: "Test completed successfully"
+        "400":
+          description: "Invalid test ID or test is already completed"
           content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/BadRequestError'
-        '401':
-          description: 'Authentication was not successful'
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
           content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/UnauthorizedError'
-        '403':
-          description: 'You do not have permission to complete this test'
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+        "403":
+          description: "You do not have permission to complete this test"
           content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/ForbiddenError'
-        '404':
-          description: 'Test not found'
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForbiddenError"
+        "404":
+          description: "Test not found"
           content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/NotFoundError'
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundError"
   /api/v1/tests/{test_id}:
     get:
       security:
-        - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
         - v1/tests
       summary: Get a test by ID
       parameters:
-        - $ref: '#/components/parameters/TestId'
+        - $ref: "#/components/parameters/TestId"
       responses:
-        '200':
-          description: 'Test details'
+        "200":
+          description: "Test details"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Test'
-        '400':
-          description: 'Invalid test ID'
+                $ref: "#/components/schemas/Test"
+        "400":
+          description: "Invalid test ID"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BadRequestError'
-        '401':
-          description: 'Authentication was not successful'
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedError'
-        '403':
-          description: 'You do not have permission to access this test'
+                $ref: "#/components/schemas/UnauthorizedError"
+        "403":
+          description: "You do not have permission to access this test"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ForbiddenError'
-        '404':
-          description: 'Test not found'
+                $ref: "#/components/schemas/ForbiddenError"
+        "404":
+          description: "Test not found"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFoundError'
+                $ref: "#/components/schemas/NotFoundError"
     patch:
       security:
-          - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
-          - v1/tests
+        - v1/tests
       summary: Update a test by ID
       parameters:
-          - $ref: '#/components/parameters/TestId'
+        - $ref: "#/components/parameters/TestId"
       requestBody:
         description: Test fields to update
         required: true
         content:
-            application/json:
-                schema:
-                  $ref: '#/components/schemas/UpdateTestReq'
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateTestReq"
       responses:
-        '200':
-          description: 'Test updated successfully'
-          content:
-            application/json:
-                schema:
-                  $ref: '#/components/schemas/Test'
-        '400':
-          description: 'Invalid input data or test ID'
-          content:
-            application/json:
-                schema:
-                  $ref: '#/components/schemas/BadRequestError'
-        '401':
-          description: 'Authentication was not successful'
-          content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/UnauthorizedError'
-        '403':
-          description: 'You do not have permission to update this test'
-          content:
-              application/json:
-                  schema:
-                    $ref: '#/components/schemas/ForbiddenError'
-        '404':
-          description: 'Test not found'
-          content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/NotFoundError'
-    delete:
-      security:
-          - bearerAuth: [ ]
-      tags:
-          - v1/tests
-      summary: Delete a test by ID
-      parameters:
-          - $ref: '#/components/parameters/TestId'
-      responses:
-        '204':
-          description: 'Test deleted successfully'
-        '400':
-          description: 'Invalid test ID'
-          content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/BadRequestError'
-        '401':
-          description: 'Authentication was not successful'
+        "200":
+          description: "Test updated successfully"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedError'
-        '403':
-          description: 'You do not have permission to delete this test'
+                $ref: "#/components/schemas/Test"
+        "400":
+          description: "Invalid input data or test ID"
           content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/ForbiddenError'
-        '404':
-          description: 'Test not found'
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
           content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/NotFoundError'
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+        "403":
+          description: "You do not have permission to update this test"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForbiddenError"
+        "404":
+          description: "Test not found"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundError"
+    delete:
+      security:
+        - bearerAuth: []
+      tags:
+        - v1/tests
+      summary: Delete a test by ID
+      parameters:
+        - $ref: "#/components/parameters/TestId"
+      responses:
+        "204":
+          description: "Test deleted successfully"
+        "400":
+          description: "Invalid test ID"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+        "403":
+          description: "You do not have permission to delete this test"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForbiddenError"
+        "404":
+          description: "Test not found"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundError"
   /api/v1/tests/results:
     get:
       security:
-          - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
-          - v1/tests/results
+        - v1/tests/results
       summary: Get test results
       parameters:
-          - $ref: '#/components/parameters/TestId'
-          - $ref: '#/components/parameters/TestIdFilter'
-          - $ref: '#/components/parameters/CreatedFromFilter'
-          - $ref: '#/components/parameters/CreatedToFilter'
+        - $ref: "#/components/parameters/TestId"
+        - $ref: "#/components/parameters/TestIdFilter"
+        - $ref: "#/components/parameters/CreatedFromFilter"
+        - $ref: "#/components/parameters/CreatedToFilter"
       responses:
-          '200':
-            description: 'List of test results'
-            content:
-              application/json:
-                schema:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/TestResult'
-          '400':
-            description: 'Invalid test ID'
-            content:
-              application/json:
-                  schema:
-                    $ref: '#/components/schemas/BadRequestError'
-          '401':
-            description: 'Authentication was not successful'
-            content:
-              application/json:
-                  schema:
-                    $ref: '#/components/schemas/UnauthorizedError'
-          '403':
-            description: 'You do not have permission to access results for this test'
-            content:
-              application/json:
-                  schema:
-                    $ref: '#/components/schemas/ForbiddenError'
-          '404':
-            description: 'Test not found'
-            content:
-              application/json:
-                  schema:
-                    $ref: '#/components/schemas/NotFoundError'
+        "200":
+          description: "List of test results"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/TestResult"
+        "400":
+          description: "Invalid test ID"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+        "403":
+          description: "You do not have permission to access results for this test"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForbiddenError"
+        "404":
+          description: "Test not found"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundError"
   /api/v1/tests/{test_id}/results:
     post:
       security:
-          - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
-          - v1/tests/results
+        - v1/tests/results
       summary: Upload test result for specific test. Optionally you can specify student id.
       parameters:
-          - $ref: '#/components/parameters/TestId'
+        - $ref: "#/components/parameters/TestId"
       requestBody:
         description: Request to get presigned URL for uploading test result
         required: true
@@ -708,8 +708,8 @@ paths:
                   type: string
                   format: uuid
       responses:
-        '200':
-          description: 'Returns the presigned URL for uploading the files'
+        "200":
+          description: "Returns the presigned URL for uploading the files"
           content:
             application/json:
               schema:
@@ -719,93 +719,93 @@ paths:
                     type: string
                     format: uri
                     example: "https://s3.amazonaws.com/your-bucket/presigned-url"
-        '400':
-          description: 'Invalid test ID'
+        "400":
+          description: "Invalid test ID"
           content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/BadRequestError'
-        '401':
-          description: 'Authentication was not successful'
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
           content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/UnauthorizedError'
-        '403':
-          description: 'You do not have permission to submit results for this test'
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+        "403":
+          description: "You do not have permission to submit results for this test"
           content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/ForbiddenError'
-        '404':
-          description: 'Test not found'
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForbiddenError"
+        "404":
+          description: "Test not found"
           content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/NotFoundError'
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundError"
   /api/v1/tests/{test_id}/results/bulk:
     post:
-        security:
-            - bearerAuth: [ ]
-        tags:
-            - v1/tests/results
-        summary: Upload multiple test results.
-        parameters:
-          - $ref: '#/components/parameters/TestId'
-        requestBody:
-          description: Request to get presigned URL for uploading multiple test results
+      security:
+        - bearerAuth: []
+      tags:
+        - v1/tests/results
+      summary: Upload multiple test results.
+      parameters:
+        - $ref: "#/components/parameters/TestId"
+      requestBody:
+        description: Request to get presigned URL for uploading multiple test results
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                number_of_files:
+                  type: integer
+                  example: 3
+              required:
+                - number_of_files
+      responses:
+        "200":
+          description: "Returns the presigned URL for uploading the files"
           content:
-              application/json:
-                schema:
-                  type: object
-                  properties:
-                    number_of_files:
-                      type: integer
-                      example: 3
-                  required:
-                  - number_of_files
-        responses:
-            '200':
-              description: 'Returns the presigned URL for uploading the files'
-              content:
-                application/json:
-                  schema:
-                    type: object
-                    properties:
-                      upload_url:
-                        type: string
-                        format: uri
-                        example: "https://s3.amazonaws.com/your-bucket/presigned-url"
-            '400':
-              description: 'Invalid test ID'
-              content:
-                application/json:
-                    schema:
-                      $ref: '#/components/schemas/BadRequestError'
-            '401':
-              description: 'Authentication was not successful'
-              content:
-                application/json:
-                    schema:
-                      $ref: '#/components/schemas/UnauthorizedError'
-            '403':
-              description: 'You do not have permission to submit results for this test'
-              content:
-                application/json:
-                    schema:
-                      $ref: '#/components/schemas/ForbiddenError'
-            '404':
-              description: 'Test not found'
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/NotFoundError'
+            application/json:
+              schema:
+                type: object
+                properties:
+                  upload_url:
+                    type: string
+                    format: uri
+                    example: "https://s3.amazonaws.com/your-bucket/presigned-url"
+        "400":
+          description: "Invalid test ID"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+        "403":
+          description: "You do not have permission to submit results for this test"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForbiddenError"
+        "404":
+          description: "Test not found"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundError"
   /api/v1/tests/{test_id}/results/evaluate:
     post:
       security:
-          - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
-          - v1/tests/results
+        - v1/tests/results
       summary: Trigger OMR evaluation of all uploaded test files for this test.
       description: |
         Scans S3 for uploaded test photos under the test_id directory and processes them using Optical Mark Recognition (OMR) to automatically:
@@ -814,124 +814,124 @@ paths:
         - Extract answers from multiple choice bubbles
         - Grade against the test answer key
         - Create new test_results records in the database
-        
+
         The evaluation processes all image files found in S3 under the test_id prefix and runs synchronously.
       parameters:
-          - $ref: '#/components/parameters/TestId'
+        - $ref: "#/components/parameters/TestId"
       responses:
-        '200':
-          description: 'OMR evaluation completed successfully'
+        "200":
+          description: "OMR evaluation completed successfully"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OMREvaluationResponse'
-        '400':
-          description: 'Invalid test ID'
+                $ref: "#/components/schemas/OMREvaluationResponse"
+        "400":
+          description: "Invalid test ID"
           content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/BadRequestError'
-        '401':
-          description: 'Authentication was not successful'
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
           content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/UnauthorizedError'
-        '403':
-          description: 'You do not have permission to evaluate results for this test'
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+        "403":
+          description: "You do not have permission to evaluate results for this test"
           content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/ForbiddenError'
-        '404':
-          description: 'Test not found'
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForbiddenError"
+        "404":
+          description: "Test not found"
           content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/NotFoundError'
-        '500':
-          description: 'OMR evaluation failed or internal server error'
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundError"
+        "500":
+          description: "OMR evaluation failed or internal server error"
           content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/InternalServerError'
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InternalServerError"
   /api/v1/tests/{test_id}/results/{result_id}:
     get:
       security:
-          - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
-          - v1/tests/results
+        - v1/tests/results
       summary: Get a specific test result by ID
       parameters:
-          - $ref: '#/components/parameters/TestId'
-          - $ref: '#/components/parameters/TestResultId'
+        - $ref: "#/components/parameters/TestId"
+        - $ref: "#/components/parameters/TestResultId"
       responses:
-          '200':
-              description: 'Test result details'
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/TestResult'
-          '400':
-              description: 'Invalid test ID or result ID'
-              content:
-                application/json:
-                  schema:
-                      $ref: '#/components/schemas/BadRequestError'
-          '401':
-              description: 'Authentication was not successful'
-              content:
-                application/json:
-                  schema:
-                      $ref: '#/components/schemas/UnauthorizedError'
-          '403':
-              description: 'You do not have permission to access this test result'
-              content:
-                application/json:
-                  schema:
-                      $ref: '#/components/schemas/ForbiddenError'
-          '404':
-              description: 'Test or result not found'
-              content:
-                application/json:
-                  schema:
-                      $ref: '#/components/schemas/NotFoundError'
+        "200":
+          description: "Test result details"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TestResult"
+        "400":
+          description: "Invalid test ID or result ID"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+        "403":
+          description: "You do not have permission to access this test result"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForbiddenError"
+        "404":
+          description: "Test or result not found"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundError"
     delete:
       security:
-          - bearerAuth: [ ]
+        - bearerAuth: []
       tags:
-          - v1/tests/results
+        - v1/tests/results
       summary: Delete a specific test result by ID
       parameters:
-          - $ref: '#/components/parameters/TestId'
-          - $ref: '#/components/parameters/TestResultId'
+        - $ref: "#/components/parameters/TestId"
+        - $ref: "#/components/parameters/TestResultId"
       responses:
-          '204':
-              description: 'Test result deleted successfully'
-          '400':
-              description: 'Invalid test ID or result ID'
-              content:
-                  application/json:
-                    schema:
-                      $ref: '#/components/schemas/BadRequestError'
-          '401':
-              description: 'Authentication was not successful'
-              content:
-                  application/json:
-                    schema:
-                      $ref: '#/components/schemas/UnauthorizedError'
-          '403':
-              description: 'You do not have permission to delete this test result'
-              content:
-                  application/json:
-                    schema:
-                      $ref: '#/components/schemas/ForbiddenError'
-          '404':
-              description: 'Test or result not found'
-              content:
-                  application/json:
-                    schema:
-                      $ref: '#/components/schemas/NotFoundError'
+        "204":
+          description: "Test result deleted successfully"
+        "400":
+          description: "Invalid test ID or result ID"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BadRequestError"
+        "401":
+          description: "Authentication was not successful"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnauthorizedError"
+        "403":
+          description: "You do not have permission to delete this test result"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForbiddenError"
+        "404":
+          description: "Test or result not found"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFoundError"
 components:
   schemas:
     CreateStudentReq:
@@ -982,10 +982,10 @@ components:
         name:
           type: string
         student_ids:
-            type: array
-            items:
-              type: string
-              format: uuid
+          type: array
+          items:
+            type: string
+            format: uuid
       required:
         - name
         - students_ids
@@ -995,7 +995,7 @@ components:
         name:
           type: string
         students_ids:
-          type : array
+          type: array
           items:
             type: string
             format: uuid
@@ -1031,10 +1031,10 @@ components:
           type: string
           example: "Quick test on monday to test past simple"
         scheduled_at:
-          type: string 
+          type: string
           format: date-time
         test_params:
-            $ref: '#/components/schemas/TestParams'
+          $ref: "#/components/schemas/TestParams"
       required:
         - group_id
         - name
@@ -1043,19 +1043,19 @@ components:
     UpdateTestReq:
       type: object
       properties:
-          name:
-            type: string
-            example: "Past simple"
-          description:
-            type: string
-            example: "Quick test on monday to test past simple"
-          scheduled_at:
-            type: string
-            format: date-time
-          content:
-            type: array
-            items:
-              $ref: '#/components/schemas/TestItem'
+        name:
+          type: string
+          example: "Past simple"
+        description:
+          type: string
+          example: "Quick test on monday to test past simple"
+        scheduled_at:
+          type: string
+          format: date-time
+        content:
+          type: array
+          items:
+            $ref: "#/components/schemas/TestItem"
 
     Test:
       type: object
@@ -1081,11 +1081,11 @@ components:
           type: string
           format: date-time
         test_params:
-            $ref: '#/components/schemas/TestParams'
+          $ref: "#/components/schemas/TestParams"
         content:
           type: array
           items:
-              $ref: '#/components/schemas/TestItem'
+            $ref: "#/components/schemas/TestItem"
         created_at:
           type: string
           format: date-time
@@ -1099,7 +1099,6 @@ components:
         - name
         - schedulated_at
         - test_params
-        - content
         - created_at
         - updated_at
     TestParams:
@@ -1132,7 +1131,7 @@ components:
         - time_per_question_in_minutes
     TestParamsDebug:
       allOf:
-        - $ref: '#/components/schemas/TestParams'
+        - $ref: "#/components/schemas/TestParams"
         - type: object
           properties:
             max_tokens:
@@ -1161,7 +1160,7 @@ components:
         options:
           type: array
           items:
-            $ref: '#/components/schemas/TestItemOptions'
+            $ref: "#/components/schemas/TestItemOptions"
       required:
         - q
         - question
@@ -1198,6 +1197,7 @@ components:
             - pending
             - failed
             - evaluated
+            - pending_assignment
         correct_answers:
           type: integer
         wrong_answers:
@@ -1211,8 +1211,8 @@ components:
           format: url
           example: https://my-bucket-name.s3.us-west-2.amazonaws.com/photos/image1.jpg
       required:
-      - id
-      - status
+        - id
+        - status
 
     OMREvaluationResponse:
       type: object
@@ -1239,7 +1239,7 @@ components:
         evaluation_details:
           type: array
           items:
-            $ref: '#/components/schemas/OMREvaluationDetail'
+            $ref: "#/components/schemas/OMREvaluationDetail"
       required:
         - message
         - test_id
@@ -1305,46 +1305,46 @@ components:
       properties:
         errorCode:
           type: string
-          example: '401'
+          example: "401"
         errorMessage:
           type: string
-          example: 'JWT token is missing or invalid.'
+          example: "JWT token is missing or invalid."
     BadRequestError:
       type: object
       properties:
         errorCode:
           type: string
-          example: '400'
+          example: "400"
         errorMessage:
           type: string
-          example: 'Invalid input data.'
+          example: "Invalid input data."
     ForbiddenError:
       type: object
       properties:
         errorCode:
           type: string
-          example: '403'
+          example: "403"
         errorMessage:
           type: string
-          example: 'You do not have permission to access this resource.'
+          example: "You do not have permission to access this resource."
     NotFoundError:
       type: object
       properties:
         errorCode:
           type: string
-          example: '404'
+          example: "404"
         errorMessage:
           type: string
-          example: 'Resource not found.'
+          example: "Resource not found."
     InternalServerError:
       type: object
       properties:
         errorCode:
           type: string
-          example: '500'
+          example: "500"
         errorMessage:
           type: string
-          example: 'Internal server error occurred during processing.'
+          example: "Internal server error occurred during processing."
   parameters:
     StudentId:
       name: student_id
@@ -1384,32 +1384,32 @@ components:
       description: UUID of the group filter
       required: false
       schema:
-          type: string
-          format: uuid
+        type: string
+        format: uuid
     CreatedFromFilter:
       name: created_from_filter
       in: query
       description: Filter results created from this date (inclusive)
       required: false
       schema:
-          type: string
-          format: date-time
+        type: string
+        format: date-time
     CreatedToFilter:
       name: created_to_filter
       in: query
       description: Filter results created up to this date (inclusive)
       required: false
       schema:
-          type: string
-          format: date-time
+        type: string
+        format: date-time
     TestIdFilter:
       name: test_id_filter
       in: query
       description: UUID of the test filter
       required: false
       schema:
-          type: string
-          format: uuid
+        type: string
+        format: uuid
   securitySchemes:
     bearerAuth:
       type: http

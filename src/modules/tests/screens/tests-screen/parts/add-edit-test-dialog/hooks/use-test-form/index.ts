@@ -1,4 +1,4 @@
-import { Test, TestParamsQuestionFormat } from "@/lib/api/generated/model";
+import { TestParamsQuestionFormat } from "@/lib/api/generated/model";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import * as React from "react";
@@ -29,7 +29,7 @@ export const createTestSchema = (t: ReturnType<typeof useTranslations>) =>
 
 export type TestFormData = z.infer<ReturnType<typeof createTestSchema>>;
 
-export function useTestForm(test?: Test) {
+export function useTestForm() {
   const tValidation = useTranslations("Dashboard.tests.dialog.validation");
   const testSchema = React.useMemo(
     () => createTestSchema(tValidation),
@@ -38,19 +38,5 @@ export function useTestForm(test?: Test) {
 
   return useForm<TestFormData>({
     resolver: zodResolver(testSchema),
-    defaultValues: {
-      name: test?.name ?? "",
-      description: test?.description ?? "",
-      subject: test?.test_params?.subject ?? "",
-      topic: test?.test_params?.topic ?? "",
-      student_age_range: test?.test_params?.student_age_range ?? "",
-      difficulty_level: test?.test_params?.difficulty_level ?? "",
-      question_format:
-        test?.test_params?.question_format ??
-        TestParamsQuestionFormat.multiple_choice,
-      number_of_questions: test?.test_params?.number_of_questions ?? 10,
-      time_per_question_in_minutes:
-        test?.test_params?.time_per_question_in_minutes ?? 2,
-    },
   });
 }

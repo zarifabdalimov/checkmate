@@ -37,11 +37,11 @@ export function QuestionsStep() {
                   />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value={TestParamsQuestionFormat.multiple_choice}>
-                    {t("form.questionFormat.options.multipleChoice")}
-                  </SelectItem>
                   <SelectItem value={TestParamsQuestionFormat.single_choice}>
                     {t("form.questionFormat.options.singleChoice")}
+                  </SelectItem>
+                  <SelectItem value={TestParamsQuestionFormat.multiple_choice}>
+                    {t("form.questionFormat.options.multipleChoice")}
                   </SelectItem>
                 </SelectContent>
               </Select>

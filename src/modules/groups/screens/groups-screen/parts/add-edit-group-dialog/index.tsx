@@ -42,7 +42,7 @@ export function AddEditGroupDialog({
   const studentsQuery = useGetStudents();
   const isEditing = !!group;
   const t = useTranslations("Dashboard.groups.dialog");
-  const form = useGroupForm();
+  const form = useGroupForm(group);
 
   // Convert students data to MultiSelect options
   const studentOptions = useMemo(() => {
