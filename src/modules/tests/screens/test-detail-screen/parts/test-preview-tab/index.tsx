@@ -14,7 +14,7 @@ export function TestPreviewTab({ test }: TestPreviewTabProps) {
   const questionCount = test.content?.length ?? 0;
 
   return (
-    <div className="max-w-4xl space-y-6 py-8">
+    <div className="max-w-4xl space-y-10 py-10">
       <div className="text-center">
         <h1 className="text-2xl font-bold mb-2">{test.name}</h1>
         {test.description && <p className="text-lg mb-2">{test.description}</p>}
@@ -31,11 +31,11 @@ export function TestPreviewTab({ test }: TestPreviewTabProps) {
         </div>
       </div>
       <Separator className="bg-black" />
-      <div className="space-y-6">
+      <div className="space-y-4">
         {test.content?.map((item) => (
           <div key={item.q} className="space-y-2">
             <div>
-              <span className="text-lg">
+              <span className="text-sm">
                 <span>{item.q}. </span>
                 {item.question}
               </span>
@@ -44,7 +44,7 @@ export function TestPreviewTab({ test }: TestPreviewTabProps) {
             <div className="space-y-1">
               {item.options.map((option, optionIndex) => (
                 <div key={option.order} className="flex items-start gap-3">
-                  <span className="text-md">
+                  <span className="text-xs">
                     <span className="font-bold">
                       {String.fromCharCode(65 + optionIndex)}.{" "}
                     </span>
