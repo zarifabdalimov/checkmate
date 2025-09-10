@@ -70,6 +70,7 @@ export function AddEditTestDialog({
       form.reset({
         name: "",
         description: "",
+        group_id: "",
         subject: "",
         topic: "",
         student_age_range: "",
@@ -109,7 +110,7 @@ export function AddEditTestDialog({
   const getFieldsForStep = (stepIndex: number): (keyof TestFormData)[] => {
     switch (stepIndex) {
       case 0:
-        return ["name", "description"];
+        return ["name", "description", "group_id"];
       case 1:
         return ["subject", "topic", "student_age_range", "difficulty_level"];
       case 2:

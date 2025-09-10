@@ -24,7 +24,7 @@ export function TestsScreen() {
       data: {
         name: data.name,
         description: data.description,
-        group_id: "06830463-da67-4882-9846-040c885845aa", // This should be set based on current context
+        group_id: data.group_id,
         test_params: {
           subject: data.subject,
           topic: data.topic,

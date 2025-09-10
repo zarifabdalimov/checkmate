@@ -9,6 +9,7 @@ export const createTestSchema = (t: ReturnType<typeof useTranslations>) =>
   z.object({
     name: z.string().min(1, t("nameRequired")).max(100, t("nameTooLong")),
     description: z.string().optional(),
+    group_id: z.string().min(1, t("groupRequired")),
     subject: z
       .string()
       .min(1, t("subjectRequired"))

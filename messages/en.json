@@ -400,6 +400,10 @@
             "label": "Description",
             "placeholder": "Enter test description"
           },
+          "group": {
+            "label": "Group",
+            "placeholder": "Select a group"
+          },
           "subject": {
             "label": "Subject",
             "placeholder": "Enter subject"
@@ -464,6 +468,7 @@
         "validation": {
           "nameRequired": "Name is required",
           "nameTooLong": "Name is too long",
+          "groupRequired": "Group is required",
           "subjectRequired": "Subject is required",
           "subjectTooLong": "Subject is too long",
           "topicRequired": "Topic is required",
