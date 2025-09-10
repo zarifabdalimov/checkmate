@@ -536,6 +536,23 @@
           "title": "AI is preparing your test",
           "description": "This test is currently being prepared for AI evaluation"
         }
+      },
+      "testResult": {
+        "loading": "Loading test result...",
+        "error": "Error loading test result",
+        "notFound": "No test result found",
+        "studentInfo": {
+          "title": "Student Information",
+          "name": "Name",
+          "score": "Score",
+          "scoreValue": "{correct} correct / {wrong} wrong"
+        },
+        "questions": {
+          "title": "Test Questions",
+          "questionNumber": "Question {number}",
+          "studentAnswer": "Student's Answer",
+          "correctAnswer": "Correct Answer"
+        }
       }
     },
     "mutations": {
