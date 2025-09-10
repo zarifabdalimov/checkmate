@@ -117,14 +117,14 @@ export function ContentEditorStep() {
                             )
                           }
                           value={field.value || ""}
-                          className="space-y-2"
                         >
                           {Array.from({ length: 4 }, (_, optionIndex) => (
                             <div
                               key={optionIndex}
-                              className="flex gap-2 items-center"
+                              className="flex items-center gap-2"
                             >
-                              <span className="w-8 text-sm font-medium">
+                              <RadioGroupItem value={optionIndex.toString()} />
+                              <span className="text-sm font-medium">
                                 {String.fromCharCode(65 + optionIndex)}.
                               </span>
                               <FormField
@@ -149,10 +149,6 @@ export function ContentEditorStep() {
                                   </FormItem>
                                 )}
                               />
-                              <RadioGroupItem
-                                value={optionIndex.toString()}
-                                className="shrink-0"
-                              />
                             </div>
                           ))}
                         </RadioGroup>
@@ -166,6 +162,10 @@ export function ContentEditorStep() {
           </Card>
         ))}
 
+        <Button type="button" onClick={addQuestion}>
+          <Plus />
+          {t("form.content.addQuestion")}
+        </Button>
         {fields.length === 0 && (
           <div className="text-center py-8 text-muted-foreground">
             {t("form.content.noQuestions")}

@@ -42,10 +42,12 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-success: var(--success);
 }
 
 :root {
   --radius: 0.625rem;
+  --success: oklch(0.728 0.159 134.256);
   --background: oklch(0.973 0.015 75);
   --foreground: oklch(0.28 0.05 35);
   --card: oklch(0.984 0.015 80.708);
