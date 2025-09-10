@@ -772,10 +772,14 @@ paths:
               schema:
                 type: object
                 properties:
-                  upload_url:
-                    type: string
-                    format: uri
-                    example: "https://s3.amazonaws.com/your-bucket/presigned-url"
+                  upload_urls:
+                    type: array
+                    items:
+                      type: string
+                      format: uri
+                    example:
+                      - "https://s3.amazonaws.com/your-bucket/presigned-url-1"
+                      - "https://s3.amazonaws.com/your-bucket/presigned-url-2"
         "400":
           description: "Invalid test ID"
           content:

@@ -40,7 +40,7 @@ export function TestDetailScreen() {
         <TestResultsTab />
       </TabsContent>
       <TabsContent value="upload-results">
-        <UploadResultsTab />
+        <UploadResultsTab test={testQuery.data} />
       </TabsContent>
     </Tabs>
   );
