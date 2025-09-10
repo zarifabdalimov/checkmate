@@ -35,9 +35,9 @@ export function SignUpScreen() {
   const form = useForm<SignUpFormData>({
     resolver: zodResolver(createSignUpSchema(tValidation)),
     defaultValues: {
-      email: "zarif.abdalimov@gmail.com",
-      password: "123123123",
-      confirmPassword: "123123123",
+      email: "",
+      password: "",
+      confirmPassword: "",
     },
   });
 
