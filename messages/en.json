@@ -480,6 +480,31 @@
           "timeMin": "Minimum 0.5 minutes per question",
           "timeMax": "Maximum 60 minutes per question"
         }
+      },
+      "uploadResults": {
+        "title": "Upload Results",
+        "description": "Upload images of completed test papers for AI evaluation.",
+        "uploadButton": {
+          "idle": "Upload Files",
+          "uploading": "Uploading..."
+        },
+        "dropzone": {
+          "description": "Please select up to 10 images",
+          "trigger": {
+            "title": "Upload listing images",
+            "subtitle": "Click here or drag and drop to upload"
+          }
+        },
+        "fileStatus": {
+          "uploading": "Uploading...",
+          "uploaded": "Uploaded",
+          "failed": "Upload failed"
+        },
+        "fileSize": "{size} MB",
+        "messages": {
+          "uploadSuccess": "Upload completed successfully",
+          "uploadError": "Upload failed"
+        }
       }
     },
     "mutations": {
@@ -523,31 +548,6 @@
         "delete": {
           "error": "Failed to delete test",
           "success": "Test deleted successfully"
-        }
-      },
-      "uploadResults": {
-        "title": "Upload Results",
-        "description": "Upload images of completed test papers for AI evaluation.",
-        "uploadButton": {
-          "idle": "Upload Files",
-          "uploading": "Uploading..."
-        },
-        "dropzone": {
-          "description": "Please select up to 10 images",
-          "trigger": {
-            "title": "Upload listing images",
-            "subtitle": "Click here or drag and drop to upload"
-          }
-        },
-        "fileStatus": {
-          "uploading": "Uploading...",
-          "uploaded": "Uploaded",
-          "failed": "Upload failed"
-        },
-        "fileSize": "{size} MB",
-        "messages": {
-          "uploadSuccess": "Upload completed successfully",
-          "uploadError": "Upload failed"
         }
       }
     }
