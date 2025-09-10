@@ -53,7 +53,7 @@ export function TestDetailScreen() {
   }
 
   return (
-    <Tabs defaultValue="test-preview" className="w-full">
+    <Tabs defaultValue="test-preview" className="max-w-4xl">
       <TabsList className="print:hidden">
         <TabsTrigger value="test-preview">{t("tabs.testPreview")}</TabsTrigger>
         <TabsTrigger value="upload-results">
