@@ -16,6 +16,7 @@ import {
 } from "@/modules/ui/sidebar";
 import { BookOpen, FileText, Users } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Image from 'next/image'
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -46,9 +47,12 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarHeader>
         <div className="flex items-center gap-2 px-2 py-1">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-            <BookOpen className="h-4 w-4" />
-          </div>
+          <Image
+            alt="CheckMate.ink"
+            src="/logo.png"
+            width={36}
+            height={36}
+          />
           <div className="grid flex-1 text-left text-sm leading-tight">
             <span className="truncate font-bold font-serif">
               {t("brand.title")}
