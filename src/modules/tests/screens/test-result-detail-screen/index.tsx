@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/modules/ui/card";
 import { Spinner } from "@/modules/ui/spinner";
 import { useTranslations } from "next-intl";
 import { Grade } from "@/modules/components/grade";
+import { TestImageViewer } from "./parts/test-image-viewer";
 
 export function TestResultDetailScreen() {
   const t = useTranslations("Dashboard.tests.testResult");
@@ -80,6 +81,35 @@ export function TestResultDetailScreen() {
           </div>
         </CardContent>
       </Card>
+
+      {/* Test Images */}
+      {(testResult.original_file_url || testResult.evaluated_file_url) && (
+        <Card>
+          <CardHeader>
+            <CardTitle>{t("images.title")}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              {testResult.original_file_url && (
+                <TestImageViewer
+                  imageUrl={testResult.original_file_url}
+                  title={t("images.original")}
+                  viewFullscreenLabel={t("images.viewFullscreen")}
+                  closeFullscreenLabel={t("images.closeFullscreen")}
+                />
+              )}
+              {testResult.evaluated_file_url && (
+                <TestImageViewer
+                  imageUrl={testResult.evaluated_file_url}
+                  title={t("images.evaluated")}
+                  viewFullscreenLabel={t("images.viewFullscreen")}
+                  closeFullscreenLabel={t("images.closeFullscreen")}
+                />
+              )}
+            </div>
+          </CardContent>
+        </Card>
+      )}
 
       {/* Test Questions */}
       {testResult.test_with_answers && (

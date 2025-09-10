@@ -552,6 +552,14 @@
           "questionNumber": "Question {number}",
           "studentAnswer": "Student's Answer",
           "correctAnswer": "Correct Answer"
+        },
+        "images": {
+          "title": "Test Images",
+          "original": "Original Test",
+          "evaluated": "Evaluated Test",
+          "viewFullscreen": "View Fullscreen",
+          "closeFullscreen": "Close",
+          "noImages": "No test images available"
         }
       }
     },
