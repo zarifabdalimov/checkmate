@@ -297,6 +297,7 @@
         "columns": {
           "id": "ID",
           "name": "Name",
+          "studentsCount": "Students Count",
           "actions": "Actions"
         },
         "actions": {
@@ -348,6 +349,10 @@
       "table": {
         "columns": {
           "name": "Name",
+          "subject": "Subject",
+          "topic": "Topic",
+          "studentAgeRange": "Age Range",
+          "difficultyLevel": "Difficulty",
           "actions": "Actions"
         },
         "actions": {

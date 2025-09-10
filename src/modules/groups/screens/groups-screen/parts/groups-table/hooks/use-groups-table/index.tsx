@@ -30,6 +30,10 @@ export function useGroupsTable({
         header: t("columns.name"),
         cell: (info) => info.getValue(),
       }),
+      columnHelper.accessor("student_ids", {
+        header: t("columns.studentsCount"),
+        cell: (info) => info.getValue()?.length ?? 0,
+      }),
       columnHelper.display({
         id: "actions",
         header: t("columns.actions"),

@@ -3,6 +3,7 @@
 import { Button } from "@/modules/ui/button";
 import { GraduationCap, BookOpen, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export function Hero() {
   const t = useTranslations("LandingPage.hero");
@@ -30,21 +31,15 @@ export function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-          <Button
-            size="lg"
-            className="text-lg font-semibold px-8 py-4 h-auto shadow-lg hover:shadow-xl transition-all"
-          >
-            <GraduationCap className="w-5 h-5 mr-2" />
-            {t("getStarted")}
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="text-lg font-semibold px-8 py-4 h-auto border-2 hover:bg-primary/5 transition-all"
-          >
-            <BookOpen className="w-5 h-5 mr-2" />
-            {t("watchDemo")}
-          </Button>
+          <Link href="/auth/sign-up">
+            <Button
+              size="lg"
+              className="text-lg font-semibold px-8 py-4 h-auto shadow-lg hover:shadow-xl transition-all"
+            >
+              <GraduationCap className="w-5 h-5 mr-2" />
+              {t("getStarted")}
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

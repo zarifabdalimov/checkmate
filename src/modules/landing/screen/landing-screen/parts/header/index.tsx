@@ -42,12 +42,6 @@ export function Header() {
               {t("navigation.howItWorks")}
             </button>
             <button
-              onClick={() => scrollToSection("pricing")}
-              className="text-muted-foreground hover:text-foreground transition-colors font-medium"
-            >
-              {t("navigation.pricing")}
-            </button>
-            <button
               onClick={() => scrollToSection("about")}
               className="text-muted-foreground hover:text-foreground transition-colors font-medium"
             >

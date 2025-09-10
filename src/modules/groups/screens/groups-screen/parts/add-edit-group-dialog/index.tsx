@@ -59,12 +59,13 @@ export function AddEditGroupDialog({
     if (open) {
       form.reset({
         name: group?.name || "",
-        studentIds: [],
+        studentIds: group?.student_ids,
       });
     }
   }, [open, group, form]);
 
   const handleSubmit = (data: GroupFormData) => {
+    console.log('[debug]', data)
     onSubmit(data);
     onOpenChange(false);
     form.reset();
