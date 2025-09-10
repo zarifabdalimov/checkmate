@@ -40,7 +40,7 @@ export function UploadResultsTab({ test }: UploadResultsTabProps) {
         "image/*": [".png", ".jpg", ".jpeg"],
       },
       maxSize: 10 * 1024 * 1024,
-      maxFiles: 10,
+      maxFiles: 30,
     },
   });
 

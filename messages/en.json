@@ -502,7 +502,7 @@
           "uploading": "Uploading..."
         },
         "dropzone": {
-          "description": "Please select up to 10 images",
+          "description": "Please select up to 30 images",
           "trigger": {
             "title": "Upload listing images",
             "subtitle": "Click here or drag and drop to upload"
