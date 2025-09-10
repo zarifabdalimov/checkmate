@@ -516,6 +516,7 @@
       },
       "testDetail": {
         "tabs": {
+          "testPreview": "Test Preview",
           "editTest": "Edit Test",
           "testResults": "Test Results",
           "uploadResults": "Upload Results"

@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
 import * as React from "react";
 import { EditTestTab } from "./parts/edit-test-tab";
+import { TestPreviewTab } from "./parts/test-preview-tab";
 import { TestResultsTab } from "./parts/test-results-tab";
 import { UploadResultsTab } from "./parts/upload-results-tab";
 
@@ -52,13 +53,17 @@ export function TestDetailScreen() {
   }
 
   return (
-    <Tabs defaultValue="upload-results" className="w-full">
-      <TabsList>
+    <Tabs defaultValue="test-preview" className="w-full">
+      <TabsList className="print:hidden">
+        <TabsTrigger value="test-preview">{t("tabs.testPreview")}</TabsTrigger>
         <TabsTrigger value="upload-results">
           {t("tabs.uploadResults")}
         </TabsTrigger>
         <TabsTrigger value="test-results">{t("tabs.testResults")}</TabsTrigger>
       </TabsList>
+      <TabsContent value="test-preview">
+        <TestPreviewTab test={testQuery.data} />
+      </TabsContent>
       <TabsContent value="test-results">
         <TestResultsTab />
       </TabsContent>

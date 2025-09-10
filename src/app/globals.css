@@ -129,3 +129,79 @@
     @apply font-serif;
   }
 }
+
+/* Print Styles - Hide browser headers/footers and unwanted elements */
+@media print {
+  /* Hide all print:hidden elements */
+  .print\\:hidden {
+    display: none !important;
+  }
+
+  /* Aggressive browser header/footer removal */
+  @page {
+    margin: 0;
+    size: auto;
+  }
+
+  /* Hide browser print headers completely */
+  html,
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Force hide all browser print elements */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide navigation and layout elements */
+  header,
+  nav,
+  aside,
+  .sidebar,
+  .header {
+    display: none !important;
+  }
+
+  /* Remove any browser-generated content */
+  body::before,
+  body::after,
+  html::before,
+  html::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  /* Chrome/Safari specific */
+  @-webkit-keyframes hide-print-headers {
+    from {
+      margin-top: 0;
+    }
+    to {
+      margin-top: 0;
+    }
+  }
+
+  /* Firefox specific */
+  @-moz-document url-prefix() {
+    @page {
+      margin: 0;
+    }
+  }
+
+  /* Ensure content takes full page */
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: auto !important;
+  }
+
+  /* Hide any remaining print artifacts */
+  ::-webkit-scrollbar {
+    display: none !important;
+  }
+}

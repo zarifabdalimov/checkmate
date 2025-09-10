@@ -58,7 +58,7 @@ export function ContentEditorStep() {
       <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle>{t("form.content.title")}</CardTitle>
         <Button type="button" onClick={addQuestion}>
-          <Plus/>
+          <Plus />
           {t("form.content.addQuestion")}
         </Button>
       </CardHeader>
@@ -77,7 +77,7 @@ export function ContentEditorStep() {
                 size="sm"
                 onClick={() => remove(questionIndex)}
               >
-                <Trash/>
+                <Trash />
                 {t("form.content.removeQuestion")}
               </Button>
             </div>
