@@ -1,11 +1,11 @@
 "use client";
 
 import { useGetApiV1TestsTestIdResultsResultId } from "@/lib/api/generated/aPIForCheckmateApp";
-import { useParams } from "next/navigation";
-import { Card, CardContent, CardHeader, CardTitle } from "@/modules/ui/card";
-import { Spinner } from "@/modules/ui/spinner";
-import { useTranslations } from "next-intl";
 import { Grade } from "@/modules/components/grade";
+import { Status } from "@/modules/components/status";
+import { Card, CardContent, CardHeader, CardTitle } from "@/modules/ui/card";
+import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 import { TestImageViewer } from "./parts/test-image-viewer";
 
 export function TestResultDetailScreen() {
@@ -21,28 +21,14 @@ export function TestResultDetailScreen() {
   );
 
   if (testResultDetailQuery.isLoading) {
-    return (
-      <div className="flex h-[50vh] items-center justify-center">
-        <Spinner />
-      </div>
-    );
-  }
-
-  if (testResultDetailQuery.isError) {
-    return (
-      <div className="flex h-[50vh] items-center justify-center text-destructive">
-        {t("error")}
-      </div>
-    );
+    return <Status isLoading />;
   }
 
   const testResult = testResultDetailQuery.data;
 
-  if (!testResult) {
+  if (testResultDetailQuery.isError || !testResult) {
     return (
-      <div className="flex h-[50vh] items-center justify-center text-muted-foreground">
-        {t("notFound")}
-      </div>
+      <Status title={t("error")} description={t("error")} icon="alert-circle" />
     );
   }
 
