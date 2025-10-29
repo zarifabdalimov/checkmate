@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { Button } from "@/modules/ui/button";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { LanguageSelector } from "./language-selector";
 
 export function Header() {
   const t = useTranslations("LandingPage.header");
@@ -48,6 +49,7 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <LanguageSelector />
             {auth.data ? (
               <Button className="font-medium shadow-sm" asChild>
                 <Link href="/dashboard">{t("auth.dashboard")}</Link>
