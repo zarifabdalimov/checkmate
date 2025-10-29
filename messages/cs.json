@@ -1,0 +1,615 @@
+{
+  "HomePage": {
+    "title": "Vítejte!",
+    "getStarted": "Začněte úpravou",
+    "saveChanges": "Uložte a uvidíte změny okamžitě.",
+    "deployNow": "Nasadit nyní",
+    "readDocs": "Přečtěte si dokumentaci",
+    "learn": "Učit se",
+    "examples": "Příklady",
+    "goToNextjs": "Přejít na nextjs.org"
+  },
+  "LandingPage": {
+    "header": {
+      "navigation": {
+        "features": "Funkce",
+        "howItWorks": "Jak to funguje",
+        "pricing": "Ceník",
+        "about": "O nás"
+      },
+      "auth": {
+        "dashboard": "Nástěnka",
+        "signIn": "Přihlásit se",
+        "signUp": "Registrovat se"
+      }
+    },
+    "hero": {
+      "badge": "Vzdělávací platforma s umělou inteligencí",
+      "title": "Transformujte\ntestování pomocí <highlight>AI</highlight>",
+      "titleHighlight": "umělé inteligence",
+      "subtitle": "Umožněte učitelům vytvářet inteligentní hodnocení a poskytovat studentům personalizovanou zpětnou vazbu a studijní pomoc s AI.",
+      "getStarted": "Začněte zdarma",
+      "watchDemo": "Shlédnout demo",
+      "stats": {
+        "testsGenerated": "Vygenerovaných testů",
+        "teachers": "Učitelů",
+        "studentsHelped": "Podpořených studentů"
+      }
+    },
+    "features": {
+      "title": "Kompletní řešení pro hodnocení",
+      "subtitle": "Od tvorby testů po personalizovanou zpětnou vazbu, naše platforma zvládá celý proces vzdělávacího hodnocení.",
+      "aiTestGeneration": {
+        "title": "Generování testů pomocí AI",
+        "description": "Vytvářejte komplexní testy okamžitě s naší pokročilou AI, která rozumí vašemu učebnímu plánu a vzdělávacím cílům."
+      },
+      "automatedGrading": {
+        "title": "Automatické hodnocení",
+        "description": "Ušetřete hodiny času s inteligentním hodnocením, které poskytuje detailní zpětnou vazbu a automaticky identifikuje mezery ve vzdělávání."
+      },
+      "studentInsights": {
+        "title": "Přehled o studentech",
+        "description": "Sledujte pokrok studentů s detailní analytikou a poskytujte personalizovaná doporučení pro učení."
+      },
+      "personalAiTutor": {
+        "title": "Osobní AI tutor",
+        "description": "Získejte okamžitá vysvětlení a studijní vedení přizpůsobené vašim specifickým potřebám a chybám."
+      },
+      "interactiveResults": {
+        "title": "Interaktivní výsledky",
+        "description": "Přistupujte k výsledkům testů přes personalizovaný odkaz s detailními vysvětleními a návrhy na zlepšení."
+      },
+      "studyMaterials": {
+        "title": "Studijní materiály",
+        "description": "Získejte vybrané studijní materiály a cvičné otázky na základě vašeho výkonu a studijních cílů."
+      }
+    },
+    "howItWorks": {
+      "title": "Jak to funguje",
+      "subtitle": "Jednoduchý, výkonný pracovní postup, který transformuje tradiční testování na inteligentní vzdělávací zkušenost.",
+      "steps": {
+        "generateTest": {
+          "title": "Vygenerovat test",
+          "description": "Učitelé používají AI k vytváření přizpůsobených testů na základě jejich učebního plánu a vzdělávacích cílů."
+        },
+        "printDistribute": {
+          "title": "Tisk a distribuce",
+          "description": "Vytiskněte vygenerovaný test a rozdejte studentům pro tradiční papírové hodnocení."
+        },
+        "aiEvaluation": {
+          "title": "AI hodnocení",
+          "description": "Naše AI vyhodnocuje dokončené testy a generuje detailní zpětnou vazbu a vysvětlení."
+        },
+        "personalizedLearning": {
+          "title": "Personalizované učení",
+          "description": "Studenti obdrží personalizované odkazy s výsledky, vysvětleními a podporou AI tutora."
+        }
+      }
+    },
+    "cta": {
+      "title": "Připraveni transformovat vaši třídu?",
+      "subtitle": "Připojte se k tisícům pedagogů, kteří již používají AI k vytváření lepších vzdělávacích zkušeností pro své studenty.",
+      "startTrial": "Začít zkušební verzi zdarma",
+      "scheduleDemo": "Naplánovat demo"
+    },
+    "footer": {
+      "tagline": "Transformujeme vzdělávání pomocí AI hodnocení",
+      "product": {
+        "title": "Produkt",
+        "features": "Funkce",
+        "pricing": "Ceník",
+        "demo": "Demo",
+        "documentation": "Dokumentace"
+      },
+      "company": {
+        "title": "Společnost",
+        "about": "O nás",
+        "careers": "Kariéra",
+        "blog": "Blog",
+        "contact": "Kontakt"
+      },
+      "support": {
+        "title": "Podpora",
+        "helpCenter": "Centrum nápovědy",
+        "tutorials": "Tutoriály",
+        "community": "Komunita",
+        "status": "Stav služby"
+      },
+      "legal": {
+        "title": "Právní",
+        "privacy": "Ochrana soukromí",
+        "terms": "Podmínky služby",
+        "cookies": "Zásady cookies"
+      },
+      "newsletter": {
+        "title": "Zůstaňte informováni",
+        "description": "Získejte nejnovější informace o AI ve vzdělávání a funkcích platformy.",
+        "placeholder": "Zadejte svůj email",
+        "subscribe": "Odebírat"
+      },
+      "social": {
+        "followUs": "Sledujte nás"
+      },
+      "copyright": "© 2025 CheckMate.ink. Všechna práva vyhrazena."
+    }
+  },
+  "AuthPages": {
+    "signIn": {
+      "title": "Vítejte zpět",
+      "subtitle": "Přihlaste se ke svému účtu pro pokračování",
+      "form": {
+        "email": "Email",
+        "emailPlaceholder": "Zadejte svůj email",
+        "password": "Heslo",
+        "passwordPlaceholder": "Zadejte své heslo",
+        "submitButton": "Přihlásit se",
+        "submittingButton": "Přihlašování..."
+      },
+      "footer": {
+        "noAccount": "Nemáte účet?",
+        "signUpLink": "Registrovat se"
+      }
+    },
+    "signUp": {
+      "title": "Vytvořte si účet",
+      "subtitle": "Registrujte se a začněte s CheckMate.ink",
+      "form": {
+        "email": "Email",
+        "emailPlaceholder": "Zadejte svůj email",
+        "password": "Heslo",
+        "passwordPlaceholder": "Vytvořte heslo",
+        "confirmPassword": "Potvrdit heslo",
+        "confirmPasswordPlaceholder": "Potvrďte své heslo",
+        "submitButton": "Vytvořit účet",
+        "submittingButton": "Vytváření účtu..."
+      },
+      "footer": {
+        "hasAccount": "Již máte účet?",
+        "signInLink": "Přihlásit se"
+      }
+    },
+    "verifyEmail": {
+      "title": "Ověřte svůj email",
+      "subtitle": "Poslali jsme ověřovací kód na",
+      "form": {
+        "code": "Ověřovací kód",
+        "codePlaceholder": "Zadejte 6místný kód",
+        "submitButton": "Ověřit email",
+        "submittingButton": "Ověřování..."
+      },
+      "resend": {
+        "text": "Nedostali jste kód?",
+        "button": "Poslat kód znovu",
+        "sendingButton": "Odesílání..."
+      },
+      "messages": {
+        "success": "Email úspěšně ověřen! Přesměrování na přihlášení...",
+        "resendSuccess": "Ověřovací kód odeslán! Zkontrolujte svůj email."
+      },
+      "footer": {
+        "backToSignUp": "Zpět na registraci"
+      }
+    },
+    "validation": {
+      "emailRequired": "Email je povinný",
+      "emailInvalid": "Zadejte prosím platnou emailovou adresu",
+      "passwordRequired": "Heslo je povinné",
+      "passwordMinLength": "Heslo musí mít alespoň 6 znaků",
+      "confirmPasswordRequired": "Potvrďte prosím své heslo",
+      "passwordsDontMatch": "Hesla se neshodují",
+      "codeRequired": "Ověřovací kód je povinný",
+      "codeLength": "Kód musí mít 6 číslic"
+    }
+  },
+  "Dashboard": {
+    "sidebar": {
+      "brand": {
+        "title": "CheckMate.ink",
+        "subtitle": "Nástěnka"
+      },
+      "navigation": {
+        "title": "Navigace",
+        "students": "Studenti",
+        "groups": "Skupiny",
+        "tests": "Testy"
+      }
+    },
+    "pages": {
+      "home": "Nástěnka",
+      "students": "Studenti",
+      "groups": "Skupiny",
+      "tests": "Testy"
+    },
+    "students": {
+      "screen": {
+        "description": "Spravujte své studenty a jejich informace.",
+        "addButton": "Přidat studenta",
+        "emptyState": {
+          "title": "Zatím žádní studenti",
+          "description": "Začněte přidáním svého prvního studenta pro správu vaší třídy.",
+          "addFirstButton": "Přidat prvního studenta"
+        }
+      },
+      "table": {
+        "columns": {
+          "id": "ID",
+          "name": "Jméno",
+          "email": "Email",
+          "phone": "Telefon",
+          "actions": "Akce"
+        },
+        "actions": {
+          "editTooltip": "Upravit studenta",
+          "deleteTooltip": "Smazat studenta"
+        }
+      },
+      "dialog": {
+        "add": {
+          "title": "Přidat nového studenta",
+          "description": "Zadejte informace o studentovi pro přidání do vaší třídy."
+        },
+        "edit": {
+          "title": "Upravit studenta",
+          "description": "Aktualizujte informace o studentovi níže."
+        },
+        "form": {
+          "name": {
+            "label": "Celé jméno",
+            "placeholder": "Zadejte celé jméno studenta"
+          },
+          "email": {
+            "label": "Emailová adresa",
+            "placeholder": "Zadejte email studenta"
+          },
+          "phone": {
+            "label": "Telefonní číslo",
+            "placeholder": "Zadejte telefonní číslo studenta"
+          }
+        },
+        "buttons": {
+          "cancel": "Zrušit",
+          "addStudent": "Přidat studenta",
+          "updateStudent": "Aktualizovat studenta",
+          "lockTest": "Uzamknout test",
+          "saving": "Ukládání..."
+        },
+        "validation": {
+          "nameRequired": "Jméno je povinné",
+          "nameTooLong": "Jméno je příliš dlouhé",
+          "emailRequired": "Email je povinný",
+          "emailInvalid": "Zadejte prosím platnou emailovou adresu",
+          "phoneRequired": "Telefonní číslo je povinné",
+          "phoneInvalid": "Zadejte prosím platné telefonní číslo"
+        }
+      }
+    },
+    "groups": {
+      "screen": {
+        "description": "Spravujte své skupiny a organizujte studenty.",
+        "addButton": "Přidat skupinu",
+        "emptyState": {
+          "title": "Zatím žádné skupiny",
+          "description": "Začněte vytvořením své první skupiny pro organizaci studentů.",
+          "addFirstButton": "Vytvořit první skupinu"
+        }
+      },
+      "table": {
+        "columns": {
+          "id": "ID",
+          "name": "Název",
+          "studentsCount": "Počet studentů",
+          "actions": "Akce"
+        },
+        "actions": {
+          "editTooltip": "Upravit skupinu",
+          "deleteTooltip": "Smazat skupinu"
+        }
+      },
+      "dialog": {
+        "add": {
+          "title": "Přidat novou skupinu",
+          "description": "Zadejte informace o skupině pro vytvoření nové skupiny."
+        },
+        "edit": {
+          "title": "Upravit skupinu",
+          "description": "Aktualizujte informace o skupině níže."
+        },
+        "form": {
+          "name": {
+            "label": "Název skupiny",
+            "placeholder": "Zadejte název skupiny"
+          },
+          "students": {
+            "label": "Studenti",
+            "placeholder": "Vyberte studenty pro přidání do této skupiny"
+          }
+        },
+        "buttons": {
+          "cancel": "Zrušit",
+          "addGroup": "Přidat skupinu",
+          "updateGroup": "Aktualizovat skupinu",
+          "saving": "Ukládání..."
+        },
+        "validation": {
+          "nameRequired": "Název je povinný",
+          "nameTooLong": "Název je příliš dlouhý"
+        }
+      }
+    },
+    "tests": {
+      "screen": {
+        "description": "Spravujte své testy a hodnocení.",
+        "addButton": "Přidat test",
+        "emptyState": {
+          "title": "Zatím žádné testy",
+          "description": "Začněte vytvořením svého prvního testu pro hodnocení studentů.",
+          "addFirstButton": "Vytvořit první test"
+        }
+      },
+      "table": {
+        "columns": {
+          "name": "Název",
+          "subject": "Předmět",
+          "topic": "Téma",
+          "studentAgeRange": "Věkové rozmezí",
+          "difficultyLevel": "Obtížnost",
+          "actions": "Akce"
+        },
+        "actions": {
+          "editTooltip": "Upravit test",
+          "deleteTooltip": "Smazat test"
+        }
+      },
+      "dialog": {
+        "add": {
+          "title": "Vytvořit nový test",
+          "description": "Postupujte podle kroků pro vytvoření komplexního testu."
+        },
+        "edit": {
+          "title": "Upravit test",
+          "description": "Postupujte podle kroků pro aktualizaci informací o testu."
+        },
+        "steps": {
+          "basic": {
+            "title": "Základní informace",
+            "description": "Zadejte název a popis testu."
+          },
+          "parameters": {
+            "title": "Parametry",
+            "description": "Nastavte předmět, téma, věkové rozmezí a obtížnost testu."
+          },
+          "questions": {
+            "title": "Otázky",
+            "description": "Nastavte formát otázek, počet a časování."
+          }
+        },
+        "form": {
+          "tabs": {
+            "basicInfo": "Základní informace",
+            "parameters": "Parametry",
+            "content": "Obsah testu"
+          },
+          "basicInfo": {
+            "title": "Základní informace"
+          },
+          "parameters": {
+            "title": "Parametry testu"
+          },
+          "testParams": {
+            "title": "Parametry testu"
+          },
+          "name": {
+            "label": "Název testu",
+            "placeholder": "Zadejte název testu"
+          },
+          "description": {
+            "label": "Popis",
+            "placeholder": "Zadejte popis testu"
+          },
+          "group": {
+            "label": "Skupina",
+            "placeholder": "Vyberte skupinu"
+          },
+          "subject": {
+            "label": "Předmět",
+            "placeholder": "Zadejte předmět"
+          },
+          "topic": {
+            "label": "Téma",
+            "placeholder": "Zadejte téma"
+          },
+          "ageRange": {
+            "label": "Věkové rozmezí",
+            "placeholder": "Vyberte věkové rozmezí"
+          },
+          "difficulty": {
+            "label": "Úroveň obtížnosti",
+            "placeholder": "Vyberte obtížnost",
+            "options": {
+              "beginner": "Začátečník",
+              "intermediate": "Středně pokročilý",
+              "advanced": "Pokročilý"
+            }
+          },
+          "questionFormat": {
+            "label": "Formát otázek",
+            "placeholder": "Vyberte formát",
+            "options": {
+              "multipleChoice": "Více možností",
+              "singleChoice": "Jedna možnost"
+            }
+          },
+          "questionsCount": {
+            "label": "Počet otázek"
+          },
+          "questions": {
+            "label": "Počet otázek",
+            "placeholder": "10"
+          },
+          "timePerQuestion": {
+            "label": "Čas na otázku (minuty)",
+            "placeholder": "2.0"
+          },
+          "content": {
+            "title": "Testové otázky",
+            "addQuestion": "Přidat otázku",
+            "questionNumber": "Otázka {number}",
+            "removeQuestion": "Odstranit",
+            "questionText": "Text otázky",
+            "questionPlaceholder": "Zadejte otázku",
+            "answerOptions": "Možnosti odpovědí",
+            "optionPlaceholder": "Možnost {letter}",
+            "noQuestions": "Zatím nejsou přidány žádné otázky. Klikněte na \"Přidat otázku\" pro začátek."
+          }
+        },
+        "buttons": {
+          "cancel": "Zrušit",
+          "previous": "Předchozí",
+          "next": "Další",
+          "lockTest": "Uzamknout test",
+          "addTest": "Vytvořit test",
+          "updateTest": "Aktualizovat test",
+          "saveChanges": "Uložit změny",
+          "saving": "Ukládání..."
+        },
+        "lockTestConfirm": {
+          "title": "Opravdu chcete uzamknout tento test?",
+          "description": "Po uzamčení již nebude možné test upravovat. Studenti budou moci test absolvovat a výsledky mohou být nahrány k vyhodnocení. Tuto akci nelze vrátit zpět.",
+          "confirmButton": "Uzamknout test",
+          "cancelButton": "Zrušit"
+        },
+        "validation": {
+          "nameRequired": "Název je povinný",
+          "nameTooLong": "Název je příliš dlouhý",
+          "groupRequired": "Skupina je povinná",
+          "subjectRequired": "Předmět je povinný",
+          "subjectTooLong": "Předmět je příliš dlouhý",
+          "topicRequired": "Téma je povinné",
+          "topicTooLong": "Téma je příliš dlouhé",
+          "ageRangeRequired": "Věkové rozmezí je povinné",
+          "difficultyRequired": "Úroveň obtížnosti je povinná",
+          "questionsMin": "Musí obsahovat alespoň 1 otázku",
+          "questionsMax": "Nelze překročit 100 otázek",
+          "timeMin": "Minimálně 0.5 minuty na otázku",
+          "timeMax": "Maximálně 60 minut na otázku"
+        }
+      },
+      "uploadResults": {
+        "title": "Nahrát výsledky",
+        "description": "Nahrajte obrázky vyplněných testů pro AI vyhodnocení.",
+        "uploadButton": {
+          "idle": "Nahrát soubory",
+          "uploading": "Nahrávání..."
+        },
+        "dropzone": {
+          "description": "Vyberte prosím až 30 obrázků",
+          "trigger": {
+            "title": "Nahrát obrázky testů",
+            "subtitle": "Klikněte zde nebo přetáhněte soubory pro nahrání"
+          }
+        },
+        "fileStatus": {
+          "uploading": "Nahrávání...",
+          "uploaded": "Nahráno",
+          "failed": "Nahrávání selhalo"
+        },
+        "fileSize": "{size} MB",
+        "messages": {
+          "uploadSuccess": "Nahrávání úspěšně dokončeno",
+          "uploadError": "Nahrávání selhalo"
+        }
+      },
+      "testDetail": {
+        "tabs": {
+          "testPreview": "Náhled testu",
+          "editTest": "Upravit test",
+          "testResults": "Výsledky testu",
+          "uploadResults": "Nahrát výsledky"
+        },
+        "errors": {
+          "loadFailed": {
+            "title": "Nepodařilo se načíst test",
+            "description": "Při načítání testu došlo k chybě. Zkuste to prosím znovu."
+          }
+        },
+        "draft": {
+          "title": "AI připravuje váš test",
+          "description": "Tento test je momentálně připravován pro AI vyhodnocení"
+        }
+      },
+      "testResult": {
+        "loading": "Načítání výsledku testu...",
+        "error": "Chyba při načítání výsledku testu",
+        "notFound": "Výsledek testu nenalezen",
+        "studentInfo": {
+          "title": "Informace o studentovi",
+          "name": "Jméno",
+          "score": "Skóre",
+          "scoreValue": "{correct} správně / {wrong} špatně"
+        },
+        "questions": {
+          "title": "Testové otázky",
+          "questionNumber": "Otázka {number}",
+          "studentAnswer": "Odpověď studenta",
+          "correctAnswer": "Správná odpověď"
+        },
+        "images": {
+          "title": "Obrázky testu",
+          "original": "Původní test",
+          "evaluated": "Vyhodnocený test",
+          "viewFullscreen": "Zobrazit na celou obrazovku",
+          "closeFullscreen": "Zavřít",
+          "noImages": "Žádné obrázky testu nejsou k dispozici"
+        }
+      }
+    },
+    "mutations": {
+      "students": {
+        "add": {
+          "error": "Nepodařilo se přidat studenta",
+          "success": "Student {name} byl úspěšně přidán"
+        },
+        "edit": {
+          "error": "Nepodařilo se aktualizovat studenta",
+          "success": "Student {name} byl úspěšně aktualizován"
+        },
+        "delete": {
+          "error": "Nepodařilo se smazat studenta",
+          "success": "Student byl úspěšně smazán"
+        }
+      },
+      "groups": {
+        "add": {
+          "error": "Nepodařilo se přidat skupinu",
+          "success": "Skupina {name} byla úspěšně přidána"
+        },
+        "edit": {
+          "error": "Nepodařilo se aktualizovat skupinu",
+          "success": "Skupina {name} byla úspěšně aktualizována"
+        },
+        "delete": {
+          "error": "Nepodařilo se smazat skupinu",
+          "success": "Skupina byla úspěšně smazána"
+        }
+      },
+      "tests": {
+        "add": {
+          "error": "Nepodařilo se přidat test",
+          "success": "Test {name} byl úspěšně přidán"
+        },
+        "edit": {
+          "error": "Nepodařilo se aktualizovat test",
+          "success": "Test {name} byl úspěšně aktualizován"
+        },
+        "delete": {
+          "error": "Nepodařilo se smazat test",
+          "success": "Test byl úspěšně smazán"
+        },
+        "lock": {
+          "error": "Nepodařilo se uzamknout test",
+          "success": "Test byl úspěšně uzamčen"
+        }
+      }
+    }
+  }
+}
