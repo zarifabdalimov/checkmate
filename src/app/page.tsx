@@ -1,17 +1,6 @@
-import { METADATA_CONSTANTS } from "@/lib/constants/metadata";
-import type { Metadata } from "next";
+import {redirect} from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: "Home",
-  description: METADATA_CONSTANTS.LANDING_DESCRIPTION,
-  openGraph: {
-    title: METADATA_CONSTANTS.BRAND_FULL,
-    description: METADATA_CONSTANTS.LANDING_DESCRIPTION,
-  },
-  twitter: {
-    title: METADATA_CONSTANTS.BRAND_FULL,
-    description: METADATA_CONSTANTS.LANDING_DESCRIPTION,
-  },
-};
-
-export { LandingScreen as default } from "@/modules/landing/screen/landing-screen";
+// This page only renders when the app is built statically (output: 'export')
+export default function RootPage() {
+	redirect('/en');
+}

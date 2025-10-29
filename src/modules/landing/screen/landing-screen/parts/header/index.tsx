@@ -1,10 +1,10 @@
 "use client";
 
 import { useAuth } from "@/hooks/use-auth";
+import { Link } from "@/i18n/navigation";
 import { Button } from "@/modules/ui/button";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
 
 export function Header() {
   const t = useTranslations("LandingPage.header");

@@ -1,0 +1,639 @@
+{
+  "HomePage": {
+    "title": "Hallo Welt!",
+    "getStarted": "Beginnen Sie mit der Bearbeitung",
+    "saveChanges": "Speichern Sie und sehen Sie Ihre Änderungen sofort.",
+    "deployNow": "Jetzt bereitstellen",
+    "readDocs": "Dokumentation lesen",
+    "learn": "Lernen",
+    "examples": "Beispiele",
+    "goToNextjs": "Zu nextjs.org gehen"
+  },
+  "LandingPage": {
+    "header": {
+      "navigation": {
+        "features": "Funktionen",
+        "howItWorks": "Wie es funktioniert",
+        "pricing": "Preise",
+        "about": "Über uns"
+      },
+      "auth": {
+        "dashboard": "Dashboard",
+        "signIn": "Anmelden",
+        "signUp": "Registrieren"
+      }
+    },
+    "hero": {
+      "badge": "KI-gestützte Bildungsplattform",
+      "title": "Testen mit\n<highlight>KI-Intelligenz</highlight> transformieren",
+      "titleHighlight": "KI-Intelligenz",
+      "subtitle": "Ermöglichen Sie Lehrern, intelligente Bewertungen zu erstellen und Schülern personalisiertes Feedback und KI-gestützte Lernunterstützung zu bieten.",
+      "getStarted": "Kostenlos loslegen",
+      "watchDemo": "Demo ansehen",
+      "stats": {
+        "testsGenerated": "Erstellte Tests",
+        "teachers": "Lehrer",
+        "studentsHelped": "Unterstützte Schüler"
+      }
+    },
+    "features": {
+      "title": "Komplette Bewertungslösung",
+      "subtitle": "Von der Testerstellung bis zum personalisierten Feedback – unsere Plattform übernimmt den gesamten Workflow der Bildungsbewertung.",
+      "aiTestGeneration": {
+        "title": "KI-Testerstellung",
+        "description": "Erstellen Sie sofort umfassende Tests mit unserer fortschrittlichen KI, die Ihren Lehrplan und Ihre Lernziele versteht."
+      },
+      "automatedGrading": {
+        "title": "Automatische Bewertung",
+        "description": "Sparen Sie Stunden mit intelligenter Bewertung, die detailliertes Feedback gibt und Lernlücken automatisch identifiziert."
+      },
+      "studentInsights": {
+        "title": "Schülereinblicke",
+        "description": "Verfolgen Sie den Fortschritt der Schüler mit detaillierten Analysen und geben Sie personalisierte Lernempfehlungen."
+      },
+      "personalAiTutor": {
+        "title": "Persönlicher KI-Tutor",
+        "description": "Erhalten Sie sofortige Erklärungen und Lernhilfe, die auf Ihre spezifischen Bedürfnisse und Fehler zugeschnitten sind."
+      },
+      "interactiveResults": {
+        "title": "Interaktive Ergebnisse",
+        "description": "Greifen Sie über einen personalisierten Link auf Ihre Testergebnisse mit detaillierten Erklärungen und Verbesserungsvorschlägen zu."
+      },
+      "studyMaterials": {
+        "title": "Lernmaterialien",
+        "description": "Erhalten Sie kuratierte Lernmaterialien und Übungsfragen basierend auf Ihrer Leistung und Ihren Lernzielen."
+      }
+    },
+    "howItWorks": {
+      "title": "Wie es funktioniert",
+      "subtitle": "Einfacher, leistungsstarker Workflow, der traditionelle Tests in ein intelligentes Lernerlebnis verwandelt.",
+      "steps": {
+        "generateTest": {
+          "title": "Test generieren",
+          "description": "Lehrer nutzen KI, um maßgeschneiderte Tests basierend auf ihrem Lehrplan und ihren Lernzielen zu erstellen."
+        },
+        "printDistribute": {
+          "title": "Drucken & Verteilen",
+          "description": "Drucken Sie den generierten Test und verteilen Sie ihn an die Schüler für eine traditionelle papierbasierte Bewertung."
+        },
+        "aiEvaluation": {
+          "title": "KI-Bewertung",
+          "description": "Unsere KI bewertet die ausgefüllten Tests und erstellt detailliertes Feedback und Erklärungen."
+        },
+        "personalizedLearning": {
+          "title": "Personalisiertes Lernen",
+          "description": "Schüler erhalten personalisierte Links mit Ergebnissen, Erklärungen und KI-Nachhilfeunterstützung."
+        }
+      }
+    },
+    "aboutUs": {
+      "title": "Über uns",
+      "subtitle": "Lernen Sie das Team hinter CheckMate.ink kennen und erfahren Sie mehr über unsere Reise.",
+      "achievement": {
+        "title": "Erster Platz beim BlockJam Hackathon",
+        "description": "Wir haben den ersten Platz beim BlockJam Hackathon gewonnen und entwickeln dieses Projekt mit ihrer Förderung weiter, um innovative KI-gestützte Bildungslösungen für Lehrer und Schüler zu bringen."
+      },
+      "team": {
+        "title": "Unser Team",
+        "subtitle": "Vier professionelle Entwickler von STRV, die sich leidenschaftlich für die Transformation der Bildung durch Technologie einsetzen.",
+        "positions": {
+          "frontend": "Frontend-Entwickler",
+          "backendDevops": "Backend-Entwickler, DevOps",
+          "backendBusiness": "Backend-Entwickler, Geschäftsanalyse",
+          "backendProduct": "Backend-Entwickler, Produktmanager"
+        }
+      },
+      "sponsorship": {
+        "title": "Unterstützt von Theta Network",
+        "description": "Mit der fortlaufenden Unterstützung von Theta Network und unseren Technologiepartnern sind wir bestrebt, KI-gestützte Bildung für alle zugänglich zu machen.",
+        "partnersTitle": "Technologiepartner"
+      }
+    },
+    "cta": {
+      "title": "Bereit, Ihr Klassenzimmer zu transformieren?",
+      "subtitle": "Schließen Sie sich Tausenden von Pädagogen an, die bereits KI nutzen, um bessere Lernerfahrungen für ihre Schüler zu schaffen.",
+      "startTrial": "Kostenlos testen",
+      "scheduleDemo": "Demo vereinbaren"
+    },
+    "footer": {
+      "tagline": "Bildung mit KI-gestützten Bewertungen transformieren",
+      "product": {
+        "title": "Produkt",
+        "features": "Funktionen",
+        "pricing": "Preise",
+        "demo": "Demo",
+        "documentation": "Dokumentation"
+      },
+      "company": {
+        "title": "Unternehmen",
+        "about": "Über uns",
+        "careers": "Karriere",
+        "blog": "Blog",
+        "contact": "Kontakt"
+      },
+      "support": {
+        "title": "Support",
+        "helpCenter": "Hilfecenter",
+        "tutorials": "Tutorials",
+        "community": "Community",
+        "status": "Status"
+      },
+      "legal": {
+        "title": "Rechtliches",
+        "privacy": "Datenschutzrichtlinie",
+        "terms": "Nutzungsbedingungen",
+        "cookies": "Cookie-Richtlinie"
+      },
+      "newsletter": {
+        "title": "Bleiben Sie auf dem Laufenden",
+        "description": "Erhalten Sie die neuesten Updates zu KI in der Bildung und Plattformfunktionen.",
+        "placeholder": "Geben Sie Ihre E-Mail ein",
+        "subscribe": "Abonnieren"
+      },
+      "social": {
+        "followUs": "Folgen Sie uns"
+      },
+      "copyright": "© 2025 CheckMate.ink. Alle Rechte vorbehalten."
+    }
+  },
+  "AuthPages": {
+    "signIn": {
+      "title": "Willkommen zurück",
+      "subtitle": "Melden Sie sich bei Ihrem Konto an, um fortzufahren",
+      "form": {
+        "email": "E-Mail",
+        "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
+        "password": "Passwort",
+        "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
+        "submitButton": "Anmelden",
+        "submittingButton": "Anmeldung läuft..."
+      },
+      "footer": {
+        "noAccount": "Noch kein Konto?",
+        "signUpLink": "Registrieren"
+      }
+    },
+    "signUp": {
+      "title": "Konto erstellen",
+      "subtitle": "Registrieren Sie sich, um mit CheckMate.ink zu beginnen",
+      "form": {
+        "email": "E-Mail",
+        "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
+        "password": "Passwort",
+        "passwordPlaceholder": "Erstellen Sie ein Passwort",
+        "confirmPassword": "Passwort bestätigen",
+        "confirmPasswordPlaceholder": "Bestätigen Sie Ihr Passwort",
+        "submitButton": "Konto erstellen",
+        "submittingButton": "Konto wird erstellt..."
+      },
+      "footer": {
+        "hasAccount": "Haben Sie bereits ein Konto?",
+        "signInLink": "Anmelden"
+      }
+    },
+    "verifyEmail": {
+      "title": "E-Mail verifizieren",
+      "subtitle": "Wir haben einen Verifizierungscode gesendet an",
+      "form": {
+        "code": "Verifizierungscode",
+        "codePlaceholder": "6-stelligen Code eingeben",
+        "submitButton": "E-Mail verifizieren",
+        "submittingButton": "Verifizierung läuft..."
+      },
+      "resend": {
+        "text": "Code nicht erhalten?",
+        "button": "Code erneut senden",
+        "sendingButton": "Wird gesendet..."
+      },
+      "messages": {
+        "success": "E-Mail erfolgreich verifiziert! Weiterleitung zur Anmeldung...",
+        "resendSuccess": "Verifizierungscode gesendet! Überprüfen Sie Ihre E-Mail."
+      },
+      "footer": {
+        "backToSignUp": "Zurück zur Registrierung"
+      }
+    },
+    "validation": {
+      "emailRequired": "E-Mail ist erforderlich",
+      "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "passwordRequired": "Passwort ist erforderlich",
+      "passwordMinLength": "Passwort muss mindestens 6 Zeichen lang sein",
+      "confirmPasswordRequired": "Bitte bestätigen Sie Ihr Passwort",
+      "passwordsDontMatch": "Passwörter stimmen nicht überein",
+      "codeRequired": "Verifizierungscode ist erforderlich",
+      "codeLength": "Code muss 6 Ziffern haben"
+    }
+  },
+  "Dashboard": {
+    "sidebar": {
+      "brand": {
+        "title": "CheckMate.ink",
+        "subtitle": "Dashboard"
+      },
+      "navigation": {
+        "title": "Navigation",
+        "students": "Schüler",
+        "groups": "Gruppen",
+        "tests": "Tests"
+      }
+    },
+    "pages": {
+      "home": "Dashboard",
+      "students": "Schüler",
+      "groups": "Gruppen",
+      "tests": "Tests"
+    },
+    "students": {
+      "screen": {
+        "description": "Verwalten Sie Ihre Schüler und deren Informationen.",
+        "addButton": "Schüler hinzufügen",
+        "emptyState": {
+          "title": "Noch keine Schüler",
+          "description": "Beginnen Sie, indem Sie Ihren ersten Schüler hinzufügen, um mit der Verwaltung Ihres Klassenzimmers zu beginnen.",
+          "addFirstButton": "Ersten Schüler hinzufügen"
+        }
+      },
+      "table": {
+        "columns": {
+          "id": "ID",
+          "name": "Name",
+          "email": "E-Mail",
+          "phone": "Telefon",
+          "actions": "Aktionen"
+        },
+        "actions": {
+          "editTooltip": "Schüler bearbeiten",
+          "deleteTooltip": "Schüler löschen"
+        }
+      },
+      "dialog": {
+        "add": {
+          "title": "Neuen Schüler hinzufügen",
+          "description": "Geben Sie die Informationen des Schülers ein, um ihn zu Ihrer Klasse hinzuzufügen."
+        },
+        "edit": {
+          "title": "Schüler bearbeiten",
+          "description": "Aktualisieren Sie die Informationen des Schülers unten."
+        },
+        "form": {
+          "name": {
+            "label": "Vollständiger Name",
+            "placeholder": "Geben Sie den vollständigen Namen des Schülers ein"
+          },
+          "email": {
+            "label": "E-Mail-Adresse",
+            "placeholder": "Geben Sie die E-Mail des Schülers ein"
+          },
+          "phone": {
+            "label": "Telefonnummer",
+            "placeholder": "Geben Sie die Telefonnummer des Schülers ein"
+          }
+        },
+        "buttons": {
+          "cancel": "Abbrechen",
+          "addStudent": "Schüler hinzufügen",
+          "updateStudent": "Schüler aktualisieren",
+          "lockTest": "Test sperren",
+          "saving": "Wird gespeichert..."
+        },
+        "validation": {
+          "nameRequired": "Name ist erforderlich",
+          "nameTooLong": "Name ist zu lang",
+          "emailRequired": "E-Mail ist erforderlich",
+          "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+          "phoneRequired": "Telefonnummer ist erforderlich",
+          "phoneInvalid": "Bitte geben Sie eine gültige Telefonnummer ein"
+        }
+      }
+    },
+    "groups": {
+      "screen": {
+        "description": "Verwalten Sie Ihre Gruppen und organisieren Sie Ihre Schüler.",
+        "addButton": "Gruppe hinzufügen",
+        "emptyState": {
+          "title": "Noch keine Gruppen",
+          "description": "Beginnen Sie, indem Sie Ihre erste Gruppe erstellen, um Ihre Schüler zu organisieren.",
+          "addFirstButton": "Erste Gruppe erstellen"
+        }
+      },
+      "table": {
+        "columns": {
+          "id": "ID",
+          "name": "Name",
+          "studentsCount": "Anzahl Schüler",
+          "actions": "Aktionen"
+        },
+        "actions": {
+          "editTooltip": "Gruppe bearbeiten",
+          "deleteTooltip": "Gruppe löschen"
+        }
+      },
+      "dialog": {
+        "add": {
+          "title": "Neue Gruppe hinzufügen",
+          "description": "Geben Sie die Gruppeninformationen ein, um eine neue Gruppe zu erstellen."
+        },
+        "edit": {
+          "title": "Gruppe bearbeiten",
+          "description": "Aktualisieren Sie die Gruppeninformationen unten."
+        },
+        "form": {
+          "name": {
+            "label": "Gruppenname",
+            "placeholder": "Geben Sie den Gruppennamen ein"
+          },
+          "students": {
+            "label": "Schüler",
+            "placeholder": "Wählen Sie Schüler aus, die dieser Gruppe hinzugefügt werden sollen"
+          }
+        },
+        "buttons": {
+          "cancel": "Abbrechen",
+          "addGroup": "Gruppe hinzufügen",
+          "updateGroup": "Gruppe aktualisieren",
+          "saving": "Wird gespeichert..."
+        },
+        "validation": {
+          "nameRequired": "Name ist erforderlich",
+          "nameTooLong": "Name ist zu lang"
+        }
+      }
+    },
+    "tests": {
+      "screen": {
+        "description": "Verwalten Sie Ihre Tests und Bewertungen.",
+        "addButton": "Test hinzufügen",
+        "emptyState": {
+          "title": "Noch keine Tests",
+          "description": "Beginnen Sie, indem Sie Ihren ersten Test erstellen, um Ihre Schüler zu bewerten.",
+          "addFirstButton": "Ersten Test erstellen"
+        }
+      },
+      "table": {
+        "columns": {
+          "name": "Name",
+          "subject": "Fach",
+          "topic": "Thema",
+          "studentAgeRange": "Altersbereich",
+          "difficultyLevel": "Schwierigkeit",
+          "actions": "Aktionen"
+        },
+        "actions": {
+          "editTooltip": "Test bearbeiten",
+          "deleteTooltip": "Test löschen"
+        }
+      },
+      "dialog": {
+        "add": {
+          "title": "Neuen Test erstellen",
+          "description": "Folgen Sie den Schritten, um eine umfassende Testbewertung zu erstellen."
+        },
+        "edit": {
+          "title": "Test bearbeiten",
+          "description": "Folgen Sie den Schritten, um die Testinformationen zu aktualisieren."
+        },
+        "steps": {
+          "basic": {
+            "title": "Grundlegende Infos",
+            "description": "Geben Sie den Testnamen und die Beschreibung ein."
+          },
+          "parameters": {
+            "title": "Parameter",
+            "description": "Konfigurieren Sie das Testfach, Thema, Altersbereich und Schwierigkeit."
+          },
+          "questions": {
+            "title": "Fragen",
+            "description": "Legen Sie das Fragenformat, die Anzahl und die Zeit fest."
+          }
+        },
+        "form": {
+          "tabs": {
+            "basicInfo": "Grundlegende Infos",
+            "parameters": "Parameter",
+            "content": "Testinhalt"
+          },
+          "basicInfo": {
+            "title": "Grundlegende Informationen"
+          },
+          "parameters": {
+            "title": "Testparameter"
+          },
+          "testParams": {
+            "title": "Testparameter"
+          },
+          "name": {
+            "label": "Testname",
+            "placeholder": "Geben Sie den Testnamen ein"
+          },
+          "description": {
+            "label": "Beschreibung",
+            "placeholder": "Geben Sie die Testbeschreibung ein"
+          },
+          "group": {
+            "label": "Gruppe",
+            "placeholder": "Wählen Sie eine Gruppe"
+          },
+          "subject": {
+            "label": "Fach",
+            "placeholder": "Geben Sie das Fach ein"
+          },
+          "topic": {
+            "label": "Thema",
+            "placeholder": "Geben Sie das Thema ein"
+          },
+          "ageRange": {
+            "label": "Altersbereich",
+            "placeholder": "Wählen Sie den Altersbereich"
+          },
+          "difficulty": {
+            "label": "Schwierigkeitsgrad",
+            "placeholder": "Wählen Sie die Schwierigkeit",
+            "options": {
+              "beginner": "Anfänger",
+              "intermediate": "Fortgeschritten",
+              "advanced": "Erweitert"
+            }
+          },
+          "questionFormat": {
+            "label": "Fragenformat",
+            "placeholder": "Wählen Sie das Format",
+            "options": {
+              "multipleChoice": "Multiple Choice",
+              "singleChoice": "Single Choice"
+            }
+          },
+          "questionsCount": {
+            "label": "Anzahl der Fragen"
+          },
+          "questions": {
+            "label": "Anzahl der Fragen",
+            "placeholder": "10"
+          },
+          "timePerQuestion": {
+            "label": "Zeit pro Frage (Minuten)",
+            "placeholder": "2.0"
+          },
+          "content": {
+            "title": "Testfragen",
+            "addQuestion": "Frage hinzufügen",
+            "questionNumber": "Frage {number}",
+            "removeQuestion": "Entfernen",
+            "questionText": "Fragetext",
+            "questionPlaceholder": "Geben Sie die Frage ein",
+            "answerOptions": "Antwortoptionen",
+            "optionPlaceholder": "Option {letter}",
+            "noQuestions": "Noch keine Fragen hinzugefügt. Klicken Sie auf \"Frage hinzufügen\", um zu beginnen."
+          }
+        },
+        "buttons": {
+          "cancel": "Abbrechen",
+          "previous": "Zurück",
+          "next": "Weiter",
+          "lockTest": "Test sperren",
+          "addTest": "Test erstellen",
+          "updateTest": "Test aktualisieren",
+          "saveChanges": "Änderungen speichern",
+          "saving": "Wird gespeichert..."
+        },
+        "lockTestConfirm": {
+          "title": "Sind Sie sicher, dass Sie diesen Test sperren möchten?",
+          "description": "Einmal gesperrt, kann dieser Test nicht mehr bearbeitet werden. Schüler können diesen Test absolvieren und Ergebnisse können zur Bewertung hochgeladen werden. Diese Aktion kann nicht rückgängig gemacht werden.",
+          "confirmButton": "Test sperren",
+          "cancelButton": "Abbrechen"
+        },
+        "validation": {
+          "nameRequired": "Name ist erforderlich",
+          "nameTooLong": "Name ist zu lang",
+          "groupRequired": "Gruppe ist erforderlich",
+          "subjectRequired": "Fach ist erforderlich",
+          "subjectTooLong": "Fach ist zu lang",
+          "topicRequired": "Thema ist erforderlich",
+          "topicTooLong": "Thema ist zu lang",
+          "ageRangeRequired": "Altersbereich ist erforderlich",
+          "difficultyRequired": "Schwierigkeitsgrad ist erforderlich",
+          "questionsMin": "Muss mindestens 1 Frage haben",
+          "questionsMax": "Kann nicht mehr als 100 Fragen haben",
+          "timeMin": "Mindestens 0,5 Minuten pro Frage",
+          "timeMax": "Maximal 60 Minuten pro Frage"
+        }
+      },
+      "uploadResults": {
+        "title": "Ergebnisse hochladen",
+        "description": "Laden Sie Bilder der ausgefüllten Testbögen für die KI-Bewertung hoch.",
+        "uploadButton": {
+          "idle": "Dateien hochladen",
+          "uploading": "Wird hochgeladen..."
+        },
+        "dropzone": {
+          "description": "Bitte wählen Sie bis zu 30 Bilder aus",
+          "trigger": {
+            "title": "Listing-Bilder hochladen",
+            "subtitle": "Klicken Sie hier oder ziehen Sie Dateien per Drag & Drop hierher"
+          }
+        },
+        "fileStatus": {
+          "uploading": "Wird hochgeladen...",
+          "uploaded": "Hochgeladen",
+          "failed": "Hochladen fehlgeschlagen"
+        },
+        "fileSize": "{size} MB",
+        "messages": {
+          "uploadSuccess": "Hochladen erfolgreich abgeschlossen",
+          "uploadError": "Hochladen fehlgeschlagen"
+        }
+      },
+      "testDetail": {
+        "tabs": {
+          "testPreview": "Testvorschau",
+          "editTest": "Test bearbeiten",
+          "testResults": "Testergebnisse",
+          "uploadResults": "Ergebnisse hochladen"
+        },
+        "errors": {
+          "loadFailed": {
+            "title": "Fehler beim Laden des Tests",
+            "description": "Beim Laden Ihres Tests ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+          }
+        },
+        "draft": {
+          "title": "KI bereitet Ihren Test vor",
+          "description": "Dieser Test wird derzeit für die KI-Bewertung vorbereitet"
+        }
+      },
+      "testResult": {
+        "loading": "Testergebnis wird geladen...",
+        "error": "Fehler beim Laden des Testergebnisses",
+        "notFound": "Kein Testergebnis gefunden",
+        "studentInfo": {
+          "title": "Schülerinformationen",
+          "name": "Name",
+          "score": "Punktzahl",
+          "scoreValue": "{correct} richtig / {wrong} falsch"
+        },
+        "questions": {
+          "title": "Testfragen",
+          "questionNumber": "Frage {number}",
+          "studentAnswer": "Antwort des Schülers",
+          "correctAnswer": "Richtige Antwort"
+        },
+        "images": {
+          "title": "Testbilder",
+          "original": "Ursprünglicher Test",
+          "evaluated": "Bewerteter Test",
+          "viewFullscreen": "Vollbild anzeigen",
+          "closeFullscreen": "Schließen",
+          "noImages": "Keine Testbilder verfügbar"
+        }
+      }
+    },
+    "mutations": {
+      "students": {
+        "add": {
+          "error": "Fehler beim Hinzufügen des Schülers",
+          "success": "Schüler {name} erfolgreich hinzugefügt"
+        },
+        "edit": {
+          "error": "Fehler beim Aktualisieren des Schülers",
+          "success": "Schüler {name} erfolgreich aktualisiert"
+        },
+        "delete": {
+          "error": "Fehler beim Löschen des Schülers",
+          "success": "Schüler erfolgreich gelöscht"
+        }
+      },
+      "groups": {
+        "add": {
+          "error": "Fehler beim Hinzufügen der Gruppe",
+          "success": "Gruppe {name} erfolgreich hinzugefügt"
+        },
+        "edit": {
+          "error": "Fehler beim Aktualisieren der Gruppe",
+          "success": "Gruppe {name} erfolgreich aktualisiert"
+        },
+        "delete": {
+          "error": "Fehler beim Löschen der Gruppe",
+          "success": "Gruppe erfolgreich gelöscht"
+        }
+      },
+      "tests": {
+        "add": {
+          "error": "Fehler beim Hinzufügen des Tests",
+          "success": "Test {name} erfolgreich hinzugefügt"
+        },
+        "edit": {
+          "error": "Fehler beim Aktualisieren des Tests",
+          "success": "Test {name} erfolgreich aktualisiert"
+        },
+        "delete": {
+          "error": "Fehler beim Löschen des Tests",
+          "success": "Test erfolgreich gelöscht"
+        },
+        "lock": {
+          "error": "Fehler beim Sperren des Tests",
+          "success": "Test erfolgreich gesperrt"
+        }
+      }
+    }
+  }
+}
+
