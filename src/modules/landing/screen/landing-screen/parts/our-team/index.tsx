@@ -3,7 +3,7 @@
 import { Avatar, AvatarImage, AvatarFallback } from "@/modules/ui/avatar";
 import { Users } from "lucide-react";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 export function OurTeam() {
   const t = useTranslations("LandingPage.aboutUs");

@@ -16,7 +16,7 @@ import { getAuthErrorMessage } from "@/lib/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Eye, EyeOff, Lock, Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { useBoolean } from "usehooks-ts";

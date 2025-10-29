@@ -3,7 +3,7 @@
 import { Trophy } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 export function HackathonWinners() {
   const t = useTranslations("LandingPage.aboutUs");

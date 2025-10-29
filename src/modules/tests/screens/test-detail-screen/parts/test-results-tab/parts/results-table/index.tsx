@@ -8,7 +8,7 @@ import {
 } from "@tanstack/react-table";
 import type { TestResult } from "@/lib/api/generated/model/testResult";
 import { TableExternalLinkAction } from "@/modules/ui/table";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 interface ResultsTableProps {
   data: TestResult[];

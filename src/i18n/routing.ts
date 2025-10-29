@@ -10,4 +10,3 @@ export const routing = defineRouting({
   // Use always mode temporarily to test
   localePrefix: "always",
 });
-

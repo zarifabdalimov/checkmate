@@ -10,7 +10,7 @@ import {
   BreadcrumbSeparator,
 } from "@/modules/ui/breadcrumb";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useParams, usePathname } from "next/navigation";
 
 export function AppBreadcrumb() {

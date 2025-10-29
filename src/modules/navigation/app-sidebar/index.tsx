@@ -17,7 +17,7 @@ import {
 import { BookOpen, FileText, Users } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { usePathname } from "next/navigation";
 
 const getNavigationItems = (t: ReturnType<typeof useTranslations>) => [
