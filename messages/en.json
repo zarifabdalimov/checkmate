@@ -86,6 +86,29 @@
         }
       }
     },
+    "aboutUs": {
+      "title": "About Us",
+      "subtitle": "Meet the team behind CheckMate.ink and learn about our journey.",
+      "achievement": {
+        "title": "First Place at BlockJam Hackathon",
+        "description": "We won first place at the BlockJam hackathon and continue to develop this project with their sponsorship, bringing innovative AI-powered education solutions to teachers and students."
+      },
+      "team": {
+        "title": "Our Team",
+        "subtitle": "Four professional developers from STRV passionate about transforming education through technology.",
+        "positions": {
+          "frontend": "Frontend Developer",
+          "backendDevops": "Backend Developer, DevOps",
+          "backendBusiness": "Backend Developer, Business Research",
+          "backendProduct": "Backend Developer, Product Manager"
+        }
+      },
+      "sponsorship": {
+        "title": "Powered by Theta Network",
+        "description": "With continued support from Theta Network and our technology partners, we're committed to making AI-powered education accessible to everyone.",
+        "partnersTitle": "Technology Partners"
+      }
+    },
     "cta": {
       "title": "Ready to Transform Your Classroom?",
       "subtitle": "Join thousands of educators who are already using AI to create better learning experiences for their students.",

@@ -86,6 +86,29 @@
         }
       }
     },
+    "aboutUs": {
+      "title": "O nás",
+      "subtitle": "Seznamte se s týmem za CheckMate.ink a dozvíte se o naší cestě.",
+      "achievement": {
+        "title": "První místo na BlockJam Hackathonu",
+        "description": "Vyhráli jsme první místo na BlockJam hackathonu a pokračujeme ve vývoji tohoto projektu s jejich sponzorstvím, přinášíme inovativní AI řešení pro vzdělávání učitelům a studentům."
+      },
+      "team": {
+        "title": "Náš tým",
+        "subtitle": "Čtyři profesionální vývojáři ze STRV, kteří jsou nadšení pro transformaci vzdělávání prostřednictvím technologie.",
+        "positions": {
+          "frontend": "Frontend vývojář",
+          "backendDevops": "Backend vývojář, DevOps",
+          "backendBusiness": "Backend vývojář, Business Research",
+          "backendProduct": "Backend vývojář, Product Manager"
+        }
+      },
+      "sponsorship": {
+        "title": "Poháněno Theta Network",
+        "description": "S pokračující podporou Theta Network a našich technologických partnerů se zavazujeme zpřístupnit AI vzdělávání všem.",
+        "partnersTitle": "Technologičtí partneři"
+      }
+    },
     "cta": {
       "title": "Připraveni transformovat vaši třídu?",
       "subtitle": "Připojte se k tisícům pedagogů, kteří již používají AI k vytváření lepších vzdělávacích zkušeností pro své studenty.",
