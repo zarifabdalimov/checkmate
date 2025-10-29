@@ -574,7 +574,9 @@
           "title": "Testové otázky",
           "questionNumber": "Otázka {number}",
           "studentAnswer": "Odpověď studenta",
-          "correctAnswer": "Správná odpověď"
+          "correctAnswer": "Správná odpověď",
+          "explanation": "Vysvětlení",
+          "askAi": "Zeptat se AI"
         },
         "images": {
           "title": "Obrázky testu",
@@ -633,6 +635,43 @@
           "success": "Test byl úspěšně uzamčen"
         }
       }
+    }
+  },
+  "PublicResult": {
+    "pin": {
+      "title": "Zadejte PIN pro zobrazení výsledků",
+      "subtitle": "Prosím zadejte svůj 6místný PIN kód pro přístup k vašim výsledkům testu",
+      "resultId": "ID výsledku",
+      "verifying": "Ověřování...",
+      "invalidPin": "Neplatný PIN kód. Zkuste to prosím znovu.",
+      "testingNote": "Pro testování: PIN je"
+    },
+    "view": {
+      "title": "Vaše výsledky testu",
+      "subtitle": "Prohlédněte si svůj výkon a získejte podrobnou zpětnou vazbu",
+      "token": "Token",
+      "backToPin": "Zpět na zadání PIN",
+      "lockResults": "Zamknout výsledky"
+    },
+    "studentInfo": {
+      "title": "Informace o studentovi",
+      "name": "Jméno",
+      "score": "Skóre"
+    },
+    "images": {
+      "title": "Obrázky testu",
+      "original": "Původní test",
+      "evaluated": "Vyhodnocený test",
+      "viewFullscreen": "Zobrazit na celou obrazovku",
+      "closeFullscreen": "Zavřít"
+    },
+    "questions": {
+      "title": "Otázky testu",
+      "questionNumber": "Otázka {number}",
+      "studentAnswer": "Odpověď studenta",
+      "correctAnswer": "Správná odpověď",
+      "explanation": "Vysvětlení",
+      "askAi": "Zeptat se AI"
     }
   }
 }

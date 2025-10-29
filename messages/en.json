@@ -574,7 +574,9 @@
           "title": "Test Questions",
           "questionNumber": "Question {number}",
           "studentAnswer": "Student's Answer",
-          "correctAnswer": "Correct Answer"
+          "correctAnswer": "Correct Answer",
+          "explanation": "Explanation",
+          "askAi": "Ask AI"
         },
         "images": {
           "title": "Test Images",
@@ -633,6 +635,43 @@
           "success": "Test locked successfully"
         }
       }
+    }
+  },
+  "PublicResult": {
+    "pin": {
+      "title": "Enter PIN to View Results",
+      "subtitle": "Please enter your 6-digit PIN code to access your test results",
+      "resultId": "Result ID",
+      "verifying": "Verifying...",
+      "invalidPin": "Invalid PIN code. Please try again.",
+      "testingNote": "For testing: PIN is"
+    },
+    "view": {
+      "title": "Your Test Results",
+      "subtitle": "Review your performance and see detailed feedback",
+      "token": "Token",
+      "backToPin": "Back to PIN Entry",
+      "lockResults": "Lock Results"
+    },
+    "studentInfo": {
+      "title": "Student Information",
+      "name": "Name",
+      "score": "Score"
+    },
+    "images": {
+      "title": "Test Images",
+      "original": "Original Test",
+      "evaluated": "Evaluated Test",
+      "viewFullscreen": "View Fullscreen",
+      "closeFullscreen": "Close"
+    },
+    "questions": {
+      "title": "Test Questions",
+      "questionNumber": "Question {number}",
+      "studentAnswer": "Student's Answer",
+      "correctAnswer": "Correct Answer",
+      "explanation": "Explanation",
+      "askAi": "Ask AI"
     }
   }
 }

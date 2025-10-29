@@ -574,7 +574,9 @@
           "title": "Testfragen",
           "questionNumber": "Frage {number}",
           "studentAnswer": "Antwort des Schülers",
-          "correctAnswer": "Richtige Antwort"
+          "correctAnswer": "Richtige Antwort",
+          "explanation": "Erklärung",
+          "askAi": "KI fragen"
         },
         "images": {
           "title": "Testbilder",
@@ -633,6 +635,43 @@
           "success": "Test erfolgreich gesperrt"
         }
       }
+    }
+  },
+  "PublicResult": {
+    "pin": {
+      "title": "PIN eingeben, um Ergebnisse anzuzeigen",
+      "subtitle": "Bitte geben Sie Ihren 6-stelligen PIN-Code ein, um auf Ihre Testergebnisse zuzugreifen",
+      "resultId": "Ergebnis-ID",
+      "verifying": "Überprüfung...",
+      "invalidPin": "Ungültiger PIN-Code. Bitte versuchen Sie es erneut.",
+      "testingNote": "Zum Testen: PIN ist"
+    },
+    "view": {
+      "title": "Ihre Testergebnisse",
+      "subtitle": "Überprüfen Sie Ihre Leistung und sehen Sie detailliertes Feedback",
+      "token": "Token",
+      "backToPin": "Zurück zur PIN-Eingabe",
+      "lockResults": "Ergebnisse sperren"
+    },
+    "studentInfo": {
+      "title": "Schülerinformationen",
+      "name": "Name",
+      "score": "Punktzahl"
+    },
+    "images": {
+      "title": "Testbilder",
+      "original": "Original-Test",
+      "evaluated": "Bewerteter Test",
+      "viewFullscreen": "Vollbild anzeigen",
+      "closeFullscreen": "Schließen"
+    },
+    "questions": {
+      "title": "Testfragen",
+      "questionNumber": "Frage {number}",
+      "studentAnswer": "Antwort des Schülers",
+      "correctAnswer": "Richtige Antwort",
+      "explanation": "Erklärung",
+      "askAi": "KI fragen"
     }
   }
 }
