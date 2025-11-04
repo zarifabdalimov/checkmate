@@ -9,14 +9,15 @@ export function Hero() {
   const t = useTranslations("LandingPage.hero");
 
   return (
-    <section className="container mx-auto px-4 pt-32 pb-16">
-      <div className="text-center space-y-8 max-w-4xl mx-auto">
+    <section className="py-32 pb-16">
+      <div className="container mx-auto px-4">
+        <div className="text-center space-y-8 max-w-4xl mx-auto">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/10 text-primary shadow-sm">
           <Sparkles className="w-4 h-4" />
           <span className="text-sm font-medium">{t("badge")}</span>
         </div>
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight whitespace-pre-line">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight whitespace-pre-line leading-22">
           {t.rich("title", {
             highlight: (chunks) => (
               <span className="bg-gradient-to-r from-primary via-primary to-primary/80 bg-clip-text text-transparent">
@@ -39,6 +40,7 @@ export function Hero() {
               {t("getStarted")}
             </Button>
           </Link>
+        </div>
         </div>
       </div>
     </section>

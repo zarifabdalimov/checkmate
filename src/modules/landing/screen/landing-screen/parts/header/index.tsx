@@ -6,17 +6,49 @@ import { Button } from "@/modules/ui/button";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { LanguageSelector } from "./language-selector";
+import { useEffect, useState } from "react";
 
 export function Header() {
   const t = useTranslations("LandingPage.header");
   const auth = useAuth();
+  const [activeSection, setActiveSection] = useState<string>("");
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const headerOffset = 80; // Height of fixed header + some padding
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["why-checkmate", "how-it-works", "team", "sponsors"];
+      const scrollPosition = window.scrollY + 100; // Offset for better detection
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Check initial position
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/50 shadow-sm">
@@ -29,22 +61,44 @@ export function Header() {
 
           <nav className="hidden md:flex items-center space-x-8">
             <button
-              onClick={() => scrollToSection("features")}
-              className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+              onClick={() => scrollToSection("why-checkmate")}
+              className={`text-muted-foreground hover:text-foreground transition-colors font-medium relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 ${
+                activeSection === "why-checkmate" 
+                  ? "text-foreground after:w-full" 
+                  : "after:w-0 hover:after:w-full"
+              }`}
             >
               {t("navigation.features")}
             </button>
             <button
               onClick={() => scrollToSection("how-it-works")}
-              className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+              className={`text-muted-foreground hover:text-foreground transition-colors font-medium relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 ${
+                activeSection === "how-it-works" 
+                  ? "text-foreground after:w-full" 
+                  : "after:w-0 hover:after:w-full"
+              }`}
             >
               {t("navigation.howItWorks")}
             </button>
             <button
-              onClick={() => scrollToSection("about")}
-              className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+              onClick={() => scrollToSection("team")}
+              className={`text-muted-foreground hover:text-foreground transition-colors font-medium relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 ${
+                activeSection === "team" 
+                  ? "text-foreground after:w-full" 
+                  : "after:w-0 hover:after:w-full"
+              }`}
             >
               {t("navigation.about")}
+            </button>
+            <button
+              onClick={() => scrollToSection("sponsors")}
+              className={`text-muted-foreground hover:text-foreground transition-colors font-medium relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 ${
+                activeSection === "sponsors" 
+                  ? "text-foreground after:w-full" 
+                  : "after:w-0 hover:after:w-full"
+              }`}
+            >
+              Partners
             </button>
           </nav>
 

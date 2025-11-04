@@ -24,11 +24,11 @@
       }
     },
     "hero": {
-      "badge": "KI-gestützte Bildungsplattform",
-      "title": "Testen mit\n<highlight>KI-Intelligenz</highlight> transformieren",
-      "titleHighlight": "KI-Intelligenz",
-      "subtitle": "Ermöglichen Sie Lehrern, intelligente Bewertungen zu erstellen und Schülern personalisiertes Feedback und KI-gestützte Lernunterstützung zu bieten.",
-      "getStarted": "Kostenlos loslegen",
+      "badge": "Intelligentere Tests. Schnellere Bewertung. Besseres Lernen.",
+      "title": "Intelligentere Tests.\nSchnellere Bewertung.\n<highlight>Besseres Lernen.</highlight>",
+      "titleHighlight": "Besseres Lernen.",
+      "subtitle": "Checkmate hilft Lehrern, Routineaufgaben zu bewältigen, damit sie sich auf das Wesentliche konzentrieren können - ihre Schüler.",
+      "getStarted": "Demo testen",
       "watchDemo": "Demo ansehen",
       "stats": {
         "testsGenerated": "Erstellte Tests",
@@ -37,23 +37,35 @@
       }
     },
     "features": {
-      "title": "Komplette Bewertungslösung",
-      "subtitle": "Von der Testerstellung bis zum personalisierten Feedback – unsere Plattform übernimmt den gesamten Workflow der Bildungsbewertung.",
+      "title": "Warum Checkmate?",
+      "subtitle": "Unterrichten ist komplex. Wir machen es einfacher.",
+      "benefit1": {
+        "title": "Sparen Sie jede Woche Stunden Arbeit",
+        "description": "Automatisieren Sie Routineaufgaben und konzentrieren Sie sich auf das Wesentliche."
+      },
+      "benefit2": {
+        "title": "Analysieren Sie den Schülerfortschritt mit einem Klick",
+        "description": "Erhalten Sie sofortige Einblicke in die Leistung der Schüler und Klassentrends."
+      },
+      "benefit3": {
+        "title": "Helfen Sie jedem Schüler, sein volles Potenzial zu erreichen",
+        "description": "Bieten Sie personalisiertes Feedback und Anleitung für jeden Lernenden."
+      },
       "aiTestGeneration": {
-        "title": "KI-Testerstellung",
-        "description": "Erstellen Sie sofort umfassende Tests mit unserer fortschrittlichen KI, die Ihren Lehrplan und Ihre Lernziele versteht."
+        "title": "Tests sofort erstellen",
+        "description": "Generieren Sie vollständige, hochwertige Tests aus Ihren eigenen Materialien. Keine Vorlagen, keine Wiederholungen."
       },
       "automatedGrading": {
         "title": "Automatische Bewertung",
-        "description": "Sparen Sie Stunden mit intelligenter Bewertung, die detailliertes Feedback gibt und Lernlücken automatisch identifiziert."
+        "description": "Checkmate bewertet Schülerantworten in Sekunden, identifiziert häufige Fehler und liefert klare Erklärungen für jede Frage."
       },
       "studentInsights": {
-        "title": "Schülereinblicke",
-        "description": "Verfolgen Sie den Fortschritt der Schüler mit detaillierten Analysen und geben Sie personalisierte Lernempfehlungen."
+        "title": "Ergebnisse & Analysen",
+        "description": "Visualisieren Sie Trends über Schüler und Klassen hinweg. Entdecken Sie, wer hervorragend ist, wer Hilfe braucht und wo sich Ihr Unterricht anpassen kann."
       },
       "personalAiTutor": {
-        "title": "Persönlicher KI-Tutor",
-        "description": "Erhalten Sie sofortige Erklärungen und Lernhilfe, die auf Ihre spezifischen Bedürfnisse und Fehler zugeschnitten sind."
+        "title": "Intelligenter Lernassistent",
+        "description": "Hilft Schülern, intelligenter zu lernen mit klaren Erklärungen und sanfter Anleitung."
       },
       "interactiveResults": {
         "title": "Interaktive Ergebnisse",
@@ -62,36 +74,39 @@
       "studyMaterials": {
         "title": "Lernmaterialien",
         "description": "Erhalten Sie kuratierte Lernmaterialien und Übungsfragen basierend auf Ihrer Leistung und Ihren Lernzielen."
-      }
+      },
+      "sectionTitle": "Vom Testen zur Unterstützung der Schüler"
     },
     "howItWorks": {
-      "title": "Wie es funktioniert",
-      "subtitle": "Einfacher, leistungsstarker Workflow, der traditionelle Tests in ein intelligentes Lernerlebnis verwandelt.",
+      "title": "Einfach. Leistungsstark. Lehrerfreundlich.",
+      "subtitle": "Checkmate integriert sich nahtlos in Ihren bestehenden Arbeitsablauf.",
       "steps": {
         "generateTest": {
-          "title": "Test generieren",
-          "description": "Lehrer nutzen KI, um maßgeschneiderte Tests basierend auf ihrem Lehrplan und ihren Lernzielen zu erstellen."
+          "title": "Einen Test erstellen",
+          "description": "Laden Sie Ihre Unterrichtsmaterialien hoch oder beschreiben Sie, was Sie benötigen - Checkmates KI erstellt einen Test, der zu Ihren Inhalten und Zielen passt."
         },
         "printDistribute": {
-          "title": "Drucken & Verteilen",
-          "description": "Drucken Sie den generierten Test und verteilen Sie ihn an die Schüler für eine traditionelle papierbasierte Bewertung."
+          "title": "Drucken oder Teilen",
+          "description": "Verteilen Sie den Test digital oder auf Papier - was auch immer für Ihre Klasse am besten funktioniert."
         },
         "aiEvaluation": {
-          "title": "KI-Bewertung",
-          "description": "Unsere KI bewertet die ausgefüllten Tests und erstellt detailliertes Feedback und Erklärungen."
+          "title": "Lassen Sie die KI bewerten",
+          "description": "Nach dem Sammeln bewertet Checkmate automatisch jede Antwort und hebt wichtige Muster hervor."
         },
         "personalizedLearning": {
-          "title": "Personalisiertes Lernen",
-          "description": "Schüler erhalten personalisierte Links mit Ergebnissen, Erklärungen und KI-Nachhilfeunterstützung."
+          "title": "Personalisiertes Lernen anleiten",
+          "description": "Schüler erhalten individuelles Feedback, Erklärungen und adaptive Übungsfragen."
         }
       }
     },
     "aboutUs": {
-      "title": "Über uns",
-      "subtitle": "Lernen Sie das Team hinter CheckMate.ink kennen und erfahren Sie mehr über unsere Reise.",
+      "title": "Das Team kennenlernen",
+      "subtitle": "Die Köpfe hinter Checkmate.",
+      "description": "Wir sind ein junges tschechisches Team, das sich leidenschaftlich dafür einsetzt, Lehrern zu helfen, ihre beste Arbeit zu leisten.",
+      "collaboration": "Mit der Unterstützung von Investoren und Innovatoren, die unsere Mission teilen, entwickeln wir Checkmate in enger Zusammenarbeit mit tschechischen Pädagogen.",
       "achievement": {
         "title": "Erster Platz beim BlockJam Hackathon",
-        "description": "Wir haben den ersten Platz beim BlockJam Hackathon gewonnen und entwickeln dieses Projekt mit ihrer Förderung weiter, um innovative KI-gestützte Bildungslösungen für Lehrer und Schüler zu bringen."
+        "description": "Unsere Reise begann beim BlockJam Hackathon, wo Checkmate den ersten Platz für sein Potenzial gewann, die Bildung durch KI zu transformieren."
       },
       "team": {
         "title": "Unser Team",
@@ -104,15 +119,18 @@
         }
       },
       "sponsorship": {
-        "title": "Unterstützt von Theta Network",
-        "description": "Mit der fortlaufenden Unterstützung von Theta Network und unseren Technologiepartnern sind wir bestrebt, KI-gestützte Bildung für alle zugänglich zu machen.",
+        "title": "Unsere Partner",
+        "description": "Mit der Unterstützung von Theta Network, AWS und BlockJam bringen wir intelligentere Bildungstechnologie zum Leben.",
         "partnersTitle": "Technologiepartner"
       }
     },
     "cta": {
-      "title": "Bereit, Ihr Klassenzimmer zu transformieren?",
-      "subtitle": "Schließen Sie sich Tausenden von Pädagogen an, die bereits KI nutzen, um bessere Lernerfahrungen für ihre Schüler zu schaffen.",
-      "startTrial": "Kostenlos testen",
+      "title": "Demo testen",
+      "subtitle": "Checkmate ist derzeit in der Entwicklung, testen Sie unsere kostenlose Demo und sehen Sie, was bald kommt!",
+      "footer": "Für Lehrer, von Lehrern unterstützt",
+      "footerSubtitle": "Helfen Sie uns, ein Tool für echte Klassenzimmer zu entwickeln.",
+      "survey": "Nehmen Sie an der 3-minütigen Umfrage teil",
+      "startTrial": "Demo testen",
       "scheduleDemo": "Demo vereinbaren",
       "contactUs": "Kontaktieren Sie uns"
     },

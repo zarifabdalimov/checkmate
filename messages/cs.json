@@ -24,11 +24,11 @@
       }
     },
     "hero": {
-      "badge": "Vzdělávací platforma s umělou inteligencí",
-      "title": "Transformujte\ntestování pomocí <highlight>AI</highlight>",
-      "titleHighlight": "umělé inteligence",
-      "subtitle": "Umožněte učitelům vytvářet inteligentní hodnocení a poskytovat studentům personalizovanou zpětnou vazbu a studijní pomoc s AI.",
-      "getStarted": "Začněte zdarma",
+      "badge": "Chytřejší testy. Rychlejší hodnocení. Lepší učení.",
+      "title": "Chytřejší testy.\nRychlejší hodnocení.\n<highlight>Lepší učení.</highlight>",
+      "titleHighlight": "Lepší učení.",
+      "subtitle": "Checkmate pomáhá učitelům s rutinními úkoly, aby se mohli soustředit na to nejdůležitější - své studenty.",
+      "getStarted": "Vyzkoušet demo",
       "watchDemo": "Shlédnout demo",
       "stats": {
         "testsGenerated": "Vygenerovaných testů",
@@ -37,23 +37,35 @@
       }
     },
     "features": {
-      "title": "Kompletní řešení pro hodnocení",
-      "subtitle": "Od tvorby testů po personalizovanou zpětnou vazbu, naše platforma zvládá celý proces vzdělávacího hodnocení.",
+      "title": "Proč Checkmate?",
+      "subtitle": "Učení je náročné. My ho zjednodušujeme.",
+      "benefit1": {
+        "title": "Ušetřete hodiny práce každý týden",
+        "description": "Automatizujte rutinní hodnocení a soustřeďte se na to nejdůležitější."
+      },
+      "benefit2": {
+        "title": "Analyzujte pokroky studentů jedním kliknutím",
+        "description": "Získejte okamžitý přehled o výkonu studentů a trendech ve třídě."
+      },
+      "benefit3": {
+        "title": "Pomozte každému studentovi rozvinout jeho potenciál",
+        "description": "Poskytněte personalizovanou zpětnou vazbu a vedení pro každého studenta."
+      },
       "aiTestGeneration": {
-        "title": "Generování testů pomocí AI",
-        "description": "Vytvářejte komplexní testy okamžitě s naší pokročilou AI, která rozumí vašemu učebnímu plánu a vzdělávacím cílům."
+        "title": "Tvorba testů během chvilky",
+        "description": "Vytvářejte testy z vlastních materiálů. Bez šablon, bez opakování."
       },
       "automatedGrading": {
         "title": "Automatické hodnocení",
-        "description": "Ušetřete hodiny času s inteligentním hodnocením, které poskytuje detailní zpětnou vazbu a automaticky identifikuje mezery ve vzdělávání."
+        "description": "Checkmate vyhodnotí odpovědi v testech za vás - rychle a spolehlivě."
       },
       "studentInsights": {
-        "title": "Přehled o studentech",
-        "description": "Sledujte pokrok studentů s detailní analytikou a poskytujte personalizovaná doporučení pro učení."
+        "title": "Výsledky a analýzy",
+        "description": "Získejte přehled o trendech napříč třídami. Poznejte, kdo vyniká, kdo potřebuje pomoc a jak přizpůsobit vaši výuku na míru studentům."
       },
       "personalAiTutor": {
-        "title": "Osobní AI tutor",
-        "description": "Získejte okamžitá vysvětlení a studijní vedení přizpůsobené vašim specifickým potřebám a chybám."
+        "title": "Chytrý studijní asistent",
+        "description": "Pomáhá studentům pochopit látku a zlepšovat se vlastním tempem."
       },
       "interactiveResults": {
         "title": "Interaktivní výsledky",
@@ -62,36 +74,39 @@
       "studyMaterials": {
         "title": "Studijní materiály",
         "description": "Získejte vybrané studijní materiály a cvičné otázky na základě vašeho výkonu a studijních cílů."
-      }
+      },
+      "sectionTitle": "Od testování až po rozvoj studentů"
     },
     "howItWorks": {
-      "title": "Jak to funguje",
-      "subtitle": "Jednoduchý, výkonný pracovní postup, který transformuje tradiční testování na inteligentní vzdělávací zkušenost.",
+      "title": "Jednoduchá. Chytrá. Pro učitele.",
+      "subtitle": "Aplikace Checkmate se přirozeně stane součástí vaší výuky.",
       "steps": {
         "generateTest": {
-          "title": "Vygenerovat test",
-          "description": "Učitelé používají AI k vytváření přizpůsobených testů na základě jejich učebního plánu a vzdělávacích cílů."
+          "title": "Vytvořte test",
+          "description": "Nahrajte své materiály nebo popište, co potřebujete - Checkmate vám připraví test přesně podle vašich potřeb."
         },
         "printDistribute": {
-          "title": "Tisk a distribuce",
-          "description": "Vytiskněte vygenerovaný test a rozdejte studentům pro tradiční papírové hodnocení."
+          "title": "Vytiskněte nebo sdílejte online",
+          "description": "Sdílejte testy se studenty online nebo v papírové podobě - tak, jak vám to vyhovuje."
         },
         "aiEvaluation": {
-          "title": "AI hodnocení",
-          "description": "Naše AI vyhodnocuje dokončené testy a generuje detailní zpětnou vazbu a vysvětlení."
+          "title": "Opravování nechte na umělé inteligenci",
+          "description": "Checkmate po odevzdání testu automaticky vyhodnotí odpovědi a zároveň odhalí časté chyby i opakující se vzorce."
         },
         "personalizedLearning": {
-          "title": "Personalizované učení",
-          "description": "Studenti obdrží personalizované odkazy s výsledky, vysvětleními a podporou AI tutora."
+          "title": "Pomozte studentům učit se po svém",
+          "description": "Studenti získají individuální hodnocení, na míru šitá cvičení a výklad probírané látky."
         }
       }
     },
     "aboutUs": {
-      "title": "O nás",
-      "subtitle": "Seznamte se s týmem za CheckMate.ink a dozvíte se o naší cestě.",
+      "title": "Náš tým",
+      "subtitle": "Lidé stojící za Checkmate",
+      "description": "Jsme mladý tým, který pomáhá učitelům dělat jejich práci co nejlépe. Spolupracujeme s českými pedagogy a máme podporu investorů, kteří sdílí naši vizi.",
+      "collaboration": "Jsme mladý tým, který pomáhá učitelům dělat jejich práci co nejlépe. Spolupracujeme s českými pedagogy a máme podporu investorů, kteří sdílí naši vizi.",
       "achievement": {
-        "title": "První místo na BlockJam Hackathonu",
-        "description": "Vyhráli jsme první místo na BlockJam hackathonu a pokračujeme ve vývoji tohoto projektu s jejich sponzorstvím, přinášíme inovativní AI řešení pro vzdělávání učitelům a studentům."
+        "title": "Vítězství na BlockJam Hackathonu",
+        "description": "Naše cesta začala na soutěži BlockJam Hackathon, kde aplikace Checkmate vyhrála první místo díky inovativnímu využití umělé inteligence ve vzdělávání."
       },
       "team": {
         "title": "Náš tým",
@@ -104,15 +119,18 @@
         }
       },
       "sponsorship": {
-        "title": "Poháněno Theta Network",
-        "description": "S pokračující podporou Theta Network a našich technologických partnerů se zavazujeme zpřístupnit AI vzdělávání všem.",
+        "title": "Naši partneři",
+        "description": "Díky podpoře Theta Network, AWS a BlockJam přinášíme do škol řešení, které pomáhají učitelům i studentům.",
         "partnersTitle": "Technologičtí partneři"
       }
     },
     "cta": {
-      "title": "Připraveni transformovat vaši třídu?",
-      "subtitle": "Připojte se k tisícům pedagogů, kteří již používají AI k vytváření lepších vzdělávacích zkušeností pro své studenty.",
-      "startTrial": "Začít zkušební verzi zdarma",
+      "title": "Vyzkoušet demo",
+      "subtitle": "Na aplikaci pracujeme, vyzkoušejte zdarma naše demo a podívejte se, co se chystá!",
+      "footer": "Pro učitele. S učiteli.",
+      "footerSubtitle": "Pomozte nám tvořit nástroj, který učitelům opravdu pomáhá.",
+      "survey": "Vyplňte dotazník (3 minuty)",
+      "startTrial": "Vyzkoušet demo",
       "scheduleDemo": "Naplánovat demo",
       "contactUs": "Kontaktujte nás"
     },

@@ -24,11 +24,11 @@
       }
     },
     "hero": {
-      "badge": "AI-Powered Education Platform",
-      "title": "Transform Testing with\n<highlight>AI Intelligence</highlight>",
-      "titleHighlight": "AI Intelligence",
-      "subtitle": "Empower teachers to create intelligent assessments and provide students with personalized feedback and AI-powered study assistance.",
-      "getStarted": "Get Started Free",
+      "badge": "Smarter Tests. Faster Grading. Better Learning.",
+      "title": "Smarter Tests.\nFaster Grading.\n<highlight>Better Learning.</highlight>",
+      "titleHighlight": "Better Learning.",
+      "subtitle": "Checkmate helps teachers handle routine tasks so they can focus on what truly matters - their students.",
+      "getStarted": "Try the demo",
       "watchDemo": "Watch Demo",
       "stats": {
         "testsGenerated": "Tests Generated",
@@ -37,23 +37,35 @@
       }
     },
     "features": {
-      "title": "Complete Assessment Solution",
-      "subtitle": "From test creation to personalized feedback, our platform handles the entire educational assessment workflow.",
+      "title": "Why Checkmate?",
+      "subtitle": "Teaching is complex. We make it simpler.",
+      "benefit1": {
+        "title": "Save hours of work each week",
+        "description": "Automate routine grading tasks and focus on what matters most."
+      },
+      "benefit2": {
+        "title": "Analyze student progress in one click",
+        "description": "Get instant insights into student performance and class trends."
+      },
+      "benefit3": {
+        "title": "Help every student reach their full potential",
+        "description": "Provide personalized feedback and guidance for each learner."
+      },
       "aiTestGeneration": {
-        "title": "AI Test Generation",
-        "description": "Create comprehensive tests instantly with our advanced AI that understands your curriculum and learning objectives."
+        "title": "Create tests instantly",
+        "description": "Generate complete, high-quality tests from your own materials. No templates, no repetition."
       },
       "automatedGrading": {
-        "title": "Automated Grading",
-        "description": "Save hours with intelligent evaluation that provides detailed feedback and identifies learning gaps automatically."
+        "title": "Automatic grading",
+        "description": "Checkmate grades student responses in seconds, identifies common mistakes, and provides clear explanations for every question."
       },
       "studentInsights": {
-        "title": "Student Insights",
-        "description": "Track student progress with detailed analytics and provide personalized learning recommendations."
+        "title": "Results & Analytics",
+        "description": "Visualize trends across students and classes. Discover who's excelling, who needs help, and where your teaching can adapt."
       },
       "personalAiTutor": {
-        "title": "Personal AI Tutor",
-        "description": "Get instant explanations and study guidance tailored to your specific learning needs and mistakes."
+        "title": "Smart Study Assistant",
+        "description": "Helps students learn smarter with clear explanations and gentle guidance."
       },
       "interactiveResults": {
         "title": "Interactive Results",
@@ -62,36 +74,39 @@
       "studyMaterials": {
         "title": "Study Materials",
         "description": "Receive curated study materials and practice questions based on your performance and learning goals."
-      }
+      },
+      "sectionTitle": "From making tests to helping students"
     },
     "howItWorks": {
-      "title": "How It Works",
-      "subtitle": "Simple, powerful workflow that transforms traditional testing into an intelligent learning experience.",
+      "title": "Simple. Powerful. Teacher-friendly.",
+      "subtitle": "Checkmate integrates seamlessly into your existing workflow.",
       "steps": {
         "generateTest": {
-          "title": "Generate Test",
-          "description": "Teachers use AI to create customized tests based on their curriculum and learning objectives."
+          "title": "Create a Test",
+          "description": "Upload your lesson materials or describe what you need - Checkmate's AI builds a test that matches your content and objectives."
         },
         "printDistribute": {
-          "title": "Print & Distribute",
-          "description": "Print the generated test and distribute to students for traditional paper-based assessment."
+          "title": "Print or Share",
+          "description": "Distribute the test digitally or on paper - whatever works best for your class."
         },
         "aiEvaluation": {
-          "title": "AI Evaluation",
-          "description": "Our AI evaluates completed tests and generates detailed feedback and explanations."
+          "title": "Let AI Do the Grading",
+          "description": "Once collected, Checkmate automatically evaluates every response and highlights key patterns."
         },
         "personalizedLearning": {
-          "title": "Personalized Learning",
-          "description": "Students receive personalized links with results, explanations, and AI tutoring support."
+          "title": "Guide Personalized Learning",
+          "description": "Students receive individualized feedback, explanations, and adaptive practice questions."
         }
       }
     },
     "aboutUs": {
-      "title": "About Us",
-      "subtitle": "Meet the team behind CheckMate.ink and learn about our journey.",
+      "title": "Meet the Team",
+      "subtitle": "The minds behind Checkmate.",
+      "description": "We're a young Czech team passionate about helping teachers do their best work.",
+      "collaboration": "Backed by investors and innovators who share our mission, we're developing Checkmate in close collaboration with Czech educators.",
       "achievement": {
         "title": "First Place at BlockJam Hackathon",
-        "description": "We won first place at the BlockJam hackathon and continue to develop this project with their sponsorship, bringing innovative AI-powered education solutions to teachers and students."
+        "description": "Our journey began at the BlockJam Hackathon, where Checkmate won first place for its potential to transform education through AI."
       },
       "team": {
         "title": "Our Team",
@@ -104,15 +119,18 @@
         }
       },
       "sponsorship": {
-        "title": "Powered by Theta Network",
-        "description": "With continued support from Theta Network and our technology partners, we're committed to making AI-powered education accessible to everyone.",
+        "title": "Our Partners",
+        "description": "With support from Theta Network, AWS, and BlockJam, we're bringing smarter education technology to life.",
         "partnersTitle": "Technology Partners"
       }
     },
     "cta": {
-      "title": "Ready to Transform Your Classroom?",
-      "subtitle": "Join thousands of educators who are already using AI to create better learning experiences for their students.",
-      "startTrial": "Start Free Trial",
+      "title": "Try the demo",
+      "subtitle": "Checkmate is currently in development, try our free demo to see what's coming soon!",
+      "footer": "For Teachers, Backed by Teachers",
+      "footerSubtitle": "Help us build a tool for real classrooms.",
+      "survey": "Take the 3-minute survey",
+      "startTrial": "Try the demo",
       "scheduleDemo": "Schedule Demo",
       "contactUs": "Contact Us"
     },

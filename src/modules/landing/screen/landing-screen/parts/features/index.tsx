@@ -20,15 +20,13 @@ export function Features() {
   const t = useTranslations("LandingPage.features");
 
   return (
-    <section id="features" className="container mx-auto px-4 py-16">
-      <div className="text-center space-y-4 mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold">{t("title")}</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          {t("subtitle")}
-        </p>
+    <section id="features" className="py-16">
+      <div className="container mx-auto px-4">
+        <div className="text-center space-y-4 mb-12">
+        <h2 className="text-2xl md:text-3xl font-bold">{t("sectionTitle")}</h2>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20">
           <CardHeader>
             <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
@@ -76,28 +74,7 @@ export function Features() {
             </CardDescription>
           </CardHeader>
         </Card>
-
-        <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20">
-          <CardHeader>
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-              <BookOpen className="w-6 h-6 text-primary" />
-            </div>
-            <CardTitle>{t("interactiveResults.title")}</CardTitle>
-            <CardDescription>
-              {t("interactiveResults.description")}
-            </CardDescription>
-          </CardHeader>
-        </Card>
-
-        <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20">
-          <CardHeader>
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-              <GraduationCap className="w-6 h-6 text-primary" />
-            </div>
-            <CardTitle>{t("studyMaterials.title")}</CardTitle>
-            <CardDescription>{t("studyMaterials.description")}</CardDescription>
-          </CardHeader>
-        </Card>
+      </div>
       </div>
     </section>
   );
