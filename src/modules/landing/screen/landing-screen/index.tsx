@@ -15,8 +15,8 @@ export function LandingScreen() {
       <Hero />
       <Features />
       <HowItWorks />
-      <HackathonWinners />
       <OurTeam />
+      <HackathonWinners />
       <Sponsors />
       <CTA />
       <Footer />

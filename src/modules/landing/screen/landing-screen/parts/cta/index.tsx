@@ -3,6 +3,7 @@
 import { Button } from "@/modules/ui/button";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { Mail, Phone } from "lucide-react";
 
 export function CTA() {
   const t = useTranslations("LandingPage.cta");
@@ -22,6 +23,25 @@ export function CTA() {
                 {t("startTrial")}
               </Button>
             </Link>
+          </div>
+          <div className="mt-8 pt-8 border-t border-border/50">
+            <h3 className="text-xl font-semibold mb-4">{t("contactUs")}</h3>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-muted-foreground">
+              <a 
+                href="mailto:info@checkmate.ink" 
+                className="hover:text-primary transition-colors flex items-center gap-2"
+              >
+                <Mail className="w-5 h-5" />
+                info@checkmate.ink
+              </a>
+              <a 
+                href="tel:+420721518984" 
+                className="hover:text-primary transition-colors flex items-center gap-2"
+              >
+                <Phone className="w-5 h-5" />
+                +420 721 518 984
+              </a>
+            </div>
           </div>
         </div>
       </div>
