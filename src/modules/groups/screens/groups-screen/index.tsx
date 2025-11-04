@@ -2,15 +2,15 @@
 
 import { useGetApiV1Groups } from "@/lib/api/generated/aPIForCheckmateApp";
 import { Group } from "@/lib/api/generated/model";
-import { GroupFormData } from "./parts/add-edit-group-dialog/hooks/use-group-form";
-import { Status } from "../../../components/status";
-import { useGroupMutations } from "./hooks/use-group-mutations";
 import { Button } from "@/modules/ui/button";
 import { Plus } from "lucide-react";
 import { useTranslations } from "next-intl";
 import * as React from "react";
 import { useBoolean } from "usehooks-ts";
+import { Status } from "../../../components/status";
+import { useGroupMutations } from "./hooks/use-group-mutations";
 import { AddEditGroupDialog } from "./parts/add-edit-group-dialog";
+import { GroupFormData } from "./parts/add-edit-group-dialog/hooks/use-group-form";
 import { GroupsTable } from "./parts/groups-table";
 
 export function GroupsScreen() {

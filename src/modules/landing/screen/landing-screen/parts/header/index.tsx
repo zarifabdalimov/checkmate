@@ -5,8 +5,8 @@ import { Link } from "@/i18n/navigation";
 import { Button } from "@/modules/ui/button";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { LanguageSelector } from "./language-selector";
 import { useEffect, useState } from "react";
+import { LanguageSelector } from "./language-selector";
 
 export function Header() {
   const t = useTranslations("LandingPage.header");
@@ -18,11 +18,12 @@ export function Header() {
     if (element) {
       const headerOffset = 80; // Height of fixed header + some padding
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   };
@@ -36,7 +37,10 @@ export function Header() {
         const element = document.getElementById(sectionId);
         if (element) {
           const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
             setActiveSection(sectionId);
             break;
           }
@@ -63,8 +67,8 @@ export function Header() {
             <button
               onClick={() => scrollToSection("why-checkmate")}
               className={`text-muted-foreground hover:text-foreground transition-colors font-medium relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 ${
-                activeSection === "why-checkmate" 
-                  ? "text-foreground after:w-full" 
+                activeSection === "why-checkmate"
+                  ? "text-foreground after:w-full"
                   : "after:w-0 hover:after:w-full"
               }`}
             >
@@ -73,8 +77,8 @@ export function Header() {
             <button
               onClick={() => scrollToSection("how-it-works")}
               className={`text-muted-foreground hover:text-foreground transition-colors font-medium relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 ${
-                activeSection === "how-it-works" 
-                  ? "text-foreground after:w-full" 
+                activeSection === "how-it-works"
+                  ? "text-foreground after:w-full"
                   : "after:w-0 hover:after:w-full"
               }`}
             >
@@ -83,8 +87,8 @@ export function Header() {
             <button
               onClick={() => scrollToSection("team")}
               className={`text-muted-foreground hover:text-foreground transition-colors font-medium relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 ${
-                activeSection === "team" 
-                  ? "text-foreground after:w-full" 
+                activeSection === "team"
+                  ? "text-foreground after:w-full"
                   : "after:w-0 hover:after:w-full"
               }`}
             >
@@ -93,8 +97,8 @@ export function Header() {
             <button
               onClick={() => scrollToSection("sponsors")}
               className={`text-muted-foreground hover:text-foreground transition-colors font-medium relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 ${
-                activeSection === "sponsors" 
-                  ? "text-foreground after:w-full" 
+                activeSection === "sponsors"
+                  ? "text-foreground after:w-full"
                   : "after:w-0 hover:after:w-full"
               }`}
             >

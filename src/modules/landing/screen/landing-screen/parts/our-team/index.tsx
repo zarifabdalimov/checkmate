@@ -1,9 +1,10 @@
 "use client";
 
-import { Avatar, AvatarImage, AvatarFallback } from "@/modules/ui/avatar";
-import { Users } from "lucide-react";
-import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { fadeInUp, scaleIn, staggerContainer } from "@/lib/animations";
+import { Avatar, AvatarFallback, AvatarImage } from "@/modules/ui/avatar";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function OurTeam() {
   const t = useTranslations("LandingPage.aboutUs");
@@ -38,44 +39,66 @@ export function OurTeam() {
   return (
     <section id="team" className="bg-muted/30 py-16">
       <div className="container mx-auto px-4">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="text-center space-y-4 mb-12"
+        >
+          <motion.h2
+            variants={fadeInUp}
+            className="text-3xl md:text-4xl font-bold"
+          >
             {t("title")}
-          </h2>
-          <p className="text-xl text-muted-foreground font-medium max-w-xl mx-auto">
+          </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            className="text-xl text-muted-foreground font-medium max-w-xl mx-auto"
+          >
             {t("subtitle")}
-          </p>
-          <p className="text-base text-muted-foreground max-w-2xl mx-auto pt-2">
+          </motion.p>
+          <motion.p
+            variants={fadeInUp}
+            className="text-base text-muted-foreground max-w-2xl mx-auto pt-2"
+          >
             {t("collaboration")}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-12 pt-4">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="flex flex-wrap justify-center gap-12 pt-4"
+        >
           {team.map((member) => (
-            <Link
-              key={member.name}
-              href={member.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex flex-col items-center space-y-4 transition-all duration-300"
-            >
-              <Avatar className="w-48 h-48 border-4 border-primary/20 group-hover:border-primary/50 transition-all group-hover:scale-105">
-                <AvatarImage src={member.photo} alt={member.name} />
-                <AvatarFallback className="text-5xl font-bold text-primary">
-                  {member.name.charAt(0)}
-                </AvatarFallback>
-              </Avatar>
-              <div className="text-center space-y-1">
-                <h4 className="font-semibold text-xl group-hover:text-primary transition-colors">
-                  {member.name}
-                </h4>
-                <p className="text-base text-muted-foreground max-w-[220px]">
-                  {t(`team.positions.${member.position}`)}
-                </p>
-              </div>
-            </Link>
+            <motion.div key={member.name} variants={scaleIn}>
+              <Link
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col items-center space-y-4 transition-all duration-300"
+              >
+                <Avatar className="w-48 h-48 border-4 border-primary/20 group-hover:border-primary/50 transition-all group-hover:scale-105">
+                  <AvatarImage src={member.photo} alt={member.name} />
+                  <AvatarFallback className="text-5xl font-bold text-primary">
+                    {member.name.charAt(0)}
+                  </AvatarFallback>
+                </Avatar>
+                <div className="text-center space-y-1">
+                  <h4 className="font-semibold text-xl group-hover:text-primary transition-colors">
+                    {member.name}
+                  </h4>
+                  <p className="text-base text-muted-foreground max-w-[220px]">
+                    {t(`team.positions.${member.position}`)}
+                  </p>
+                </div>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

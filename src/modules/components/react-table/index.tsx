@@ -1,6 +1,3 @@
-import { flexRender, useReactTable } from "@tanstack/react-table";
-import * as React from "react";
-
 import {
   Table,
   TableBody,
@@ -9,6 +6,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/modules/ui/table";
+import { flexRender, useReactTable } from "@tanstack/react-table";
+import * as React from "react";
 
 interface ReactTableProps<T> {
   table: ReturnType<typeof useReactTable<T>>;

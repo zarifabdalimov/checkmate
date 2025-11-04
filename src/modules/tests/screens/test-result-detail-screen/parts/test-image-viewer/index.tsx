@@ -1,7 +1,7 @@
 "use client";
 
-import { Dialog, DialogContent } from "@/modules/ui/dialog";
 import { Button } from "@/modules/ui/button";
+import { Dialog, DialogContent } from "@/modules/ui/dialog";
 import { Maximize2Icon } from "lucide-react";
 import { useState } from "react";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";

@@ -1,7 +1,7 @@
+import { Test } from "@/lib/api/generated/model";
 import { ReactTable } from "@/modules/components/react-table";
 import * as React from "react";
 import { useTestsTable } from "./hooks/use-tests-table";
-import { Test } from "@/lib/api/generated/model";
 
 interface TestsTableProps {
   data: Test[];

@@ -1,13 +1,13 @@
-import { InitAmplify } from "@/modules/amplify/parts/init-amplify";
-import { Toaster } from "@/modules/ui/sonner";
-import { QueryProvider } from "@/modules/providers/query-provider";
+import { routing } from "@/i18n/routing";
 import { METADATA_CONSTANTS } from "@/lib/constants/metadata";
+import { InitAmplify } from "@/modules/amplify/parts/init-amplify";
+import { QueryProvider } from "@/modules/providers/query-provider";
+import { Toaster } from "@/modules/ui/sonner";
 import type { Metadata } from "next";
-import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { Inter, Lora } from "next/font/google";
 import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
 import { PropsWithChildren } from "react";
 import "../globals.css";
 

@@ -1,7 +1,7 @@
 "use client";
 
-import { useMutation } from "@tanstack/react-query";
 import { resetUserPassword } from "@/lib/auth";
+import { useMutation } from "@tanstack/react-query";
 
 export function useResetPassword() {
   return useMutation({

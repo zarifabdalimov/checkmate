@@ -1,7 +1,7 @@
 import type { TestItemWithAnswer, TestResult } from "@/lib/api/generated/model";
-import { TestResultStudentInfo } from "./student-info";
 import { TestResultImages } from "./images";
 import { TestResultQuestions } from "./questions";
+import { TestResultStudentInfo } from "./student-info";
 
 interface TestResultDisplayProps {
   testResult: TestResult & {

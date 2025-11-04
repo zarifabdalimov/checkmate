@@ -1,3 +1,4 @@
+import { Link } from "@/i18n/navigation";
 import { Test } from "@/lib/api/generated/model";
 import { TEMP_ENTITY_ID } from "@/lib/constants/cache";
 import { TableDeleteAction, TableExternalLinkAction } from "@/modules/ui/table";
@@ -7,7 +8,6 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import * as React from "react";
 
 interface UseTestsTableProps {

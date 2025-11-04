@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/modules/ui/card";
 import { TestImageViewer } from "@/modules/tests/screens/test-result-detail-screen/parts/test-image-viewer";
+import { Card, CardContent, CardHeader, CardTitle } from "@/modules/ui/card";
 
 interface TestResultImagesProps {
   originalFileUrl?: string;

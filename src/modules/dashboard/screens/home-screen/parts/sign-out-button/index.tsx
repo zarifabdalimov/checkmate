@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/modules/ui/button";
 import { useSignOut } from "@/hooks/use-sign-out";
+import { Button } from "@/modules/ui/button";
 import { useRouter } from "next/navigation";
 
 export function SignOutButton() {

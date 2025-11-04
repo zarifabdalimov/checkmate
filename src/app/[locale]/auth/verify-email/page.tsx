@@ -1,5 +1,5 @@
-import { VerifyEmailScreen } from "@/modules/auth/screens/verify-email";
 import { createPageMetadata } from "@/lib/constants/metadata";
+import { VerifyEmailScreen } from "@/modules/auth/screens/verify-email";
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { Suspense } from "react";

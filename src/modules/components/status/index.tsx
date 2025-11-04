@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils";
-import { Spinner } from "../../ui/spinner";
 import { Button } from "@/modules/ui/button";
 import { Plus } from "lucide-react";
 import { DynamicIcon, IconName } from "lucide-react/dynamic";
 import * as React from "react";
+import { Spinner } from "../../ui/spinner";
 
 interface EmptyStateProps {
   icon?: IconName;

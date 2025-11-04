@@ -1,3 +1,4 @@
+import { TestParamsQuestionFormat } from "@/lib/api/generated/model";
 import {
   FormControl,
   FormField,
@@ -13,7 +14,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/modules/ui/select";
-import { TestParamsQuestionFormat } from "@/lib/api/generated/model";
 import { useTranslations } from "next-intl";
 import { useTestFormContext } from "../../hooks/use-test-form-context";
 

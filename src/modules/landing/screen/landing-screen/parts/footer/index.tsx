@@ -24,15 +24,15 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Contact</h3>
             <div className="space-y-3">
-              <a 
-                href="mailto:info@checkmate.ink" 
+              <a
+                href="mailto:info@checkmate.ink"
                 className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="w-4 h-4" />
                 info@checkmate.ink
               </a>
-              <a 
-                href="tel:+420721518984" 
+              <a
+                href="tel:+420721518984"
                 className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
               >
                 <Phone className="w-4 h-4" />

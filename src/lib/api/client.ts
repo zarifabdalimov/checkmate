@@ -1,5 +1,5 @@
-import Axios, { AxiosError, AxiosRequestConfig } from "axios";
 import { fetchAuthSession } from "aws-amplify/auth";
+import Axios, { AxiosError, AxiosRequestConfig } from "axios";
 
 export const AXIOS_INSTANCE = Axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,

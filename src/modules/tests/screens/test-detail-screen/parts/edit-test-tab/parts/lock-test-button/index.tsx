@@ -5,6 +5,7 @@ import {
   usePostApiV1TestsTestIdComplete,
 } from "@/lib/api/generated/aPIForCheckmateApp";
 import { TestStatus } from "@/lib/api/generated/model";
+import { queryClient } from "@/modules/providers/query-provider";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -17,7 +18,6 @@ import {
   AlertDialogTrigger,
 } from "@/modules/ui/alert-dialog";
 import { Button } from "@/modules/ui/button";
-import { queryClient } from "@/modules/providers/query-provider";
 import { Lock } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";

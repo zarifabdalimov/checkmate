@@ -12,9 +12,9 @@ import {
   DropzoneTrigger,
   useDropzone,
 } from "@/modules/ui/dropzone";
-import { CloudUploadIcon, Trash2Icon, Loader2Icon } from "lucide-react";
-import Image from "next/image";
+import { CloudUploadIcon, Loader2Icon, Trash2Icon } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { useUploadResults } from "./hooks/use-upload-results";
 
 interface UploadResultsTabProps {

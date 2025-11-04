@@ -5,6 +5,7 @@ import {
   usePatchApiV1TestsTestId,
 } from "@/lib/api/generated/aPIForCheckmateApp";
 import { Test, TestParamsQuestionFormat } from "@/lib/api/generated/model";
+import { queryClient } from "@/modules/providers/query-provider";
 import { useEditTestForm } from "@/modules/tests/screens/test-detail-screen/parts/edit-test-tab/hooks/use-edit-test-form-context";
 import { Button } from "@/modules/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/modules/ui/tabs";
@@ -16,7 +17,6 @@ import { ContentEditorStep } from "./parts/content-editor-step";
 import { LockTestButton } from "./parts/lock-test-button";
 import { ParametersStep } from "./parts/parameters-step";
 import { EditTestFormData } from "./types";
-import { queryClient } from "@/modules/providers/query-provider";
 
 interface EditTestTabProps {
   test: Test;

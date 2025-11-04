@@ -1,8 +1,8 @@
 "use client";
 
+import { confirmPasswordReset } from "@/lib/auth";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-import { confirmPasswordReset } from "@/lib/auth";
 
 export function useConfirmPasswordReset() {
   const router = useRouter();

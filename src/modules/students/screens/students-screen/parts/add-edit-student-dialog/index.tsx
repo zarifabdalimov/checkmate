@@ -1,5 +1,6 @@
 "use client";
 
+import { Student } from "@/lib/api/generated/model";
 import { Button } from "@/modules/ui/button";
 import {
   Dialog,
@@ -18,10 +19,9 @@ import {
   FormMessage,
 } from "@/modules/ui/form";
 import { Input } from "@/modules/ui/input";
-import { Student } from "@/lib/api/generated/model";
 import { useTranslations } from "next-intl";
-import { useEffect } from "react";
 import * as React from "react";
+import { useEffect } from "react";
 import { StudentFormData, useStudentForm } from "./hooks/use-student-form";
 
 interface AddEditStudentDialogProps {

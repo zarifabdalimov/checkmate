@@ -1,5 +1,6 @@
 "use client";
 
+import { Link } from "@/i18n/navigation";
 import { SignOutButton } from "@/modules/dashboard/screens/home-screen/parts/sign-out-button";
 
 import {
@@ -17,7 +18,6 @@ import {
 import { BookOpen, FileText, Users } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { Link } from "@/i18n/navigation";
 import { usePathname } from "next/navigation";
 
 const getNavigationItems = (t: ReturnType<typeof useTranslations>) => [

@@ -1,14 +1,14 @@
+import { Link } from "@/i18n/navigation";
+import type { TestResult } from "@/lib/api/generated/model/testResult";
+import { Grade } from "@/modules/components/grade";
 import { ReactTable } from "@/modules/components/react-table";
 import { Status } from "@/modules/components/status";
-import { Grade } from "@/modules/components/grade";
+import { TableExternalLinkAction } from "@/modules/ui/table";
 import {
   createColumnHelper,
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import type { TestResult } from "@/lib/api/generated/model/testResult";
-import { TableExternalLinkAction } from "@/modules/ui/table";
-import { Link } from "@/i18n/navigation";
 
 interface ResultsTableProps {
   data: TestResult[];

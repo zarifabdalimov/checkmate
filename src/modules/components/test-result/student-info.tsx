@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/modules/ui/card";
 import { Grade } from "@/modules/components/grade";
+import { Card, CardContent, CardHeader, CardTitle } from "@/modules/ui/card";
 
 interface TestResultStudentInfoProps {
   studentName?: string;

@@ -1,5 +1,5 @@
-import { ReactTable } from "@/modules/components/react-table";
 import { Group } from "@/lib/api/generated/model";
+import { ReactTable } from "@/modules/components/react-table";
 import * as React from "react";
 import { useGroupsTable } from "./hooks/use-groups-table";
 

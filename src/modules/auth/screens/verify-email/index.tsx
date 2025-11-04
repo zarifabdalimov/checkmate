@@ -1,5 +1,8 @@
 "use client";
 
+import { useConfirmSignUp } from "@/hooks/use-confirm-sign-up";
+import { useResendVerificationCode } from "@/hooks/use-resend-verification-code";
+import { getAuthErrorMessage } from "@/lib/auth";
 import { Button } from "@/modules/ui/button";
 import { Card } from "@/modules/ui/card";
 import {
@@ -11,10 +14,6 @@ import {
   FormMessage,
 } from "@/modules/ui/form";
 import { Input } from "@/modules/ui/input";
-
-import { useConfirmSignUp } from "@/hooks/use-confirm-sign-up";
-import { useResendVerificationCode } from "@/hooks/use-resend-verification-code";
-import { getAuthErrorMessage } from "@/lib/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowLeft, Mail } from "lucide-react";
 import { useTranslations } from "next-intl";

@@ -1,7 +1,7 @@
 "use client";
 
-import { useMutation } from "@tanstack/react-query";
 import { resendVerificationCode } from "@/lib/auth";
+import { useMutation } from "@tanstack/react-query";
 
 export function useResendVerificationCode() {
   return useMutation({

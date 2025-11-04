@@ -1,10 +1,10 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-import { Button } from "@/modules/ui/button";
-import { TestResultDisplay } from "@/modules/components/test-result";
-import type { TestItemWithAnswer, TestResult } from "@/lib/api/generated/model";
 import { useRouter } from "@/i18n/navigation";
+import type { TestItemWithAnswer, TestResult } from "@/lib/api/generated/model";
+import { TestResultDisplay } from "@/modules/components/test-result";
+import { Button } from "@/modules/ui/button";
+import { useTranslations } from "next-intl";
 
 // Mock test result data with explanations
 const mockTestResult: TestResult & {

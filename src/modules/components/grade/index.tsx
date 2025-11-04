@@ -1,6 +1,6 @@
-import * as React from "react";
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react";
 
 const gradeVariants = cva(
   "inline-flex items-center justify-center rounded-full font-semibold transition-colors border-2",

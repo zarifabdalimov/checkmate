@@ -1,5 +1,8 @@
 "use client";
 
+import { useSignUp } from "@/hooks/use-sign-up";
+import { Link } from "@/i18n/navigation";
+import { getAuthErrorMessage } from "@/lib/auth";
 import { Button } from "@/modules/ui/button";
 import { Card } from "@/modules/ui/card";
 import {
@@ -11,12 +14,9 @@ import {
   FormMessage,
 } from "@/modules/ui/form";
 import { Input } from "@/modules/ui/input";
-import { useSignUp } from "@/hooks/use-sign-up";
-import { getAuthErrorMessage } from "@/lib/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Eye, EyeOff, Lock, Mail, UserPlus } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { useBoolean } from "usehooks-ts";

@@ -1,5 +1,6 @@
 "use client";
 
+import { Link } from "@/i18n/navigation";
 import { useGetApiV1TestsTestId } from "@/lib/api/generated/aPIForCheckmateApp";
 import {
   Breadcrumb,
@@ -10,7 +11,6 @@ import {
   BreadcrumbSeparator,
 } from "@/modules/ui/breadcrumb";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import { useParams, usePathname } from "next/navigation";
 
 export function AppBreadcrumb() {

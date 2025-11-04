@@ -1,9 +1,11 @@
 "use client";
 
+import { Link } from "@/i18n/navigation";
+import { fadeInUp, staggerContainer } from "@/lib/animations";
 import { Card, CardDescription, CardHeader } from "@/modules/ui/card";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { Link } from "@/i18n/navigation";
 
 export function Sponsors() {
   const t = useTranslations("LandingPage.aboutUs");
@@ -11,13 +13,28 @@ export function Sponsors() {
   return (
     <section id="sponsors" className="bg-muted/30 py-16">
       <div className="container mx-auto px-4">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="text-center space-y-4 mb-12"
+        >
+          <motion.h2
+            variants={fadeInUp}
+            className="text-3xl md:text-4xl font-bold"
+          >
             {t("sponsorship.title")}
-          </h2>
-        </div>
+          </motion.h2>
+        </motion.div>
 
-        <div className="max-w-4xl mx-auto">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={fadeInUp}
+          className="max-w-4xl mx-auto"
+        >
           <Card className="border-2">
             <CardHeader className="text-center space-y-6">
               <CardDescription className="text-base">
@@ -92,7 +109,7 @@ export function Sponsors() {
               </div>
             </CardHeader>
           </Card>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

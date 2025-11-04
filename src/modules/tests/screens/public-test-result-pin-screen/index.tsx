@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/modules/ui/card";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/modules/ui/input-otp";
-import { useRouter } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 // Hardcoded PIN for now
 const HARDCODED_PIN = "123456";
