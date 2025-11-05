@@ -2,7 +2,14 @@ import { createPageMetadata } from "@/lib/constants/metadata";
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 
-export const metadata: Metadata = createPageMetadata("DASHBOARD");
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return createPageMetadata("DASHBOARD", locale);
+}
 
 type Props = {
   params: Promise<{ locale: string }>;

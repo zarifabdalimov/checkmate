@@ -4,7 +4,14 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { Suspense } from "react";
 
-export const metadata: Metadata = createPageMetadata("VERIFY_EMAIL");
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return createPageMetadata("VERIFY_EMAIL", locale);
+}
 
 type Props = {
   params: Promise<{ locale: string }>;

@@ -1,5 +1,5 @@
 import { routing } from "@/i18n/routing";
-import { METADATA_CONSTANTS } from "@/lib/constants/metadata";
+import { getMetadataForLocale } from "@/lib/constants/metadata";
 import { InitAmplify } from "@/modules/amplify/parts/init-amplify";
 import { QueryProvider } from "@/modules/providers/query-provider";
 import { Toaster } from "@/modules/ui/sonner";
@@ -22,28 +22,37 @@ const lora = Lora({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: {
-    template: `%s | ${METADATA_CONSTANTS.BRAND_NAME}`,
-    default: METADATA_CONSTANTS.BRAND_FULL,
-  },
-  description: METADATA_CONSTANTS.MAIN_DESCRIPTION,
-  keywords: METADATA_CONSTANTS.KEYWORDS,
-  authors: [{ name: METADATA_CONSTANTS.AUTHOR }],
-  creator: METADATA_CONSTANTS.CREATOR,
-  openGraph: {
-    type: METADATA_CONSTANTS.OG_TYPE,
-    locale: METADATA_CONSTANTS.OG_LOCALE,
-    title: METADATA_CONSTANTS.BRAND_FULL,
-    description: METADATA_CONSTANTS.MAIN_DESCRIPTION,
-    siteName: METADATA_CONSTANTS.BRAND_NAME,
-  },
-  twitter: {
-    card: METADATA_CONSTANTS.TWITTER_CARD,
-    title: METADATA_CONSTANTS.BRAND_FULL,
-    description: METADATA_CONSTANTS.MAIN_DESCRIPTION,
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const metadata = getMetadataForLocale(locale);
+
+  return {
+    title: {
+      template: `%s | ${metadata.BRAND_NAME}`,
+      default: metadata.BRAND_FULL,
+    },
+    description: metadata.MAIN_DESCRIPTION,
+    keywords: metadata.KEYWORDS,
+    authors: [{ name: metadata.AUTHOR }],
+    creator: metadata.CREATOR,
+    openGraph: {
+      type: metadata.OG_TYPE,
+      locale: metadata.OG_LOCALE,
+      title: metadata.BRAND_FULL,
+      description: metadata.MAIN_DESCRIPTION,
+      siteName: metadata.BRAND_NAME,
+    },
+    twitter: {
+      card: metadata.TWITTER_CARD,
+      title: metadata.BRAND_FULL,
+      description: metadata.MAIN_DESCRIPTION,
+    },
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

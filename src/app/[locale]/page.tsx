@@ -1,19 +1,28 @@
-import { METADATA_CONSTANTS } from "@/lib/constants/metadata";
+import { getMetadataForLocale } from "@/lib/constants/metadata";
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Home",
-  description: METADATA_CONSTANTS.LANDING_DESCRIPTION,
-  openGraph: {
-    title: METADATA_CONSTANTS.BRAND_FULL,
-    description: METADATA_CONSTANTS.LANDING_DESCRIPTION,
-  },
-  twitter: {
-    title: METADATA_CONSTANTS.BRAND_FULL,
-    description: METADATA_CONSTANTS.LANDING_DESCRIPTION,
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const metadata = getMetadataForLocale(locale);
+
+  return {
+    title: metadata.HOME_PAGE_TITLE,
+    description: metadata.LANDING_DESCRIPTION,
+    openGraph: {
+      title: metadata.BRAND_FULL,
+      description: metadata.LANDING_DESCRIPTION,
+    },
+    twitter: {
+      title: metadata.BRAND_FULL,
+      description: metadata.LANDING_DESCRIPTION,
+    },
+  };
+}
 
 type Props = {
   params: Promise<{ locale: string }>;
