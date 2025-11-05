@@ -5,10 +5,19 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 import { Button } from "@/modules/ui/button";
 import { motion } from "framer-motion";
 import { Mail, Phone } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export function CTA() {
   const t = useTranslations("LandingPage.cta");
+  const locale = useLocale();
+
+  const surveyLinks: Record<string, string> = {
+    cs: "https://forms.gle/4iAWnVBRUPbKpLze8",
+    en: "https://forms.gle/8YiiUWYszgPb4WJC6",
+    de: "https://forms.gle/8YiiUWYszgPb4WJC6", // Fallback to EN for German
+  };
+
+  const surveyLink = surveyLinks[locale] || surveyLinks.en;
 
   return (
     <section className="bg-muted/30 py-20">
@@ -34,7 +43,7 @@ export function CTA() {
           </motion.p>
           <motion.div variants={fadeInUp}>
             <Link
-              href="https://forms.gle/your-survey-link"
+              href={surveyLink}
               target="_blank"
               rel="noopener noreferrer"
             >

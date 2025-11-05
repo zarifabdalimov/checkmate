@@ -2,7 +2,7 @@
 
 import { useSignOut } from "@/hooks/use-sign-out";
 import { Button } from "@/modules/ui/button";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 
 export function SignOutButton() {
   const signOut = useSignOut();

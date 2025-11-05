@@ -112,10 +112,10 @@
         "title": "Náš tým",
         "subtitle": "Čtyři profesionální vývojáři ze STRV, kteří jsou nadšení pro transformaci vzdělávání prostřednictvím technologie.",
         "positions": {
-          "frontend": "Frontend vývojář",
-          "backendDevops": "Backend vývojář, DevOps",
-          "backendBusiness": "Backend vývojář, Business Research",
-          "backendProduct": "Backend vývojář, Product Manager"
+          "frontend": "Uživatelská zkušenost a design",
+          "backendDevops": "Infrastruktura a provoz",
+          "backendBusiness": "Obchodní strategie a výzkum",
+          "backendProduct": "Produktová vize a vývoj"
         }
       },
       "sponsorship": {

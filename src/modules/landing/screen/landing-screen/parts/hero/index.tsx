@@ -1,28 +1,20 @@
 "use client";
 
+import { useAuth } from "@/hooks/use-auth";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/modules/ui/button";
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export function Hero() {
   const t = useTranslations("LandingPage.hero");
+  const tHeader = useTranslations("LandingPage.header");
+  const auth = useAuth();
 
   return (
     <section className="py-32 pb-16">
       <div className="container mx-auto px-4">
         <div className="text-center space-y-8 max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/10 text-primary shadow-sm"
-          >
-            <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-medium">{t("badge")}</span>
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -53,7 +45,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
           >
-            <Link href="/auth/sign-up">
+            <Link href={auth.data ? "/dashboard" : "/auth/sign-up"}>
               <motion.div
                 animate={{
                   scale: [1, 1.05, 1],
@@ -69,7 +61,7 @@ export function Hero() {
                   size="lg"
                   className="text-lg font-semibold px-8 py-4 h-auto shadow-lg hover:shadow-xl transition-all"
                 >
-                  {t("getStarted")}
+                  {auth.data ? tHeader("auth.dashboard") : t("getStarted")}
                 </Button>
               </motion.div>
             </Link>

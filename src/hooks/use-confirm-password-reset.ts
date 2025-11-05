@@ -2,7 +2,7 @@
 
 import { confirmPasswordReset } from "@/lib/auth";
 import { useMutation } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 
 export function useConfirmPasswordReset() {
   const router = useRouter();

@@ -112,10 +112,10 @@
         "title": "Unser Team",
         "subtitle": "Vier professionelle Entwickler von STRV, die sich leidenschaftlich für die Transformation der Bildung durch Technologie einsetzen.",
         "positions": {
-          "frontend": "Frontend-Entwickler",
-          "backendDevops": "Backend-Entwickler, DevOps",
-          "backendBusiness": "Backend-Entwickler, Geschäftsanalyse",
-          "backendProduct": "Backend-Entwickler, Produktmanager"
+          "frontend": "Benutzererfahrung & Design",
+          "backendDevops": "Infrastruktur & Betrieb",
+          "backendBusiness": "Geschäftsstrategie & Forschung",
+          "backendProduct": "Produktvision & Entwicklung"
         }
       },
       "sponsorship": {

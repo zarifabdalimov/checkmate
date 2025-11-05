@@ -17,7 +17,7 @@ import { Input } from "@/modules/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Eye, EyeOff, Lock, Mail, UserPlus } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 import { useForm } from "react-hook-form";
 import { useBoolean } from "usehooks-ts";
 

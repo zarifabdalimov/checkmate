@@ -29,7 +29,7 @@ export function OurTeam() {
       linkedin: "https://www.linkedin.com/in/filip-ohanka-bb1419200/",
     },
     {
-      name: "Honza Zabloudil",
+      name: "Jan Zabloudil",
       photo: "/team/honza.png",
       position: "backendProduct",
       linkedin: "https://www.linkedin.com/in/jan-zabloudil/",
