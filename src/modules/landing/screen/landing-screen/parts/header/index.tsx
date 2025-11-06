@@ -57,11 +57,11 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/50 shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
+        <div className="flex items-center justify-between h-16 gap-4">
+          <Link href="/" className="flex items-center gap-2 shrink-0">
             <Image alt="CheckMate.ink" src="/logo.png" width={32} height={32} />
-            <span className="text-xl font-bold font-serif">CheckMate.ink</span>
-          </div>
+            <span className="text-xl font-bold font-serif hidden sm:inline">CheckMate.ink</span>
+          </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
             <button
@@ -106,18 +106,20 @@ export function Header() {
             </button>
           </nav>
 
-          <div className="flex items-center gap-3">
-            <LanguageSelector />
+          <div className="flex items-center gap-2 sm:gap-3 flex-1 sm:flex-initial justify-end">
+            <div className="flex-1 sm:flex-initial">
+              <LanguageSelector />
+            </div>
             {auth.data ? (
-              <Button className="font-medium shadow-sm" asChild>
+              <Button className="font-medium shadow-sm shrink-0" asChild>
                 <Link href="/dashboard">{t("auth.dashboard")}</Link>
               </Button>
             ) : (
               <>
-                <Button variant="ghost" className="font-medium" asChild>
+                <Button variant="ghost" className="font-medium hidden sm:inline-flex shrink-0" asChild>
                   <Link href="/auth/sign-in">{t("auth.signIn")}</Link>
                 </Button>
-                <Button className="font-medium shadow-sm" asChild>
+                <Button className="font-medium shadow-sm shrink-0" asChild>
                   <Link href="/auth/sign-up">{t("auth.signUp")}</Link>
                 </Button>
               </>

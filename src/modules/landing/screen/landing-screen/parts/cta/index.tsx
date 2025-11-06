@@ -42,11 +42,7 @@ export function CTA() {
             {t("footerSubtitle")}
           </motion.p>
           <motion.div variants={fadeInUp}>
-            <Link
-              href={surveyLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href={surveyLink} target="_blank" rel="noopener noreferrer">
               <motion.div
                 animate={{
                   scale: [1, 1.05, 1],

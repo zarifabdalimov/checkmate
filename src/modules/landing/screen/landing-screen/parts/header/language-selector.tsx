@@ -29,15 +29,11 @@ export function LanguageSelector() {
 
   return (
     <Select value={locale} onValueChange={handleLanguageChange}>
-      <SelectTrigger className="w-[140px]">
-        <SelectValue>
-          <div className="flex items-center gap-2">
-            <span className="hidden sm:inline">
-              {currentLanguage?.flag} {currentLanguage?.name}
-            </span>
-            <span className="sm:hidden">{currentLanguage?.flag}</span>
-          </div>
-        </SelectValue>
+      <SelectTrigger className="w-full sm:w-[140px]">
+        <div className="flex items-center justify-center sm:justify-start gap-2 w-full">
+          <span>{currentLanguage?.flag}</span>
+          <span>{currentLanguage?.name}</span>
+        </div>
       </SelectTrigger>
       <SelectContent>
         {languages.map((language) => (

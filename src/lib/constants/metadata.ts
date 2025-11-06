@@ -333,7 +333,9 @@ const METADATA_BY_LOCALE: Record<string, LocalizedMetadata> = {
 };
 
 // Get metadata for a specific locale (defaults to English)
-export const getMetadataForLocale = (locale: string = "en"): LocalizedMetadata => {
+export const getMetadataForLocale = (
+  locale: string = "en",
+): LocalizedMetadata => {
   return METADATA_BY_LOCALE[locale] || METADATA_BY_LOCALE.en;
 };
 
