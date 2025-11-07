@@ -6,7 +6,6 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
 } from "@/modules/ui/select";
 import { useLocale } from "next-intl";
 

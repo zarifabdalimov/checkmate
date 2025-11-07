@@ -29,6 +29,7 @@
       "titleHighlight": "Besseres Lernen.",
       "subtitle": "Checkmate hilft Lehrern, Routineaufgaben zu bewältigen, damit sie sich auf das Wesentliche konzentrieren können - ihre Schüler.",
       "getStarted": "Demo testen",
+      "getStartedTooltip": "Checkmate befindet sich derzeit in der Entwicklung – probieren Sie noch heute unser kostenloses Demo aus und erhalten Sie einen exklusiven Vorgeschmack auf das, was bald kommt!",
       "watchDemo": "Demo ansehen",
       "stats": {
         "testsGenerated": "Erstellte Tests",

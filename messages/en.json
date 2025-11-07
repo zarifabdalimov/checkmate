@@ -29,6 +29,7 @@
       "titleHighlight": "Better Learning.",
       "subtitle": "Checkmate helps teachers handle routine tasks so they can focus on what truly matters - their students.",
       "getStarted": "Try the demo",
+      "getStartedTooltip": "Checkmate is currently in development - try our free demo today for an exclusive preview of what's coming soon!",
       "watchDemo": "Watch Demo",
       "stats": {
         "testsGenerated": "Tests Generated",

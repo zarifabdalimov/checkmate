@@ -60,7 +60,9 @@ export function Header() {
         <div className="flex items-center justify-between h-16 gap-4">
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <Image alt="CheckMate.ink" src="/logo.png" width={32} height={32} />
-            <span className="text-xl font-bold font-serif hidden sm:inline">CheckMate.ink</span>
+            <span className="text-xl font-bold font-serif hidden sm:inline">
+              CheckMate.ink
+            </span>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
@@ -116,7 +118,11 @@ export function Header() {
               </Button>
             ) : (
               <>
-                <Button variant="ghost" className="font-medium hidden sm:inline-flex shrink-0" asChild>
+                <Button
+                  variant="ghost"
+                  className="font-medium hidden sm:inline-flex shrink-0"
+                  asChild
+                >
                   <Link href="/auth/sign-in">{t("auth.signIn")}</Link>
                 </Button>
                 <Button className="font-medium shadow-sm shrink-0" asChild>

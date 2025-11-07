@@ -1,3 +1,4 @@
+import { ContactUs } from "./parts/contact-us";
 import { CTA } from "./parts/cta";
 import { Features } from "./parts/features";
 import { Footer } from "./parts/footer";
@@ -17,10 +18,11 @@ export function LandingScreen() {
       <WhyCheckmate />
       <Features />
       <HowItWorks />
+      <CTA />
       <OurTeam />
       <HackathonWinners />
       <Sponsors />
-      <CTA />
+      <ContactUs />
       <Footer />
     </div>
   );

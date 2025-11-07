@@ -3,6 +3,7 @@
 import { useAuth } from "@/hooks/use-auth";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/modules/ui/button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/modules/ui/tooltip";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
@@ -45,26 +46,56 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
           >
-            <Link href={auth.data ? "/dashboard" : "/auth/sign-up"}>
-              <motion.div
-                animate={{
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  ease: "easeInOut",
-                }}
-              >
-                <Button
-                  size="lg"
-                  className="text-lg font-semibold px-8 py-4 h-auto shadow-lg hover:shadow-xl transition-all"
+            {auth.data ? (
+              <Link href="/dashboard">
+                <motion.div
+                  animate={{
+                    scale: [1, 1.05, 1],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                  }}
                 >
-                  {auth.data ? tHeader("auth.dashboard") : t("getStarted")}
-                </Button>
-              </motion.div>
-            </Link>
+                  <Button
+                    size="lg"
+                    className="text-lg font-semibold px-8 py-4 h-auto shadow-lg hover:shadow-xl transition-all"
+                  >
+                    {tHeader("auth.dashboard")}
+                  </Button>
+                </motion.div>
+              </Link>
+            ) : (
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link href="/auth/sign-up">
+                    <motion.div
+                      animate={{
+                        scale: [1, 1.05, 1],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <Button
+                        size="lg"
+                        className="text-lg font-semibold px-8 py-4 h-auto shadow-lg hover:shadow-xl transition-all"
+                      >
+                        {t("getStarted")}
+                      </Button>
+                    </motion.div>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p className="text-white text-lg">{t("getStartedTooltip")}</p>
+                </TooltipContent>
+              </Tooltip>
+            )}
           </motion.div>
         </div>
       </div>
