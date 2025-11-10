@@ -28,8 +28,8 @@ export function LanguageSelector() {
 
   return (
     <Select value={locale} onValueChange={handleLanguageChange}>
-      <SelectTrigger className="w-full sm:w-[140px]">
-        <div className="flex items-center justify-center sm:justify-start gap-2 w-full">
+      <SelectTrigger className="w-full">
+        <div className="flex items-center justify-start gap-2 w-full">
           <span>{currentLanguage?.flag}</span>
           <span>{currentLanguage?.name}</span>
         </div>
