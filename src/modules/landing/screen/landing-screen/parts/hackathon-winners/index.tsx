@@ -10,7 +10,7 @@ export function HackathonWinners() {
   const t = useTranslations("LandingPage.aboutUs");
 
   return (
-    <section id="hackathon" className="py-16">
+    <section id="hackathon" className="py-16 overflow-x-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">

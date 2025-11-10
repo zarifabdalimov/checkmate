@@ -12,7 +12,7 @@ import { WhyCheckmate } from "./parts/why-checkmate";
 
 export function LandingScreen() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/10">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/10 overflow-x-hidden">
       <Header />
       <Hero />
       <WhyCheckmate />
