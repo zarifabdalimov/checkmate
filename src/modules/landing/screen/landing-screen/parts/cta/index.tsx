@@ -19,7 +19,7 @@ export function CTA() {
   const surveyLink = surveyLinks[locale] || surveyLinks.en;
 
   return (
-    <section className="bg-muted/30 py-20">
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"
