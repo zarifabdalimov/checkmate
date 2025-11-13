@@ -2,6 +2,7 @@
 
 import { useConfirmSignUp } from "@/hooks/use-confirm-sign-up";
 import { useResendVerificationCode } from "@/hooks/use-resend-verification-code";
+import { useRouter } from "@/i18n/navigation";
 import { getAuthErrorMessage } from "@/lib/auth";
 import { Button } from "@/modules/ui/button";
 import { Card } from "@/modules/ui/card";
@@ -17,7 +18,7 @@ import { Input } from "@/modules/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowLeft, Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
