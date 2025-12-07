@@ -29,11 +29,10 @@ export function DesktopNav({ activeSection, onNavigate }: DesktopNavProps) {
                 section.translationKey as
                   | "navigation.features"
                   | "navigation.howItWorks"
-                  | "navigation.about"
+                  | "navigation.about",
               )}
         </Button>
       ))}
     </nav>
   );
 }
-

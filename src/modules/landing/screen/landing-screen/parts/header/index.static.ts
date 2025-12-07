@@ -6,4 +6,3 @@ export const NAV_SECTIONS = [
 ] as const;
 
 export type NavSection = (typeof NAV_SECTIONS)[number];
-

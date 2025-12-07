@@ -695,5 +695,112 @@
       "explanation": "Vysvětlení",
       "askAi": "Zeptat se AI"
     }
+  },
+  "ShowcasePage": {
+    "header": {
+      "backToHome": "Zpět na domovskou stránku",
+      "signIn": "Přihlásit se",
+      "signUp": "Registrovat se"
+    },
+    "hero": {
+      "badge": "Generování testů pomocí AI",
+      "title": "Vygenerujte testy za <highlight>vteřiny</highlight>",
+      "subtitle": "Popište, co potřebujete, a sledujte, jak naše AI vytvoří kompletní, kvalitní test přizpůsobený vašim požadavkům."
+    },
+    "form": {
+      "tryItOut": "✨ Vyzkoušejte! Vygenerujte svůj první test",
+      "subject": {
+        "label": "Předmět",
+        "placeholder": "Vyberte předmět"
+      },
+      "difficulty": {
+        "label": "Úroveň obtížnosti",
+        "placeholder": "Vyberte obtížnost",
+        "options": {
+          "basicSchool": "Základní škola",
+          "middleSchool": "Střední škola",
+          "highSchool": "Gymnázium",
+          "firstYearUniversity": "První rok univerzity",
+          "custom": "Vlastní"
+        }
+      },
+      "customDifficulty": {
+        "label": "Vlastní obtížnost",
+        "placeholder": "např., Pokročilá úroveň"
+      },
+      "topic": {
+        "label": "Téma",
+        "placeholder": "např., Lineární rovnice, Druhá světová válka"
+      },
+      "language": {
+        "label": "Jazyk",
+        "placeholder": "např., Angličtina, Čeština, Němčina"
+      },
+      "format": {
+        "label": "Formát otázek",
+        "placeholder": "Vyberte formát",
+        "options": {
+          "singleChoice": "Jedna správná odpověď",
+          "multipleChoice": "Více správných odpovědí"
+        }
+      },
+      "subjects": {
+        "english": "Angličtina",
+        "history": "Dějepis",
+        "biology": "Biologie",
+        "literature": "Literatura"
+      },
+      "generate": "Generovat test",
+      "generating": "Generování..."
+    },
+    "promptInput": {
+      "placeholder": "Popište test, který chcete vytvořit...\n\nNapříklad: \"Vytvořte test s 10 otázkami s výběrem odpovědí o druhé světové válce pro studenty střední školy, obtížnost střední\"",
+      "keyboardShortcut": "Stiskněte ⌘ + Enter pro generování",
+      "generate": "Generovat test",
+      "generating": "Generování..."
+    },
+    "examples": {
+      "title": "Vyzkoušejte tyto příklady",
+      "subtitle": "Klikněte na jakýkoliv příklad pro rychlý start",
+      "english": {
+        "title": "Anglický jazyk",
+        "topic": "Gramatika, slovní zásoba a čtení s porozuměním"
+      },
+      "history": {
+        "title": "Světové dějiny",
+        "topic": "Období renesance - umění, politika a kulturní změny"
+      },
+      "science": {
+        "title": "Základy biologie",
+        "topic": "Buněčná biologie - struktura, organely a buněčné procesy"
+      },
+      "literature": {
+        "title": "Klasická literatura",
+        "topic": "Shakespearův Romeo a Julie - témata, postavy a literární prostředky"
+      }
+    },
+    "preview": {
+      "badge": "Test úspěšně vygenerován",
+      "title": "Váš vygenerovaný test",
+      "subtitle": "Zkontrolujte a upravte svůj test níže",
+      "yourPrompt": "Váš požadavek",
+      "generatedTest": "Náhled vygenerovaného testu",
+      "previewPlaceholder": "Zde se zobrazí váš vygenerovaný test, jakmile bude dokončena integrace API. Test bude obsahovat všechny otázky, možnosti odpovědí a bude připraven k použití ve vaší třídě.",
+      "apiNotice": "Integrace API přichází brzy - toto je náhled UI ukazující, jak bude váš vygenerovaný test zobrazen.",
+      "download": "Stáhnout PDF",
+      "share": "Sdílet test",
+      "editTest": "Upravit test",
+      "saveEdits": "Uložit úpravy",
+      "exportPdf": "Exportovat jako PDF",
+      "subject": "Předmět",
+      "topic": "Téma",
+      "difficulty": "Obtížnost",
+      "questions": "Otázky",
+      "timeLimit": "Časový limit",
+      "minutes": "minut",
+      "generatedBy": "Vygenerováno pomocí Checkmate AI",
+      "addQuestion": "Přidat otázku",
+      "removeQuestion": "Odebrat otázku"
+    }
   }
 }

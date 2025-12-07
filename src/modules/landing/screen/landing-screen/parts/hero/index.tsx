@@ -1,16 +1,70 @@
 "use client";
 
-import { useAuth } from "@/hooks/use-auth";
-import { Link } from "@/i18n/navigation";
-import { Button } from "@/modules/ui/button";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/modules/ui/tooltip";
+import {
+  useCreateDemoTest,
+  useGetDemoTest,
+} from "@/hooks/use-create-demo-test";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { useRef, useState } from "react";
+import { ExamplePrompts } from "./parts/example-prompts";
+import {
+  TestGenerationForm,
+  type TestGenerationFormData,
+  type TestGenerationFormRef,
+} from "./parts/test-generation-form";
+import { EditableTestPreview } from "./parts/editable-test-preview";
 
 export function Hero() {
   const t = useTranslations("LandingPage.hero");
-  const tHeader = useTranslations("LandingPage.header");
-  const auth = useAuth();
+  const [testId, setTestId] = useState<string>(
+    "e663ef4a-0721-4470-a12c-67ff5c0bf7b5",
+  );
+  const demoTestQuery = useGetDemoTest("e663ef4a-0721-4470-a12c-67ff5c0bf7b5");
+
+  // console.log("[debug] data", demoTestQuery.data);
+  // console.log("[debug] error", demoTestQuery.error);
+  const previewRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<TestGenerationFormRef>(null);
+
+  const { mutate: createTest, isPending } = useCreateDemoTest();
+
+  const handleExampleClick = (preset: TestGenerationFormData) => {
+    formRef.current?.applyPreset(preset);
+  };
+
+  const handleGenerate = async (
+    data: TestGenerationFormData & { custom_difficulty_text?: string },
+  ) => {
+    const difficultyLevel =
+      data.difficulty_level === "custom" && data.custom_difficulty_text
+        ? data.custom_difficulty_text
+        : data.difficulty_level;
+
+    createTest(
+      {
+        model: "CLAUDE_HAIKU_3",
+        subject: data.subject,
+        difficulty_level: difficultyLevel,
+        language: data.language,
+        content: [
+          {
+            topic: data.topic,
+            amount: 10,
+            format: data.format,
+          },
+        ],
+      },
+      {
+        onSuccess: (response) => {
+          setTestId(response.test_id);
+        },
+        onError: (error) => {
+          console.error("Failed to create test:", error);
+        },
+      },
+    );
+  };
 
   return (
     <section className="py-32 pb-16">
@@ -40,29 +94,21 @@ export function Hero() {
             {t("subtitle")}
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
-          >
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <div>
-                  <Button
-                    size="lg"
-                    disabled
-                    className="text-lg font-semibold px-8 py-4 h-auto opacity-50 cursor-not-allowed"
-                  >
-                    {t("comingSoon")}
-                  </Button>
-                </div>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p className="text-white text-lg">{t("comingSoonTooltip")}</p>
-              </TooltipContent>
-            </Tooltip>
-          </motion.div>
+          <div className="pt-8 space-y-12 max-w-6xl mx-auto">
+            <TestGenerationForm
+              ref={formRef}
+              onGenerate={handleGenerate}
+              isGenerating={isPending}
+              examplePrompts={
+                <ExamplePrompts onExampleClick={handleExampleClick} />
+              }
+            />
+            {demoTestQuery.data && (
+              <div ref={previewRef}>
+                <EditableTestPreview test={demoTestQuery.data} />
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>

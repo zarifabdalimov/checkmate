@@ -695,5 +695,112 @@
       "explanation": "Erklärung",
       "askAi": "KI fragen"
     }
+  },
+  "ShowcasePage": {
+    "header": {
+      "backToHome": "Zurück zur Startseite",
+      "signIn": "Anmelden",
+      "signUp": "Registrieren"
+    },
+    "hero": {
+      "badge": "KI-gestützte Testerstellung",
+      "title": "Erstellen Sie Tests in <highlight>Sekunden</highlight>",
+      "subtitle": "Beschreiben Sie, was Sie brauchen, und beobachten Sie, wie unsere KI einen vollständigen, hochwertigen Test erstellt, der auf Ihre Anforderungen zugeschnitten ist."
+    },
+    "form": {
+      "tryItOut": "✨ Probieren Sie es aus! Generieren Sie Ihren ersten Test",
+      "subject": {
+        "label": "Fach",
+        "placeholder": "Wählen Sie ein Fach"
+      },
+      "difficulty": {
+        "label": "Schwierigkeitsgrad",
+        "placeholder": "Wählen Sie die Schwierigkeit",
+        "options": {
+          "basicSchool": "Grundschule",
+          "middleSchool": "Mittelschule",
+          "highSchool": "Gymnasium",
+          "firstYearUniversity": "Erstes Studienjahr",
+          "custom": "Benutzerdefiniert"
+        }
+      },
+      "customDifficulty": {
+        "label": "Benutzerdefinierte Schwierigkeit",
+        "placeholder": "z.B., Fortgeschrittenes Niveau"
+      },
+      "topic": {
+        "label": "Thema",
+        "placeholder": "z.B., Lineare Gleichungen, Zweiter Weltkrieg"
+      },
+      "language": {
+        "label": "Sprache",
+        "placeholder": "z.B., Englisch, Tschechisch, Deutsch"
+      },
+      "format": {
+        "label": "Fragenformat",
+        "placeholder": "Wählen Sie das Format",
+        "options": {
+          "singleChoice": "Einfachauswahl",
+          "multipleChoice": "Mehrfachauswahl"
+        }
+      },
+      "subjects": {
+        "english": "Englisch",
+        "history": "Geschichte",
+        "biology": "Biologie",
+        "literature": "Literatur"
+      },
+      "generate": "Test generieren",
+      "generating": "Wird generiert..."
+    },
+    "promptInput": {
+      "placeholder": "Beschreiben Sie den Test, den Sie erstellen möchten...\n\nZum Beispiel: \"Erstellen Sie einen Multiple-Choice-Test mit 10 Fragen über den Zweiten Weltkrieg für Gymnasiasten, Schwierigkeitsgrad mittel\"",
+      "keyboardShortcut": "Drücken Sie ⌘ + Enter zum Generieren",
+      "generate": "Test generieren",
+      "generating": "Wird generiert..."
+    },
+    "examples": {
+      "title": "Probieren Sie diese Beispiele",
+      "subtitle": "Klicken Sie auf ein Beispiel, um schnell zu beginnen",
+      "english": {
+        "title": "Englische Sprache",
+        "topic": "Grammatik, Wortschatz und Leseverständnis"
+      },
+      "history": {
+        "title": "Weltgeschichte",
+        "topic": "Renaissance-Periode - Kunst, Politik und kulturelle Veränderungen"
+      },
+      "science": {
+        "title": "Biologie-Grundlagen",
+        "topic": "Zellbiologie - Struktur, Organellen und zelluläre Prozesse"
+      },
+      "literature": {
+        "title": "Klassische Literatur",
+        "topic": "Shakespeares Romeo und Julia - Themen, Charaktere und literarische Mittel"
+      }
+    },
+    "preview": {
+      "badge": "Test erfolgreich generiert",
+      "title": "Ihr generierter Test",
+      "subtitle": "Überprüfen und passen Sie Ihren Test unten an",
+      "yourPrompt": "Ihre Eingabe",
+      "generatedTest": "Generierte Testvorschau",
+      "previewPlaceholder": "Hier wird Ihr generierter Test angezeigt, sobald die API-Integration abgeschlossen ist. Der Test wird alle Fragen und Antwortmöglichkeiten enthalten und für den Einsatz in Ihrem Klassenzimmer bereit sein.",
+      "apiNotice": "API-Integration kommt bald - dies ist eine UI-Vorschau, die zeigt, wie Ihr generierter Test angezeigt wird.",
+      "download": "PDF herunterladen",
+      "share": "Test teilen",
+      "editTest": "Test bearbeiten",
+      "saveEdits": "Änderungen speichern",
+      "exportPdf": "Als PDF exportieren",
+      "subject": "Fach",
+      "topic": "Thema",
+      "difficulty": "Schwierigkeitsgrad",
+      "questions": "Fragen",
+      "timeLimit": "Zeitlimit",
+      "minutes": "Minuten",
+      "generatedBy": "Generiert von Checkmate AI",
+      "addQuestion": "Frage hinzufügen",
+      "removeQuestion": "Frage entfernen"
+    }
   }
 }

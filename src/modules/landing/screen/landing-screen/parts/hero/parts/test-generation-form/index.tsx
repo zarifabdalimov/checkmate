@@ -1,0 +1,251 @@
+"use client";
+
+import { Button } from "@/modules/ui/button";
+import { Input } from "@/modules/ui/input";
+import { Card, CardContent } from "@/modules/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/modules/ui/select";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/modules/ui/form";
+import { useTranslations } from "next-intl";
+import { useImperativeHandle, forwardRef } from "react";
+import { Sparkles, Loader2 } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  useTestGenerationForm,
+  type TestGenerationFormData,
+} from "./use-test-generation-form";
+
+export type { TestGenerationFormData };
+
+export interface TestGenerationFormRef {
+  applyPreset: (preset: TestGenerationFormData) => void;
+}
+
+interface TestGenerationFormProps {
+  onGenerate: (data: TestGenerationFormData) => void;
+  isGenerating: boolean;
+  examplePrompts?: React.ReactNode;
+}
+
+const DIFFICULTY_LEVELS = [
+  "basicSchool",
+  "middleSchool",
+  "highSchool",
+  "firstYearUniversity",
+  "custom",
+] as const;
+
+const FORMATS = ["singleChoice", "multipleChoice"] as const;
+
+export const TestGenerationForm = forwardRef<
+  TestGenerationFormRef,
+  TestGenerationFormProps
+>(function TestGenerationForm({ onGenerate, isGenerating, examplePrompts }, ref) {
+  const t = useTranslations("ShowcasePage.form");
+  const { form, difficultyLevel, applyPreset } = useTestGenerationForm();
+
+  // Expose method to apply preset
+  useImperativeHandle(ref, () => ({
+    applyPreset,
+  }));
+
+  const onSubmit = (data: TestGenerationFormData) => {
+    onGenerate(data);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.6 }}
+      className="w-full max-w-2xl mx-auto space-y-3"
+    >
+      <div className="text-center">
+        <p className="text-sm font-medium text-muted-foreground">
+          {t("tryItOut")}
+        </p>
+      </div>
+      <Card className="overflow-hidden">
+        <CardContent>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            {/* Subject */}
+            <FormField
+              control={form.control}
+              name="subject"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("subject.label")}</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={t("subject.placeholder")}
+                      disabled={isGenerating}
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            {/* Topic */}
+            <FormField
+              control={form.control}
+              name="topic"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("topic.label")}</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={t("topic.placeholder")}
+                      disabled={isGenerating}
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            {/* Language */}
+            <FormField
+              control={form.control}
+              name="language"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("language.label")}</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={t("language.placeholder")}
+                      disabled={isGenerating}
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            {/* Difficulty Level and Format - same row */}
+            <div className="grid grid-cols-2 gap-4">
+              <FormField
+                control={form.control}
+                name="difficulty_level"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t("difficulty.label")}</FormLabel>
+                    <Select
+                      onValueChange={field.onChange}
+                      value={field.value}
+                      disabled={isGenerating}
+                    >
+                      <FormControl>
+                        <SelectTrigger className="w-full">
+                          <SelectValue placeholder={t("difficulty.placeholder")} />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        {DIFFICULTY_LEVELS.map((level) => (
+                          <SelectItem key={level} value={level}>
+                            {t(`difficulty.options.${level}`)}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="format"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t("format.label")}</FormLabel>
+                    <Select
+                      onValueChange={field.onChange}
+                      value={field.value}
+                      disabled={isGenerating}
+                    >
+                      <FormControl>
+                        <SelectTrigger className="w-full">
+                          <SelectValue placeholder={t("format.placeholder")} />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        {FORMATS.map((fmt) => (
+                          <SelectItem key={fmt} value={fmt === "singleChoice" ? "MCQ_SINGLE" : "MCQ_MULTIPLE"}>
+                            {t(`format.options.${fmt}`)}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+
+            {/* Custom Difficulty (shown when custom is selected) */}
+            {difficultyLevel === "custom" && (
+              <FormField
+                control={form.control}
+                name="custom_difficulty_text"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t("customDifficulty.label")}</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder={t("customDifficulty.placeholder")}
+                        disabled={isGenerating}
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            )}
+
+            {/* Generate Button */}
+            <div className="flex justify-center">
+              <Button
+                type="submit"
+                disabled={isGenerating}
+                size="lg"
+                className="gap-2"
+              >
+                {isGenerating ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    {t("generating")}
+                  </>
+                ) : (
+                  <>
+                    <Sparkles className="h-4 w-4" />
+                    {t("generate")}
+                  </>
+                )}
+              </Button>
+            </div>
+          </form>
+        </Form>
+        </CardContent>
+      </Card>
+      {examplePrompts && examplePrompts}
+    </motion.div>
+  );
+});
