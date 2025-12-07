@@ -46,56 +46,22 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
           >
-            {auth.data ? (
-              <Link href="/dashboard">
-                <motion.div
-                  animate={{
-                    scale: [1, 1.05, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    ease: "easeInOut",
-                  }}
-                >
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div>
                   <Button
                     size="lg"
-                    className="text-lg font-semibold px-8 py-4 h-auto shadow-lg hover:shadow-xl transition-all"
+                    disabled
+                    className="text-lg font-semibold px-8 py-4 h-auto opacity-50 cursor-not-allowed"
                   >
-                    {tHeader("auth.dashboard")}
+                    {t("comingSoon")}
                   </Button>
-                </motion.div>
-              </Link>
-            ) : (
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link href="/auth/sign-up">
-                    <motion.div
-                      animate={{
-                        scale: [1, 1.05, 1],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        repeatType: "reverse",
-                        ease: "easeInOut",
-                      }}
-                    >
-                      <Button
-                        size="lg"
-                        className="text-lg font-semibold px-8 py-4 h-auto shadow-lg hover:shadow-xl transition-all"
-                      >
-                        {t("getStarted")}
-                      </Button>
-                    </motion.div>
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p className="text-white text-lg">{t("getStartedTooltip")}</p>
-                </TooltipContent>
-              </Tooltip>
-            )}
+                </div>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p className="text-white text-lg">{t("comingSoonTooltip")}</p>
+              </TooltipContent>
+            </Tooltip>
           </motion.div>
         </div>
       </div>

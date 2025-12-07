@@ -31,6 +31,8 @@
       "getStarted": "Demo testen",
       "getStartedTooltip": "Checkmate befindet sich derzeit in der Entwicklung – probieren Sie noch heute unser kostenloses Demo aus und erhalten Sie einen exklusiven Vorgeschmack auf das, was bald kommt!",
       "watchDemo": "Demo ansehen",
+      "comingSoon": "Demnächst verfügbar",
+      "comingSoonTooltip": "Wir arbeiten hart daran, Checkmate zum Leben zu erwecken! Die Plattform befindet sich derzeit in der Entwicklung und wird bald verfügbar sein.",
       "stats": {
         "testsGenerated": "Erstellte Tests",
         "teachers": "Lehrer",

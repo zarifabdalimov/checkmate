@@ -33,7 +33,6 @@ export function Header() {
             {/* Desktop Actions */}
             <div className="hidden md:flex items-center gap-2 sm:gap-3 justify-end">
               <LanguageSelector />
-              <AuthButtons isAuthenticated={!!auth.data} />
             </div>
 
             {/* Mobile Menu Button */}

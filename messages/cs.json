@@ -31,6 +31,8 @@
       "getStarted": "Vyzkoušet demo",
       "getStartedTooltip": "Na aplikaci pracujeme, vyzkoušejte zdarma naše demo a podívejte se, co se chystá!",
       "watchDemo": "Shlédnout demo",
+      "comingSoon": "Již brzy",
+      "comingSoonTooltip": "Pilně pracujeme na tom, abychom Checkmate uvedli do života! Platforma je momentálně ve vývoji a bude brzy k dispozici.",
       "stats": {
         "testsGenerated": "Vygenerovaných testů",
         "teachers": "Učitelů",
