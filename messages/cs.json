@@ -695,5 +695,54 @@
       "explanation": "Vysvětlení",
       "askAi": "Zeptat se AI"
     }
+  },
+  "ShowcasePage": {
+    "header": {
+      "backToHome": "Zpět na domovskou stránku",
+      "signIn": "Přihlásit se",
+      "signUp": "Registrovat se"
+    },
+    "hero": {
+      "badge": "Generování testů pomocí AI",
+      "title": "Vygenerujte testy za <highlight>vteřiny</highlight>",
+      "subtitle": "Popište, co potřebujete, a sledujte, jak naše AI vytvoří kompletní, kvalitní test přizpůsobený vašim požadavkům."
+    },
+    "promptInput": {
+      "placeholder": "Popište test, který chcete vytvořit...\n\nNapříklad: \"Vytvořte test s 10 otázkami s výběrem odpovědí o druhé světové válce pro studenty střední školy, obtížnost střední\"",
+      "keyboardShortcut": "Stiskněte ⌘ + Enter pro generování",
+      "generate": "Generovat test",
+      "generating": "Generování..."
+    },
+    "examples": {
+      "title": "Vyzkoušejte tyto příklady",
+      "subtitle": "Klikněte na jakýkoliv příklad pro rychlý start",
+      "math": {
+        "title": "Základy algebry",
+        "prompt": "Vytvořte test s 15 otázkami o lineárních rovnicích a kvadratických funkcích pro žáky 8. třídy"
+      },
+      "history": {
+        "title": "Světové dějiny",
+        "prompt": "Vygenerujte komplexní test pokrývající období renesance se zaměřením na umění, politiku a kulturní změny"
+      },
+      "science": {
+        "title": "Základy biologie",
+        "prompt": "Vytvořte test o buněčné biologii včetně buněčné struktury, organel a buněčných procesů pro úroveň střední školy"
+      },
+      "literature": {
+        "title": "Klasická literatura",
+        "prompt": "Vygenerujte otázky o Shakespearově Romeu a Julii se zaměřením na témata, postavy a literární prostředky"
+      }
+    },
+    "preview": {
+      "badge": "Test úspěšně vygenerován",
+      "title": "Váš vygenerovaný test",
+      "subtitle": "Zkontrolujte a upravte svůj test níže",
+      "yourPrompt": "Váš požadavek",
+      "generatedTest": "Náhled vygenerovaného testu",
+      "previewPlaceholder": "Zde se zobrazí váš vygenerovaný test, jakmile bude dokončena integrace API. Test bude obsahovat všechny otázky, možnosti odpovědí a bude připraven k použití ve vaší třídě.",
+      "apiNotice": "Integrace API přichází brzy - toto je náhled UI ukazující, jak bude váš vygenerovaný test zobrazen.",
+      "download": "Stáhnout PDF",
+      "share": "Sdílet test"
+    }
   }
 }

@@ -5,7 +5,6 @@ import { useBoolean } from "usehooks-ts";
 import { Button } from "@/modules/ui/button";
 import { Menu } from "lucide-react";
 import { LanguageSelector } from "./language-selector";
-import { AuthButtons } from "./parts/auth-buttons";
 import { DesktopNav } from "./parts/desktop-nav";
 import { Logo } from "./parts/logo";
 import { MobileMenu } from "./parts/mobile-menu";

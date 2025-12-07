@@ -1,16 +1,32 @@
 "use client";
 
-import { useAuth } from "@/hooks/use-auth";
-import { Link } from "@/i18n/navigation";
-import { Button } from "@/modules/ui/button";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/modules/ui/tooltip";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { useState, useRef } from "react";
+import { PromptInput } from "./parts/prompt-input";
+import { ExamplePrompts } from "./parts/example-prompts";
+import { GeneratedPreview } from "./parts/generated-preview";
 
 export function Hero() {
   const t = useTranslations("LandingPage.hero");
-  const tHeader = useTranslations("LandingPage.header");
-  const auth = useAuth();
+  const [prompt, setPrompt] = useState("");
+  const [generatedTest, setGeneratedTest] = useState<string | null>(null);
+  const previewRef = useRef<HTMLDivElement>(null);
+
+  const handleExampleClick = (examplePrompt: string) => {
+    setPrompt(examplePrompt);
+  };
+
+  const handleGenerate = (test: string) => {
+    setGeneratedTest(test);
+    // Scroll to the preview section after a short delay to allow it to render
+    setTimeout(() => {
+      previewRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100);
+  };
 
   return (
     <section className="py-32 pb-16">
@@ -40,29 +56,21 @@ export function Hero() {
             {t("subtitle")}
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
-          >
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <div>
-                  <Button
-                    size="lg"
-                    disabled
-                    className="text-lg font-semibold px-8 py-4 h-auto opacity-50 cursor-not-allowed"
-                  >
-                    {t("comingSoon")}
-                  </Button>
-                </div>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p className="text-white text-lg">{t("comingSoonTooltip")}</p>
-              </TooltipContent>
-            </Tooltip>
-          </motion.div>
+          <div className="pt-8 space-y-12 max-w-6xl mx-auto">
+            <PromptInput
+              prompt={prompt}
+              onPromptChange={setPrompt}
+              onGenerate={handleGenerate}
+              examplePrompts={
+                <ExamplePrompts onExampleClick={handleExampleClick} />
+              }
+            />
+            {generatedTest && (
+              <div ref={previewRef}>
+                <GeneratedPreview content={generatedTest} />
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>

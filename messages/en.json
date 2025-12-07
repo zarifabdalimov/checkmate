@@ -695,5 +695,54 @@
       "explanation": "Explanation",
       "askAi": "Ask AI"
     }
+  },
+  "ShowcasePage": {
+    "header": {
+      "backToHome": "Back to Home",
+      "signIn": "Sign In",
+      "signUp": "Sign Up"
+    },
+    "hero": {
+      "badge": "AI-Powered Test Generation",
+      "title": "Generate Tests in <highlight>Seconds</highlight>",
+      "subtitle": "Describe what you need and watch our AI create a complete, high-quality test tailored to your requirements."
+    },
+    "promptInput": {
+      "placeholder": "Describe the test you want to create...\n\nFor example: \"Create a 10-question multiple choice test about World War II for high school students, difficulty level intermediate\"",
+      "keyboardShortcut": "Press ⌘ + Enter to generate",
+      "generate": "Generate Test",
+      "generating": "Generating..."
+    },
+    "examples": {
+      "title": "Try These Examples",
+      "subtitle": "Click any example to get started quickly",
+      "math": {
+        "title": "Algebra Fundamentals",
+        "prompt": "Create a test with 15 questions about linear equations and quadratic functions for 8th grade students"
+      },
+      "history": {
+        "title": "World History",
+        "prompt": "Generate a comprehensive test covering the Renaissance period with focus on art, politics, and cultural changes"
+      },
+      "science": {
+        "title": "Biology Basics",
+        "prompt": "Create a test about cell biology including cell structure, organelles, and cellular processes for high school level"
+      },
+      "literature": {
+        "title": "Classic Literature",
+        "prompt": "Generate questions about Shakespeare's Romeo and Juliet focusing on themes, characters, and literary devices"
+      }
+    },
+    "preview": {
+      "badge": "Test Generated Successfully",
+      "title": "Your Generated Test",
+      "subtitle": "Review and customize your test below",
+      "yourPrompt": "Your Prompt",
+      "generatedTest": "Generated Test Preview",
+      "previewPlaceholder": "This is where your generated test will appear once the API integration is complete. The test will include all questions, answer choices, and be ready for use in your classroom.",
+      "apiNotice": "API integration coming soon - this is a UI preview showing how your generated test will be displayed.",
+      "download": "Download PDF",
+      "share": "Share Test"
+    }
   }
 }

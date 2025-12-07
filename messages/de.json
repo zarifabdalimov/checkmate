@@ -695,5 +695,54 @@
       "explanation": "Erklärung",
       "askAi": "KI fragen"
     }
+  },
+  "ShowcasePage": {
+    "header": {
+      "backToHome": "Zurück zur Startseite",
+      "signIn": "Anmelden",
+      "signUp": "Registrieren"
+    },
+    "hero": {
+      "badge": "KI-gestützte Testerstellung",
+      "title": "Erstellen Sie Tests in <highlight>Sekunden</highlight>",
+      "subtitle": "Beschreiben Sie, was Sie brauchen, und beobachten Sie, wie unsere KI einen vollständigen, hochwertigen Test erstellt, der auf Ihre Anforderungen zugeschnitten ist."
+    },
+    "promptInput": {
+      "placeholder": "Beschreiben Sie den Test, den Sie erstellen möchten...\n\nZum Beispiel: \"Erstellen Sie einen Multiple-Choice-Test mit 10 Fragen über den Zweiten Weltkrieg für Gymnasiasten, Schwierigkeitsgrad mittel\"",
+      "keyboardShortcut": "Drücken Sie ⌘ + Enter zum Generieren",
+      "generate": "Test generieren",
+      "generating": "Wird generiert..."
+    },
+    "examples": {
+      "title": "Probieren Sie diese Beispiele",
+      "subtitle": "Klicken Sie auf ein Beispiel, um schnell zu beginnen",
+      "math": {
+        "title": "Algebra-Grundlagen",
+        "prompt": "Erstellen Sie einen Test mit 15 Fragen über lineare Gleichungen und quadratische Funktionen für Schüler der 8. Klasse"
+      },
+      "history": {
+        "title": "Weltgeschichte",
+        "prompt": "Generieren Sie einen umfassenden Test über die Renaissance mit Schwerpunkt auf Kunst, Politik und kulturellen Veränderungen"
+      },
+      "science": {
+        "title": "Biologie-Grundlagen",
+        "prompt": "Erstellen Sie einen Test über Zellbiologie einschließlich Zellstruktur, Organellen und zelluläre Prozesse für Gymnasialniveau"
+      },
+      "literature": {
+        "title": "Klassische Literatur",
+        "prompt": "Generieren Sie Fragen zu Shakespeares Romeo und Julia mit Fokus auf Themen, Charaktere und literarische Mittel"
+      }
+    },
+    "preview": {
+      "badge": "Test erfolgreich generiert",
+      "title": "Ihr generierter Test",
+      "subtitle": "Überprüfen und passen Sie Ihren Test unten an",
+      "yourPrompt": "Ihre Eingabe",
+      "generatedTest": "Generierte Testvorschau",
+      "previewPlaceholder": "Hier wird Ihr generierter Test angezeigt, sobald die API-Integration abgeschlossen ist. Der Test wird alle Fragen und Antwortmöglichkeiten enthalten und für den Einsatz in Ihrem Klassenzimmer bereit sein.",
+      "apiNotice": "API-Integration kommt bald - dies ist eine UI-Vorschau, die zeigt, wie Ihr generierter Test angezeigt wird.",
+      "download": "PDF herunterladen",
+      "share": "Test teilen"
+    }
   }
 }

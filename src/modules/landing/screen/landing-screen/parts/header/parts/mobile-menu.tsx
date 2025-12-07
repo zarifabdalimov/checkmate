@@ -65,7 +65,7 @@ export function MobileMenu({
                       section.translationKey as
                         | "navigation.features"
                         | "navigation.howItWorks"
-                        | "navigation.about"
+                        | "navigation.about",
                     )}
               </Button>
             ))}
@@ -75,4 +75,3 @@ export function MobileMenu({
     </Sheet>
   );
 }
-
