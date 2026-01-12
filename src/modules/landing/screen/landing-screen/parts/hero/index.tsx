@@ -57,7 +57,7 @@ export function Hero() {
 
     createTest(
       {
-        model: "CLAUDE_HAIKU_3",
+        model: data.model,
         subject: data.subject,
         difficulty_level: difficultyLevel,
         language: data.language,

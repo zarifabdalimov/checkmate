@@ -1,5 +1,6 @@
 "use client";
 
+import { ModelType } from "@/hooks/use-create-demo-test";
 import { Button } from "@/modules/ui/button";
 import { Input } from "@/modules/ui/input";
 import { Card, CardContent } from "@/modules/ui/card";
@@ -49,10 +50,19 @@ const DIFFICULTY_LEVELS = [
 
 const FORMATS = ["singleChoice", "multipleChoice"] as const;
 
+const MODELS: ModelType[] = [
+  "THETA_ON_DEMAND",
+  "CLAUDE_HAIKU_3",
+  "CLAUSE_HAIKU_4_5",
+];
+
 export const TestGenerationForm = forwardRef<
   TestGenerationFormRef,
   TestGenerationFormProps
->(function TestGenerationForm({ onGenerate, isGenerating, examplePrompts }, ref) {
+>(function TestGenerationForm(
+  { onGenerate, isGenerating, examplePrompts },
+  ref,
+) {
   const t = useTranslations("ShowcasePage.form");
   const { form, difficultyLevel, applyPreset } = useTestGenerationForm();
 
@@ -81,135 +91,16 @@ export const TestGenerationForm = forwardRef<
         <CardContent>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            {/* Subject */}
-            <FormField
-              control={form.control}
-              name="subject"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>{t("subject.label")}</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder={t("subject.placeholder")}
-                      disabled={isGenerating}
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            {/* Topic */}
-            <FormField
-              control={form.control}
-              name="topic"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>{t("topic.label")}</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder={t("topic.placeholder")}
-                      disabled={isGenerating}
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            {/* Language */}
-            <FormField
-              control={form.control}
-              name="language"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>{t("language.label")}</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder={t("language.placeholder")}
-                      disabled={isGenerating}
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            {/* Difficulty Level and Format - same row */}
-            <div className="grid grid-cols-2 gap-4">
+              {/* Subject */}
               <FormField
                 control={form.control}
-                name="difficulty_level"
+                name="subject"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t("difficulty.label")}</FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      value={field.value}
-                      disabled={isGenerating}
-                    >
-                      <FormControl>
-                        <SelectTrigger className="w-full">
-                          <SelectValue placeholder={t("difficulty.placeholder")} />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        {DIFFICULTY_LEVELS.map((level) => (
-                          <SelectItem key={level} value={level}>
-                            {t(`difficulty.options.${level}`)}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="format"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t("format.label")}</FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      value={field.value}
-                      disabled={isGenerating}
-                    >
-                      <FormControl>
-                        <SelectTrigger className="w-full">
-                          <SelectValue placeholder={t("format.placeholder")} />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        {FORMATS.map((fmt) => (
-                          <SelectItem key={fmt} value={fmt === "singleChoice" ? "MCQ_SINGLE" : "MCQ_MULTIPLE"}>
-                            {t(`format.options.${fmt}`)}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-
-            {/* Custom Difficulty (shown when custom is selected) */}
-            {difficultyLevel === "custom" && (
-              <FormField
-                control={form.control}
-                name="custom_difficulty_text"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t("customDifficulty.label")}</FormLabel>
+                    <FormLabel>{t("subject.label")}</FormLabel>
                     <FormControl>
                       <Input
-                        placeholder={t("customDifficulty.placeholder")}
+                        placeholder={t("subject.placeholder")}
                         disabled={isGenerating}
                         {...field}
                       />
@@ -218,31 +109,189 @@ export const TestGenerationForm = forwardRef<
                   </FormItem>
                 )}
               />
-            )}
 
-            {/* Generate Button */}
-            <div className="flex justify-center">
-              <Button
-                type="submit"
-                disabled={isGenerating}
-                size="lg"
-                className="gap-2"
-              >
-                {isGenerating ? (
-                  <>
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                    {t("generating")}
-                  </>
-                ) : (
-                  <>
-                    <Sparkles className="h-4 w-4" />
-                    {t("generate")}
-                  </>
+              {/* Topic */}
+              <FormField
+                control={form.control}
+                name="topic"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t("topic.label")}</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder={t("topic.placeholder")}
+                        disabled={isGenerating}
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
                 )}
-              </Button>
-            </div>
-          </form>
-        </Form>
+              />
+
+              {/* Language */}
+              <FormField
+                control={form.control}
+                name="language"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t("language.label")}</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder={t("language.placeholder")}
+                        disabled={isGenerating}
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <div className="grid grid-cols-2 gap-4">
+                <FormField
+                  control={form.control}
+                  name="difficulty_level"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{t("difficulty.label")}</FormLabel>
+                      <Select
+                        onValueChange={field.onChange}
+                        value={field.value}
+                        disabled={isGenerating}
+                      >
+                        <FormControl>
+                          <SelectTrigger className="w-full">
+                            <SelectValue
+                              placeholder={t("difficulty.placeholder")}
+                            />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          {DIFFICULTY_LEVELS.map((level) => (
+                            <SelectItem key={level} value={level}>
+                              {t(`difficulty.options.${level}`)}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="format"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{t("format.label")}</FormLabel>
+                      <Select
+                        onValueChange={field.onChange}
+                        value={field.value}
+                        disabled={isGenerating}
+                      >
+                        <FormControl>
+                          <SelectTrigger className="w-full">
+                            <SelectValue
+                              placeholder={t("format.placeholder")}
+                            />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          {FORMATS.map((fmt) => (
+                            <SelectItem
+                              key={fmt}
+                              value={
+                                fmt === "singleChoice"
+                                  ? "MCQ_SINGLE"
+                                  : "MCQ_MULTIPLE"
+                              }
+                            >
+                              {t(`format.options.${fmt}`)}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <FormField
+                control={form.control}
+                name="model"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t("model.label")}</FormLabel>
+                    <Select
+                      onValueChange={field.onChange}
+                      value={field.value}
+                      disabled={isGenerating}
+                    >
+                      <FormControl>
+                        <SelectTrigger className="w-full">
+                          <SelectValue placeholder={t("model.placeholder")} />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        {MODELS.map((model) => (
+                          <SelectItem key={model} value={model}>
+                            {t(`model.options.${model}`)}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* Custom Difficulty (shown when custom is selected) */}
+              {difficultyLevel === "custom" && (
+                <FormField
+                  control={form.control}
+                  name="custom_difficulty_text"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{t("customDifficulty.label")}</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder={t("customDifficulty.placeholder")}
+                          disabled={isGenerating}
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              )}
+
+              {/* Generate Button */}
+              <div className="flex justify-center">
+                <Button
+                  type="submit"
+                  disabled={isGenerating}
+                  size="lg"
+                  className="gap-2"
+                >
+                  {isGenerating ? (
+                    <>
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      {t("generating")}
+                    </>
+                  ) : (
+                    <>
+                      <Sparkles className="h-4 w-4" />
+                      {t("generate")}
+                    </>
+                  )}
+                </Button>
+              </div>
+            </form>
+          </Form>
         </CardContent>
       </Card>
       {examplePrompts && examplePrompts}

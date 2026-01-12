@@ -752,6 +752,15 @@
           "multipleChoice": "Více správných odpovědí"
         }
       },
+      "model": {
+        "label": "AI Model",
+        "placeholder": "Vyberte model",
+        "options": {
+          "THETA_ON_DEMAND": "Theta On Demand - Nejrychlejší, nižší kvalita",
+          "CLAUDE_HAIKU_3": "Claude Haiku 3 - Vyvážená rychlost a kvalita",
+          "CLAUSE_HAIKU_4_5": "Claude Haiku 4.5 - Nejvyšší kvalita, pomalejší"
+        }
+      },
       "subjects": {
         "english": "Angličtina",
         "history": "Dějepis",

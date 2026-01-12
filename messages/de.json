@@ -752,6 +752,15 @@
           "multipleChoice": "Mehrfachauswahl"
         }
       },
+      "model": {
+        "label": "KI-Modell",
+        "placeholder": "Wählen Sie das Modell",
+        "options": {
+          "THETA_ON_DEMAND": "Theta On Demand - Am schnellsten, geringere Qualität",
+          "CLAUDE_HAIKU_3": "Claude Haiku 3 - Ausgewogene Geschwindigkeit und Qualität",
+          "CLAUSE_HAIKU_4_5": "Claude Haiku 4.5 - Höchste Qualität, langsamer"
+        }
+      },
       "subjects": {
         "english": "Englisch",
         "history": "Geschichte",

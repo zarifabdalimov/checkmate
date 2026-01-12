@@ -37,6 +37,7 @@ export function ExamplePrompts({ onExampleClick }: ExamplePromptsProps) {
         topic: t("english.topic"),
         format: "MCQ_SINGLE",
         language: "English",
+        model: "CLAUDE_HAIKU_3",
       },
     },
     {
@@ -49,6 +50,7 @@ export function ExamplePrompts({ onExampleClick }: ExamplePromptsProps) {
         topic: t("history.topic"),
         format: "MCQ_SINGLE",
         language: "English",
+        model: "CLAUDE_HAIKU_3",
       },
     },
     {
@@ -61,6 +63,7 @@ export function ExamplePrompts({ onExampleClick }: ExamplePromptsProps) {
         topic: t("science.topic"),
         format: "MCQ_SINGLE",
         language: "English",
+        model: "CLAUDE_HAIKU_3",
       },
     },
     {
@@ -73,6 +76,7 @@ export function ExamplePrompts({ onExampleClick }: ExamplePromptsProps) {
         topic: t("literature.topic"),
         format: "MCQ_SINGLE",
         language: "English",
+        model: "CLAUDE_HAIKU_3",
       },
     },
   ];

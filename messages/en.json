@@ -752,6 +752,15 @@
           "multipleChoice": "Multiple Choice"
         }
       },
+      "model": {
+        "label": "AI Model",
+        "placeholder": "Select model",
+        "options": {
+          "THETA_ON_DEMAND": "Theta On Demand - Fastest, lower quality",
+          "CLAUDE_HAIKU_3": "Claude Haiku 3 - Balanced speed and quality",
+          "CLAUSE_HAIKU_4_5": "Claude Haiku 4.5 - Highest quality, slower"
+        }
+      },
       "subjects": {
         "english": "English",
         "history": "History",

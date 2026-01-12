@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useEffect } from "react";
-import type { TestFormat } from "@/hooks/use-create-demo-test";
+import type { TestFormat, ModelType } from "@/hooks/use-create-demo-test";
 
 export interface TestGenerationFormData {
   subject: string;
@@ -10,6 +10,7 @@ export interface TestGenerationFormData {
   topic: string;
   format: TestFormat;
   language: string;
+  model: ModelType;
 }
 
 const formSchema = z.object({
@@ -19,6 +20,7 @@ const formSchema = z.object({
   topic: z.string().min(1, "Topic is required"),
   format: z.enum(["MCQ_SINGLE", "MCQ_MULTIPLE"]),
   language: z.string().min(1, "Language is required"),
+  model: z.enum(["THETA_ON_DEMAND", "CLAUDE_HAIKU_3", "CLAUSE_HAIKU_4_5"]),
 }).superRefine((data, ctx) => {
   if (data.difficulty_level === "custom" && !data.custom_difficulty_text?.trim()) {
     ctx.addIssue({
@@ -39,6 +41,7 @@ export function useTestGenerationForm() {
       topic: "",
       format: "MCQ_SINGLE",
       language: "",
+      model: "CLAUDE_HAIKU_3",
     },
   });
 
