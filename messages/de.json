@@ -801,6 +801,18 @@
       "generatedBy": "Generiert von Checkmate AI",
       "addQuestion": "Frage hinzufügen",
       "removeQuestion": "Frage entfernen"
+    },
+    "loading": {
+      "title": "Ihr Test wird erstellt",
+      "subtitle": "Unsere KI arbeitet an Ihrem individuellen Test. Dies dauert normalerweise 10-30 Sekunden.",
+      "progress": "Fortschritt",
+      "tip": "Ihr Test wird 10 sorgfältig ausgearbeitete Fragen mit detaillierten Erklärungen enthalten.",
+      "steps": {
+        "analyzing": "Ihre Anforderungen werden analysiert...",
+        "generating": "Fragen und Antworten werden generiert...",
+        "reviewing": "Qualität und Genauigkeit werden überprüft...",
+        "finalizing": "Ihr Test wird fertiggestellt..."
+      }
     }
   }
 }

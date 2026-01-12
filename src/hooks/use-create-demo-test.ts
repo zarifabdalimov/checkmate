@@ -112,7 +112,7 @@ export function useGetDemoTest(testId: string) {
     queryKey: ["demo-test", testId],
     enabled: Boolean(testId),
     refetchInterval: (query) => {
-      return query.state.data?.status === "pending" ? 3000 : false;
+      return query.state.data?.status === "pending" ? 1000 : false;
     },
     queryFn: async () => {
       const response = await axios.get<Test>(

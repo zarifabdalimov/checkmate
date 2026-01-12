@@ -6,7 +6,7 @@ import {
 } from "@/hooks/use-create-demo-test";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ExamplePrompts } from "./parts/example-prompts";
 import {
   TestGenerationForm,
@@ -14,20 +14,34 @@ import {
   type TestGenerationFormRef,
 } from "./parts/test-generation-form";
 import { EditableTestPreview } from "./parts/editable-test-preview";
+import { TestGenerationLoading } from "./parts/test-generation-loading";
 
 export function Hero() {
   const t = useTranslations("LandingPage.hero");
-  const [testId, setTestId] = useState<string>(
-    "e663ef4a-0721-4470-a12c-67ff5c0bf7b5",
-  );
-  const demoTestQuery = useGetDemoTest("e663ef4a-0721-4470-a12c-67ff5c0bf7b5");
-
-  // console.log("[debug] data", demoTestQuery.data);
-  // console.log("[debug] error", demoTestQuery.error);
+  const [testId, setTestId] = useState<string>("");
+  const demoTestQuery = useGetDemoTest(testId);
   const previewRef = useRef<HTMLDivElement>(null);
+  const loadingRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<TestGenerationFormRef>(null);
 
   const { mutate: createTest, isPending } = useCreateDemoTest();
+
+  useEffect(() => {
+    if (testId && demoTestQuery.data?.status === "pending") {
+      const scrollToLoading = () => {
+        if (loadingRef.current) {
+          loadingRef.current.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+        } else {
+          setTimeout(scrollToLoading, 50);
+        }
+      };
+      
+      setTimeout(scrollToLoading, 100);
+    }
+  }, [testId, demoTestQuery.data?.status]);
 
   const handleExampleClick = (preset: TestGenerationFormData) => {
     formRef.current?.applyPreset(preset);
@@ -103,7 +117,12 @@ export function Hero() {
                 <ExamplePrompts onExampleClick={handleExampleClick} />
               }
             />
-            {demoTestQuery.data && (
+            {testId && demoTestQuery.data?.status === "pending" && (
+              <div ref={loadingRef}>
+                <TestGenerationLoading testId={testId} />
+              </div>
+            )}
+            {demoTestQuery.data?.status === "completed" && demoTestQuery.data.content && (
               <div ref={previewRef}>
                 <EditableTestPreview test={demoTestQuery.data} />
               </div>

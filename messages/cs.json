@@ -801,6 +801,18 @@
       "generatedBy": "Vygenerováno pomocí Checkmate AI",
       "addQuestion": "Přidat otázku",
       "removeQuestion": "Odebrat otázku"
+    },
+    "loading": {
+      "title": "Vytváříme váš test",
+      "subtitle": "Naše AI pracuje na vašem testu. Obvykle to trvá 10-30 sekund.",
+      "progress": "Průběh",
+      "tip": "Váš test bude obsahovat 10 pečlivě vytvořených otázek s podrobnými vysvětleními.",
+      "steps": {
+        "analyzing": "Analyzujeme vaše požadavky...",
+        "generating": "Generujeme otázky a odpovědi...",
+        "reviewing": "Kontrolujeme kvalitu a přesnost...",
+        "finalizing": "Dokončujeme váš test..."
+      }
     }
   }
 }
