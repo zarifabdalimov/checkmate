@@ -1,9 +1,9 @@
 "use client";
 
 import { Test } from "@/lib/api/generated/model";
-import { Button } from "@/modules/ui/button";
 import { Separator } from "@/modules/ui/separator";
-import { Printer } from "lucide-react";
+import { DashboardTestPDFDownload } from "@/modules/pdf";
+import { useTranslations } from "next-intl";
 import * as React from "react";
 
 interface TestPreviewTabProps {
@@ -11,6 +11,7 @@ interface TestPreviewTabProps {
 }
 
 export function TestPreviewTab({ test }: TestPreviewTabProps) {
+  const t = useTranslations("Dashboard.tests.testDetail");
   const questionCount = test.content?.length ?? 0;
 
   return (
@@ -19,14 +20,14 @@ export function TestPreviewTab({ test }: TestPreviewTabProps) {
         <h1 className="text-2xl font-bold mb-2">{test.name}</h1>
         {test.description && <p className="text-lg mb-2">{test.description}</p>}
         <div className="text-sm">
-          <span className="font-medium">Subject:</span>{" "}
+          <span className="font-medium">{t("preview.subject")}:</span>{" "}
           {test.test_params?.subject || "N/A"} |
-          <span className="font-medium ml-2">Difficulty:</span>{" "}
+          <span className="font-medium ml-2">{t("preview.difficulty")}:</span>{" "}
           {test.test_params?.difficulty_level || "N/A"} |
-          <span className="font-medium ml-2">Questions:</span> {questionCount} |
-          <span className="font-medium ml-2">Time:</span>{" "}
+          <span className="font-medium ml-2">{t("preview.questions")}:</span> {questionCount} |
+          <span className="font-medium ml-2">{t("preview.time")}:</span>{" "}
           {test.test_params?.time_per_question_in_minutes
-            ? `${test.test_params.time_per_question_in_minutes * questionCount} minutes`
+            ? `${test.test_params.time_per_question_in_minutes * questionCount} ${t("preview.minutes")}`
             : "N/A"}
         </div>
       </div>
@@ -58,10 +59,17 @@ export function TestPreviewTab({ test }: TestPreviewTabProps) {
       </div>
       <Separator className="bg-black" />
       <div className="print:hidden">
-        <Button onClick={window.print} variant="outline">
-          <Printer className="h-4 w-4" />
-          Print Test
-        </Button>
+        <DashboardTestPDFDownload
+          test={test}
+          translations={{
+            subject: t("preview.subject"),
+            difficulty: t("preview.difficulty"),
+            questions: t("preview.questions"),
+            time: t("preview.time"),
+            minutes: t("preview.minutes"),
+          }}
+          buttonText={t("preview.exportPdf")}
+        />
       </div>
     </div>
   );

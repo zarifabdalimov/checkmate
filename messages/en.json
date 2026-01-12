@@ -571,6 +571,14 @@
           "testResults": "Test Results",
           "uploadResults": "Upload Results"
         },
+        "preview": {
+          "subject": "Subject",
+          "difficulty": "Difficulty",
+          "questions": "Questions",
+          "time": "Time",
+          "minutes": "minutes",
+          "exportPdf": "Export PDF"
+        },
         "errors": {
           "loadFailed": {
             "title": "Failed to load test",
@@ -813,6 +821,16 @@
         "reviewing": "Reviewing quality and accuracy...",
         "finalizing": "Finalizing your test..."
       }
+    },
+    "feedback": {
+      "title": "How was the generated test?",
+      "like": "Good",
+      "dislike": "Bad",
+      "commentPlaceholder": "Tell us more about your experience (optional)...",
+      "submitFeedback": "Submit Feedback",
+      "submitting": "Submitting...",
+      "success": "Thank you for your feedback!",
+      "error": "Failed to submit feedback. Please try again."
     }
   }
 }

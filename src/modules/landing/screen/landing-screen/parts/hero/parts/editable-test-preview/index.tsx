@@ -13,6 +13,7 @@ import { TestHeader } from "./parts/test-header";
 import { TestTitle } from "./parts/test-title";
 import { TestMetadata } from "./parts/test-metadata";
 import { QuestionsList } from "./parts/questions-list/questions-list";
+import { TestFeedback } from "./parts/test-feedback";
 
 interface EditableTestPreviewProps {
   test: Test;
@@ -39,9 +40,8 @@ export function EditableTestPreview({
     }
   };
 
-  const handleExportPDF = () => {
-    window.print();
-  };
+  const testName = methods.watch("testName");
+  const questions = methods.watch("questions");
 
   return (
     <FormProvider {...methods}>
@@ -57,8 +57,10 @@ export function EditableTestPreview({
             <TestHeader
               isEditing={isEditing}
               onToggleEdit={handleToggleEdit}
-              onExportPDF={handleExportPDF}
               onClose={onClose}
+              test={test}
+              questions={questions}
+              testName={testName}
             />
             <div className="text-center space-y-4">
               <TestTitle isEditing={isEditing} />
@@ -67,8 +69,12 @@ export function EditableTestPreview({
             <Separator />
             <QuestionsList isEditing={isEditing} />
             <Separator />
-            <div className="text-center text-sm text-muted-foreground print:hidden">
-              {t("generatedBy")}
+            <div className="print:hidden">
+              <TestFeedback
+                testId={test.id}
+                initialLiked={test.feedback_liked}
+                initialComment={test.feedback_comment}
+              />
             </div>
           </CardContent>
         </Card>

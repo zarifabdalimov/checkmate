@@ -571,6 +571,14 @@
           "testResults": "Testergebnisse",
           "uploadResults": "Ergebnisse hochladen"
         },
+        "preview": {
+          "subject": "Fach",
+          "difficulty": "Schwierigkeit",
+          "questions": "Fragen",
+          "time": "Zeit",
+          "minutes": "Minuten",
+          "exportPdf": "PDF exportieren"
+        },
         "errors": {
           "loadFailed": {
             "title": "Fehler beim Laden des Tests",
@@ -813,6 +821,16 @@
         "reviewing": "Qualität und Genauigkeit werden überprüft...",
         "finalizing": "Ihr Test wird fertiggestellt..."
       }
+    },
+    "feedback": {
+      "title": "Wie war der generierte Test?",
+      "like": "Gut",
+      "dislike": "Schlecht",
+      "commentPlaceholder": "Erzählen Sie uns mehr über Ihre Erfahrung (optional)...",
+      "submitFeedback": "Feedback senden",
+      "submitting": "Wird gesendet...",
+      "success": "Vielen Dank für Ihr Feedback!",
+      "error": "Feedback konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
     }
   }
 }
