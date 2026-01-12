@@ -23,17 +23,14 @@ export function useEditableTestForm(test: Test) {
     },
   });
 
-  const { fields, append, remove, update } = useFieldArray({
+  const fieldArrayMethods = useFieldArray({
     control: methods.control,
     name: "questions",
   });
 
   return {
     ...methods,
-    fields,
-    append,
-    remove,
-    update,
+    fieldArrayMethods,
   };
 }
 

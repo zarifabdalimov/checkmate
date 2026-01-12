@@ -1,19 +1,18 @@
 "use client";
 
+import type { Test } from "@/hooks/use-create-demo-test";
 import { Card, CardContent } from "@/modules/ui/card";
 import { Separator } from "@/modules/ui/separator";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
 import { useState } from "react";
-import type { Test } from "@/hooks/use-create-demo-test";
 import { FormProvider } from "react-hook-form";
-import { useEditableTestForm } from "./hooks/use-editable-test-form";
 import { FieldArrayProvider } from "./hooks/field-array-context";
-import { TestHeader } from "./parts/test-header";
-import { TestTitle } from "./parts/test-title";
-import { TestMetadata } from "./parts/test-metadata";
+import { useEditableTestForm } from "./hooks/use-editable-test-form";
 import { QuestionsList } from "./parts/questions-list/questions-list";
 import { TestFeedback } from "./parts/test-feedback";
+import { TestHeader } from "./parts/test-header";
+import { TestMetadata } from "./parts/test-metadata";
+import { TestTitle } from "./parts/test-title";
 
 interface EditableTestPreviewProps {
   test: Test;
@@ -24,9 +23,8 @@ export function EditableTestPreview({
   test,
   onClose,
 }: EditableTestPreviewProps) {
-  const t = useTranslations("ShowcasePage.preview");
   const [isEditing, setIsEditing] = useState(false);
-  const { fields, append, remove, update, ...methods } = useEditableTestForm(test);
+  const { fieldArrayMethods, ...methods } = useEditableTestForm(test);
 
   const onSubmit = () => {
     setIsEditing(false);
@@ -45,40 +43,40 @@ export function EditableTestPreview({
 
   return (
     <FormProvider {...methods}>
-      <FieldArrayProvider value={{ fields, append, remove, update } as any}>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="w-full max-w-4xl mx-auto"
-      >
-        <Card>
-          <CardContent className="p-8 space-y-6">
-            <TestHeader
-              isEditing={isEditing}
-              onToggleEdit={handleToggleEdit}
-              onClose={onClose}
-              test={test}
-              questions={questions}
-              testName={testName}
-            />
-            <div className="text-center space-y-4">
-              <TestTitle isEditing={isEditing} />
-              <TestMetadata test={test} />
-            </div>
-            <Separator />
-            <QuestionsList isEditing={isEditing} />
-            <Separator />
-            <div className="print:hidden">
-              <TestFeedback
-                testId={test.id}
-                initialLiked={test.feedback_liked}
-                initialComment={test.feedback_comment}
+      <FieldArrayProvider value={fieldArrayMethods}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full max-w-4xl mx-auto"
+        >
+          <Card>
+            <CardContent className="p-8 space-y-6">
+              <TestHeader
+                isEditing={isEditing}
+                onToggleEdit={handleToggleEdit}
+                onClose={onClose}
+                test={test}
+                questions={questions}
+                testName={testName}
               />
-            </div>
-          </CardContent>
-        </Card>
-      </motion.div>
+              <div className="text-center space-y-4">
+                <TestTitle isEditing={isEditing} />
+                <TestMetadata test={test} />
+              </div>
+              <Separator />
+              <QuestionsList isEditing={isEditing} />
+              <Separator />
+              <div className="print:hidden">
+                <TestFeedback
+                  testId={test.id}
+                  initialLiked={test.feedback_liked}
+                  initialComment={test.feedback_comment}
+                />
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
       </FieldArrayProvider>
     </FormProvider>
   );
