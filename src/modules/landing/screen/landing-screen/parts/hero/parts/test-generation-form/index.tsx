@@ -54,6 +54,9 @@ const MODELS: ModelType[] = [
   "THETA_ON_DEMAND",
   "CLAUDE_HAIKU_3",
   "CLAUSE_HAIKU_4_5",
+  "GEMINI_2_5_FLASH_LITE",
+  "GEMINI_3_FLASH_PREVIEW",
+  "THETA_DEPLOYMENT_GEMMA_2B",
 ];
 
 export const TestGenerationForm = forwardRef<

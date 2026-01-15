@@ -758,7 +758,10 @@
         "options": {
           "THETA_ON_DEMAND": "Theta On Demand - Nejrychlejší, nižší kvalita",
           "CLAUDE_HAIKU_3": "Claude Haiku 3 - Vyvážená rychlost a kvalita",
-          "CLAUSE_HAIKU_4_5": "Claude Haiku 4.5 - Nejvyšší kvalita, pomalejší"
+          "CLAUSE_HAIKU_4_5": "Claude Haiku 4.5 - Nejvyšší kvalita, pomalejší",
+          "GEMINI_2_5_FLASH_LITE": "Gemini 2.5 Flash Lite - Rychlý a efektivní",
+          "GEMINI_3_FLASH_PREVIEW": "Gemini 3 Flash Preview - Nejnovější verze preview",
+          "THETA_DEPLOYMENT_GEMMA_2B": "Theta Gemma 2B - Lehký model pro nasazení"
         }
       },
       "subjects": {

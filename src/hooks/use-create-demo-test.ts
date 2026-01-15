@@ -7,7 +7,10 @@ export type TestFormat = "MCQ_SINGLE" | "MCQ_MULTIPLE";
 export type ModelType =
   | "THETA_ON_DEMAND"
   | "CLAUDE_HAIKU_3"
-  | "CLAUSE_HAIKU_4_5";
+  | "CLAUSE_HAIKU_4_5"
+  | "GEMINI_2_5_FLASH_LITE"
+  | "GEMINI_3_FLASH_PREVIEW"
+  | "THETA_DEPLOYMENT_GEMMA_2B";
 
 export interface TestGroupRequest {
   format: TestFormat;
