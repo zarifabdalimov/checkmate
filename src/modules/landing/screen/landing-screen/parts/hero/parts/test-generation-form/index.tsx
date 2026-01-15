@@ -200,6 +200,27 @@ export const TestGenerationForm = forwardRef<
                 />
               </div>
 
+              {/* Custom Difficulty (shown when custom is selected) */}
+              {difficultyLevel === "custom" && (
+                <FormField
+                  control={form.control}
+                  name="custom_difficulty_text"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{t("customDifficulty.label")}</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder={t("customDifficulty.placeholder")}
+                          disabled={isGenerating}
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              )}
+
               <FormField
                 control={form.control}
                 name="model"
@@ -228,27 +249,6 @@ export const TestGenerationForm = forwardRef<
                   </FormItem>
                 )}
               />
-
-              {/* Custom Difficulty (shown when custom is selected) */}
-              {difficultyLevel === "custom" && (
-                <FormField
-                  control={form.control}
-                  name="custom_difficulty_text"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{t("customDifficulty.label")}</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder={t("customDifficulty.placeholder")}
-                          disabled={isGenerating}
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              )}
 
               {/* Generate Button */}
               <div className="flex justify-center">
