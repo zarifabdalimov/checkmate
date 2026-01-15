@@ -6,8 +6,8 @@ export const MODELS: ModelType[] = [
   "CLAUSE_HAIKU_4_5",
   "GEMINI_2_5_FLASH_LITE",
   "GEMINI_3_FLASH_PREVIEW",
-  "THETA_DEPLOYMENT_GEMMA_2B",
 ];
+
 export const DIFFICULTY_LEVELS = [
   "basicSchool",
   "middleSchool",
