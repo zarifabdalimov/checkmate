@@ -748,8 +748,9 @@
         "label": "Fragenformat",
         "placeholder": "Wählen Sie das Format",
         "options": {
-          "singleChoice": "Einfachauswahl",
-          "multipleChoice": "Mehrfachauswahl"
+          "MCQ_SINGLE": "Einfachauswahl",
+          "MCQ_MULTIPLE": "Mehrfachauswahl",
+          "OPEN_ENDED": "Offene Fragen"
         }
       },
       "model": {
@@ -843,6 +844,10 @@
       "submitting": "Wird gesendet...",
       "success": "Vielen Dank für Ihr Feedback!",
       "error": "Feedback konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
+    },
+    "errors": {
+      "createTestFailed": "Test konnte nicht erstellt werden",
+      "createTestFailedDescription": "Beim Erstellen Ihres Tests ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
     }
   }
 }

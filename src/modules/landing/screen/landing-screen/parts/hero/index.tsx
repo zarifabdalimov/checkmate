@@ -7,6 +7,7 @@ import {
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
+import { toast } from "sonner";
 import { ExamplePrompts } from "./parts/example-prompts";
 import {
   TestGenerationForm,
@@ -18,6 +19,7 @@ import { TestGenerationLoading } from "./parts/test-generation-loading";
 
 export function Hero() {
   const t = useTranslations("LandingPage.hero");
+  const tError = useTranslations("ShowcasePage.errors");
   const [testId, setTestId] = useState<string>("");
   const demoTestQuery = useGetDemoTest(testId);
   const previewRef = useRef<HTMLDivElement>(null);
@@ -75,6 +77,9 @@ export function Hero() {
         },
         onError: (error) => {
           console.error("Failed to create test:", error);
+          toast.error(tError("createTestFailed"), {
+            description: tError("createTestFailedDescription"),
+          });
         },
       },
     );

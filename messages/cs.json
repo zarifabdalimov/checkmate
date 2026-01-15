@@ -748,8 +748,9 @@
         "label": "Formát otázek",
         "placeholder": "Vyberte formát",
         "options": {
-          "singleChoice": "Jedna správná odpověď",
-          "multipleChoice": "Více správných odpovědí"
+          "MCQ_SINGLE": "Jedna správná odpověď",
+          "MCQ_MULTIPLE": "Více správných odpovědí",
+          "OPEN_ENDED": "Otevřené otázky"
         }
       },
       "model": {
@@ -843,6 +844,10 @@
       "submitting": "Odesílání...",
       "success": "Děkujeme za vaši zpětnou vazbu!",
       "error": "Nepodařilo se odeslat zpětnou vazbu. Zkuste to prosím znovu."
+    },
+    "errors": {
+      "createTestFailed": "Nepodařilo se vytvořit test",
+      "createTestFailedDescription": "Při vytváření testu došlo k chybě. Zkuste to prosím znovu."
     }
   }
 }

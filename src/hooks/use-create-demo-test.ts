@@ -2,7 +2,7 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 // Types based on the OpenAPI schema
-export type TestFormat = "MCQ_SINGLE" | "MCQ_MULTIPLE";
+export type TestFormat = "MCQ_SINGLE" | "MCQ_MULTIPLE" | "OPEN_ENDED";
 
 export type ModelType =
   | "THETA_ON_DEMAND"

@@ -1,16 +1,12 @@
 "use client";
 
-import { ModelType } from "@/hooks/use-create-demo-test";
-import { Button } from "@/modules/ui/button";
-import { Input } from "@/modules/ui/input";
-import { Card, CardContent } from "@/modules/ui/card";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/modules/ui/select";
+  DIFFICULTY_LEVELS,
+  FORMATS,
+  MODELS,
+} from "@/modules/landing/screen/landing-screen/parts/hero/parts/test-generation-form/index.static";
+import { Button } from "@/modules/ui/button";
+import { Card, CardContent } from "@/modules/ui/card";
 import {
   Form,
   FormControl,
@@ -19,14 +15,22 @@ import {
   FormLabel,
   FormMessage,
 } from "@/modules/ui/form";
-import { useTranslations } from "next-intl";
-import { useImperativeHandle, forwardRef } from "react";
-import { Sparkles, Loader2 } from "lucide-react";
-import { motion } from "framer-motion";
+import { Input } from "@/modules/ui/input";
 import {
-  useTestGenerationForm,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/modules/ui/select";
+import { motion } from "framer-motion";
+import { Loader2, Sparkles } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { forwardRef, useImperativeHandle } from "react";
+import {
   type TestGenerationFormData,
-} from "./use-test-generation-form";
+  useTestGenerationForm,
+} from "./hooks/use-test-generation-form";
 
 export type { TestGenerationFormData };
 
@@ -39,25 +43,6 @@ interface TestGenerationFormProps {
   isGenerating: boolean;
   examplePrompts?: React.ReactNode;
 }
-
-const DIFFICULTY_LEVELS = [
-  "basicSchool",
-  "middleSchool",
-  "highSchool",
-  "firstYearUniversity",
-  "custom",
-] as const;
-
-const FORMATS = ["singleChoice", "multipleChoice"] as const;
-
-const MODELS: ModelType[] = [
-  "THETA_ON_DEMAND",
-  "CLAUDE_HAIKU_3",
-  "CLAUSE_HAIKU_4_5",
-  "GEMINI_2_5_FLASH_LITE",
-  "GEMINI_3_FLASH_PREVIEW",
-  "THETA_DEPLOYMENT_GEMMA_2B",
-];
 
 export const TestGenerationForm = forwardRef<
   TestGenerationFormRef,
@@ -202,16 +187,9 @@ export const TestGenerationForm = forwardRef<
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          {FORMATS.map((fmt) => (
-                            <SelectItem
-                              key={fmt}
-                              value={
-                                fmt === "singleChoice"
-                                  ? "MCQ_SINGLE"
-                                  : "MCQ_MULTIPLE"
-                              }
-                            >
-                              {t(`format.options.${fmt}`)}
+                          {FORMATS.map((format) => (
+                            <SelectItem key={format} value={format}>
+                              {t(`format.options.${format}`)}
                             </SelectItem>
                           ))}
                         </SelectContent>

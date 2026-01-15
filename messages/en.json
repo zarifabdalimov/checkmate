@@ -748,8 +748,9 @@
         "label": "Question Format",
         "placeholder": "Select format",
         "options": {
-          "singleChoice": "Single Choice",
-          "multipleChoice": "Multiple Choice"
+          "MCQ_SINGLE": "Single Choice",
+          "MCQ_MULTIPLE": "Multiple Choice",
+          "OPEN_ENDED": "Open Ended"
         }
       },
       "model": {
@@ -843,6 +844,10 @@
       "submitting": "Submitting...",
       "success": "Thank you for your feedback!",
       "error": "Failed to submit feedback. Please try again."
+    },
+    "errors": {
+      "createTestFailed": "Failed to create test",
+      "createTestFailedDescription": "There was an error creating your test. Please try again."
     }
   }
 }
