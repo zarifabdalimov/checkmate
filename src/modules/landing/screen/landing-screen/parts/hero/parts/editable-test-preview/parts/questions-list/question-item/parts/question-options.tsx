@@ -71,11 +71,20 @@ export function QuestionOptions({
   return (
     <div className="space-y-2 pl-6">
       {question.options.map((option, optionIndex) => (
-        <div key={option.order} className="flex items-start gap-2">
-          <span className="font-medium text-sm">
+        <div 
+          key={option.order} 
+          className={`flex items-start gap-2 p-2 rounded-md transition-colors ${
+            option.correct 
+              ? 'bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800' 
+              : ''
+          }`}
+        >
+          <span className={`font-medium text-sm ${option.correct ? 'text-green-700 dark:text-green-400' : ''}`}>
             {String.fromCharCode(65 + optionIndex)}.
           </span>
-          <span className="text-sm">{option.answer}</span>
+          <span className={`text-sm ${option.correct ? 'text-green-700 dark:text-green-400 font-medium' : ''}`}>
+            {option.answer}
+          </span>
         </div>
       ))}
     </div>
