@@ -1,0 +1,430 @@
+openapi: 3.0.3
+info:
+  title: API for Checkmate demo
+  version: 0.0.0
+
+tags:
+  - name: maintenance
+    description: Maintenance operations
+  - name: v1/tests
+    description: Operations related to tests
+
+paths:
+  /dev/ping:
+    get:
+      tags:
+        - maintenance
+      summary: Health check endpoint
+      parameters:
+        - $ref: '#/components/parameters/X-Api-Key'
+      operationId: ping
+      responses:
+        '204':
+          description: 'Service is healthy'
+  /dev/openapi:
+    get:
+      tags:
+        - maintenance
+      summary: Get OpenAPI specification
+      parameters:
+        - $ref: '#/components/parameters/X-Api-Key'
+      operationId: getOpenAPISpec
+      responses:
+        '200':
+          description: 'OpenAPI specification in YAML format'
+  /dev/api/v1/tests:
+    post:
+      tags:
+        - v1/tests
+      summary: Create a new test
+      parameters:
+        - $ref: '#/components/parameters/X-Api-Key'
+      requestBody:
+        description: Test to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTestReq'
+      responses:
+        '200':
+          description: 'Test created successfully'
+          content:
+            application/json:
+              schema:
+                properties:
+                  test_id:
+                    type: string
+                    format: uuid
+                required:
+                  - test_id
+
+        '400':
+          description: 'Invalid input data'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+  /dev/api/v1/tests/{test_id}:
+    get:
+      tags:
+        - v1/tests
+      summary: Get a test by ID
+      parameters:
+        - $ref: '#/components/parameters/TestId'
+        - $ref: '#/components/parameters/X-Api-Key'
+      responses:
+        '200':
+          description: 'Test details'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Test'
+        '400':
+          description: 'Invalid test ID'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '404':
+          description: 'Test not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+  /dev/api/v1/tests/{test_id}/feedback:
+    put:
+      tags:
+        - v1/tests
+      summary: Submit feedback for a test
+      parameters:
+        - $ref: '#/components/parameters/TestId'
+        - $ref: '#/components/parameters/X-Api-Key'
+      requestBody:
+        description: Feedback for the test
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubmitTestFeedbackReq'
+      responses:
+        '204':
+          description: 'Feedback submitted successfully'
+        '400':
+          description: 'Invalid input data'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequestError'
+        '404':
+          description: 'Test not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
+components:
+  schemas:
+    ## Types
+    TestStatus:
+      type: string
+      enum:
+        - pending
+        - completed
+    TestFormat:
+      type: string
+      enum:
+        - MCQ_SINGLE
+        - MCQ_MULTIPLE
+        - OPEN_ENDED
+    ModelType:
+      type: string
+      enum:
+        - THETA_ON_DEMAND
+        - CLAUDE_HAIKU_3
+        - CLAUDE_HAIKU_4_5
+        - GEMINI_2_5_FLASH_LITE
+        - GEMINI_3_FLASH_PREVIEW
+        - THETA_DEPLOYMENT_GEMMA_2B
+    TestSubject:
+      type: string
+      description: 'Subject of the test'
+      example: 'History'
+    TestDifficultyLevel:
+      type: string
+      description: 'Difficulty level of the test'
+      example: '1st year of university'
+    TestLanguage:
+      type: string
+      description: 'Language of the test'
+      example: 'English'
+    TestGroupAmount:
+      type: integer
+      description: "number of questions in the test group"
+      example: 5
+      minimum: 1
+    TestGroupTopic:
+      type: string
+      description: "topic of the test group"
+      example: "Battles of World War 2"
+    TestQuestionTitle:
+      type: string
+      description: "title of the test question"
+      example: "What animals lives in the water?"
+    TestName:
+      type: string
+      description: "name of the test"
+      example: "History Test on World War 2"
+    TestTimeLimitMin:
+      type: integer
+      description: "time limit of the test in minutes"
+      example: 30
+      minimum: 1
+    TestFeedbackLiked:
+      type: boolean
+      description: "Whether the user liked the test"
+      example: true
+      nullable: true
+    TestFeedbackComment:
+      type: string
+      description: "User's comment about the test"
+      example: "Great test, very challenging!"
+      nullable: true
+    # Objects
+    SubmitTestFeedbackReq:
+      type: object
+      properties:
+        liked:
+          type: boolean
+          description: "Whether the user liked the test"
+          example: true
+        comment:
+          type: string
+          description: "User's comment about the test"
+          example: "Great test, very challenging!"
+      required:
+        - liked
+    CreateTestReq:
+      type: object
+      properties:
+        model:
+          $ref: '#/components/schemas/ModelType'
+        subject:
+          $ref: '#/components/schemas/TestSubject'
+        difficulty_level:
+          $ref: '#/components/schemas/TestDifficultyLevel'
+        language:
+          $ref: '#/components/schemas/TestLanguage'
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/TestGroupRequest'
+      required:
+        - model
+        - subject
+        - difficulty_level
+        - language
+        - content
+    TestGroupRequest:
+      type: object
+      properties:
+        format:
+          $ref: '#/components/schemas/TestFormat'
+        amount:
+          $ref: '#/components/schemas/TestGroupAmount'
+        topic:
+          $ref: '#/components/schemas/TestGroupTopic'
+      required:
+        - format
+        - amount
+        - topic
+    Content:
+      type: object
+      properties:
+        test_metadata:
+          $ref: '#/components/schemas/TestMetadata'
+        test_content:
+          $ref: '#/components/schemas/TestContent'
+      required:
+        - test_metadata
+        - test_content
+    TestMetadata:
+      type: object
+      properties:
+        name:
+          $ref: '#/components/schemas/TestName'
+        time_limit_min:
+          $ref: '#/components/schemas/TestTimeLimitMin'
+        topic:
+          $ref: '#/components/schemas/TestSubject'
+        level:
+          $ref: '#/components/schemas/TestDifficultyLevel'
+        language:
+          $ref: '#/components/schemas/TestLanguage'
+      required:
+        - name
+        - time_limit_min
+        - topic
+        - level
+        - language
+    TestContent:
+      type: object
+      properties:
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/TestGroup'
+      required:
+        - groups
+    TestGroup:
+      type: object
+      properties:
+        name:
+          $ref: '#/components/schemas/TestGroupTopic'
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/TestQuestion'
+      required:
+        - name
+    TestQuestion:
+      type: object
+      properties:
+        q:
+          type: integer
+          minimum: 0
+        type:
+          $ref: '#/components/schemas/TestFormat'
+        question:
+          $ref: '#/components/schemas/TestQuestionTitle'
+        options:
+          type: array
+          items:
+            $ref: '#/components/schemas/TestItemOptions'
+      required:
+        - q
+        - type
+        - question
+    TestItem:
+      type: object
+      properties:
+        q:
+          type: integer
+          minimum: 1
+        question:
+          type: string
+          example: "What animals lives in the water?"
+        options:
+          type: array
+          items:
+            $ref: '#/components/schemas/TestItemOptions'
+      required:
+        - q
+        - question
+        - options
+    TestItemOptions:
+      type: object
+      description: Multiple-choice options labeled A–D
+      properties:
+        order:
+          type: integer
+          example: 0
+        answer:
+          type: string
+          example: "Whale"
+        correct:
+          type: boolean
+          example: true
+      required:
+        - order
+        - answer
+        - correct
+    Test:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        model:
+          $ref: '#/components/schemas/ModelType'
+        status:
+          $ref: '#/components/schemas/TestStatus'
+        subject:
+          $ref: '#/components/schemas/TestSubject'
+        difficulty_level:
+          $ref: '#/components/schemas/TestDifficultyLevel'
+        feedback_liked:
+          $ref: '#/components/schemas/TestFeedbackLiked'
+        feedback_comment:
+          $ref: '#/components/schemas/TestFeedbackComment'
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/Content'
+      required:
+        - id
+        - status
+        - subject
+        - topic
+        - content
+    ## Errors
+    UnauthorizedError:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          example: '401'
+        errorMessage:
+          type: string
+          example: 'JWT token is missing or invalid.'
+    BadRequestError:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          example: '400'
+        errorMessage:
+          type: string
+          example: 'Invalid input data.'
+    ForbiddenError:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          example: '403'
+        errorMessage:
+          type: string
+          example: 'You do not have permission to access this resource.'
+    NotFoundError:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          example: '404'
+        errorMessage:
+          type: string
+          example: 'Resource not found.'
+    InternalServerError:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          example: '500'
+        errorMessage:
+          type: string
+          example: 'Internal server error occurred during processing.'
+  parameters:
+    TestId:
+      name: test_id
+      in: path
+      description: UUID of the test
+      required: true
+      schema:
+        type: string
+        format: uuid
+    X-Api-Key:
+      name: X-Api-Key
+      in: header
+      description: API key for authentication
+      required: true
+      schema:
+        type: string

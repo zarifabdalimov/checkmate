@@ -40,7 +40,7 @@ export interface TestQuestion {
   q: number;
   type: TestFormat;
   question: string;
-  options: TestItemOptions[];
+  options?: TestItemOptions[];
 }
 
 export interface TestGroup {

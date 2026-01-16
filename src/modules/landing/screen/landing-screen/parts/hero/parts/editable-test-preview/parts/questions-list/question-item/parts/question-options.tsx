@@ -71,8 +71,8 @@ export function QuestionOptions({
   return (
     <div className="space-y-2 pl-6">
       {question.options.map((option, optionIndex) => (
-        <div 
-          key={option.order} 
+        <div
+          key={option.order}
           className={`flex items-start gap-2 p-2 rounded-md transition-colors ${
             option.correct 
               ? 'bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800' 

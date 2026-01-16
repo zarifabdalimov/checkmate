@@ -16,7 +16,7 @@ export function useEditableTestForm(test: Test) {
         ? testContent.groups.flatMap((group) =>
             (group.items ?? []).map((item) => ({
               question: item.question,
-              options: item.options,
+              options: item.options ?? [],
             })),
           )
         : [],
