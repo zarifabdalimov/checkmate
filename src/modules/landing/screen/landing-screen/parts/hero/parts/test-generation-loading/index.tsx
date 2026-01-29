@@ -26,7 +26,7 @@ export function TestGenerationLoading({ testId }: TestGenerationLoadingProps) {
   useEffect(() => {
     const totalDuration = GENERATION_STEPS.reduce((sum, step) => sum + step.duration, 0);
     let elapsed = 0;
-    
+
     const interval = setInterval(() => {
       elapsed += 50;
       const newProgress = Math.min((elapsed / totalDuration) * 100, 95);
@@ -51,7 +51,7 @@ export function TestGenerationLoading({ testId }: TestGenerationLoadingProps) {
 
   const getStepIcon = (stepIndex: number) => {
     if (stepIndex < currentStep) {
-      return <CheckCircle2 className="w-5 h-5 text-green-500" />;
+      return <CheckCircle2 className="w-5 h-5 text-success" />;
     } else if (stepIndex === currentStep) {
       return <Loader2 className="w-5 h-5 animate-spin text-primary" />;
     } else {
@@ -102,7 +102,7 @@ export function TestGenerationLoading({ testId }: TestGenerationLoadingProps) {
               <AnimatePresence mode="sync">
                 {GENERATION_STEPS.map((step, index) => {
                   if (index > currentStep) return null;
-                  
+
                   return (
                     <motion.div
                       key={step.key}

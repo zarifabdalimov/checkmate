@@ -6,19 +6,38 @@ import { Toaster } from "@/modules/ui/sonner";
 import type { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
-import { Inter, Lora } from "next/font/google";
+import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import { PropsWithChildren } from "react";
 import "../globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+const workSans = localFont({
+  src: [
+    {
+      path: "../../../public/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf",
+      style: "normal",
+    },
+    {
+      path: "../../../public/fonts/Work_Sans/WorkSans-Italic-VariableFont_wght.ttf",
+      style: "italic",
+    },
+  ],
+  variable: "--font-work-sans",
+  display: "swap",
 });
 
-const lora = Lora({
-  subsets: ["latin"],
-  variable: "--font-lora",
+const besley = localFont({
+  src: [
+    {
+      path: "../../../public/fonts/Besley/Besley-VariableFont_wght.ttf",
+      style: "normal",
+    },
+    {
+      path: "../../../public/fonts/Besley/Besley-Italic-VariableFont_wght.ttf",
+      style: "italic",
+    },
+  ],
+  variable: "--font-besley",
   display: "swap",
 });
 
@@ -82,7 +101,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${inter.variable} ${lora.variable}`}>
+      <body className={`${workSans.variable} ${besley.variable}`}>
         <InitAmplify />
         <QueryProvider>
           <NextIntlClientProvider messages={messages}>

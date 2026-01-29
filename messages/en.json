@@ -759,7 +759,7 @@
         "options": {
           "THETA_ON_DEMAND": "Theta On Demand - Fastest, lower quality",
           "CLAUDE_HAIKU_3": "Claude Haiku 3 - Balanced speed and quality",
-          "CLAUSE_HAIKU_4_5": "Claude Haiku 4.5 - Highest quality, slower",
+          "CLAUDE_HAIKU_4_5": "Claude Haiku 4.5 - Highest quality, slower",
           "GEMINI_2_5_FLASH_LITE": "Gemini 2.5 Flash Lite - Fast and efficient",
           "GEMINI_3_FLASH_PREVIEW": "Gemini 3 Flash Preview - Latest preview version",
           "THETA_DEPLOYMENT_GEMMA_2B": "Theta Gemma 2B - Lightweight deployment model"

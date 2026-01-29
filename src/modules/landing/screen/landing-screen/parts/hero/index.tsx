@@ -40,7 +40,7 @@ export function Hero() {
           setTimeout(scrollToLoading, 50);
         }
       };
-      
+
       setTimeout(scrollToLoading, 100);
     }
   }, [testId, demoTestQuery.data?.status]);
@@ -93,11 +93,11 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight whitespace-pre-line leading-12 md:leading-20 lg:leading-22"
+            className="text-4xl md:text-6xl lg:text-7xl tracking-tight whitespace-pre-line leading-12 md:leading-20 lg:leading-22"
           >
             {t.rich("title", {
               highlight: (chunks) => (
-                <span className="bg-gradient-to-r from-primary via-primary to-primary/80 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r font-bold">
                   {chunks}
                 </span>
               ),
@@ -108,7 +108,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+            className="text-lg font-normal md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
           >
             {t("subtitle")}
           </motion.p>
@@ -127,11 +127,12 @@ export function Hero() {
                 <TestGenerationLoading testId={testId} />
               </div>
             )}
-            {demoTestQuery.data?.status === "completed" && demoTestQuery.data.content && (
-              <div ref={previewRef}>
-                <EditableTestPreview test={demoTestQuery.data} />
-              </div>
-            )}
+            {demoTestQuery.data?.status === "completed" &&
+              demoTestQuery.data.content && (
+                <div ref={previewRef}>
+                  <EditableTestPreview test={demoTestQuery.data} />
+                </div>
+              )}
           </div>
         </div>
       </div>

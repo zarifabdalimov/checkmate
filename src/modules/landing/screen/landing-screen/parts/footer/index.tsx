@@ -1,7 +1,8 @@
 "use client";
 
+import { Logo } from "@/modules/landing/screen/landing-screen/parts/header/parts/logo";
 import { Separator } from "@/modules/ui/separator";
-import { GraduationCap, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export function Footer() {
@@ -12,12 +13,7 @@ export function Footer() {
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <GraduationCap className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold">CheckMate</span>
-            </div>
+            <Logo />
             <p className="text-muted-foreground max-w-sm">{t("tagline")}</p>
           </div>
 

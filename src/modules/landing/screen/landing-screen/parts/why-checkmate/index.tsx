@@ -64,27 +64,27 @@ export function WhyCheckmate() {
             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
               <CheckCircle className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="font-semibold text-lg max-w-[220px] mx-auto">
+            <p className="text-lg max-w-[220px] mx-auto">
               {t("benefit1.title")}
-            </h3>
+            </p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="text-center space-y-4">
             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
               <Users className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="font-semibold text-lg max-w-[220px] mx-auto">
+            <p className="text-lg max-w-[220px] mx-auto">
               {t("benefit2.title")}
-            </h3>
+            </p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="text-center space-y-4">
             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
               <GraduationCap className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="font-semibold text-lg max-w-[220px] mx-auto">
+            <p className="text-lg max-w-[220px] mx-auto">
               {t("benefit3.title")}
-            </h3>
+            </p>
           </motion.div>
         </motion.div>
       </div>

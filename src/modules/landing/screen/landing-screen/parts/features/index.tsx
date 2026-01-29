@@ -40,9 +40,9 @@ export function Features() {
           className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto"
         >
           <motion.div variants={fadeInUp}>
-            <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20 h-full">
+            <Card className="border-2 h-full">
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Brain className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle>{t("aiTestGeneration.title")}</CardTitle>
@@ -54,9 +54,9 @@ export function Features() {
           </motion.div>
 
           <motion.div variants={fadeInUp}>
-            <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20 h-full">
+            <Card className="border-2 h-full">
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <CheckCircle className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle>{t("automatedGrading.title")}</CardTitle>
@@ -68,9 +68,9 @@ export function Features() {
           </motion.div>
 
           <motion.div variants={fadeInUp}>
-            <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20 h-full">
+            <Card className="border-2 h-full">
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle>{t("studentInsights.title")}</CardTitle>
@@ -82,9 +82,9 @@ export function Features() {
           </motion.div>
 
           <motion.div variants={fadeInUp}>
-            <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20 h-full">
+            <Card className="border-2 h-full">
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Sparkles className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle>{t("personalAiTutor.title")}</CardTitle>

@@ -75,14 +75,14 @@ export function QuestionOptions({
           key={option.order}
           className={`flex items-start gap-2 p-2 rounded-md transition-colors ${
             option.correct 
-              ? 'bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800' 
+              ? 'bg-success-lighter dark:bg-success/20 border border-success-light dark:border-success' 
               : ''
           }`}
         >
-          <span className={`font-medium text-sm ${option.correct ? 'text-green-700 dark:text-green-400' : ''}`}>
+          <span className={`font-medium text-sm ${option.correct ? 'text-success dark:text-success-light' : ''}`}>
             {String.fromCharCode(65 + optionIndex)}.
           </span>
-          <span className={`text-sm ${option.correct ? 'text-green-700 dark:text-green-400 font-medium' : ''}`}>
+          <span className={`text-sm ${option.correct ? 'text-success dark:text-success-light font-medium' : ''}`}>
             {option.answer}
           </span>
         </div>
