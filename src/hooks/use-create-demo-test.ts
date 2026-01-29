@@ -1,87 +1,37 @@
+import { components, paths } from "@/types/api.v1";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
+export type ModelType = components["schemas"]["ModelType"];
+
 // Types based on the OpenAPI schema
-export type TestFormat = "MCQ_SINGLE" | "MCQ_MULTIPLE" | "OPEN_ENDED";
+export type TestFormat = components["schemas"]["TestFormat"];
 
-export type ModelType =
-  | "THETA_ON_DEMAND"
-  | "CLAUDE_HAIKU_3"
-  | "CLAUSE_HAIKU_4_5"
-  | "GEMINI_2_5_FLASH_LITE"
-  | "GEMINI_3_FLASH_PREVIEW"
-  | "THETA_DEPLOYMENT_GEMMA_2B";
+export type TestGroupRequest = components["schemas"]["TestGroupRequest"];
 
-export interface TestGroupRequest {
-  format: TestFormat;
-  amount: number;
-  topic: string;
-}
+export type CreateDemoTestRequest = components["schemas"]["CreateTestReq"];
 
-export interface CreateDemoTestRequest {
-  model: ModelType;
-  subject: string;
-  difficulty_level: string;
-  language: string;
-  content: TestGroupRequest[];
-}
+export type CreateDemoTestResponse =
+  paths["/dev/api/v1/tests"]["post"]["responses"]["200"]["content"]["application/json"];
 
-export interface CreateDemoTestResponse {
-  test_id: string;
-}
+export type TestItemOptions = components["schemas"]["TestItemOptions"];
 
-export interface TestItemOptions {
-  order: number;
-  answer: string;
-  correct: boolean;
-}
+export type TestQuestion = components["schemas"]["TestQuestion"];
 
-export interface TestQuestion {
-  q: number;
-  type: TestFormat;
-  question: string;
-  options?: TestItemOptions[];
-}
+export type TestGroup = components["schemas"]["TestGroup"];
 
-export interface TestGroup {
-  name: string;
-  items?: TestQuestion[];
-}
+export type TestContent = components["schemas"]["TestContent"];
 
-export interface TestContent {
-  groups: TestGroup[];
-}
+export type TestMetadata = components["schemas"]["TestMetadata"];
 
-export interface TestMetadata {
-  name: string;
-  time_limit_min: number;
-  topic: string;
-  level: string;
-  language: string;
-}
+export type Content = components["schemas"]["Content"];
 
-export interface Content {
-  test_metadata: TestMetadata;
-  test_content: TestContent;
-}
+export type TestStatus = components["schemas"]["TestStatus"];
 
-export type TestStatus = "pending" | "completed";
+export type Test = components["schemas"]["Test"];
 
-export interface Test {
-  id: string;
-  model: ModelType;
-  status: TestStatus;
-  subject: string;
-  difficulty_level: string;
-  feedback_liked?: boolean | null;
-  feedback_comment?: string | null;
-  content: Content | null;
-}
-
-export interface SubmitTestFeedbackRequest {
-  liked: boolean;
-  comment?: string;
-}
+export type SubmitTestFeedbackRequest =
+  components["schemas"]["SubmitTestFeedbackReq"];
 
 const DEMO_API_BASE_URL = process.env.NEXT_PUBLIC_DEMO_API_BASE_URL || "";
 const DEMO_API_KEY = process.env.NEXT_PUBLIC_DEMO_API_KEY || "";

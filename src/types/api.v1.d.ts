@@ -226,7 +226,7 @@ export interface components {
         /** @enum {string} */
         TestFormat: "MCQ_SINGLE" | "MCQ_MULTIPLE" | "OPEN_ENDED";
         /** @enum {string} */
-        ModelType: "THETA_ON_DEMAND" | "CLAUDE_HAIKU_3" | "CLAUSE_HAIKU_4_5" | "GEMINI_2_5_FLASH_LITE" | "GEMINI_3_FLASH_PREVIEW" | "THETA_DEPLOYMENT_GEMMA_2B";
+        ModelType: "THETA_ON_DEMAND" | "CLAUDE_HAIKU_3" | "CLAUDE_HAIKU_4_5" | "GEMINI_2_5_FLASH_LITE" | "GEMINI_3_FLASH_PREVIEW" | "THETA_DEPLOYMENT_GEMMA_2B";
         /**
          * @description Subject of the test
          * @example History
@@ -320,10 +320,10 @@ export interface components {
             items?: components["schemas"]["TestQuestion"][];
         };
         TestQuestion: {
-            q?: number;
-            type?: components["schemas"]["TestFormat"];
+            q: number;
+            type: components["schemas"]["TestFormat"];
             question: components["schemas"]["TestQuestionTitle"];
-            options: components["schemas"]["TestItemOptions"][];
+            options?: components["schemas"]["TestItemOptions"][];
         };
         TestItem: {
             q: number;
@@ -349,7 +349,7 @@ export interface components {
             difficulty_level?: components["schemas"]["TestDifficultyLevel"];
             feedback_liked?: components["schemas"]["TestFeedbackLiked"];
             feedback_comment?: components["schemas"]["TestFeedbackComment"];
-            content: components["schemas"]["Content"][];
+            content: components["schemas"]["Content"];
         };
         UnauthorizedError: {
             /** @example 401 */

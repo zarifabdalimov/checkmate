@@ -13,7 +13,7 @@
     "codequality:check": "npm run format:fix && npm run lint:check && npm run type:check",
     "api:generate": "orval --config orval.config.ts",
     "api:watch": "orval --config orval.config.ts --watch",
-    "codegen:api": "npx openapi-typescript ./openapi.yaml -o ./src/types/api.v1.d.ts"
+    "api:generate-test-demo-api": "./scripts/fetch-openapi.sh && npx openapi-typescript ./openapi-test-showcase.yaml -o ./src/types/api.v1.d.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",

@@ -133,9 +133,9 @@ components:
     TestFormat:
       type: string
       enum:
-        - MCQ_SINGLE
-        - MCQ_MULTIPLE
-        - OPEN_ENDED
+          - MCQ_SINGLE
+          - MCQ_MULTIPLE
+          - OPEN_ENDED
     ModelType:
       type: string
       enum:
@@ -238,15 +238,15 @@ components:
         - amount
         - topic
     Content:
-      type: object
-      properties:
-        test_metadata:
-          $ref: '#/components/schemas/TestMetadata'
-        test_content:
-          $ref: '#/components/schemas/TestContent'
-      required:
-        - test_metadata
-        - test_content
+        type: object
+        properties:
+          test_metadata:
+            $ref: '#/components/schemas/TestMetadata'
+          test_content:
+            $ref: '#/components/schemas/TestContent'
+        required:
+          - test_metadata
+          - test_content
     TestMetadata:
       type: object
       properties:
@@ -272,9 +272,9 @@ components:
         groups:
           type: array
           items:
-            $ref: '#/components/schemas/TestGroup'
+              $ref: '#/components/schemas/TestGroup'
       required:
-        - groups
+          - groups
     TestGroup:
       type: object
       properties:
@@ -341,25 +341,23 @@ components:
     Test:
       type: object
       properties:
-        id:
-          type: string
-          format: uuid
-        model:
-          $ref: '#/components/schemas/ModelType'
-        status:
-          $ref: '#/components/schemas/TestStatus'
-        subject:
-          $ref: '#/components/schemas/TestSubject'
-        difficulty_level:
-          $ref: '#/components/schemas/TestDifficultyLevel'
-        feedback_liked:
-          $ref: '#/components/schemas/TestFeedbackLiked'
-        feedback_comment:
-          $ref: '#/components/schemas/TestFeedbackComment'
-        content:
-          type: array
-          items:
-            $ref: '#/components/schemas/Content'
+          id:
+            type: string
+            format: uuid
+          model:
+            $ref: '#/components/schemas/ModelType'
+          status:
+            $ref: '#/components/schemas/TestStatus'
+          subject:
+            $ref: '#/components/schemas/TestSubject'
+          difficulty_level:
+            $ref: '#/components/schemas/TestDifficultyLevel'
+          feedback_liked:
+            $ref: '#/components/schemas/TestFeedbackLiked'
+          feedback_comment:
+            $ref: '#/components/schemas/TestFeedbackComment'
+          content:
+              $ref: '#/components/schemas/Content'
       required:
         - id
         - status
