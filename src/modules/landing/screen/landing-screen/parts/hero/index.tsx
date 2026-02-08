@@ -4,7 +4,9 @@ import {
   useCreateDemoTest,
   useGetDemoTest,
 } from "@/hooks/use-create-demo-test";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
@@ -122,6 +124,20 @@ export function Hero() {
                 <ExamplePrompts onExampleClick={handleExampleClick} />
               }
             />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.8 }}
+              className="flex justify-center"
+            >
+              <Link
+                href="/create-test"
+                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                {t("advancedConfig")}
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </motion.div>
             {testId && demoTestQuery.data?.status === "pending" && (
               <div ref={loadingRef}>
                 <TestGenerationLoading testId={testId} />

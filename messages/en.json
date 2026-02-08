@@ -29,6 +29,7 @@
       "titleHighlight": "Better Learning.",
       "subtitle": "Checkmate helps teachers handle routine tasks so they can focus on what truly matters - their students.",
       "getStarted": "Try the demo",
+      "advancedConfig": "or try advanced test configuration",
       "getStartedTooltip": "Checkmate is currently in development - try our free demo today for an exclusive preview of what's coming soon!",
       "watchDemo": "Watch Demo",
       "comingSoon": "Coming Soon",
@@ -844,6 +845,86 @@
       "submitting": "Submitting...",
       "success": "Thank you for your feedback!",
       "error": "Failed to submit feedback. Please try again."
+    },
+    "errors": {
+      "createTestFailed": "Failed to create test",
+      "createTestFailedDescription": "There was an error creating your test. Please try again."
+    }
+  },
+  "CreateTestPage": {
+    "backToHome": "Back",
+    "title": "Create a Test",
+    "subtitle": "Configure your test settings and add multiple content sections with different topics and formats.",
+    "form": {
+      "generalSettings": "General Settings",
+      "contentSections": "Content Sections",
+      "contentSectionTitle": "Section {number}",
+      "subject": {
+        "label": "Subject",
+        "placeholder": "e.g., Mathematics, History"
+      },
+      "difficulty": {
+        "label": "Difficulty Level",
+        "placeholder": "Select difficulty"
+      },
+      "customDifficulty": {
+        "label": "Custom Difficulty",
+        "placeholder": "e.g., Advanced Placement (AP) level"
+      },
+      "language": {
+        "label": "Language",
+        "placeholder": "e.g., English, Czech, German"
+      },
+      "model": {
+        "label": "AI Model",
+        "placeholder": "Select model"
+      },
+      "topic": {
+        "label": "Topic",
+        "placeholder": "e.g., Linear Equations, World War II"
+      },
+      "format": {
+        "label": "Question Format",
+        "placeholder": "Select format"
+      },
+      "amount": {
+        "label": "Number of Questions",
+        "placeholder": "e.g., 10"
+      },
+      "addSection": "Add Section",
+      "removeSection": "Remove",
+      "generate": "Generate Test",
+      "generating": "Generating..."
+    },
+    "examples": {
+      "english": {
+        "title": "English Exam",
+        "sections": {
+          "grammar": "Grammar and sentence structure",
+          "vocabulary": "Vocabulary and word usage"
+        }
+      },
+      "history": {
+        "title": "History Exam",
+        "sections": {
+          "events": "Key events of the Renaissance period",
+          "figures": "Important historical figures and their contributions"
+        }
+      },
+      "science": {
+        "title": "Biology Exam",
+        "sections": {
+          "cells": "Cell biology - structure and organelles",
+          "genetics": "Basic genetics and DNA"
+        }
+      },
+      "literature": {
+        "title": "Literature Exam",
+        "sections": {
+          "themes": "Themes and symbolism in Romeo and Juliet",
+          "analysis": "Character analysis and literary devices"
+        }
+      }
     },
     "errors": {
       "createTestFailed": "Failed to create test",
