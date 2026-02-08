@@ -5,7 +5,8 @@ import { Progress } from "@/modules/ui/progress";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
-import { Loader2, Sparkles, FileText, CheckCircle2 } from "lucide-react";
+import { Loader2, FileText, CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 
 interface TestGenerationLoadingProps {
   testId: string;
@@ -71,16 +72,22 @@ export function TestGenerationLoading({ testId }: TestGenerationLoadingProps) {
           <div className="text-center space-y-4">
             <motion.div
               animate={{
-                scale: [1, 1.1, 1],
+                y: [0, -6, 0],
               }}
               transition={{
-                duration: 2,
+                duration: 2.5,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10"
+              className="inline-flex items-center justify-center"
             >
-              <Sparkles className="w-8 h-8 text-primary" />
+              <Image
+                src="/mascot/mascot-searching-blue.svg"
+                alt=""
+                width={88}
+                height={88}
+                className="drop-shadow-md"
+              />
             </motion.div>
 
             <div className="space-y-2">

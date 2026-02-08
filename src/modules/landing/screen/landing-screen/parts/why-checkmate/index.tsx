@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle, GraduationCap, Users } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export function WhyCheckmate() {
   const t = useTranslations("LandingPage.features");
@@ -36,20 +37,31 @@ export function WhyCheckmate() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="text-center space-y-4 mb-16"
+          className="flex flex-col items-center gap-6 mb-16"
         >
-          <motion.h2
-            variants={itemVariants}
-            className="text-3xl md:text-4xl font-bold"
-          >
-            {t("title")}
-          </motion.h2>
-          <motion.p
-            variants={itemVariants}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
-          >
-            {t("subtitle")}
-          </motion.p>
+          <motion.div variants={itemVariants}>
+            <Image
+              src="/mascot/mascot-idle-brown.svg"
+              alt=""
+              width={80}
+              height={80}
+              className="drop-shadow-sm"
+            />
+          </motion.div>
+          <div className="text-center space-y-4">
+            <motion.h2
+              variants={itemVariants}
+              className="text-3xl md:text-4xl font-bold"
+            >
+              {t("title")}
+            </motion.h2>
+            <motion.p
+              variants={itemVariants}
+              className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            >
+              {t("subtitle")}
+            </motion.p>
+          </div>
         </motion.div>
 
         {/* Benefits section */}

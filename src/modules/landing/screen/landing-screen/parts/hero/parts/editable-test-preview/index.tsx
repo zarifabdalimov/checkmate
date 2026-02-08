@@ -4,6 +4,7 @@ import type { Test } from "@/hooks/use-create-demo-test";
 import { Card, CardContent } from "@/modules/ui/card";
 import { Separator } from "@/modules/ui/separator";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useState } from "react";
 import { FormProvider } from "react-hook-form";
 import { FieldArrayProvider } from "./hooks/field-array-context";
@@ -60,9 +61,18 @@ export function EditableTestPreview({
                 questions={questions}
                 testName={testName}
               />
-              <div className="text-center space-y-4">
-                <TestTitle isEditing={isEditing} />
-                <TestMetadata test={test} />
+              <div className="flex items-center gap-4">
+                <Image
+                  src="/mascot/mascot-reading-green.svg"
+                  alt=""
+                  width={64}
+                  height={64}
+                  className="shrink-0 hidden sm:block"
+                />
+                <div className="text-center flex-1 space-y-4">
+                  <TestTitle isEditing={isEditing} />
+                  <TestMetadata test={test} />
+                </div>
               </div>
               <Separator />
               <QuestionsList isEditing={isEditing} />

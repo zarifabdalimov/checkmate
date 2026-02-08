@@ -1,0 +1,30 @@
+<svg width="226" height="389" viewBox="0 0 226 389" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_272_3823)">
+        <rect x="28.8291" y="35.7397" width="190.266" height="285.924" rx="95.1328" fill="#BED0E6"/>
+    </g>
+    <path d="M111.685 163.362C112.17 161.397 116.053 157.513 120.421 157.581C125.881 157.665 129.017 160.9 129.429 163.637" stroke="black" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="149.516" cy="124.82" r="20.9321" transform="rotate(3 149.516 124.82)" fill="#FDFAF6"/>
+    <circle cx="150.424" cy="124.867" r="20.3422" transform="rotate(3 150.424 124.867)" stroke="black" stroke-width="3"/>
+    <ellipse cx="141.641" cy="120.238" rx="5.46055" ry="6.82568" transform="rotate(3 141.641 120.238)" fill="black"/>
+    <path d="M171.897 93.9071C171.897 93.9071 170.084 91.4149 165.081 88.968C160.077 86.521 155.985 87.1749 155.985 87.1749" stroke="black" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="20.9321" cy="20.9321" r="20.9321" transform="matrix(-0.99863 -0.052336 -0.052336 0.99863 118.035 102.208)" fill="#FDFAF6"/>
+    <circle cx="21.8422" cy="21.8422" r="20.3422" transform="matrix(-0.99863 -0.052336 -0.052336 0.99863 118.083 101.299)" stroke="black" stroke-width="3"/>
+    <path d="M129.663 123.779C128.436 122.662 125.144 121.719 123.116 121.613C121.089 121.507 117.949 122.112 116.03 123.064" stroke="black" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="5.46055" cy="6.82568" rx="5.46055" ry="6.82568" transform="matrix(-0.99863 -0.052336 -0.052336 0.99863 107.562 111.507)" fill="black"/>
+    <path d="M77.0829 88.9468C77.0829 88.9468 79.412 86.9283 84.8385 85.674C90.2651 84.4197 94.1047 85.9807 94.1047 85.9807" stroke="black" stroke-width="3" stroke-linecap="round"/>
+    <path d="M203.826 183.958C214.338 194.996 216.966 201.303 219.594 219.699C222.032 236.765 219.594 274.361 215.389 293.282" stroke="black" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="210.658" cy="299.063" rx="13.1399" ry="10.5119" transform="rotate(-65.4673 210.658 299.063)" fill="black"/>
+    <ellipse cx="27.9281" cy="72.4409" rx="13.1399" ry="10.5119" transform="rotate(-57.5775 27.9281 72.4409)" fill="black"/>
+    <path d="M34.085 170.292C21.3723 169.451 -6.66461 165.244 3.78412 119.81C14.2329 74.3758 30.0796 73.1145 34.085 75.2179" stroke="black" stroke-width="3"/>
+    <path d="M54.9928 14.7243C69.9477 7.95203 86.4718 13.2685 92.1911 25.8974C97.9102 38.5265 91.0063 54.4535 76.0514 61.2261C61.0964 67.9986 44.5711 62.6816 38.8519 50.0525C33.1329 37.4233 40.0378 21.4968 54.9928 14.7243Z" stroke="black" stroke-width="4"/>
+    <path d="M105.553 307.999C104.431 324.505 103.491 370.415 107.425 375.775" stroke="black" stroke-width="3" stroke-linecap="round"/>
+    <path d="M144.719 307.999C143.721 324.513 143.123 370.429 147.097 375.759" stroke="black" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="91.9009" cy="377.378" rx="18.9214" ry="11.5631" fill="black"/>
+    <ellipse cx="143.82" cy="377.378" rx="18.9214" ry="11.5631" fill="black"/>
+    <path d="M34.085 63.5975L43.0201 55.188" stroke="black" stroke-width="3" stroke-linecap="round"/>
+    <defs>
+        <clipPath id="clip0_272_3823">
+            <rect x="28.8291" y="35.7397" width="190.266" height="285.924" rx="95.1328" fill="white"/>
+        </clipPath>
+    </defs>
+</svg>
