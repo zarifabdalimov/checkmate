@@ -1,0 +1,11 @@
+export { SingleChoiceQuestion } from "./single-choice-question";
+export { MultipleChoiceQuestion } from "./multiple-choice-question";
+export { OpenEndedQuestion } from "./open-ended-question";
+export { TrueFalseQuestion } from "./true-false-question";
+export { MatchPairsQuestion } from "./match-pairs-question";
+export { OrderingQuestion } from "./ordering-question";
+export { FillInTheBlankQuestion } from "./fill-in-the-blank-question";
+export { CategorizationQuestion } from "./categorization-question";
+export { NumericQuestion } from "./numeric-question";
+export { ShortAnswerQuestion } from "./short-answer-question";
+export { HighlightQuestion } from "./highlight-question";

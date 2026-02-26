@@ -2,6 +2,7 @@ import type { Test } from "@/hooks/use-create-demo-test";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, useFieldArray } from "react-hook-form";
 import { testFormSchema, type TestFormData } from "../index.types";
+import { transformBeQuestions } from "../utils/transform-be-questions";
 
 export function useEditableTestForm(test: Test) {
   const content = test.content;
@@ -13,12 +14,7 @@ export function useEditableTestForm(test: Test) {
     defaultValues: {
       testName: metadata?.name || "Untitled Test",
       questions: testContent
-        ? testContent.groups.flatMap((group) =>
-            (group.items ?? []).map((item) => ({
-              question: item.question,
-              options: item.options ?? [],
-            })),
-          )
+        ? transformBeQuestions(testContent.groups)
         : [],
     },
   });
@@ -33,4 +29,3 @@ export function useEditableTestForm(test: Test) {
     fieldArrayMethods,
   };
 }
-

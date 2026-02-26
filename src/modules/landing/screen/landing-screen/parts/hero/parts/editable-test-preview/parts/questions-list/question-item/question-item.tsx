@@ -2,10 +2,26 @@
 
 import { Input } from "@/modules/ui/input";
 import { Button } from "@/modules/ui/button";
+import { Badge } from "@/modules/ui/badge";
 import { Controller } from "react-hook-form";
 import { Trash2 } from "lucide-react";
 import { useEditableTestFormContext } from "../../../hooks/use-editable-test-form-context";
-import { QuestionOptions } from "./parts/question-options";
+import { QuestionBody } from "./parts/question-body";
+import type { QuestionType } from "../../../index.types";
+
+const TYPE_LABELS: Record<QuestionType, string> = {
+  SINGLE_CHOICE: "Single Choice",
+  MULTIPLE_CHOICE: "Multiple Choice",
+  OPEN_ENDED: "Open Ended",
+  TRUE_FALSE: "True / False",
+  MATCH_PAIRS: "Match Pairs",
+  ORDERING: "Ordering",
+  FILL_IN_THE_BLANK: "Fill in the Blank",
+  CATEGORIZATION: "Categorization",
+  NUMERIC: "Numeric",
+  SHORT_ANSWER: "Short Answer",
+  HIGHLIGHT: "Highlight",
+};
 
 interface QuestionItemProps {
   questionIndex: number;
@@ -21,7 +37,14 @@ export function QuestionItem({ questionIndex, isEditing }: QuestionItemProps) {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-2">
+      {isEditing && (
+        <div className="text-left">
+          <Badge variant="outline">
+            {TYPE_LABELS[question.type]}
+          </Badge>
+        </div>
+      )}
       <div className="flex gap-2 items-start">
         <span className="font-medium shrink-0">{questionIndex + 1}.</span>
         {isEditing ? (
@@ -46,7 +69,12 @@ export function QuestionItem({ questionIndex, isEditing }: QuestionItemProps) {
         )}
       </div>
 
-      <QuestionOptions questionIndex={questionIndex} isEditing={isEditing} />
+      <QuestionBody
+        type={question.type}
+        questionIndex={questionIndex}
+        isEditing={isEditing}
+        control={control}
+      />
     </div>
   );
 }

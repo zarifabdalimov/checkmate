@@ -5,20 +5,21 @@ import { Edit2, Save, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { TestPDFDownload } from "@/modules/pdf";
 import type { Test } from "@/hooks/use-create-demo-test";
+import type { Question } from "../index.types";
+
+function questionsToLegacyFormat(questions: Question[]) {
+  return questions.map((q) => ({
+    question: q.question,
+    options: "options" in q.payload ? q.payload.options : [],
+  }));
+}
 
 interface TestHeaderProps {
   isEditing: boolean;
   onToggleEdit: () => void;
   onClose?: () => void;
   test: Test;
-  questions: Array<{
-    question: string;
-    options: Array<{
-      order: number;
-      answer: string;
-      correct: boolean;
-    }>;
-  }>;
+  questions: Question[];
   testName: string;
 }
 
@@ -54,7 +55,7 @@ export function TestHeader({
         </Button>
         <TestPDFDownload
           test={test}
-          questions={questions}
+          questions={questionsToLegacyFormat(questions)}
           testName={testName}
           translations={{
             subject: t("subject"),
