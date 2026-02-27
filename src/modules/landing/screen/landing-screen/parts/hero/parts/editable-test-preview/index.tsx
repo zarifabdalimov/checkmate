@@ -49,7 +49,7 @@ export function EditableTestPreview({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="w-full max-w-4xl mx-auto"
+          className="w-full max-w-6xl mx-auto"
         >
           <Card>
             <CardContent className="p-8 space-y-6">

@@ -6,7 +6,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/modules/ui/popover";
-import { SortableList, SortableItem } from "@/modules/ui/sortable";
+import { SortableColumns } from "@/modules/ui/sortable";
 import {
   Plus,
   CircleDot,
@@ -21,7 +21,7 @@ import {
   MessageSquare,
   Highlighter,
 } from "lucide-react";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useEditableTestFormContext } from "../../hooks/use-editable-test-form-context";
 import type { QuestionType } from "../../index.types";
@@ -66,41 +66,70 @@ export function QuestionsList({ isEditing }: QuestionsListProps) {
     setPopoverOpen(false);
   };
 
-  const handleReorder = (oldIndex: number, newIndex: number) => {
-    move(oldIndex, newIndex);
-  };
+  const handleReorder = useCallback(
+    (newOrder: string[]) => {
+      // Map new id order back to field array moves.
+      // We apply moves one by one from top to bottom.
+      const currentIds = fields.map((f) => f.id);
+      const working = [...currentIds];
 
-  const questionItems = fields.map((field, questionIndex) => (
-    <QuestionItem
-      key={field.id}
-      questionIndex={questionIndex}
-      isEditing={isEditing}
-    />
-  ));
+      for (let targetIdx = 0; targetIdx < newOrder.length; targetIdx++) {
+        const id = newOrder[targetIdx];
+        const currentIdx = working.indexOf(id);
+        if (currentIdx !== targetIdx && currentIdx !== -1) {
+          move(currentIdx, targetIdx);
+          // Mirror in working array
+          const [moved] = working.splice(currentIdx, 1);
+          working.splice(targetIdx, 0, moved);
+        }
+      }
+    },
+    [fields, move],
+  );
+
+  const renderQuestion = useCallback(
+    (id: string) => {
+      const index = fields.findIndex((f) => f.id === id);
+      if (index === -1) return null;
+      return <QuestionItem questionIndex={index} isEditing={isEditing} />;
+    },
+    [fields, isEditing],
+  );
+
+  const mid = Math.ceil(fields.length / 2);
 
   return (
-    <div className="space-y-8">
+    <div>
       {isEditing ? (
-        <SortableList
+        <SortableColumns
           items={fields.map((f) => f.id)}
           onReorder={handleReorder}
-        >
-          <div className="space-y-8">
-            {fields.map((field, questionIndex) => (
-              <SortableItem key={field.id} id={field.id}>
-                <QuestionItem
-                  questionIndex={questionIndex}
-                  isEditing={isEditing}
-                />
-              </SortableItem>
+          renderItem={renderQuestion}
+        />
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-4">
+            {fields.slice(0, mid).map((field, i) => (
+              <QuestionItem
+                key={field.id}
+                questionIndex={i}
+                isEditing={false}
+              />
             ))}
           </div>
-        </SortableList>
-      ) : (
-        questionItems
+          <div className="space-y-4">
+            {fields.slice(mid).map((field, i) => (
+              <QuestionItem
+                key={field.id}
+                questionIndex={mid + i}
+                isEditing={false}
+              />
+            ))}
+          </div>
+        </div>
       )}
       {isEditing && (
-        <div className="flex justify-center print:hidden">
+        <div className="flex justify-center print:hidden mt-6">
           <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
             <PopoverTrigger asChild>
               <Button type="button" variant="outline" size="sm">
